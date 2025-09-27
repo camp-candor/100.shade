@@ -1,0 +1,62 @@
+79337 : 58166 : september-1-2025-at-3-26-pm-edt
+26.446% of 300,000 lines of code to go
+10502 : 6275 : august-27-2025-at-2-57-pm-edt
+3.501% of 300,000 lines of code to go
+24509 : 11960 : august-8-2025-at-12-35-pm-edt
+8.170% of 300,000 lines of code to go
+24283 : 11792 : august-6-2025-at-3-29-pm-edt
+8.094% of 300,000 lines of code to go
+24140 : 11697 : august-5-2025-at-7-53-pm-edt
+8.047% of 300,000 lines of code to go
+23899 : 11579 : august-4-2025-at-7-31-pm-edt
+7.966% of 300,000 lines of code to go
+23464 : 11398 : august-3-2025-at-7-54-pm-edt
+7.821% of 300,000 lines of code to go
+22614 : 10804 : july-25-2025-at-9-36-am-edt
+7.538% of 300,000 lines of code to go
+22285 : 10738 : july-22-2025-at-6-38-pm-edt (+766)
+7.428% of 300,000 lines of code to go
+21519 : 10372 : july-21-2025-at-9-21-pm-edt (+51)
+7.173% of 300,000 lines of code to go
+21468 : 10518 : july-20-2025-at-8-45-am-edt(+59)
+7.156% of 300,000 lines of code to go
+21409 : 10457 : july-19-2025-at-8-33-pm-edt (+496)
+6.973% of 300,000 lines of code to go
+20913 : 10165 : july-18-2025-at-2-18-pm-edt
+20783 : 10058 : july-17-2025-at-9-39-pm-edt
+20639 : 10208 : july-17-2025-at-9-09-pm-edt
+19889 : 9928 : july-16-2025-at-8-20-pm-edt
+19809 : 9871 : july-16-2025-at-7-58-pm-edt
+19693 : 9794 : july-16-2025-at-7-28-pm-edt
+19188 : 9406 : july-16-2025-at-11-59-am-edt
+19157 : 9398 : july-15-2025-at-10-05-pm-edt
+19134 : 9394 : july-15-2025-at-4-41-pm-edt
+19142 : 9377 : july-15-2025-at-11-25-am-edt
+18831 : 9159 : july-11-2025-at-12-32-pm-edt
+19042 : 9407 : june-22-2025-at-9-35-pm-edt
+19039 : 9401 : june-22-2025-at-4-30-pm-edt
+18518 : 9012 : june-21-2025-at-6-37-pm-edt
+18496 : 9012 : june-21-2025-at-6-23-pm-edt
+18503 : 9016 : june-21-2025-at-4-50-pm-edt
+18504 : 9017 : june-21-2025-at-4-49-pm-edt
+18509 : 9022 : june-21-2025-at-4-47-pm-edt
+18488 : 9005 : june-21-2025-at-4-40-pm-edt
+18485 : 9002 : june-21-2025-at-4-35-pm-edt
+18484 : 9001 : june-21-2025-at-4-32-pm-edt
+18483 : 9000 : june-21-2025-at-4-30-pm-edt
+18265 : 9298 : june-21-2025-at-3-11-pm-edt
+18189 : 9263 : june-21-2025-at-1-47-pm-edt
+18156 : 9254 : june-21-2025-at-1-18-pm-edt
+17887 : 9187 : june-20-2025-at-7-11-pm-edt
+16588 : 8606 : june-20-2025-at-7-01-pm-edt
+16814 : 8790 : june-20-2025-at-10-18-am-edt 
+17021 : 8801 : june-19-2025-at-6-11-pm-edt
+16987 : 8777 : june-19-2025-at-2-11-pm-edt
+17560 : 9185 : june-19-2025-at-11-36-am-edt
+20696 : 11039 : june-19-2025-at-11-34-am-edt
+20648 : 11003 : june-19-2025-at-11-30-am-edt
+20583 : 10952 : june-19-2025-at-10-23-am-edt
+20570 : 10943 : june-19-2025-at-10-10-am-edt
+20160 : 10665 : june-18-2025-at-11-10-am-edt 
+20159 : 10664 : june-18-2025-at-11-09-am-edt
+      

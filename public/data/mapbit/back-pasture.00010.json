@@ -1,0 +1,76 @@
+{
+    "idx": "back-pasture",
+    "typ": "ambt",
+    "val": 12,
+    "ver": "00.00",
+    "bit": {
+        "grid": [
+            {
+                "x": 0,
+                "y": 0,
+                "hex": "8c44f10f446b5ff"
+            },
+            {
+                "x": 0,
+                "y": 1,
+                "hex": "8c44f10f446b5ff"
+            },
+            {
+                "x": 0,
+                "y": 2,
+                "hex": "8c44f10f446b5ff"
+            }            
+        ]
+    },
+    "grid": [
+        {
+            "x": 0,
+            "y": 0,
+            "hex": "8c44f10f446b5ff",
+            "__isHoneycombHex": true,
+            "orientation": "flat",
+            "origin": {
+                "x": 0,
+                "y": 0
+            },
+            "size": {
+                "xRadius": 1,
+                "yRadius": 1
+            },
+            "offset": -1
+        },
+        {
+            "x": 0,
+            "y": 1,
+            "hex": "8c44f10f446b5ff",
+            "__isHoneycombHex": true,
+            "orientation": "flat",
+            "origin": {
+                "x": 0,
+                "y": 1
+            },
+            "size": {
+                "xRadius": 1,
+                "yRadius": 1
+            },
+            "offset": -1
+        },{
+            "x": 0,
+            "y": 2,
+            "hex": "8c44f10f446b5ff",
+            "__isHoneycombHex": true,
+            "orientation": "flat",
+            "origin": {
+                "x": 0,
+                "y": 2
+            },
+            "size": {
+                "xRadius": 1,
+                "yRadius": 1
+            },
+            "offset": -1
+        }
+
+    ],
+    "dex": 0
+}

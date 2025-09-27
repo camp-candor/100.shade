@@ -1,0 +1,11 @@
+export const INIT_CONTROL = "[Control action] Init Control";
+export const UPDATE_CONTROL = "[Control action] Update Control";
+export const OPEN_CONTROL = "[Open action] Open Control";
+export const CREATE_CONTROL = "[Create action] Create Control";
+export const TEST_CONTROL = "[Test action] Test Control";
+export const ACCESS_CONTROL = "[Access action] Access Control";
+export const OUTPUT_CONTROL = "[Output action] Output Control";
+export const ADVANCE_CONTROL = "[Advance action] Advance Control";
+export const INCREMENT_CONTROL = "[Increment action] Increment Control";
+ export const DATA_CONTROL = "[Control action] Data Control";
+export const STATUS_CONTROL = "[Status action] Status Control";

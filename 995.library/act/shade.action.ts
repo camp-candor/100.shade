@@ -1,0 +1,10 @@
+export const INIT_SHADE = "[Shade action] Init Shade";
+export const UPDATE_SHADE = "[Shade action] Update Shade";
+export const OPEN_SHADE = "[Open action] Open Shade";
+export const BODY_SHADE = "[Body action] Body Shade";
+export const BROWSER_SHADE = "[Browser action] Browser Shade";
+export const RUN_SHADE = "[Run action] Run Shade";
+export const EDIT_SHADE = "[Edit action] Edit Shade";
+export const PATCH_SHADE = "[Patch action] Patch Shade";
+export const TEST_SHADE = "[Test action] Test Shade";
+export const BUILD_SHADE = "[Build action] Build Shade";

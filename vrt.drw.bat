@@ -1,0 +1,1 @@
+yarn parcel build src/index.html 

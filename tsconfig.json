@@ -1,0 +1,58 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": false,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "incremental": true,
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ],
+        "paths": {
+            "@robot/*": [
+                "./robot/*"
+            ],
+            "@queue/*": [
+                "./queue/*"
+            ],
+            "@/*": [
+                "./src/*"
+            ],
+            "@ui/*": [
+                "./ui/*"
+            ],
+            "@space/*": [
+                "./002.space/*"
+            ],
+            "@shade/*": [
+                "./110.shade/*"
+            ],
+            "@core/*": [
+                "./core/*"
+            ]
+        },
+        "target": "ES2023"
+    },
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        ".next/types/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

@@ -1,0 +1,380 @@
+detail : tree-lined
+hacker-painter
+beat : wardriving
+beat : scrubbing
+beat : tooling
+beat : lessening
+beat : hot-modding
+beat : re-building
+beat : forging
+beat : trapping
+beat : hoop-kissing
+beat : wizard-hunting
+beat : drooling
+beat : alerting
+beat : retrieving
+beat : deeming
+beat : channeling
+beat : flaming
+beat : splicing
+beat : reigning
+beat : enveloping
+beat : assembling
+beat : improving
+beat : pulling
+beat : functioning
+beat : object
+object : hallucinogens
+object : brainwashes
+object : kabuki-cho
+object : succubi
+object : masochistic
+object : linoleum
+object : butterflies
+object : eco-shamans
+object : dignitas
+object : jazz
+object : reconciliation
+object : parasecurity
+object : shocker
+object : gnostic
+object : executive
+object : dirtproof
+object : discourse
+object : chap
+object : zeitgeists
+object : woodsman
+object : quaesitor
+object : waterline
+object : trans-oceanics
+title : guardian
+title : hollywood
+title : aeronautics
+title : klein
+title : odyssey
+title : junction
+title : marathon
+title : wonderland
+title : amazonia
+title : blood
+title : tempest
+title : vikings
+title : miguel
+title : hubbard
+title : quasimodo
+title : humanity
+title : carpenter
+title : sandman
+title : monument
+title : psychiatric
+title : armor
+title : motorcycle
+title : campus
+title : maritime
+title : detail
+detail : inquisitive
+detail : rebellious
+detail : stringy
+detail : fierce
+detail : chalky
+detail : squeaky
+detail : crucial
+detail : corporate-owned
+detail : claustrophobic
+detail : synergistic
+detail : thousand-fold
+detail : lush
+detail : zoological
+detail : southwestern
+detail : rugged
+detail : gleeful
+detail : crystal
+detail : ground-floor
+detail : religious
+detail : passionate
+detail : mighty
+detail : moot
+detail : utopian
+detail : pathetic
+detail : millennial
+detail : strapping
+detail : archaic
+detail : circuitous
+detail : heartiest
+detail : noxious
+detail : mechanized
+detail : bootleg
+detail : second-hand
+detail : blond
+detail : topnotch
+detail : mousy
+detail : meta-digital
+detail : harmful
+detail : premeditated
+detail : sequential
+detail : ballistic
+detail : noble
+detail : tree-lined
+beat : chattering
+object : warehouse
+detail : fossilized
+detail : unscathed
+detail : neolithic
+detail : rudimentary
+detail : horrible
+detail : preindustrial
+detail : anthropomorphic
+detail : rubbery
+detail : unresponsive
+detail : timeworn
+detail : ecotheological
+detail : venomous
+detail : sporadic
+detail : antiseptic
+detail : ancestral
+detail : confrontational
+detail : indiscriminate
+detail : mutant
+detail : muscular
+detail : dangerous
+detail : mammalian
+detail : adversarial
+detail : supernatural
+detail : worthy
+detail : clearheaded
+detail : jotted
+detail : rigid
+detail : hyperactive
+detail : jerky
+detail : prehistoric
+detail : economical
+detail : unflinching
+detail : lewd
+detail : woodland
+detail : lengthiest
+detail : native
+detail : governmental
+detail : nature
+nature : hellishly
+nature : obsessively
+nature : unsmoothly
+nature : unusually
+nature : oddly
+nature : seemingly
+nature : memorably
+nature : terroristically
+nature : morbidly
+nature : dysfunctionally
+nature : biologically
+nature : exoskeletally
+nature : psychically
+nature : jokingly
+nature : unwittily
+nature : glumly
+nature : thunderously
+nature : carelessly
+nature : considerably
+nature : 
+object : deathwatch
+object : tobacco-brown
+object : bodies
+object : libertine
+object : armor
+object : cogs
+object : postmodernist
+object : anchorite
+object : flowers
+object : cowhorse
+object : climate
+object : materialist
+object : thorn-struck
+object : daylight
+object : species-being
+object : copies
+object : arachnoids
+object : crawls
+object : mation
+object : sword
+object : shrug
+object : entropya
+object : clamorous
+object : watercart
+object : pocketknife
+object : abandoned
+object : fingerbones
+object : artefacts
+object : nightclouds
+object : large
+object : sunrise
+object : beat
+beat : abstaining
+beat : redrawing
+beat : slackening
+beat : sprawling
+beat : knocking
+beat : squeaking
+beat : vortexing
+beat : floundering
+beat : plopping
+beat : slobbering
+beat : delivering
+beat : sentencing
+beat : twirling
+beat : clawing
+beat : stashing
+beat : silencing
+beat : unfolding
+beat : dealing
+beat : trolling
+beat : chattering
+
+be: create life 
+be:build nest
+be:guard nest
+be:create life
+be:grow life
+be:lay eggs
+be:build nest
+be:look for materials
+be:fetch materials
+be:dig
+be:place materials
+be:lay eggs
+be:quickly
+be:slowly
+be:lovingly
+be:painfuly 
+be:east asian
+be:native american
+be:western american
+be:native american kree empire
+be:bantu africa
+be:mount olympus
+be:confedrate american
+be:new england american
+be:west coast american
+be:heart land american
+be:farm of the cotton:
+be:farm of the alligator
+be:rosa beeing
+be:simon beeing
+be:farm of tree
+be:farm of the cow
+be:hacker 
+be:fresh rhetoric
+be:overlight Flow
+be:render
+be:Felicifus Calculus 
+be:Kevin Equals Rooster
+hacker: zero-hero
+be:coder
+be:hacker 
+be:animator
+be:rigger
+be:modeler
+be:illustrator
+be:painter
+be:sculptor
+be:product designer
+be:game designer
+be:fashion designer
+be:hypermedia designer
+be:critic
+be:dancer
+be:musician 
+be:architect
+be:artist
+be:robot
+be:church: 
+be: hallow
+be: vital principle
+be: prayator
+be: government 
+be: ar-15
+be: m-16, 
+be: thinker 
+be: execute 
+be: pistol grip whip
+be: eagle harpy 
+be: master sprayer
+be: Warden Man
+be: Ryan David
+be: Cruicial Pincers
+be :criminal: Poucher Bot
+be :Duran Turan
+be: Shock Youth
+
+be: raven rock, 
+be: black thorne
+be: bonnie bluff 
+be : carly marbles 
+be : wildcat
+be : Quaigbait
+be: Little Jimmie Dickson
+be: Pulpwood
+be : Swamp stomper
+be : Potash Bile
+be : iron head Galloon, 
+be: shinola  
+be: poor piss
+be: puss pack
+be: throat punch
+be: slim pickins
+be: bundead
+be: maximon
+be: apis-hori
+be: reebeeka-beeing 
+be: family
+be: speeder spider 
+be: mother queen
+be :father king
+be: Golden Child
+be : saurian 
+be : sun-eater
+be : rexxxx-lexxxx 
+be :hard heart 
+be : rot wool 
+be : rexxxxie lexxxxie
+be : Orchid Stretch, 
+be :Snake Crotch, 
+be :Kissing Games
+be : Rising Beauty, 
+be : Lizard Skull
+
+be : Prey Station
+be : Cheeta Blossom, 
+be : beastiari boom
+be : misero
+
+be : mass media
+be : janky 
+be : heart flash
+
+be : intellegence of 68 
+be : jabo 
+be : hope 
+be : odd wad
+be : intellegence of 79
+be : wad odd
+be : kbabr
+
+be : supernal
+be : fusilini gorithmm
+
+be : gator
+be :  coots, 
+be : orange blossom
+be : car claw,
+be: ditty wack
+be:  ditty back
+be : swamp chomp, 
+be :Goober, 
+be : Little Bitty, 
+be :Pretty Thing
+be : Bartlett Pear
+be : Blue Corn
+be : Purple Candy
+be : Green Hornet
+be : Blood Orange
+be : Cadmium Red Deep
+be : Flight Jacket
