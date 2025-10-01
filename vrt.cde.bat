@@ -2,5 +2,5 @@ cd..
 cd..
 cd..
 cd vcode
-start Code.exe ../work/000.camp-candor/100.shade
+start Code.exe ../work/001.tasou/100.shade
 
