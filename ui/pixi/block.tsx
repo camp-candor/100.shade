@@ -5,6 +5,9 @@ import State from "@shade/99.core/state";
 import * as Import from "@shade/BEE";
 
 import * as ActFce from "@shade/02.surface.unit/surface.action";
+import * as ActApp from "@shade/01.application.unit/application.action";
+
+
 import * as ActTxt from "@shade/05.text.unit/text.action";
 import * as ActCan from "@shade/03.container.unit/container.action";
 import * as ActHex from "@shade/07.hexagon.unit/hexagon.action";
@@ -56,6 +59,10 @@ function PixiCanvas({bus}) {
 
         if (once == false) {
             once = true
+            
+            bit = await sim.hunt(ActApp.WRITE_APPLICATION, { idx: "indexCanvas" })
+            debugger
+            
             bit = await sim.hunt(ActFce.WRITE_SURFACE, { idx: "indexCanvas" })
             
             

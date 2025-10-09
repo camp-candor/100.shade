@@ -24,7 +24,6 @@ export const initApplication = (cpy: ApplicationModel, bal: ApplicationBit, ste:
 
 export const createApplication = async (cpy: ApplicationModel, bal: ApplicationBit, ste: State) => {
 
-
     if (bal.dat == null) bal.dat = {}
 
     if (bal.dat.src == null) bal.dat.src = 'indexCanvas'
@@ -32,31 +31,28 @@ export const createApplication = async (cpy: ApplicationModel, bal: ApplicationB
     var dat: StageBit = { idx: bal.idx, src: bal.dat.src, bit: null };
     dat.bit = new Application();
 
-    debugger
+    bal.slv({ appBit: { idx: "create-application", dat:{bit:dat.bit} } });
 
-
-    bal.slv({ fceBit: { idx: "create-application", dat } });
-    var el: HTMLElement | null = document.getElementById(dat.src as string)
-
+    //bal.slv({ appBit: { idx: "create-application", dat } });
+    //var el: HTMLElement | null = document.getElementById(dat.src as string)
 
     //const width = 800;
     //const height = 480;
 
-    const width = 720;
-    const height = 1280;
+    //const width = 720;
+    //const height = 1280;
 
-    var app = dat.bit;
+    //var app = dat.bit;
 
     //app.init
-    await app.init({ background: '#ffff00',  width, height });
+    //await app.init({ background: '#ffff00',  width, height });
     //await app.init({ background: '#00FFFF',  resizeTo: window });
 
     //debugger
     //var el = document.getElementById("application00");
-    el.appendChild(app.canvas);
+    //el.appendChild(app.canvas);
 
-    bal.slv({ fceBit: { idx: "create-application", dat:{bit:app} } });
-
+    //bal.slv({ appBit: { idx: "create-application", dat:{bit:app} } });
 
     //  await app.init({ background: '#00FFFF', resizeTo: el.parentElement });
 
@@ -113,8 +109,6 @@ export const createApplication = async (cpy: ApplicationModel, bal: ApplicationB
     //container.addChild( button)
     //app.stage.addChild( button)
     //button.onPress.connect(() => console.log('Button pressed!'));
-
-
     return cpy;
 };
 
@@ -124,11 +118,11 @@ export const updateApplication = async (cpy: ApplicationModel, bal: ApplicationB
     var idx = bal.idx;
 
     bit = await ste.hunt( ActApp.READ_APPLICATION, { idx: bal.idx })
-    dat = bit.fceBit.dat;
+    dat = bit.appBit.dat;
 
     var app = dat.bit;
 
-    if (app == null) return bal.slv({ fceBit: { idx: "error-update-application" } });
+    if (app == null) return bal.slv({ appBit: { idx: "error-update-application" } });
 
     //app.renderer.resize(dat.width, dat.height);
 
@@ -139,18 +133,20 @@ export const updateApplication = async (cpy: ApplicationModel, bal: ApplicationB
 export const readApplication = async (cpy: ApplicationModel, bal: ApplicationBit, ste: State) => {
 
     var slv = bal.slv;
-    if (bal.idx == null) bal.idx = 'fce00';
+    if (bal.idx == null) bal.idx = 'app00';
     bit = await ste.hunt(ActCol.READ_COLLECT, { idx: bal.idx, bit: ActApp.CREATE_APPLICATION })
-    if (slv != null) slv({ fceBit: { idx: "read-application", dat: bit.clcBit.dat } });
+    if (slv != null) slv({ appBit: { idx: "read-application", dat: bit.clcBit.dat } });
     return cpy;
 
 };
 export const writeApplication = async (cpy: ApplicationModel, bal: ApplicationBit, ste: State) => {
 
+   
+
     bit = await ste.hunt(ActCol.WRITE_COLLECT, { idx: bal.idx, dat: bal.dat, bit: ActApp.CREATE_APPLICATION })
     ste.hunt(ActApp.UPDATE_APPLICATION, { idx: bal.idx })
 
-    if (bal.slv != null) bal.slv({ fceBit: { idx: "write-application", dat: bit.clcBit.dat } });
+    if (bal.slv != null) bal.slv({ appBit: { idx: "write-application", dat: bit.clcBit.dat } });
 
     return cpy;
 };
@@ -158,12 +154,12 @@ export const writeApplication = async (cpy: ApplicationModel, bal: ApplicationBi
 
 export const removeApplication = async (cpy: ApplicationModel, bal: ApplicationBit, ste: State) => {
 
-    if (typeof window != "object") return bal.slv({ fceBit: { idx: "error-create-visage", dat: {} } });
+    if (typeof window != "object") return bal.slv({ appBit: { idx: "error-create-visage", dat: {} } });
 
     //gotcha-- making sure that the src is present on the collect bale once caused a tremendous issue
     bit = await ste.hunt(ActCol.REMOVE_COLLECT, { idx: bal.idx, src: bal.src, dat: bal.dat, bit: ActApp.DELETE_APPLICATION })
 
-    if (bal.slv != null) bal.slv({ fceBit: { idx: "remove-application", dat: bit.clcBit } });
+    if (bal.slv != null) bal.slv({ appBit: { idx: "remove-application", dat: bit.clcBit } });
 
     return cpy;
 }
@@ -172,12 +168,12 @@ export const removeApplication = async (cpy: ApplicationModel, bal: ApplicationB
 export const deleteApplication = async (cpy: ApplicationModel, bal: ApplicationBit, ste: State) => {
 
     bit = await ste.hunt(ActApp.READ_APPLICATION, { idx: bal.idx })
-    dat = bit.fceBit.dat
+    dat = bit.appBit.dat
 
     var app = dat.bit;
     app.destroy()
 
-    if (bal.slv != null) return bal.slv({ fceBit: { idx: "delete-application", dat } });
+    if (bal.slv != null) return bal.slv({ appBit: { idx: "delete-application", dat } });
 
     return cpy;
 };
@@ -188,7 +184,7 @@ export const dimensionApplication = async (cpy: ApplicationModel, bal: Applicati
     var idx = bal.idx;
     bit = await ste.hunt( ActApp.READ_APPLICATION, { idx: bal.idx })
 
-    if (bal.slv != null) return bal.slv({ fceBit: { idx: "dimension-application", dat: bal.dat } });
+    if (bal.slv != null) return bal.slv({ appBit: { idx: "dimension-application", dat: bal.dat } });
 
     return cpy;
 };
@@ -199,14 +195,14 @@ export const extractApplication = async (cpy: ApplicationModel, bal: Application
     var idx = bal.idx;
     bit = await ste.hunt( ActApp.READ_APPLICATION, { idx })
 
-    dat = bit.fceBit.dat
+    dat = bit.appBit.dat
 
     var app = dat.bit;
     var canvas = app.renderer.plugins.extract.canvas();
     const context = canvas.getContext('2d');
     const imgData = context.getImageData(0, 0, canvas.width, canvas.height);
 
-    if (bal.slv != null) return bal.slv({ fceBit: { idx: "extract-application", dat: imgData } });
+    if (bal.slv != null) return bal.slv({ appBit: { idx: "extract-application", dat: imgData } });
 
     return cpy;
 };
@@ -252,7 +248,7 @@ export const listApplication = async (cpy: ApplicationModel, bal: ApplicationBit
 
     //var dex = lst.length()
 
-    bal.slv({ fceBit: { idx: "list-application", lst} });
+    bal.slv({ appBit: { idx: "list-application", lst} });
 
 
 
