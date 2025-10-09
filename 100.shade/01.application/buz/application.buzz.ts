@@ -7,7 +7,7 @@ import StageBit from "../fce/stage.bit";
 import { Application, Assets, Container, Sprite } from 'pixi.js';
 
 import * as ActCol from "../../97.collect.unit/collect.action";
-import * as ActFce from "../../01.application.unit/application.action";
+import * as ActApp from "../application.action";
 import * as ActCan from "../../03.container.unit/container.action";
 import * as ActGph from "../../04.graphic.unit/graphic.action";
 import * as ActTxt from "../../05.text.unit/text.action";
@@ -31,6 +31,9 @@ export const createApplication = async (cpy: ApplicationModel, bal: ApplicationB
 
     var dat: StageBit = { idx: bal.idx, src: bal.dat.src, bit: null };
     dat.bit = new Application();
+
+    debugger
+
 
     bal.slv({ fceBit: { idx: "create-application", dat } });
     var el: HTMLElement | null = document.getElementById(dat.src as string)
@@ -120,7 +123,7 @@ export const updateApplication = async (cpy: ApplicationModel, bal: ApplicationB
 
     var idx = bal.idx;
 
-    bit = await ste.hunt(ActFce.READ_APPLICATION, { idx: bal.idx })
+    bit = await ste.hunt( ActApp.READ_APPLICATION, { idx: bal.idx })
     dat = bit.fceBit.dat;
 
     var app = dat.bit;
@@ -137,17 +140,15 @@ export const readApplication = async (cpy: ApplicationModel, bal: ApplicationBit
 
     var slv = bal.slv;
     if (bal.idx == null) bal.idx = 'fce00';
-    bit = await ste.hunt(ActCol.READ_COLLECT, { idx: bal.idx, bit: ActFce.CREATE_APPLICATION })
+    bit = await ste.hunt(ActCol.READ_COLLECT, { idx: bal.idx, bit: ActApp.CREATE_APPLICATION })
     if (slv != null) slv({ fceBit: { idx: "read-application", dat: bit.clcBit.dat } });
     return cpy;
 
 };
 export const writeApplication = async (cpy: ApplicationModel, bal: ApplicationBit, ste: State) => {
 
-
-
-    bit = await ste.hunt(ActCol.WRITE_COLLECT, { idx: bal.idx, dat: bal.dat, bit: ActFce.CREATE_APPLICATION })
-    ste.hunt(ActFce.UPDATE_APPLICATION, { idx: bal.idx })
+    bit = await ste.hunt(ActCol.WRITE_COLLECT, { idx: bal.idx, dat: bal.dat, bit: ActApp.CREATE_APPLICATION })
+    ste.hunt(ActApp.UPDATE_APPLICATION, { idx: bal.idx })
 
     if (bal.slv != null) bal.slv({ fceBit: { idx: "write-application", dat: bit.clcBit.dat } });
 
@@ -160,7 +161,7 @@ export const removeApplication = async (cpy: ApplicationModel, bal: ApplicationB
     if (typeof window != "object") return bal.slv({ fceBit: { idx: "error-create-visage", dat: {} } });
 
     //gotcha-- making sure that the src is present on the collect bale once caused a tremendous issue
-    bit = await ste.hunt(ActCol.REMOVE_COLLECT, { idx: bal.idx, src: bal.src, dat: bal.dat, bit: ActFce.DELETE_APPLICATION })
+    bit = await ste.hunt(ActCol.REMOVE_COLLECT, { idx: bal.idx, src: bal.src, dat: bal.dat, bit: ActApp.DELETE_APPLICATION })
 
     if (bal.slv != null) bal.slv({ fceBit: { idx: "remove-application", dat: bit.clcBit } });
 
@@ -170,7 +171,7 @@ export const removeApplication = async (cpy: ApplicationModel, bal: ApplicationB
 
 export const deleteApplication = async (cpy: ApplicationModel, bal: ApplicationBit, ste: State) => {
 
-    bit = await ste.hunt(ActFce.READ_APPLICATION, { idx: bal.idx })
+    bit = await ste.hunt(ActApp.READ_APPLICATION, { idx: bal.idx })
     dat = bit.fceBit.dat
 
     var app = dat.bit;
@@ -185,7 +186,7 @@ export const deleteApplication = async (cpy: ApplicationModel, bal: ApplicationB
 export const dimensionApplication = async (cpy: ApplicationModel, bal: ApplicationBit, ste: State) => {
 
     var idx = bal.idx;
-    bit = await ste.hunt(ActFce.READ_APPLICATION, { idx: bal.idx })
+    bit = await ste.hunt( ActApp.READ_APPLICATION, { idx: bal.idx })
 
     if (bal.slv != null) return bal.slv({ fceBit: { idx: "dimension-application", dat: bal.dat } });
 
@@ -196,7 +197,7 @@ export const dimensionApplication = async (cpy: ApplicationModel, bal: Applicati
 export const extractApplication = async (cpy: ApplicationModel, bal: ApplicationBit, ste: State) => {
 
     var idx = bal.idx;
-    bit = await ste.hunt(ActFce.READ_APPLICATION, { idx })
+    bit = await ste.hunt( ActApp.READ_APPLICATION, { idx })
 
     dat = bit.fceBit.dat
 
@@ -215,8 +216,7 @@ export const listApplication = async (cpy: ApplicationModel, bal: ApplicationBit
 
     dat = null
 
-    bit = await ste.hunt(ActCol.FETCH_COLLECT, { val: 0, bit: ActFce.CREATE_APPLICATION })
-
+    bit = await ste.hunt(ActCol.FETCH_COLLECT, { val: 0, bit: ActApp.CREATE_APPLICATION })
 
     if (bit.clcBit.dat == null) lst = []
     else dat = bit.clcBit.dat;
