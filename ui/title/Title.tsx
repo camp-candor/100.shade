@@ -9,16 +9,20 @@ import SurfaceWriteTest from '../test/SurfaceWriteTest'
 export default function ContentsPage() {
 
   var act00 = () => {
-    document.location.href = './surface-test'
+   // document.location.href = './surface-test'
   }
   var act00 = () => {
-    document.location.href = './write-spritesheet-test'
+   // document.location.href = './write-spritesheet-test'
   }
 
 
   return (
     <Container size="md" p={0} style={{ backgroundColor: '#ab9d77', minHeight: '100vh', color: '#000' }}>
       <Box p={40}>
+        
+        <div id='surface'>
+        </div>
+        
         <Title order={1} style={{ fontSize: 72, fontWeight: 300, marginBottom: 40 }}>
           110.SHADE
         </Title>

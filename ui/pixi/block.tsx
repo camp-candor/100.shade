@@ -56,7 +56,10 @@ function PixiCanvas({bus}) {
 
         if (once == false) {
             once = true
-            bit = await sim.hunt(ActFce.WRITE_SURFACE, { idx: "surface00" })
+            bit = await sim.hunt(ActFce.WRITE_SURFACE, { idx: "indexCanvas" })
+            
+            debugger
+            
             bit = await sim.hunt(ActCan.READ_CONTAINER, { idx: "can-00" })
 
             var container = bit.canBit.dat.bit;

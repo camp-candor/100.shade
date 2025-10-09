@@ -41,6 +41,8 @@ var SHADE
 
 export const initMenu = async (cpy: MenuModel, bal: MenuBit, ste: State) => {
 
+  
+
   if (bal == null) bal = { idx: null }
 
   bit = await ste.hunt(ActTrm.INIT_TERMINAL, {});
@@ -57,9 +59,11 @@ export const initMenu = async (cpy: MenuModel, bal: MenuBit, ste: State) => {
   bit = await ste.hunt(ActCns.UPDATE_CONSOLE, { idx: 'cns00', src: "Shade PIVOT V0" })
   bit = await ste.hunt(ActCns.UPDATE_CONSOLE, { idx: 'cns00', src: "-----------" })
 
-  if (global.SHADE == null) await new Promise<void>((resolve, reject) => exec('tsc -b 110.shade', err => err ? reject(err) : resolve()));
+  
+
+  if (global.SHADE == null) await new Promise<void>((resolve, reject) => exec('tsc -b 100.shade', err => err ? reject(err) : resolve()));
   if (global.SHADE == null) bit = await ste.hunt(ActMnu.PRINT_MENU, { src: "compiled shade" });
-  if (global.SHADE == null) global.SHADE = SHADE = require(path.resolve('./dist/110.shade/hunt'));
+  if (global.SHADE == null) global.SHADE = SHADE = require(path.resolve('./dist/100.shade/hunt'));
 
   updateMenu(cpy, bal, ste);
 
@@ -90,17 +94,26 @@ export const updateMenu = async (cpy: MenuModel, bal: MenuBit, ste: State) => {
 
     case ActSde.BUILD_SHADE:
 
+    
+
       //var bit = await ste.hunt(ActSde.BUILD_SHADE, {})
 
-      exec("tsc -b 110.shade", async (err, stdout, stderr) => {
+      exec("tsc -b 100.shade", async (err, stdout, stderr) => {
 
         if (err) {
           console.error(`exec error: ${err}`);
         }
 
-        bal.src = '110.shade'
+        bal.src = '100.shade'
+
+        
+
         var template = 'node ./data/hand/000.eveiefy -t ' + bal.src;
         exec(template, async (err, stdout, stderr) => {
+          
+
+          
+          
           if (err) {
             console.error(`exec error: ${err}`);
           }

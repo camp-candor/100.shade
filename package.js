@@ -3,18 +3,18 @@ var S = require('string')
 
 var exec = require('child_process').exec;
 
-exec('tsc -b 110.shade', async (err, stdout, stderr) => {
+exec('tsc -b 100.shade', async (err, stdout, stderr) => {
     if (err) {
         console.error(`exec error: ${err}`);
     }
 
     console.log("we have shade")
 
-    var src = '110.shade'
+    var src = '100.shade'
 
     var exec = require('child_process').exec;
     if (src == null)
-        src = '110.shade';
+        src = '100.shade';
 
     
     var template = 'node ./data/hand/000.eveiefy -t ' + src;
@@ -27,7 +27,7 @@ exec('tsc -b 110.shade', async (err, stdout, stderr) => {
         //bit = await ste.bus(ActDsk.BATCH_DISK, { src: '002.bundle-pivot.bat' })
 
 
-        var list = FS.readFileSync('./work/110.shade.js',{encoding:'utf8'}).toString().split('\n');
+        var list = FS.readFileSync('./work/100.shade.js',{encoding:'utf8'}).toString().split('\n');
 
         var check = ''
 
@@ -43,8 +43,8 @@ exec('tsc -b 110.shade', async (err, stdout, stderr) => {
         })
         
         //list = S( list ).replaceAll( , '').s
-        FS.writeFileSync( './work/110.shade.js', list.join('\n') )
-        console.log('fin 110.shade')
+        FS.writeFileSync( './work/100.shade.js', list.join('\n') )
+        console.log('fin 100.shade')
 
     });
 
