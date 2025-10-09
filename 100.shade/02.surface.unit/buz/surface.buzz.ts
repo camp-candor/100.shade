@@ -36,8 +36,7 @@ export const createSurface = async (cpy: SurfaceModel, bal: SurfaceBit, ste: Sta
     bal.slv({ fceBit: { idx: "create-surface", dat } });
     var el: HTMLElement | null = document.getElementById(dat.src as string)
 
-    debugger
-
+    
     //const width = 800;
     //const height = 480;
 
