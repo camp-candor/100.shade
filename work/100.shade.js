@@ -15,7 +15,7 @@ window.SHADE.ActTun = require("../dist/100.shade/10.toon.unit/toon.action");
 window.SHADE.ActVid = require("../dist/100.shade/11.video.unit/video.action");
 window.SHADE.ActFme = require("../dist/100.shade/12.frame.unit/frame.action");
 
-},{"../dist/100.shade/00.shade.unit/shade.action":3,"../dist/100.shade/03.container.unit/container.action":15,"../dist/100.shade/04.graphic.unit/graphic.action":21,"../dist/100.shade/05.text.unit/text.action":27,"../dist/100.shade/06.sprite.unit/sprite.action":33,"../dist/100.shade/07.hexagon.unit/hexagon.action":39,"../dist/100.shade/08.focigon.unit/focigon.action":45,"../dist/100.shade/09.loop.unit/loop.action":51,"../dist/100.shade/10.toon.unit/toon.action":57,"../dist/100.shade/11.video.unit/video.action":63,"../dist/100.shade/12.frame.unit/frame.action":69,"../dist/100.shade/hunt":160,"async-mqtt":177}],2:[function(require,module,exports){
+},{"../dist/100.shade/00.shade.unit/shade.action":3,"../dist/100.shade/03.container.unit/container.action":21,"../dist/100.shade/04.graphic.unit/graphic.action":27,"../dist/100.shade/05.text.unit/text.action":33,"../dist/100.shade/06.sprite.unit/sprite.action":39,"../dist/100.shade/07.hexagon.unit/hexagon.action":45,"../dist/100.shade/08.focigon.unit/focigon.action":51,"../dist/100.shade/09.loop.unit/loop.action":57,"../dist/100.shade/10.toon.unit/toon.action":63,"../dist/100.shade/11.video.unit/video.action":69,"../dist/100.shade/12.frame.unit/frame.action":75,"../dist/100.shade/hunt":166,"async-mqtt":183}],2:[function(require,module,exports){
 (function (process){(function (){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -194,7 +194,7 @@ exports.buildShade = buildShade;
 var patch = (ste, type, bale) => ste.dispatch({ type, bale });
 
 }).call(this)}).call(this,require('_process'))
-},{"../../00.shade.unit/shade.action":3,"../../02.surface.unit/surface.action":9,"../../03.container.unit/container.action":15,"../../04.graphic.unit/graphic.action":21,"../../05.text.unit/text.action":27,"../../06.sprite.unit/sprite.action":33,"../../07.hexagon.unit/hexagon.action":39,"../../10.toon.unit/toon.action":57,"../../11.video.unit/video.action":63,"../../21.visage.unit/visage.action":87,"../../98.menu.unit/menu.action":144,"../../99.bus.unit/bus.action":149,"../../act/console.action":157,"../../act/disk.action":158,"_process":913,"child_process":undefined,"fs-extra":undefined,"path":282}],3:[function(require,module,exports){
+},{"../../00.shade.unit/shade.action":3,"../../02.surface.unit/surface.action":15,"../../03.container.unit/container.action":21,"../../04.graphic.unit/graphic.action":27,"../../05.text.unit/text.action":33,"../../06.sprite.unit/sprite.action":39,"../../07.hexagon.unit/hexagon.action":45,"../../10.toon.unit/toon.action":63,"../../11.video.unit/video.action":69,"../../21.visage.unit/visage.action":93,"../../98.menu.unit/menu.action":150,"../../99.bus.unit/bus.action":155,"../../act/console.action":163,"../../act/disk.action":164,"_process":919,"child_process":undefined,"fs-extra":undefined,"path":288}],3:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BuildShade = exports.BUILD_SHADE = exports.TestShade = exports.TEST_SHADE = exports.PatchShade = exports.PATCH_SHADE = exports.EditShade = exports.EDIT_SHADE = exports.RunShade = exports.RUN_SHADE = exports.BrowserShade = exports.BROWSER_SHADE = exports.BodyShade = exports.BODY_SHADE = exports.OpenShade = exports.OPEN_SHADE = exports.UpdateShade = exports.UPDATE_SHADE = exports.InitShade = exports.INIT_SHADE = void 0;
@@ -353,7 +353,7 @@ function reducer(model = new shade_model_1.ShadeModel(), act, state) {
     }
 }
 
-},{"./shade.action":3,"./shade.buzzer":4,"./shade.model":5,"clone-deep":189}],7:[function(require,module,exports){
+},{"./shade.action":3,"./shade.buzzer":4,"./shade.model":5,"clone-deep":195}],7:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class ShadeUnit {
@@ -363,6 +363,295 @@ class ShadeUnit {
 exports.default = ShadeUnit;
 
 },{}],8:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ListApplication = exports.LIST_APPLICATION = exports.ExtractApplication = exports.EXTRACT_APPLICATION = exports.DeleteApplication = exports.DELETE_APPLICATION = exports.DimensionApplication = exports.DIMENSION_APPLICATION = exports.CreateApplication = exports.CREATE_APPLICATION = exports.RemoveApplication = exports.REMOVE_APPLICATION = exports.WriteApplication = exports.WRITE_APPLICATION = exports.ReadApplication = exports.READ_APPLICATION = exports.UpdateApplication = exports.UPDATE_APPLICATION = exports.InitApplication = exports.INIT_APPLICATION = void 0;
+// Application actions
+exports.INIT_APPLICATION = "[Application action] Init Application";
+class InitApplication {
+    constructor(bale) {
+        this.bale = bale;
+        this.type = exports.INIT_APPLICATION;
+    }
+}
+exports.InitApplication = InitApplication;
+exports.UPDATE_APPLICATION = "[Application action] Update Application";
+class UpdateApplication {
+    constructor(bale) {
+        this.bale = bale;
+        this.type = exports.UPDATE_APPLICATION;
+    }
+}
+exports.UpdateApplication = UpdateApplication;
+exports.READ_APPLICATION = "[Read action] Read Application";
+class ReadApplication {
+    constructor(bale) {
+        this.bale = bale;
+        this.type = exports.READ_APPLICATION;
+    }
+}
+exports.ReadApplication = ReadApplication;
+exports.WRITE_APPLICATION = "[Write action] Write Application";
+class WriteApplication {
+    constructor(bale) {
+        this.bale = bale;
+        this.type = exports.WRITE_APPLICATION;
+    }
+}
+exports.WriteApplication = WriteApplication;
+exports.REMOVE_APPLICATION = "[Write action] Remove Application";
+class RemoveApplication {
+    constructor(bale) {
+        this.bale = bale;
+        this.type = exports.REMOVE_APPLICATION;
+    }
+}
+exports.RemoveApplication = RemoveApplication;
+exports.CREATE_APPLICATION = "[Create action] Create Application";
+class CreateApplication {
+    constructor(bale) {
+        this.bale = bale;
+        this.type = exports.CREATE_APPLICATION;
+    }
+}
+exports.CreateApplication = CreateApplication;
+exports.DIMENSION_APPLICATION = "[Dimension action] Dimension Application";
+class DimensionApplication {
+    constructor(bale) {
+        this.bale = bale;
+        this.type = exports.DIMENSION_APPLICATION;
+    }
+}
+exports.DimensionApplication = DimensionApplication;
+exports.DELETE_APPLICATION = "[Delete action] Delete Application";
+class DeleteApplication {
+    constructor(bale) {
+        this.bale = bale;
+        this.type = exports.DELETE_APPLICATION;
+    }
+}
+exports.DeleteApplication = DeleteApplication;
+exports.EXTRACT_APPLICATION = "[Extract action] Extract Application";
+class ExtractApplication {
+    constructor(bale) {
+        this.bale = bale;
+        this.type = exports.EXTRACT_APPLICATION;
+    }
+}
+exports.ExtractApplication = ExtractApplication;
+exports.LIST_APPLICATION = "[List action] List Application";
+class ListApplication {
+    constructor(bale) {
+        this.bale = bale;
+        this.type = exports.LIST_APPLICATION;
+    }
+}
+exports.ListApplication = ListApplication;
+
+},{}],9:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.listApplication = exports.extractApplication = exports.removeApplication = exports.deleteApplication = exports.dimensionApplication = exports.createApplication = exports.writeApplication = exports.readApplication = exports.updateApplication = exports.initApplication = void 0;
+var application_buzz_1 = require("./buz/application.buzz");
+Object.defineProperty(exports, "initApplication", { enumerable: true, get: function () { return application_buzz_1.initApplication; } });
+var application_buzz_2 = require("./buz/application.buzz");
+Object.defineProperty(exports, "updateApplication", { enumerable: true, get: function () { return application_buzz_2.updateApplication; } });
+var application_buzz_3 = require("./buz/application.buzz");
+Object.defineProperty(exports, "readApplication", { enumerable: true, get: function () { return application_buzz_3.readApplication; } });
+var application_buzz_4 = require("./buz/application.buzz");
+Object.defineProperty(exports, "writeApplication", { enumerable: true, get: function () { return application_buzz_4.writeApplication; } });
+var application_buzz_5 = require("./buz/application.buzz");
+Object.defineProperty(exports, "createApplication", { enumerable: true, get: function () { return application_buzz_5.createApplication; } });
+var application_buzz_6 = require("./buz/application.buzz");
+Object.defineProperty(exports, "dimensionApplication", { enumerable: true, get: function () { return application_buzz_6.dimensionApplication; } });
+var application_buzz_7 = require("./buz/application.buzz");
+Object.defineProperty(exports, "deleteApplication", { enumerable: true, get: function () { return application_buzz_7.deleteApplication; } });
+var application_buzz_8 = require("./buz/application.buzz");
+Object.defineProperty(exports, "removeApplication", { enumerable: true, get: function () { return application_buzz_8.removeApplication; } });
+var application_buzz_9 = require("./buz/application.buzz");
+Object.defineProperty(exports, "extractApplication", { enumerable: true, get: function () { return application_buzz_9.extractApplication; } });
+var application_buzz_10 = require("./buz/application.buzz");
+Object.defineProperty(exports, "listApplication", { enumerable: true, get: function () { return application_buzz_10.listApplication; } });
+
+},{"./buz/application.buzz":13}],10:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ApplicationModel = void 0;
+class ApplicationModel {
+    constructor() {
+        //idx:string;
+        //applicationBitList: ApplicationBit[] = [];
+        //applicationBits: any = {};
+        this.stageContainerIDX = 'stageContainer';
+    }
+}
+exports.ApplicationModel = ApplicationModel;
+
+},{}],11:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.reducer = reducer;
+const clone = require("clone-deep");
+const Act = require("./application.action");
+const application_model_1 = require("./application.model");
+const Buzz = require("./application.buzzer");
+function reducer(model = new application_model_1.ApplicationModel(), act, state) {
+    switch (act.type) {
+        case Act.UPDATE_APPLICATION:
+            return Buzz.updateApplication(clone(model), act.bale, state);
+        case Act.INIT_APPLICATION:
+            return Buzz.initApplication(clone(model), act.bale, state);
+        case Act.READ_APPLICATION:
+            return Buzz.readApplication(clone(model), act.bale, state);
+        case Act.WRITE_APPLICATION:
+            return Buzz.writeApplication(clone(model), act.bale, state);
+        case Act.CREATE_APPLICATION:
+            return Buzz.createApplication(clone(model), act.bale, state);
+        case Act.DIMENSION_APPLICATION:
+            return Buzz.dimensionApplication(clone(model), act.bale, state);
+        case Act.DELETE_APPLICATION:
+            return Buzz.deleteApplication(clone(model), act.bale, state);
+        case Act.REMOVE_APPLICATION:
+            return Buzz.removeApplication(clone(model), act.bale, state);
+        case Act.EXTRACT_APPLICATION:
+            return Buzz.extractApplication(clone(model), act.bale, state);
+        case Act.LIST_APPLICATION:
+            return Buzz.listApplication(clone(model), act.bale, state);
+        default:
+            return model;
+    }
+}
+
+},{"./application.action":8,"./application.buzzer":9,"./application.model":10,"clone-deep":195}],12:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class ApplicationUnit {
+    constructor(state) {
+    }
+}
+exports.default = ApplicationUnit;
+
+},{}],13:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.listApplication = exports.extractApplication = exports.dimensionApplication = exports.deleteApplication = exports.removeApplication = exports.writeApplication = exports.readApplication = exports.updateApplication = exports.createApplication = exports.initApplication = void 0;
+const pixi_js_1 = require("pixi.js");
+const ActCol = require("../../97.collect.unit/collect.action");
+const ActApp = require("../application.action");
+var bit, val, idx, dex, lst, dat;
+var testing = false;
+const initApplication = (cpy, bal, ste) => {
+    return cpy;
+};
+exports.initApplication = initApplication;
+const createApplication = async (cpy, bal, ste) => {
+    if (bal.dat == null)
+        bal.dat = {};
+    if (bal.dat.src == null)
+        bal.dat.src = 'indexCanvas';
+    var dat = { idx: bal.idx, src: bal.dat.src, bit: null };
+    dat.bit = new pixi_js_1.Application();
+    bal.slv({ appBit: { idx: "create-application", dat: { bit: dat.bit } } });
+    return cpy;
+};
+exports.createApplication = createApplication;
+const updateApplication = async (cpy, bal, ste) => {
+    var idx = bal.idx;
+    bit = await ste.hunt(ActApp.READ_APPLICATION, { idx: bal.idx });
+    dat = bit.appBit.dat;
+    var app = dat.bit;
+    if (app == null)
+        return bal.slv({ appBit: { idx: "error-update-application" } });
+    //app.renderer.resize(dat.width, dat.height);
+    return cpy;
+};
+exports.updateApplication = updateApplication;
+const readApplication = async (cpy, bal, ste) => {
+    var slv = bal.slv;
+    if (bal.idx == null)
+        bal.idx = 'app00';
+    bit = await ste.hunt(ActCol.READ_COLLECT, { idx: bal.idx, bit: ActApp.CREATE_APPLICATION });
+    if (slv != null)
+        slv({ appBit: { idx: "read-application", dat: bit.clcBit.dat } });
+    return cpy;
+};
+exports.readApplication = readApplication;
+const writeApplication = async (cpy, bal, ste) => {
+    bit = await ste.hunt(ActCol.WRITE_COLLECT, { idx: bal.idx, dat: bal.dat, bit: ActApp.CREATE_APPLICATION });
+    ste.hunt(ActApp.UPDATE_APPLICATION, { idx: bal.idx });
+    if (bal.slv != null)
+        bal.slv({ appBit: { idx: "write-application", dat: bit.clcBit.dat } });
+    return cpy;
+};
+exports.writeApplication = writeApplication;
+const removeApplication = async (cpy, bal, ste) => {
+    if (typeof window != "object")
+        return bal.slv({ appBit: { idx: "error-create-visage", dat: {} } });
+    //gotcha-- making sure that the src is present on the collect bale once caused a tremendous issue
+    bit = await ste.hunt(ActCol.REMOVE_COLLECT, { idx: bal.idx, src: bal.src, dat: bal.dat, bit: ActApp.DELETE_APPLICATION });
+    if (bal.slv != null)
+        bal.slv({ appBit: { idx: "remove-application", dat: bit.clcBit } });
+    return cpy;
+};
+exports.removeApplication = removeApplication;
+const deleteApplication = async (cpy, bal, ste) => {
+    bit = await ste.hunt(ActApp.READ_APPLICATION, { idx: bal.idx });
+    dat = bit.appBit.dat;
+    var app = dat.bit;
+    app.destroy();
+    if (bal.slv != null)
+        return bal.slv({ appBit: { idx: "delete-application", dat } });
+    return cpy;
+};
+exports.deleteApplication = deleteApplication;
+const dimensionApplication = async (cpy, bal, ste) => {
+    var idx = bal.idx;
+    bit = await ste.hunt(ActApp.READ_APPLICATION, { idx: bal.idx });
+    if (bal.slv != null)
+        return bal.slv({ appBit: { idx: "dimension-application", dat: bal.dat } });
+    return cpy;
+};
+exports.dimensionApplication = dimensionApplication;
+const extractApplication = async (cpy, bal, ste) => {
+    var idx = bal.idx;
+    bit = await ste.hunt(ActApp.READ_APPLICATION, { idx });
+    dat = bit.appBit.dat;
+    var app = dat.bit;
+    var canvas = app.renderer.plugins.extract.canvas();
+    const context = canvas.getContext('2d');
+    const imgData = context.getImageData(0, 0, canvas.width, canvas.height);
+    if (bal.slv != null)
+        return bal.slv({ appBit: { idx: "extract-application", dat: imgData } });
+    return cpy;
+};
+exports.extractApplication = extractApplication;
+const listApplication = async (cpy, bal, ste) => {
+    dat = null;
+    bit = await ste.hunt(ActCol.FETCH_COLLECT, { val: 0, bit: ActApp.CREATE_APPLICATION });
+    if (bit.clcBit.dat == null)
+        lst = [];
+    else
+        dat = bit.clcBit.dat;
+    dat;
+    if (dat != null) {
+        lst = [];
+        dat.bitList.forEach((a) => {
+            lst.push((a.idx));
+        });
+    }
+    lst;
+    //process.chdir("../002.space")
+    //src = cpy.hexmapLoc
+    //bit = await ste.bus(ActDsk.LIST_DISK, { idx: null, src })
+    //lst = bit.dskBit.lst
+    //if (bal.idx != null) process.chdir(bal.idx)
+    //var dex = lst.length()
+    bal.slv({ appBit: { idx: "list-application", lst } });
+    return cpy;
+};
+exports.listApplication = listApplication;
+
+},{"../../97.collect.unit/collect.action":141,"../application.action":8,"pixi.js":465}],14:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.listSurface = exports.extractSurface = exports.dimensionSurface = exports.deleteSurface = exports.removeSurface = exports.writeSurface = exports.readSurface = exports.updateSurface = exports.createSurface = exports.initSurface = void 0;
@@ -384,7 +673,6 @@ const createSurface = async (cpy, bal, ste) => {
     dat.bit = new pixi_js_1.Application();
     bal.slv({ fceBit: { idx: "create-surface", dat } });
     var el = document.getElementById(dat.src);
-    debugger;
     //const width = 800;
     //const height = 480;
     const width = 720;
@@ -533,7 +821,7 @@ const listSurface = async (cpy, bal, ste) => {
 };
 exports.listSurface = listSurface;
 
-},{"../../02.surface.unit/surface.action":9,"../../97.collect.unit/collect.action":135,"pixi.js":459}],9:[function(require,module,exports){
+},{"../../02.surface.unit/surface.action":15,"../../97.collect.unit/collect.action":141,"pixi.js":465}],15:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ListSurface = exports.LIST_SURFACE = exports.ExtractSurface = exports.EXTRACT_SURFACE = exports.DeleteSurface = exports.DELETE_SURFACE = exports.DimensionSurface = exports.DIMENSION_SURFACE = exports.CreateSurface = exports.CREATE_SURFACE = exports.RemoveSurface = exports.REMOVE_SURFACE = exports.WriteSurface = exports.WRITE_SURFACE = exports.ReadSurface = exports.READ_SURFACE = exports.UpdateSurface = exports.UPDATE_SURFACE = exports.InitSurface = exports.INIT_SURFACE = void 0;
@@ -619,7 +907,7 @@ class ListSurface {
 }
 exports.ListSurface = ListSurface;
 
-},{}],10:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.listSurface = exports.extractSurface = exports.removeSurface = exports.deleteSurface = exports.dimensionSurface = exports.createSurface = exports.writeSurface = exports.readSurface = exports.updateSurface = exports.initSurface = void 0;
@@ -644,7 +932,7 @@ Object.defineProperty(exports, "extractSurface", { enumerable: true, get: functi
 var surface_buzz_10 = require("./buz/surface.buzz");
 Object.defineProperty(exports, "listSurface", { enumerable: true, get: function () { return surface_buzz_10.listSurface; } });
 
-},{"./buz/surface.buzz":8}],11:[function(require,module,exports){
+},{"./buz/surface.buzz":14}],17:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SurfaceModel = void 0;
@@ -658,7 +946,7 @@ class SurfaceModel {
 }
 exports.SurfaceModel = SurfaceModel;
 
-},{}],12:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -693,7 +981,7 @@ function reducer(model = new surface_model_1.SurfaceModel(), act, state) {
     }
 }
 
-},{"./surface.action":9,"./surface.buzzer":10,"./surface.model":11,"clone-deep":189}],13:[function(require,module,exports){
+},{"./surface.action":15,"./surface.buzzer":16,"./surface.model":17,"clone-deep":195}],19:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class SurfaceUnit {
@@ -702,7 +990,7 @@ class SurfaceUnit {
 }
 exports.default = SurfaceUnit;
 
-},{}],14:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.listContainer = exports.addContainer = exports.surfaceContainer = exports.deleteContainer = exports.createContainer = exports.removeContainer = exports.writeContainer = exports.readContainer = exports.updateContainer = exports.initContainer = void 0;
@@ -849,7 +1137,7 @@ const listContainer = async (cpy, bal, ste) => {
 };
 exports.listContainer = listContainer;
 
-},{"../../02.surface.unit/surface.action":9,"../../03.container.unit/container.action":15,"../../97.collect.unit/collect.action":135,"../../val/shade":167,"pixi.js":459}],15:[function(require,module,exports){
+},{"../../02.surface.unit/surface.action":15,"../../03.container.unit/container.action":21,"../../97.collect.unit/collect.action":141,"../../val/shade":173,"pixi.js":465}],21:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ListContainer = exports.LIST_CONTAINER = exports.DeleteContainer = exports.DELETE_CONTAINER = exports.RemoveContainer = exports.REMOVE_CONTAINER = exports.AddContainer = exports.ADD_CONTAINER = exports.SurfaceContainer = exports.SURFACE_CONTAINER = exports.CreateContainer = exports.CREATE_CONTAINER = exports.WriteContainer = exports.WRITE_CONTAINER = exports.ReadContainer = exports.READ_CONTAINER = exports.UpdateContainer = exports.UPDATE_CONTAINER = exports.InitContainer = exports.INIT_CONTAINER = void 0;
@@ -935,7 +1223,7 @@ class ListContainer {
 }
 exports.ListContainer = ListContainer;
 
-},{}],16:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.listContainer = exports.deleteContainer = exports.removeContainer = exports.addContainer = exports.surfaceContainer = exports.createContainer = exports.writeContainer = exports.readContainer = exports.updateContainer = exports.initContainer = void 0;
@@ -960,7 +1248,7 @@ Object.defineProperty(exports, "deleteContainer", { enumerable: true, get: funct
 var container_buzz_10 = require("./buz/container.buzz");
 Object.defineProperty(exports, "listContainer", { enumerable: true, get: function () { return container_buzz_10.listContainer; } });
 
-},{"./buz/container.buzz":14}],17:[function(require,module,exports){
+},{"./buz/container.buzz":20}],23:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ContainerModel = void 0;
@@ -968,7 +1256,7 @@ class ContainerModel {
 }
 exports.ContainerModel = ContainerModel;
 
-},{}],18:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -1003,7 +1291,7 @@ function reducer(model = new container_model_1.ContainerModel(), act, state) {
     }
 }
 
-},{"./container.action":15,"./container.buzzer":16,"./container.model":17,"clone-deep":189}],19:[function(require,module,exports){
+},{"./container.action":21,"./container.buzzer":22,"./container.model":23,"clone-deep":195}],25:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class ContainerUnit {
@@ -1012,7 +1300,7 @@ class ContainerUnit {
 }
 exports.default = ContainerUnit;
 
-},{}],20:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteGraphic = exports.createGraphic = exports.removeGraphic = exports.writeGraphic = exports.readGraphic = exports.updateGraphic = exports.initGraphic = void 0;
@@ -1127,7 +1415,7 @@ const deleteGraphic = async (cpy, bal, ste) => {
 };
 exports.deleteGraphic = deleteGraphic;
 
-},{"../../04.graphic.unit/graphic.action":21,"../../97.collect.unit/collect.action":135,"../../val/graphic":164,"../../val/shade":167,"pixi.js":459}],21:[function(require,module,exports){
+},{"../../04.graphic.unit/graphic.action":27,"../../97.collect.unit/collect.action":141,"../../val/graphic":170,"../../val/shade":173,"pixi.js":465}],27:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeleteGraphic = exports.DELETE_GRAPHIC = exports.RemoveGraphic = exports.REMOVE_GRAPHIC = exports.CreateGraphic = exports.CREATE_GRAPHIC = exports.WriteGraphic = exports.WRITE_GRAPHIC = exports.ReadGraphic = exports.READ_GRAPHIC = exports.UpdateGraphic = exports.UPDATE_GRAPHIC = exports.InitGraphic = exports.INIT_GRAPHIC = void 0;
@@ -1189,7 +1477,7 @@ class DeleteGraphic {
 }
 exports.DeleteGraphic = DeleteGraphic;
 
-},{}],22:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteGraphic = exports.removeGraphic = exports.createGraphic = exports.writeGraphic = exports.readGraphic = exports.updateGraphic = exports.initGraphic = void 0;
@@ -1208,7 +1496,7 @@ Object.defineProperty(exports, "removeGraphic", { enumerable: true, get: functio
 var graphic_buzz_7 = require("./buz/graphic.buzz");
 Object.defineProperty(exports, "deleteGraphic", { enumerable: true, get: function () { return graphic_buzz_7.deleteGraphic; } });
 
-},{"./buz/graphic.buzz":20}],23:[function(require,module,exports){
+},{"./buz/graphic.buzz":26}],29:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GraphicModel = void 0;
@@ -1216,7 +1504,7 @@ class GraphicModel {
 }
 exports.GraphicModel = GraphicModel;
 
-},{}],24:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -1245,7 +1533,7 @@ function reducer(model = new graphic_model_1.GraphicModel(), act, state) {
     }
 }
 
-},{"./graphic.action":21,"./graphic.buzzer":22,"./graphic.model":23,"clone-deep":189}],25:[function(require,module,exports){
+},{"./graphic.action":27,"./graphic.buzzer":28,"./graphic.model":29,"clone-deep":195}],31:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class GraphicUnit {
@@ -1254,7 +1542,7 @@ class GraphicUnit {
 }
 exports.default = GraphicUnit;
 
-},{}],26:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.listText = exports.deleteText = exports.createText = exports.removeText = exports.writeText = exports.readText = exports.updateText = exports.initText = void 0;
@@ -1372,7 +1660,7 @@ const listText = (cpy, bal, ste) => {
 };
 exports.listText = listText;
 
-},{"../../05.text.unit/text.action":27,"../../21.visage.unit/visage.action":87,"../../97.collect.unit/collect.action":135,"../../val/shade":167,"pixi.js":459}],27:[function(require,module,exports){
+},{"../../05.text.unit/text.action":33,"../../21.visage.unit/visage.action":93,"../../97.collect.unit/collect.action":141,"../../val/shade":173,"pixi.js":465}],33:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ListText = exports.LIST_TEXT = exports.DeleteText = exports.DELETE_TEXT = exports.RemoveText = exports.REMOVE_TEXT = exports.CreateText = exports.CREATE_TEXT = exports.WriteText = exports.WRITE_TEXT = exports.ReadText = exports.READ_TEXT = exports.UpdateText = exports.UPDATE_TEXT = exports.InitText = exports.INIT_TEXT = void 0;
@@ -1442,7 +1730,7 @@ class ListText {
 }
 exports.ListText = ListText;
 
-},{}],28:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.listText = exports.deleteText = exports.removeText = exports.createText = exports.writeText = exports.readText = exports.updateText = exports.initText = void 0;
@@ -1463,7 +1751,7 @@ Object.defineProperty(exports, "deleteText", { enumerable: true, get: function (
 var text_buzz_8 = require("./buz/text.buzz");
 Object.defineProperty(exports, "listText", { enumerable: true, get: function () { return text_buzz_8.listText; } });
 
-},{"./buz/text.buzz":26}],29:[function(require,module,exports){
+},{"./buz/text.buzz":32}],35:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TextModel = void 0;
@@ -1471,7 +1759,7 @@ class TextModel {
 }
 exports.TextModel = TextModel;
 
-},{}],30:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -1502,7 +1790,7 @@ function reducer(model = new text_model_1.TextModel(), act, state) {
     }
 }
 
-},{"./text.action":27,"./text.buzzer":28,"./text.model":29,"clone-deep":189}],31:[function(require,module,exports){
+},{"./text.action":33,"./text.buzzer":34,"./text.model":35,"clone-deep":195}],37:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class TextUnit {
@@ -1511,7 +1799,7 @@ class TextUnit {
 }
 exports.default = TextUnit;
 
-},{}],32:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteSprite = exports.createSprite = exports.removeSprite = exports.writeSprite = exports.readSprite = exports.updateSprite = exports.initSprite = void 0;
@@ -1616,7 +1904,7 @@ const deleteSprite = async (cpy, bal, ste) => {
 };
 exports.deleteSprite = deleteSprite;
 
-},{"../../06.sprite.unit/sprite.action":33,"../../97.collect.unit/collect.action":135,"../../val/shade":167,"pixi.js":459}],33:[function(require,module,exports){
+},{"../../06.sprite.unit/sprite.action":39,"../../97.collect.unit/collect.action":141,"../../val/shade":173,"pixi.js":465}],39:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeleteSprite = exports.DELETE_SPRITE = exports.RemoveSprite = exports.REMOVE_SPRITE = exports.CreateSprite = exports.CREATE_SPRITE = exports.WriteSprite = exports.WRITE_SPRITE = exports.ReadSprite = exports.READ_SPRITE = exports.UpdateSprite = exports.UPDATE_SPRITE = exports.InitSprite = exports.INIT_SPRITE = void 0;
@@ -1678,7 +1966,7 @@ class DeleteSprite {
 }
 exports.DeleteSprite = DeleteSprite;
 
-},{}],34:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteSprite = exports.removeSprite = exports.createSprite = exports.writeSprite = exports.readSprite = exports.updateSprite = exports.initSprite = void 0;
@@ -1697,7 +1985,7 @@ Object.defineProperty(exports, "removeSprite", { enumerable: true, get: function
 var sprite_buzz_7 = require("./buz/sprite.buzz");
 Object.defineProperty(exports, "deleteSprite", { enumerable: true, get: function () { return sprite_buzz_7.deleteSprite; } });
 
-},{"./buz/sprite.buzz":32}],35:[function(require,module,exports){
+},{"./buz/sprite.buzz":38}],41:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SpriteModel = void 0;
@@ -1705,7 +1993,7 @@ class SpriteModel {
 }
 exports.SpriteModel = SpriteModel;
 
-},{}],36:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -1734,7 +2022,7 @@ function reducer(model = new sprite_model_1.SpriteModel(), act, state) {
     }
 }
 
-},{"./sprite.action":33,"./sprite.buzzer":34,"./sprite.model":35,"clone-deep":189}],37:[function(require,module,exports){
+},{"./sprite.action":39,"./sprite.buzzer":40,"./sprite.model":41,"clone-deep":195}],43:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class SpriteUnit {
@@ -1743,7 +2031,7 @@ class SpriteUnit {
 }
 exports.default = SpriteUnit;
 
-},{}],38:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteHexagon = exports.createHexagon = exports.removeHexagon = exports.writeHexagon = exports.readHexagon = exports.hexmapHexagon = exports.focusHexagon = exports.updateHexagon = exports.initHexagon = void 0;
@@ -1874,7 +2162,7 @@ const deleteHexagon = (cpy, bal, ste) => {
 };
 exports.deleteHexagon = deleteHexagon;
 
-},{"../../04.graphic.unit/graphic.action":21,"../../07.hexagon.unit/hexagon.action":39,"../../97.collect.unit/collect.action":135,"../../val/hexagon":166,"honeycomb-grid":220}],39:[function(require,module,exports){
+},{"../../04.graphic.unit/graphic.action":27,"../../07.hexagon.unit/hexagon.action":45,"../../97.collect.unit/collect.action":141,"../../val/hexagon":172,"honeycomb-grid":226}],45:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HexmapHexagon = exports.HEXMAP_HEXAGON = exports.FocusHexagon = exports.FOCUS_HEXAGON = exports.DeleteHexagon = exports.DELETE_HEXAGON = exports.RemoveHexagon = exports.REMOVE_HEXAGON = exports.CreateHexagon = exports.CREATE_HEXAGON = exports.WriteHexagon = exports.WRITE_HEXAGON = exports.ReadHexagon = exports.READ_HEXAGON = exports.UpdateHexagon = exports.UPDATE_HEXAGON = exports.InitHexagon = exports.INIT_HEXAGON = void 0;
@@ -1952,7 +2240,7 @@ class HexmapHexagon {
 }
 exports.HexmapHexagon = HexmapHexagon;
 
-},{}],40:[function(require,module,exports){
+},{}],46:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.hexmapHexagon = exports.focusHexagon = exports.deleteHexagon = exports.removeHexagon = exports.createHexagon = exports.writeHexagon = exports.readHexagon = exports.updateHexagon = exports.initHexagon = void 0;
@@ -1975,7 +2263,7 @@ Object.defineProperty(exports, "focusHexagon", { enumerable: true, get: function
 var hexagon_buzz_9 = require("./buz/hexagon.buzz");
 Object.defineProperty(exports, "hexmapHexagon", { enumerable: true, get: function () { return hexagon_buzz_9.hexmapHexagon; } });
 
-},{"./buz/hexagon.buzz":38}],41:[function(require,module,exports){
+},{"./buz/hexagon.buzz":44}],47:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HexagonModel = void 0;
@@ -1983,7 +2271,7 @@ class HexagonModel {
 }
 exports.HexagonModel = HexagonModel;
 
-},{}],42:[function(require,module,exports){
+},{}],48:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -2016,7 +2304,7 @@ function reducer(model = new hexagon_model_1.HexagonModel(), act, state) {
     }
 }
 
-},{"./hexagon.action":39,"./hexagon.buzzer":40,"./hexagon.model":41,"clone-deep":189}],43:[function(require,module,exports){
+},{"./hexagon.action":45,"./hexagon.buzzer":46,"./hexagon.model":47,"clone-deep":195}],49:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class HexagonUnit {
@@ -2025,7 +2313,7 @@ class HexagonUnit {
 }
 exports.default = HexagonUnit;
 
-},{}],44:[function(require,module,exports){
+},{}],50:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteFocigon = exports.createFocigon = exports.removeFocigon = exports.writeFocigon = exports.readFocigon = exports.updateFocigon = exports.initFocigon = void 0;
@@ -2195,7 +2483,7 @@ const deleteFocigon = (cpy, bal, ste) => {
 };
 exports.deleteFocigon = deleteFocigon;
 
-},{"../../08.focigon.unit/focigon.action":45,"../../97.collect.unit/collect.action":135,"../../val/direction":163}],45:[function(require,module,exports){
+},{"../../08.focigon.unit/focigon.action":51,"../../97.collect.unit/collect.action":141,"../../val/direction":169}],51:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeleteFocigon = exports.DELETE_FOCIGON = exports.CreateFocigon = exports.CREATE_FOCIGON = exports.RemoveFocigon = exports.REMOVE_FOCIGON = exports.WriteFocigon = exports.WRITE_FOCIGON = exports.ReadFocigon = exports.READ_FOCIGON = exports.UpdateFocigon = exports.UPDATE_FOCIGON = exports.InitFocigon = exports.INIT_FOCIGON = void 0;
@@ -2257,7 +2545,7 @@ class DeleteFocigon {
 }
 exports.DeleteFocigon = DeleteFocigon;
 
-},{}],46:[function(require,module,exports){
+},{}],52:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteFocigon = exports.createFocigon = exports.removeFocigon = exports.writeFocigon = exports.readFocigon = exports.updateFocigon = exports.initFocigon = void 0;
@@ -2276,7 +2564,7 @@ Object.defineProperty(exports, "createFocigon", { enumerable: true, get: functio
 var focigon_buzz_7 = require("./buz/focigon.buzz");
 Object.defineProperty(exports, "deleteFocigon", { enumerable: true, get: function () { return focigon_buzz_7.deleteFocigon; } });
 
-},{"./buz/focigon.buzz":44}],47:[function(require,module,exports){
+},{"./buz/focigon.buzz":50}],53:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FocigonModel = void 0;
@@ -2284,7 +2572,7 @@ class FocigonModel {
 }
 exports.FocigonModel = FocigonModel;
 
-},{}],48:[function(require,module,exports){
+},{}],54:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -2313,7 +2601,7 @@ function reducer(model = new focigon_model_1.FocigonModel(), act, state) {
     }
 }
 
-},{"./focigon.action":45,"./focigon.buzzer":46,"./focigon.model":47,"clone-deep":189}],49:[function(require,module,exports){
+},{"./focigon.action":51,"./focigon.buzzer":52,"./focigon.model":53,"clone-deep":195}],55:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class FocigonUnit {
@@ -2322,7 +2610,7 @@ class FocigonUnit {
 }
 exports.default = FocigonUnit;
 
-},{}],50:[function(require,module,exports){
+},{}],56:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteLoop = exports.removeLoop = exports.updateLoop = exports.initLoop = void 0;
@@ -2345,7 +2633,7 @@ const deleteLoop = (cpy, bal, ste) => {
 };
 exports.deleteLoop = deleteLoop;
 
-},{}],51:[function(require,module,exports){
+},{}],57:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeleteLoop = exports.DELETE_LOOP = exports.RemoveLoop = exports.REMOVE_LOOP = exports.UpdateLoop = exports.UPDATE_LOOP = exports.InitLoop = exports.INIT_LOOP = void 0;
@@ -2383,7 +2671,7 @@ class DeleteLoop {
 }
 exports.DeleteLoop = DeleteLoop;
 
-},{}],52:[function(require,module,exports){
+},{}],58:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteLoop = exports.removeLoop = exports.updateLoop = exports.initLoop = void 0;
@@ -2396,7 +2684,7 @@ Object.defineProperty(exports, "removeLoop", { enumerable: true, get: function (
 var loop_buzz_4 = require("./buz/loop.buzz");
 Object.defineProperty(exports, "deleteLoop", { enumerable: true, get: function () { return loop_buzz_4.deleteLoop; } });
 
-},{"./buz/loop.buzz":50}],53:[function(require,module,exports){
+},{"./buz/loop.buzz":56}],59:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LoopModel = void 0;
@@ -2404,7 +2692,7 @@ class LoopModel {
 }
 exports.LoopModel = LoopModel;
 
-},{}],54:[function(require,module,exports){
+},{}],60:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -2427,7 +2715,7 @@ function reducer(model = new loop_model_1.LoopModel(), act, state) {
     }
 }
 
-},{"./loop.action":51,"./loop.buzzer":52,"./loop.model":53,"clone-deep":189}],55:[function(require,module,exports){
+},{"./loop.action":57,"./loop.buzzer":58,"./loop.model":59,"clone-deep":195}],61:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class LoopUnit {
@@ -2436,7 +2724,7 @@ class LoopUnit {
 }
 exports.default = LoopUnit;
 
-},{}],56:[function(require,module,exports){
+},{}],62:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateToon = exports.initToon = void 0;
@@ -2449,7 +2737,7 @@ const updateToon = (cpy, bal, ste) => {
 };
 exports.updateToon = updateToon;
 
-},{}],57:[function(require,module,exports){
+},{}],63:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateToon = exports.UPDATE_TOON = exports.InitToon = exports.INIT_TOON = void 0;
@@ -2471,7 +2759,7 @@ class UpdateToon {
 }
 exports.UpdateToon = UpdateToon;
 
-},{}],58:[function(require,module,exports){
+},{}],64:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateToon = exports.initToon = void 0;
@@ -2480,7 +2768,7 @@ Object.defineProperty(exports, "initToon", { enumerable: true, get: function () 
 var toon_buzz_2 = require("./buz/toon.buzz");
 Object.defineProperty(exports, "updateToon", { enumerable: true, get: function () { return toon_buzz_2.updateToon; } });
 
-},{"./buz/toon.buzz":56}],59:[function(require,module,exports){
+},{"./buz/toon.buzz":62}],65:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ToonModel = void 0;
@@ -2488,7 +2776,7 @@ class ToonModel {
 }
 exports.ToonModel = ToonModel;
 
-},{}],60:[function(require,module,exports){
+},{}],66:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -2507,7 +2795,7 @@ function reducer(model = new toon_model_1.ToonModel(), act, state) {
     }
 }
 
-},{"./toon.action":57,"./toon.buzzer":58,"./toon.model":59,"clone-deep":189}],61:[function(require,module,exports){
+},{"./toon.action":63,"./toon.buzzer":64,"./toon.model":65,"clone-deep":195}],67:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class ToonUnit {
@@ -2516,7 +2804,7 @@ class ToonUnit {
 }
 exports.default = ToonUnit;
 
-},{}],62:[function(require,module,exports){
+},{}],68:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteVideo = exports.removeVideo = exports.updateVideo = exports.initVideo = void 0;
@@ -2539,7 +2827,7 @@ const deleteVideo = (cpy, bal, ste) => {
 };
 exports.deleteVideo = deleteVideo;
 
-},{}],63:[function(require,module,exports){
+},{}],69:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeleteVideo = exports.DELETE_VIDEO = exports.RemoveVideo = exports.REMOVE_VIDEO = exports.UpdateVideo = exports.UPDATE_VIDEO = exports.InitVideo = exports.INIT_VIDEO = void 0;
@@ -2577,7 +2865,7 @@ class DeleteVideo {
 }
 exports.DeleteVideo = DeleteVideo;
 
-},{}],64:[function(require,module,exports){
+},{}],70:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteVideo = exports.removeVideo = exports.updateVideo = exports.initVideo = void 0;
@@ -2590,7 +2878,7 @@ Object.defineProperty(exports, "removeVideo", { enumerable: true, get: function 
 var video_buzz_4 = require("./buz/video.buzz");
 Object.defineProperty(exports, "deleteVideo", { enumerable: true, get: function () { return video_buzz_4.deleteVideo; } });
 
-},{"./buz/video.buzz":62}],65:[function(require,module,exports){
+},{"./buz/video.buzz":68}],71:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VideoModel = void 0;
@@ -2598,7 +2886,7 @@ class VideoModel {
 }
 exports.VideoModel = VideoModel;
 
-},{}],66:[function(require,module,exports){
+},{}],72:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -2621,7 +2909,7 @@ function reducer(model = new video_model_1.VideoModel(), act, state) {
     }
 }
 
-},{"./video.action":63,"./video.buzzer":64,"./video.model":65,"clone-deep":189}],67:[function(require,module,exports){
+},{"./video.action":69,"./video.buzzer":70,"./video.model":71,"clone-deep":195}],73:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class VideoUnit {
@@ -2630,7 +2918,7 @@ class VideoUnit {
 }
 exports.default = VideoUnit;
 
-},{}],68:[function(require,module,exports){
+},{}],74:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteFrame = exports.createFrame = exports.removeFrame = exports.writeFrame = exports.readFrame = exports.updateFrame = exports.initFrame = void 0;
@@ -2740,7 +3028,7 @@ const deleteFrame = async (cpy, bal, ste) => {
 };
 exports.deleteFrame = deleteFrame;
 
-},{"../../04.graphic.unit/graphic.action":21,"../../21.visage.unit/visage.action":87,"../../97.collect.unit/collect.action":135,"../../val/graphic":164,"../frame.action":69,"pixi.js":459}],69:[function(require,module,exports){
+},{"../../04.graphic.unit/graphic.action":27,"../../21.visage.unit/visage.action":93,"../../97.collect.unit/collect.action":141,"../../val/graphic":170,"../frame.action":75,"pixi.js":465}],75:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeleteFrame = exports.DELETE_FRAME = exports.CreateFrame = exports.CREATE_FRAME = exports.RemoveFrame = exports.REMOVE_FRAME = exports.WriteFrame = exports.WRITE_FRAME = exports.ReadFrame = exports.READ_FRAME = exports.UpdateFrame = exports.UPDATE_FRAME = exports.InitFrame = exports.INIT_FRAME = void 0;
@@ -2802,7 +3090,7 @@ class DeleteFrame {
 }
 exports.DeleteFrame = DeleteFrame;
 
-},{}],70:[function(require,module,exports){
+},{}],76:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteFrame = exports.createFrame = exports.removeFrame = exports.writeFrame = exports.readFrame = exports.updateFrame = exports.initFrame = void 0;
@@ -2821,7 +3109,7 @@ Object.defineProperty(exports, "createFrame", { enumerable: true, get: function 
 var frame_buzz_7 = require("./buz/frame.buzz");
 Object.defineProperty(exports, "deleteFrame", { enumerable: true, get: function () { return frame_buzz_7.deleteFrame; } });
 
-},{"./buz/frame.buzz":68}],71:[function(require,module,exports){
+},{"./buz/frame.buzz":74}],77:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FrameModel = void 0;
@@ -2829,7 +3117,7 @@ class FrameModel {
 }
 exports.FrameModel = FrameModel;
 
-},{}],72:[function(require,module,exports){
+},{}],78:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -2858,7 +3146,7 @@ function reducer(model = new frame_model_1.FrameModel(), act, state) {
     }
 }
 
-},{"./frame.action":69,"./frame.buzzer":70,"./frame.model":71,"clone-deep":189}],73:[function(require,module,exports){
+},{"./frame.action":75,"./frame.buzzer":76,"./frame.model":77,"clone-deep":195}],79:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class FrameUnit {
@@ -2867,7 +3155,7 @@ class FrameUnit {
 }
 exports.default = FrameUnit;
 
-},{}],74:[function(require,module,exports){
+},{}],80:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteCamera = exports.removeCamera = exports.writeCamera = exports.readCamera = exports.createCamera = exports.updateCamera = exports.initCamera = void 0;
@@ -2940,7 +3228,7 @@ const deleteCamera = (cpy, bal, ste) => {
 exports.deleteCamera = deleteCamera;
 const gsap_1 = require("gsap");
 
-},{"../../13.camera.unit/camera.action":75,"../../21.visage.unit/visage.action":87,"../../97.collect.unit/collect.action":135,"gsap":216}],75:[function(require,module,exports){
+},{"../../13.camera.unit/camera.action":81,"../../21.visage.unit/visage.action":93,"../../97.collect.unit/collect.action":141,"gsap":222}],81:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateCamera = exports.CREATE_CAMERA = exports.DeleteCamera = exports.DELETE_CAMERA = exports.RemoveCamera = exports.REMOVE_CAMERA = exports.WriteCamera = exports.WRITE_CAMERA = exports.ReadCamera = exports.READ_CAMERA = exports.UpdateCamera = exports.UPDATE_CAMERA = exports.InitCamera = exports.INIT_CAMERA = void 0;
@@ -3002,7 +3290,7 @@ class CreateCamera {
 }
 exports.CreateCamera = CreateCamera;
 
-},{}],76:[function(require,module,exports){
+},{}],82:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createCamera = exports.deleteCamera = exports.removeCamera = exports.writeCamera = exports.readCamera = exports.updateCamera = exports.initCamera = void 0;
@@ -3021,7 +3309,7 @@ Object.defineProperty(exports, "deleteCamera", { enumerable: true, get: function
 var camera_buzz_7 = require("./buz/camera.buzz");
 Object.defineProperty(exports, "createCamera", { enumerable: true, get: function () { return camera_buzz_7.createCamera; } });
 
-},{"./buz/camera.buzz":74}],77:[function(require,module,exports){
+},{"./buz/camera.buzz":80}],83:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CameraModel = void 0;
@@ -3029,7 +3317,7 @@ class CameraModel {
 }
 exports.CameraModel = CameraModel;
 
-},{}],78:[function(require,module,exports){
+},{}],84:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -3058,7 +3346,7 @@ function reducer(model = new camera_model_1.CameraModel(), act, state) {
     }
 }
 
-},{"./camera.action":75,"./camera.buzzer":76,"./camera.model":77,"clone-deep":189}],79:[function(require,module,exports){
+},{"./camera.action":81,"./camera.buzzer":82,"./camera.model":83,"clone-deep":195}],85:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class CameraUnit {
@@ -3067,7 +3355,7 @@ class CameraUnit {
 }
 exports.default = CameraUnit;
 
-},{}],80:[function(require,module,exports){
+},{}],86:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createSpritesheet = exports.deleteSpritesheet = exports.removeSpritesheet = exports.writeSpritesheet = exports.readSpritesheet = exports.updateSpritesheet = exports.initSpritesheet = void 0;
@@ -3165,7 +3453,7 @@ const createSpritesheet = async (cpy, bal, ste) => {
 };
 exports.createSpritesheet = createSpritesheet;
 
-},{"../../97.collect.unit/collect.action":135,"../spritesheet.action":81}],81:[function(require,module,exports){
+},{"../../97.collect.unit/collect.action":141,"../spritesheet.action":87}],87:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateSpritesheet = exports.CREATE_SPRITESHEET = exports.DeleteSpritesheet = exports.DELETE_SPRITESHEET = exports.RemoveSpritesheet = exports.REMOVE_SPRITESHEET = exports.WriteSpritesheet = exports.WRITE_SPRITESHEET = exports.ReadSpritesheet = exports.READ_SPRITESHEET = exports.UpdateSpritesheet = exports.UPDATE_SPRITESHEET = exports.InitSpritesheet = exports.INIT_SPRITESHEET = void 0;
@@ -3227,7 +3515,7 @@ class CreateSpritesheet {
 }
 exports.CreateSpritesheet = CreateSpritesheet;
 
-},{}],82:[function(require,module,exports){
+},{}],88:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createSpritesheet = exports.deleteSpritesheet = exports.removeSpritesheet = exports.writeSpritesheet = exports.readSpritesheet = exports.updateSpritesheet = exports.initSpritesheet = void 0;
@@ -3246,7 +3534,7 @@ Object.defineProperty(exports, "deleteSpritesheet", { enumerable: true, get: fun
 var spritesheet_buzz_7 = require("./buz/spritesheet.buzz");
 Object.defineProperty(exports, "createSpritesheet", { enumerable: true, get: function () { return spritesheet_buzz_7.createSpritesheet; } });
 
-},{"./buz/spritesheet.buzz":80}],83:[function(require,module,exports){
+},{"./buz/spritesheet.buzz":86}],89:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SpritesheetModel = void 0;
@@ -3254,7 +3542,7 @@ class SpritesheetModel {
 }
 exports.SpritesheetModel = SpritesheetModel;
 
-},{}],84:[function(require,module,exports){
+},{}],90:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -3283,7 +3571,7 @@ function reducer(model = new spritesheet_model_1.SpritesheetModel(), act, state)
     }
 }
 
-},{"./spritesheet.action":81,"./spritesheet.buzzer":82,"./spritesheet.model":83,"clone-deep":189}],85:[function(require,module,exports){
+},{"./spritesheet.action":87,"./spritesheet.buzzer":88,"./spritesheet.model":89,"clone-deep":195}],91:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class SpritesheetUnit {
@@ -3292,7 +3580,7 @@ class SpritesheetUnit {
 }
 exports.default = SpritesheetUnit;
 
-},{}],86:[function(require,module,exports){
+},{}],92:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.nestVisage = exports.listVisage = exports.clearVisage = exports.mainVisage = exports.fullscreenVisage = exports.dimensionVisage = exports.renderVisage = exports.sizeVisage = exports.deleteVisage = exports.createVisage = exports.removeVisage = exports.writeVisage = exports.readVisage = exports.screenVisage = exports.mountVisage = exports.updateVisage = exports.initVisage = void 0;
@@ -3609,7 +3897,7 @@ exports.nestVisage = nestVisage;
 const VISAGE = require("../../val/visage");
 const SHADE = require("../../val/shade");
 
-},{"../../02.surface.unit/surface.action":9,"../../03.container.unit/container.action":15,"../../04.graphic.unit/graphic.action":21,"../../05.text.unit/text.action":27,"../../06.sprite.unit/sprite.action":33,"../../07.hexagon.unit/hexagon.action":39,"../../09.loop.unit/loop.action":51,"../../11.video.unit/video.action":63,"../../21.visage.unit/visage.action":87,"../../97.collect.unit/collect.action":135,"../../val/shade":167,"../../val/visage":168}],87:[function(require,module,exports){
+},{"../../02.surface.unit/surface.action":15,"../../03.container.unit/container.action":21,"../../04.graphic.unit/graphic.action":27,"../../05.text.unit/text.action":33,"../../06.sprite.unit/sprite.action":39,"../../07.hexagon.unit/hexagon.action":45,"../../09.loop.unit/loop.action":57,"../../11.video.unit/video.action":69,"../../21.visage.unit/visage.action":93,"../../97.collect.unit/collect.action":141,"../../val/shade":173,"../../val/visage":174}],93:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NestVisage = exports.NEST_VISAGE = exports.ListVisage = exports.LIST_VISAGE = exports.DeleteVisage = exports.DELETE_VISAGE = exports.ClearVisage = exports.CLEAR_VISAGE = exports.MainVisage = exports.MAIN_VISAGE = exports.MountVisage = exports.MOUNT_VISAGE = exports.ScreenVisage = exports.SCREEN_VISAGE = exports.DimensionVisage = exports.DIMENSION_VISAGE = exports.RenderVisage = exports.RENDER_VISAGE = exports.SizeVisage = exports.SIZE_VISAGE = exports.CreateVisage = exports.CREATE_VISAGE = exports.RemoveVisage = exports.REMOVE_VISAGE = exports.WriteVisage = exports.WRITE_VISAGE = exports.ReadVisage = exports.READ_VISAGE = exports.FullscreenVisage = exports.FULLSCREEN_VISAGE = exports.UpdateVisage = exports.UPDATE_VISAGE = exports.InitVisage = exports.INIT_VISAGE = void 0;
@@ -3751,7 +4039,7 @@ class NestVisage {
 }
 exports.NestVisage = NestVisage;
 
-},{}],88:[function(require,module,exports){
+},{}],94:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.nestVisage = exports.listVisage = exports.deleteVisage = exports.clearVisage = exports.mainVisage = exports.mountVisage = exports.screenVisage = exports.dimensionVisage = exports.renderVisage = exports.sizeVisage = exports.createVisage = exports.removeVisage = exports.writeVisage = exports.readVisage = exports.fullscreenVisage = exports.updateVisage = exports.initVisage = void 0;
@@ -3790,7 +4078,7 @@ Object.defineProperty(exports, "listVisage", { enumerable: true, get: function (
 var visage_buzz_17 = require("./buz/visage.buzz");
 Object.defineProperty(exports, "nestVisage", { enumerable: true, get: function () { return visage_buzz_17.nestVisage; } });
 
-},{"./buz/visage.buzz":86}],89:[function(require,module,exports){
+},{"./buz/visage.buzz":92}],95:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VisageModel = void 0;
@@ -3798,7 +4086,7 @@ class VisageModel {
 }
 exports.VisageModel = VisageModel;
 
-},{}],90:[function(require,module,exports){
+},{}],96:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -3847,7 +4135,7 @@ function reducer(model = new visage_model_1.VisageModel(), act, state) {
     }
 }
 
-},{"./visage.action":87,"./visage.buzzer":88,"./visage.model":89,"clone-deep":189}],91:[function(require,module,exports){
+},{"./visage.action":93,"./visage.buzzer":94,"./visage.model":95,"clone-deep":195}],97:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class VisageUnit {
@@ -3856,7 +4144,7 @@ class VisageUnit {
 }
 exports.default = VisageUnit;
 
-},{}],92:[function(require,module,exports){
+},{}],98:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createChrome = exports.deleteChrome = exports.removeChrome = exports.writeChrome = exports.readChrome = exports.updateChrome = exports.initChrome = void 0;
@@ -3935,7 +4223,7 @@ const createChrome = async (cpy, bal, ste) => {
 };
 exports.createChrome = createChrome;
 
-},{"../../24.chrome.unit/chrome.action":93,"../../97.collect.unit/collect.action":135}],93:[function(require,module,exports){
+},{"../../24.chrome.unit/chrome.action":99,"../../97.collect.unit/collect.action":141}],99:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateChrome = exports.CREATE_CHROME = exports.DeleteChrome = exports.DELETE_CHROME = exports.RemoveChrome = exports.REMOVE_CHROME = exports.WriteChrome = exports.WRITE_CHROME = exports.ReadChrome = exports.READ_CHROME = exports.UpdateChrome = exports.UPDATE_CHROME = exports.InitChrome = exports.INIT_CHROME = void 0;
@@ -3997,7 +4285,7 @@ class CreateChrome {
 }
 exports.CreateChrome = CreateChrome;
 
-},{}],94:[function(require,module,exports){
+},{}],100:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createChrome = exports.deleteChrome = exports.removeChrome = exports.writeChrome = exports.readChrome = exports.updateChrome = exports.initChrome = void 0;
@@ -4016,7 +4304,7 @@ Object.defineProperty(exports, "deleteChrome", { enumerable: true, get: function
 var chrome_buzz_7 = require("./buz/chrome.buzz");
 Object.defineProperty(exports, "createChrome", { enumerable: true, get: function () { return chrome_buzz_7.createChrome; } });
 
-},{"./buz/chrome.buzz":92}],95:[function(require,module,exports){
+},{"./buz/chrome.buzz":98}],101:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ChromeModel = void 0;
@@ -4024,7 +4312,7 @@ class ChromeModel {
 }
 exports.ChromeModel = ChromeModel;
 
-},{}],96:[function(require,module,exports){
+},{}],102:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -4053,7 +4341,7 @@ function reducer(model = new chrome_model_1.ChromeModel(), act, state) {
     }
 }
 
-},{"./chrome.action":93,"./chrome.buzzer":94,"./chrome.model":95,"clone-deep":189}],97:[function(require,module,exports){
+},{"./chrome.action":99,"./chrome.buzzer":100,"./chrome.model":101,"clone-deep":195}],103:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class ChromeUnit {
@@ -4062,7 +4350,7 @@ class ChromeUnit {
 }
 exports.default = ChromeUnit;
 
-},{}],98:[function(require,module,exports){
+},{}],104:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.layoutTerminal = exports.clearTerminal = exports.inputTerminal = exports.optionTerminal = exports.printTerminal = exports.editTerminal = exports.runTerminal = exports.closeTerminal = exports.openTerminal = exports.updateTerminal = exports.initTerminal = void 0;
@@ -4181,7 +4469,7 @@ exports.layoutTerminal = layoutTerminal;
 var patch = (ste, type, bale) => ste.dispatch({ type, bale });
 const Grid = require("../../val/grid");
 
-},{"../../81.grid.unit/grid.action":105,"../../82.canvas.unit/canvas.action":111,"../../83.console.unit/console.action":117,"../../84.input.unit/input.action":123,"../../85.choice.unit/choice.action":129,"../../98.menu.unit/menu.action":144,"../../99.bus.unit/bus.action":149,"../../val/grid":165,"../terminal.action":99,"blessed":undefined,"blessed-contrib":undefined}],99:[function(require,module,exports){
+},{"../../81.grid.unit/grid.action":111,"../../82.canvas.unit/canvas.action":117,"../../83.console.unit/console.action":123,"../../84.input.unit/input.action":129,"../../85.choice.unit/choice.action":135,"../../98.menu.unit/menu.action":150,"../../99.bus.unit/bus.action":155,"../../val/grid":171,"../terminal.action":105,"blessed":undefined,"blessed-contrib":undefined}],105:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ClearTerminal = exports.CLEAR_TERMINAL = exports.OpenTerminal = exports.OPEN_TERMINAL = exports.LayoutTerminal = exports.LAYOUT_TERMINAL = exports.InputTerminal = exports.INPUT_TERMINAL = exports.OptionTerminal = exports.OPTION_TERMINAL = exports.CloseTerminal = exports.CLOSE_TERMINAL = exports.PrintTerminal = exports.PRINT_TERMINAL = exports.EditTerminal = exports.EDIT_TERMINAL = exports.RunTerminal = exports.RUN_TERMINAL = exports.UpdateTerminal = exports.UPDATE_TERMINAL = exports.InitTerminal = exports.INIT_TERMINAL = void 0;
@@ -4274,7 +4562,7 @@ class ClearTerminal {
 }
 exports.ClearTerminal = ClearTerminal;
 
-},{}],100:[function(require,module,exports){
+},{}],106:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.clearTerminal = exports.layoutTerminal = exports.inputTerminal = exports.optionTerminal = exports.closeTerminal = exports.printTerminal = exports.editTerminal = exports.runTerminal = exports.updateTerminal = exports.openTerminal = exports.initTerminal = void 0;
@@ -4301,7 +4589,7 @@ Object.defineProperty(exports, "layoutTerminal", { enumerable: true, get: functi
 var terminal_buzz_11 = require("./buz/terminal.buzz");
 Object.defineProperty(exports, "clearTerminal", { enumerable: true, get: function () { return terminal_buzz_11.clearTerminal; } });
 
-},{"./buz/terminal.buzz":98}],101:[function(require,module,exports){
+},{"./buz/terminal.buzz":104}],107:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TerminalModel = void 0;
@@ -4314,7 +4602,7 @@ class TerminalModel {
 }
 exports.TerminalModel = TerminalModel;
 
-},{}],102:[function(require,module,exports){
+},{}],108:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -4351,7 +4639,7 @@ function reducer(model = new terminal_model_1.TerminalModel(), act, state) {
     }
 }
 
-},{"./terminal.action":99,"./terminal.buzzer":100,"./terminal.model":101,"clone-deep":189}],103:[function(require,module,exports){
+},{"./terminal.action":105,"./terminal.buzzer":106,"./terminal.model":107,"clone-deep":195}],109:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class TerminalUnit {
@@ -4360,7 +4648,7 @@ class TerminalUnit {
 }
 exports.default = TerminalUnit;
 
-},{}],104:[function(require,module,exports){
+},{}],110:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateGrid = exports.initGrid = void 0;
@@ -4394,7 +4682,7 @@ const updateGrid = (cpy, bal, ste) => {
 };
 exports.updateGrid = updateGrid;
 
-},{}],105:[function(require,module,exports){
+},{}],111:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateGrid = exports.UPDATE_GRID = exports.InitGrid = exports.INIT_GRID = void 0;
@@ -4416,7 +4704,7 @@ class UpdateGrid {
 }
 exports.UpdateGrid = UpdateGrid;
 
-},{}],106:[function(require,module,exports){
+},{}],112:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateGrid = exports.initGrid = void 0;
@@ -4425,7 +4713,7 @@ Object.defineProperty(exports, "initGrid", { enumerable: true, get: function () 
 var grid_buzz_2 = require("./buz/grid.buzz");
 Object.defineProperty(exports, "updateGrid", { enumerable: true, get: function () { return grid_buzz_2.updateGrid; } });
 
-},{"./buz/grid.buzz":104}],107:[function(require,module,exports){
+},{"./buz/grid.buzz":110}],113:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GridModel = void 0;
@@ -4433,7 +4721,7 @@ class GridModel {
 }
 exports.GridModel = GridModel;
 
-},{}],108:[function(require,module,exports){
+},{}],114:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -4452,7 +4740,7 @@ function reducer(model = new grid_model_1.GridModel(), act, state) {
     }
 }
 
-},{"./grid.action":105,"./grid.buzzer":106,"./grid.model":107,"clone-deep":189}],109:[function(require,module,exports){
+},{"./grid.action":111,"./grid.buzzer":112,"./grid.model":113,"clone-deep":195}],115:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class GridUnit {
@@ -4461,7 +4749,7 @@ class GridUnit {
 }
 exports.default = GridUnit;
 
-},{}],110:[function(require,module,exports){
+},{}],116:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.nestCanvas = exports.removeCanvas = exports.deleteCanvas = exports.writeCanvas = exports.readCanvas = exports.createCanvas = exports.updateCanvas = exports.hexmapCanvas = exports.initCanvas = void 0;
@@ -4600,7 +4888,7 @@ exports.nestCanvas = nestCanvas;
 const COLOR = require("../../val/console-color");
 const SHADE = require("../../val/shade");
 
-},{"../../82.canvas.unit/canvas.action":111,"../../97.collect.unit/collect.action":135,"../../val/console-color":162,"../../val/shade":167}],111:[function(require,module,exports){
+},{"../../82.canvas.unit/canvas.action":117,"../../97.collect.unit/collect.action":141,"../../val/console-color":168,"../../val/shade":173}],117:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NestCanvas = exports.NEST_CANVAS = exports.CreateCanvas = exports.CREATE_CANVAS = exports.RemoveCanvas = exports.REMOVE_CANVAS = exports.DeleteCanvas = exports.DELETE_CANVAS = exports.WriteCanvas = exports.WRITE_CANVAS = exports.ReadCanvas = exports.READ_CANVAS = exports.HexmapCanvas = exports.HEXMAP_CANVAS = exports.UpdateCanvas = exports.UPDATE_CANVAS = exports.InitCanvas = exports.INIT_CANVAS = void 0;
@@ -4678,7 +4966,7 @@ class NestCanvas {
 }
 exports.NestCanvas = NestCanvas;
 
-},{}],112:[function(require,module,exports){
+},{}],118:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.hexmapCanvas = exports.nestCanvas = exports.createCanvas = exports.removeCanvas = exports.deleteCanvas = exports.writeCanvas = exports.readCanvas = exports.updateCanvas = exports.initCanvas = void 0;
@@ -4701,7 +4989,7 @@ Object.defineProperty(exports, "nestCanvas", { enumerable: true, get: function (
 var canvas_buzz_9 = require("./buz/canvas.buzz");
 Object.defineProperty(exports, "hexmapCanvas", { enumerable: true, get: function () { return canvas_buzz_9.hexmapCanvas; } });
 
-},{"./buz/canvas.buzz":110}],113:[function(require,module,exports){
+},{"./buz/canvas.buzz":116}],119:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CanvasModel = void 0;
@@ -4709,7 +4997,7 @@ class CanvasModel {
 }
 exports.CanvasModel = CanvasModel;
 
-},{}],114:[function(require,module,exports){
+},{}],120:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -4742,7 +5030,7 @@ function reducer(model = new canvas_model_1.CanvasModel(), act, state) {
     }
 }
 
-},{"./canvas.action":111,"./canvas.buzzer":112,"./canvas.model":113,"clone-deep":189}],115:[function(require,module,exports){
+},{"./canvas.action":117,"./canvas.buzzer":118,"./canvas.model":119,"clone-deep":195}],121:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class CanvasUnit {
@@ -4751,7 +5039,7 @@ class CanvasUnit {
 }
 exports.default = CanvasUnit;
 
-},{}],116:[function(require,module,exports){
+},{}],122:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteConsole = exports.removeConsole = exports.writeConsole = exports.readConsole = exports.createConsole = exports.updateConsole = exports.initConsole = void 0;
@@ -4834,7 +5122,7 @@ const deleteConsole = (cpy, bal, ste) => {
 exports.deleteConsole = deleteConsole;
 const COLOR = require("../../val/console-color");
 
-},{"../../97.collect.unit/collect.action":135,"../../val/console-color":162,"../console.action":117}],117:[function(require,module,exports){
+},{"../../97.collect.unit/collect.action":141,"../../val/console-color":168,"../console.action":123}],123:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateConsole = exports.CREATE_CONSOLE = exports.DeleteConsole = exports.DELETE_CONSOLE = exports.RemoveConsole = exports.REMOVE_CONSOLE = exports.WriteConsole = exports.WRITE_CONSOLE = exports.ReadConsole = exports.READ_CONSOLE = exports.UpdateConsole = exports.UPDATE_CONSOLE = exports.InitConsole = exports.INIT_CONSOLE = void 0;
@@ -4896,7 +5184,7 @@ class CreateConsole {
 }
 exports.CreateConsole = CreateConsole;
 
-},{}],118:[function(require,module,exports){
+},{}],124:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createConsole = exports.deleteConsole = exports.removeConsole = exports.writeConsole = exports.readConsole = exports.updateConsole = exports.initConsole = void 0;
@@ -4915,7 +5203,7 @@ Object.defineProperty(exports, "deleteConsole", { enumerable: true, get: functio
 var console_buzz_7 = require("./buz/console.buzz");
 Object.defineProperty(exports, "createConsole", { enumerable: true, get: function () { return console_buzz_7.createConsole; } });
 
-},{"./buz/console.buzz":116}],119:[function(require,module,exports){
+},{"./buz/console.buzz":122}],125:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ConsoleModel = void 0;
@@ -4923,7 +5211,7 @@ class ConsoleModel {
 }
 exports.ConsoleModel = ConsoleModel;
 
-},{}],120:[function(require,module,exports){
+},{}],126:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -4952,7 +5240,7 @@ function reducer(model = new console_model_1.ConsoleModel(), act, state) {
     }
 }
 
-},{"./console.action":117,"./console.buzzer":118,"./console.model":119,"clone-deep":189}],121:[function(require,module,exports){
+},{"./console.action":123,"./console.buzzer":124,"./console.model":125,"clone-deep":195}],127:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class ConsoleUnit {
@@ -4961,7 +5249,7 @@ class ConsoleUnit {
 }
 exports.default = ConsoleUnit;
 
-},{}],122:[function(require,module,exports){
+},{}],128:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.openInput = exports.updateInput = exports.initInput = void 0;
@@ -5029,7 +5317,7 @@ const openInput = (cpy, bal, ste) => {
 };
 exports.openInput = openInput;
 
-},{"../../val/console-color":162}],123:[function(require,module,exports){
+},{"../../val/console-color":168}],129:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OpenInput = exports.OPEN_INPUT = exports.UpdateInput = exports.UPDATE_INPUT = exports.InitInput = exports.INIT_INPUT = void 0;
@@ -5059,7 +5347,7 @@ class OpenInput {
 }
 exports.OpenInput = OpenInput;
 
-},{}],124:[function(require,module,exports){
+},{}],130:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.openInput = exports.updateInput = exports.initInput = void 0;
@@ -5070,7 +5358,7 @@ Object.defineProperty(exports, "updateInput", { enumerable: true, get: function 
 var input_buzz_3 = require("./buz/input.buzz");
 Object.defineProperty(exports, "openInput", { enumerable: true, get: function () { return input_buzz_3.openInput; } });
 
-},{"./buz/input.buzz":122}],125:[function(require,module,exports){
+},{"./buz/input.buzz":128}],131:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InputModel = void 0;
@@ -5078,7 +5366,7 @@ class InputModel {
 }
 exports.InputModel = InputModel;
 
-},{}],126:[function(require,module,exports){
+},{}],132:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -5099,7 +5387,7 @@ function reducer(model = new input_model_1.InputModel(), act, state) {
     }
 }
 
-},{"./input.action":123,"./input.buzzer":124,"./input.model":125,"clone-deep":189}],127:[function(require,module,exports){
+},{"./input.action":129,"./input.buzzer":130,"./input.model":131,"clone-deep":195}],133:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class InputUnit {
@@ -5108,7 +5396,7 @@ class InputUnit {
 }
 exports.default = InputUnit;
 
-},{}],128:[function(require,module,exports){
+},{}],134:[function(require,module,exports){
 (function (process){(function (){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -5259,7 +5547,7 @@ const towerChoice = (cpy, bal, ste) => {
 exports.towerChoice = towerChoice;
 
 }).call(this)}).call(this,require('_process'))
-},{"../../val/console-color":162,"_process":913}],129:[function(require,module,exports){
+},{"../../val/console-color":168,"_process":919}],135:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TowerChoice = exports.TOWER_CHOICE = exports.KeyChoice = exports.KEY_CHOICE = exports.OpenChoice = exports.OPEN_CHOICE = exports.UpdateChoice = exports.UPDATE_CHOICE = exports.InitChoice = exports.INIT_CHOICE = void 0;
@@ -5305,7 +5593,7 @@ class TowerChoice {
 }
 exports.TowerChoice = TowerChoice;
 
-},{}],130:[function(require,module,exports){
+},{}],136:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.towerChoice = exports.keyChoice = exports.openChoice = exports.updateChoice = exports.initChoice = void 0;
@@ -5320,7 +5608,7 @@ Object.defineProperty(exports, "keyChoice", { enumerable: true, get: function ()
 var choice_buzz_5 = require("./buz/choice.buzz");
 Object.defineProperty(exports, "towerChoice", { enumerable: true, get: function () { return choice_buzz_5.towerChoice; } });
 
-},{"./buz/choice.buzz":128}],131:[function(require,module,exports){
+},{"./buz/choice.buzz":134}],137:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ChoiceModel = void 0;
@@ -5328,7 +5616,7 @@ class ChoiceModel {
 }
 exports.ChoiceModel = ChoiceModel;
 
-},{}],132:[function(require,module,exports){
+},{}],138:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -5353,7 +5641,7 @@ function reducer(model = new choice_model_1.ChoiceModel(), act, state) {
     }
 }
 
-},{"./choice.action":129,"./choice.buzzer":130,"./choice.model":131,"clone-deep":189}],133:[function(require,module,exports){
+},{"./choice.action":135,"./choice.buzzer":136,"./choice.model":137,"clone-deep":195}],139:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class ChoiceUnit {
@@ -5362,7 +5650,7 @@ class ChoiceUnit {
 }
 exports.default = ChoiceUnit;
 
-},{}],134:[function(require,module,exports){
+},{}],140:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.hashCollect = exports.listCollect = exports.formatCollect = exports.dotCollect = exports.emptyCollect = exports.deleteCollect = exports.modelCollect = exports.getCollect = exports.putCollect = exports.removeCollect = exports.createCollect = exports.writeCollect = exports.readCollect = exports.fetchCollect = exports.updateCollect = exports.initCollect = void 0;
@@ -5603,7 +5891,7 @@ exports.hashCollect = hashCollect;
 const S = require("string");
 const doT = require("dot");
 
-},{"../../97.collect.unit/collect.action":135,"dot":192,"string":949}],135:[function(require,module,exports){
+},{"../../97.collect.unit/collect.action":141,"dot":198,"string":955}],141:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HashCollect = exports.HASH_COLLECT = exports.ListCollect = exports.LIST_COLLECT = exports.DotCollect = exports.DOT_COLLECT = exports.FormatCollect = exports.FORMAT_COLLECT = exports.GetCollect = exports.GET_COLLECT = exports.PutCollect = exports.PUT_COLLECT = exports.ModelCollect = exports.MODEL_COLLECT = exports.EmptyCollect = exports.EMPTY_COLLECT = exports.DeleteCollect = exports.DELETE_COLLECT = exports.RemoveCollect = exports.REMOVE_COLLECT = exports.CreateCollect = exports.CREATE_COLLECT = exports.WriteCollect = exports.WRITE_COLLECT = exports.ReadCollect = exports.READ_COLLECT = exports.FetchCollect = exports.FETCH_COLLECT = exports.UpdateCollect = exports.UPDATE_COLLECT = exports.InitCollect = exports.INIT_COLLECT = void 0;
@@ -5737,7 +6025,7 @@ class HashCollect {
 }
 exports.HashCollect = HashCollect;
 
-},{}],136:[function(require,module,exports){
+},{}],142:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.hashCollect = exports.listCollect = exports.dotCollect = exports.formatCollect = exports.getCollect = exports.putCollect = exports.modelCollect = exports.removeCollect = exports.deleteCollect = exports.fetchCollect = exports.emptyCollect = exports.createCollect = exports.writeCollect = exports.readCollect = exports.updateCollect = exports.initCollect = void 0;
@@ -5774,7 +6062,7 @@ Object.defineProperty(exports, "listCollect", { enumerable: true, get: function 
 var collect_buzz_16 = require("./buz/collect.buzz");
 Object.defineProperty(exports, "hashCollect", { enumerable: true, get: function () { return collect_buzz_16.hashCollect; } });
 
-},{"./buz/collect.buzz":134}],137:[function(require,module,exports){
+},{"./buz/collect.buzz":140}],143:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CollectModel = void 0;
@@ -5787,7 +6075,7 @@ class CollectModel {
 }
 exports.CollectModel = CollectModel;
 
-},{}],138:[function(require,module,exports){
+},{}],144:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -5834,7 +6122,7 @@ function reducer(model = new collect_model_1.CollectModel(), act, state) {
     }
 }
 
-},{"./collect.action":135,"./collect.buzzer":136,"./collect.model":137,"clone-deep":189}],139:[function(require,module,exports){
+},{"./collect.action":141,"./collect.buzzer":142,"./collect.model":143,"clone-deep":195}],145:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class CollectUnit {
@@ -5843,7 +6131,7 @@ class CollectUnit {
 }
 exports.default = CollectUnit;
 
-},{}],140:[function(require,module,exports){
+},{}],146:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.visageMenu = exports.shadeMenu = exports.closeMenu = exports.testMenu = exports.updateMenu = exports.initMenu = void 0;
@@ -5920,7 +6208,7 @@ const visageMenu = (cpy, bal, ste) => {
 };
 exports.visageMenu = visageMenu;
 
-},{"../..//82.canvas.unit/canvas.action":111,"../../00.shade.unit/shade.action":3,"../../80.terminal.unit/terminal.action":99,"../../81.grid.unit/grid.action":105,"../../83.console.unit/console.action":117,"../../85.choice.unit/choice.action":129,"../../val/align":161,"../../val/console-color":162}],141:[function(require,module,exports){
+},{"../..//82.canvas.unit/canvas.action":117,"../../00.shade.unit/shade.action":3,"../../80.terminal.unit/terminal.action":105,"../../81.grid.unit/grid.action":111,"../../83.console.unit/console.action":123,"../../85.choice.unit/choice.action":135,"../../val/align":167,"../../val/console-color":168}],147:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.containerMenu = void 0;
@@ -5978,7 +6266,7 @@ const containerMenu = async (cpy, bal, ste) => {
 exports.containerMenu = containerMenu;
 var patch = (ste, type, bale) => ste.dispatch({ type, bale });
 
-},{"../../03.container.unit/container.action":15,"../../21.visage.unit/visage.action":87,"../../act/terminal.action":159,"../menu.action":144}],142:[function(require,module,exports){
+},{"../../03.container.unit/container.action":21,"../../21.visage.unit/visage.action":93,"../../act/terminal.action":165,"../menu.action":150}],148:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.textMenu = void 0;
@@ -6018,7 +6306,7 @@ const textMenu = async (cpy, bal, ste) => {
 exports.textMenu = textMenu;
 var patch = (ste, type, bale) => ste.dispatch({ type, bale });
 
-},{"../../05.text.unit/text.action":27,"../../21.visage.unit/visage.action":87,"../../act/terminal.action":159,"../menu.action":144}],143:[function(require,module,exports){
+},{"../../05.text.unit/text.action":33,"../../21.visage.unit/visage.action":93,"../../act/terminal.action":165,"../menu.action":150}],149:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.visageMenu = void 0;
@@ -6099,7 +6387,7 @@ const visageMenu = async (cpy, bal, ste) => {
 exports.visageMenu = visageMenu;
 var patch = (ste, type, bale) => ste.dispatch({ type, bale });
 
-},{"../../21.visage.unit/visage.action":87,"../../act/terminal.action":159,"../menu.action":144}],144:[function(require,module,exports){
+},{"../../21.visage.unit/visage.action":93,"../../act/terminal.action":165,"../menu.action":150}],150:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TextMenu = exports.TEXT_MENU = exports.ContainerMenu = exports.CONTAINER_MENU = exports.VisageMenu = exports.VISAGE_MENU = exports.ShadeMenu = exports.SHADE_MENU = exports.CloseMenu = exports.CLOSE_MENU = exports.TestMenu = exports.TEST_MENU = exports.UpdateMenu = exports.UPDATE_MENU = exports.InitMenu = exports.INIT_MENU = void 0;
@@ -6168,7 +6456,7 @@ class TextMenu {
 }
 exports.TextMenu = TextMenu;
 
-},{}],145:[function(require,module,exports){
+},{}],151:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.textMenu = exports.containerMenu = exports.visageMenu = exports.shadeMenu = exports.closeMenu = exports.testMenu = exports.updateMenu = exports.initMenu = void 0;
@@ -6189,7 +6477,7 @@ Object.defineProperty(exports, "containerMenu", { enumerable: true, get: functio
 var text_menu_buzz_1 = require("./buz/text-menu.buzz");
 Object.defineProperty(exports, "textMenu", { enumerable: true, get: function () { return text_menu_buzz_1.textMenu; } });
 
-},{"./buz/00.menu.buzz":140,"./buz/container-menu.buzz":141,"./buz/text-menu.buzz":142,"./buz/visage-menu.buzz":143}],146:[function(require,module,exports){
+},{"./buz/00.menu.buzz":146,"./buz/container-menu.buzz":147,"./buz/text-menu.buzz":148,"./buz/visage-menu.buzz":149}],152:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MenuModel = void 0;
@@ -6203,7 +6491,7 @@ class MenuModel {
 }
 exports.MenuModel = MenuModel;
 
-},{}],147:[function(require,module,exports){
+},{}],153:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -6234,7 +6522,7 @@ function reducer(model = new menu_model_1.MenuModel(), act, state) {
     }
 }
 
-},{"./menu.action":144,"./menu.buzzer":145,"./menu.model":146,"clone-deep":189}],148:[function(require,module,exports){
+},{"./menu.action":150,"./menu.buzzer":151,"./menu.model":152,"clone-deep":195}],154:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class MenuUnit {
@@ -6243,7 +6531,7 @@ class MenuUnit {
 }
 exports.default = MenuUnit;
 
-},{}],149:[function(require,module,exports){
+},{}],155:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateBus = exports.CREATE_BUS = exports.UpdateBus = exports.UPDATE_BUS = exports.MessageBus = exports.MESSAGE_BUS = exports.ConnectBus = exports.CONNECT_BUS = exports.OpenBus = exports.OPEN_BUS = exports.InitBus = exports.INIT_BUS = void 0;
@@ -6297,7 +6585,7 @@ class CreateBus {
 }
 exports.CreateBus = CreateBus;
 
-},{}],150:[function(require,module,exports){
+},{}],156:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createBus = exports.messageBus = exports.connectBus = exports.updateBus = exports.openBus = exports.initBus = void 0;
@@ -6314,7 +6602,7 @@ Object.defineProperty(exports, "messageBus", { enumerable: true, get: function (
 var bus_buzz_6 = require("./buz/bus.buzz");
 Object.defineProperty(exports, "createBus", { enumerable: true, get: function () { return bus_buzz_6.createBus; } });
 
-},{"./buz/bus.buzz":154}],151:[function(require,module,exports){
+},{"./buz/bus.buzz":160}],157:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BusModel = void 0;
@@ -6327,7 +6615,7 @@ class BusModel {
 }
 exports.BusModel = BusModel;
 
-},{}],152:[function(require,module,exports){
+},{}],158:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = reducer;
@@ -6354,7 +6642,7 @@ function reducer(model = new bus_model_1.BusModel(), act, state) {
     }
 }
 
-},{"./bus.action":149,"./bus.buzzer":150,"./bus.model":151,"clone-deep":189}],153:[function(require,module,exports){
+},{"./bus.action":155,"./bus.buzzer":156,"./bus.model":157,"clone-deep":195}],159:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class BusUnit {
@@ -6363,7 +6651,7 @@ class BusUnit {
 }
 exports.default = BusUnit;
 
-},{}],154:[function(require,module,exports){
+},{}],160:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateBus = exports.messageBus = exports.connectBus = exports.openBus = exports.createBus = exports.initBus = void 0;
@@ -6539,7 +6827,7 @@ exports.updateBus = updateBus;
 var patch = (ste, type, bale) => ste.dispatch({ type, bale });
 const clone = require("clone-deep");
 
-},{"../../97.collect.unit/collect.action":135,"../../98.menu.unit/menu.action":144,"../../99.bus.unit/bus.action":149,"clone-deep":189}],155:[function(require,module,exports){
+},{"../../97.collect.unit/collect.action":141,"../../98.menu.unit/menu.action":150,"../../99.bus.unit/bus.action":155,"clone-deep":195}],161:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const rx_lite_1 = require("rx-lite");
@@ -6574,11 +6862,12 @@ class State extends rx_lite_1.BehaviorSubject {
 }
 exports.default = State;
 
-},{"../BEE":156,"rx-lite":938}],156:[function(require,module,exports){
+},{"../BEE":162,"rx-lite":944}],162:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reducer = exports.list = void 0;
 const shade_unit_1 = require("./00.shade.unit/shade.unit");
+const application_unit_1 = require("./01.application.unit/application.unit");
 const surface_unit_1 = require("./02.surface.unit/surface.unit");
 const container_unit_1 = require("./03.container.unit/container.unit");
 const graphic_unit_1 = require("./04.graphic.unit/graphic.unit");
@@ -6604,6 +6893,7 @@ const collect_unit_1 = require("./97.collect.unit/collect.unit");
 const menu_unit_1 = require("./98.menu.unit/menu.unit");
 const bus_unit_1 = require("./99.bus.unit/bus.unit");
 const shade_model_1 = require("./00.shade.unit/shade.model");
+const application_model_1 = require("./01.application.unit/application.model");
 const surface_model_1 = require("./02.surface.unit/surface.model");
 const container_model_1 = require("./03.container.unit/container.model");
 const graphic_model_1 = require("./04.graphic.unit/graphic.model");
@@ -6628,8 +6918,9 @@ const choice_model_1 = require("./85.choice.unit/choice.model");
 const collect_model_1 = require("./97.collect.unit/collect.model");
 const menu_model_1 = require("./98.menu.unit/menu.model");
 const bus_model_1 = require("./99.bus.unit/bus.model");
-exports.list = [shade_unit_1.default, surface_unit_1.default, container_unit_1.default, graphic_unit_1.default, text_unit_1.default, sprite_unit_1.default, hexagon_unit_1.default, focigon_unit_1.default, loop_unit_1.default, toon_unit_1.default, video_unit_1.default, frame_unit_1.default, camera_unit_1.default, spritesheet_unit_1.default, visage_unit_1.default, chrome_unit_1.default, terminal_unit_1.default, grid_unit_1.default, canvas_unit_1.default, console_unit_1.default, input_unit_1.default, choice_unit_1.default, collect_unit_1.default, menu_unit_1.default, bus_unit_1.default];
+exports.list = [shade_unit_1.default, application_unit_1.default, surface_unit_1.default, container_unit_1.default, graphic_unit_1.default, text_unit_1.default, sprite_unit_1.default, hexagon_unit_1.default, focigon_unit_1.default, loop_unit_1.default, toon_unit_1.default, video_unit_1.default, frame_unit_1.default, camera_unit_1.default, spritesheet_unit_1.default, visage_unit_1.default, chrome_unit_1.default, terminal_unit_1.default, grid_unit_1.default, canvas_unit_1.default, console_unit_1.default, input_unit_1.default, choice_unit_1.default, collect_unit_1.default, menu_unit_1.default, bus_unit_1.default];
 const reduceFromShade = require("./00.shade.unit/shade.reduce");
+const reduceFromApplication = require("./01.application.unit/application.reduce");
 const reduceFromSurface = require("./02.surface.unit/surface.reduce");
 const reduceFromContainer = require("./03.container.unit/container.reduce");
 const reduceFromGraphic = require("./04.graphic.unit/graphic.reduce");
@@ -6656,6 +6947,7 @@ const reduceFromMenu = require("./98.menu.unit/menu.reduce");
 const reduceFromBus = require("./99.bus.unit/bus.reduce");
 exports.reducer = {
     shade: reduceFromShade.reducer,
+    application: reduceFromApplication.reducer,
     surface: reduceFromSurface.reducer,
     container: reduceFromContainer.reducer,
     graphic: reduceFromGraphic.reducer,
@@ -6684,6 +6976,7 @@ exports.reducer = {
 class UnitData {
     constructor() {
         this.shade = new shade_model_1.ShadeModel();
+        this.application = new application_model_1.ApplicationModel();
         this.surface = new surface_model_1.SurfaceModel();
         this.container = new container_model_1.ContainerModel();
         this.graphic = new graphic_model_1.GraphicModel();
@@ -6712,7 +7005,7 @@ class UnitData {
 }
 exports.default = UnitData;
 
-},{"./00.shade.unit/shade.model":5,"./00.shade.unit/shade.reduce":6,"./00.shade.unit/shade.unit":7,"./02.surface.unit/surface.model":11,"./02.surface.unit/surface.reduce":12,"./02.surface.unit/surface.unit":13,"./03.container.unit/container.model":17,"./03.container.unit/container.reduce":18,"./03.container.unit/container.unit":19,"./04.graphic.unit/graphic.model":23,"./04.graphic.unit/graphic.reduce":24,"./04.graphic.unit/graphic.unit":25,"./05.text.unit/text.model":29,"./05.text.unit/text.reduce":30,"./05.text.unit/text.unit":31,"./06.sprite.unit/sprite.model":35,"./06.sprite.unit/sprite.reduce":36,"./06.sprite.unit/sprite.unit":37,"./07.hexagon.unit/hexagon.model":41,"./07.hexagon.unit/hexagon.reduce":42,"./07.hexagon.unit/hexagon.unit":43,"./08.focigon.unit/focigon.model":47,"./08.focigon.unit/focigon.reduce":48,"./08.focigon.unit/focigon.unit":49,"./09.loop.unit/loop.model":53,"./09.loop.unit/loop.reduce":54,"./09.loop.unit/loop.unit":55,"./10.toon.unit/toon.model":59,"./10.toon.unit/toon.reduce":60,"./10.toon.unit/toon.unit":61,"./11.video.unit/video.model":65,"./11.video.unit/video.reduce":66,"./11.video.unit/video.unit":67,"./12.frame.unit/frame.model":71,"./12.frame.unit/frame.reduce":72,"./12.frame.unit/frame.unit":73,"./13.camera.unit/camera.model":77,"./13.camera.unit/camera.reduce":78,"./13.camera.unit/camera.unit":79,"./15.spritesheet.unit/spritesheet.model":83,"./15.spritesheet.unit/spritesheet.reduce":84,"./15.spritesheet.unit/spritesheet.unit":85,"./21.visage.unit/visage.model":89,"./21.visage.unit/visage.reduce":90,"./21.visage.unit/visage.unit":91,"./24.chrome.unit/chrome.model":95,"./24.chrome.unit/chrome.reduce":96,"./24.chrome.unit/chrome.unit":97,"./80.terminal.unit/terminal.model":101,"./80.terminal.unit/terminal.reduce":102,"./80.terminal.unit/terminal.unit":103,"./81.grid.unit/grid.model":107,"./81.grid.unit/grid.reduce":108,"./81.grid.unit/grid.unit":109,"./82.canvas.unit/canvas.model":113,"./82.canvas.unit/canvas.reduce":114,"./82.canvas.unit/canvas.unit":115,"./83.console.unit/console.model":119,"./83.console.unit/console.reduce":120,"./83.console.unit/console.unit":121,"./84.input.unit/input.model":125,"./84.input.unit/input.reduce":126,"./84.input.unit/input.unit":127,"./85.choice.unit/choice.model":131,"./85.choice.unit/choice.reduce":132,"./85.choice.unit/choice.unit":133,"./97.collect.unit/collect.model":137,"./97.collect.unit/collect.reduce":138,"./97.collect.unit/collect.unit":139,"./98.menu.unit/menu.model":146,"./98.menu.unit/menu.reduce":147,"./98.menu.unit/menu.unit":148,"./99.bus.unit/bus.model":151,"./99.bus.unit/bus.reduce":152,"./99.bus.unit/bus.unit":153}],157:[function(require,module,exports){
+},{"./00.shade.unit/shade.model":5,"./00.shade.unit/shade.reduce":6,"./00.shade.unit/shade.unit":7,"./01.application.unit/application.model":10,"./01.application.unit/application.reduce":11,"./01.application.unit/application.unit":12,"./02.surface.unit/surface.model":17,"./02.surface.unit/surface.reduce":18,"./02.surface.unit/surface.unit":19,"./03.container.unit/container.model":23,"./03.container.unit/container.reduce":24,"./03.container.unit/container.unit":25,"./04.graphic.unit/graphic.model":29,"./04.graphic.unit/graphic.reduce":30,"./04.graphic.unit/graphic.unit":31,"./05.text.unit/text.model":35,"./05.text.unit/text.reduce":36,"./05.text.unit/text.unit":37,"./06.sprite.unit/sprite.model":41,"./06.sprite.unit/sprite.reduce":42,"./06.sprite.unit/sprite.unit":43,"./07.hexagon.unit/hexagon.model":47,"./07.hexagon.unit/hexagon.reduce":48,"./07.hexagon.unit/hexagon.unit":49,"./08.focigon.unit/focigon.model":53,"./08.focigon.unit/focigon.reduce":54,"./08.focigon.unit/focigon.unit":55,"./09.loop.unit/loop.model":59,"./09.loop.unit/loop.reduce":60,"./09.loop.unit/loop.unit":61,"./10.toon.unit/toon.model":65,"./10.toon.unit/toon.reduce":66,"./10.toon.unit/toon.unit":67,"./11.video.unit/video.model":71,"./11.video.unit/video.reduce":72,"./11.video.unit/video.unit":73,"./12.frame.unit/frame.model":77,"./12.frame.unit/frame.reduce":78,"./12.frame.unit/frame.unit":79,"./13.camera.unit/camera.model":83,"./13.camera.unit/camera.reduce":84,"./13.camera.unit/camera.unit":85,"./15.spritesheet.unit/spritesheet.model":89,"./15.spritesheet.unit/spritesheet.reduce":90,"./15.spritesheet.unit/spritesheet.unit":91,"./21.visage.unit/visage.model":95,"./21.visage.unit/visage.reduce":96,"./21.visage.unit/visage.unit":97,"./24.chrome.unit/chrome.model":101,"./24.chrome.unit/chrome.reduce":102,"./24.chrome.unit/chrome.unit":103,"./80.terminal.unit/terminal.model":107,"./80.terminal.unit/terminal.reduce":108,"./80.terminal.unit/terminal.unit":109,"./81.grid.unit/grid.model":113,"./81.grid.unit/grid.reduce":114,"./81.grid.unit/grid.unit":115,"./82.canvas.unit/canvas.model":119,"./82.canvas.unit/canvas.reduce":120,"./82.canvas.unit/canvas.unit":121,"./83.console.unit/console.model":125,"./83.console.unit/console.reduce":126,"./83.console.unit/console.unit":127,"./84.input.unit/input.model":131,"./84.input.unit/input.reduce":132,"./84.input.unit/input.unit":133,"./85.choice.unit/choice.model":137,"./85.choice.unit/choice.reduce":138,"./85.choice.unit/choice.unit":139,"./97.collect.unit/collect.model":143,"./97.collect.unit/collect.reduce":144,"./97.collect.unit/collect.unit":145,"./98.menu.unit/menu.model":152,"./98.menu.unit/menu.reduce":153,"./98.menu.unit/menu.unit":154,"./99.bus.unit/bus.model":157,"./99.bus.unit/bus.reduce":158,"./99.bus.unit/bus.unit":159}],163:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CREATE_CONSOLE = exports.DELETE_CONSOLE = exports.REMOVE_CONSOLE = exports.WRITE_CONSOLE = exports.READ_CONSOLE = exports.UPDATE_CONSOLE = exports.INIT_CONSOLE = void 0;
@@ -6724,7 +7017,7 @@ exports.REMOVE_CONSOLE = "[Remove action] Remove Console";
 exports.DELETE_CONSOLE = "[Delete action] Delete Console";
 exports.CREATE_CONSOLE = "[Create action] Create Console";
 
-},{}],158:[function(require,module,exports){
+},{}],164:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.COPY_DISK = exports.LOAD_LIST_DISK = exports.LIST_DISK = exports.WRITE_DISK = exports.READ_DISK = exports.UPDATE_DISK = exports.INIT_DISK = void 0;
@@ -6736,7 +7029,7 @@ exports.LIST_DISK = "[List action] List Disk";
 exports.LOAD_LIST_DISK = "[Load_list action] Load_list Disk";
 exports.COPY_DISK = "[Copy action] Copy Disk";
 
-},{}],159:[function(require,module,exports){
+},{}],165:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ADD_PORT = exports.CONTENT_TERMINAL = exports.ROOT_TERMINAL = exports.CLOSE_TERMINAL = exports.TABLE_TERMINAL = exports.INPUT_TERMINAL = exports.CLEAR_TERMINAL = exports.UPDATE_TERMINAL = exports.WRITE_TERMINAL = exports.FOCUS_TERMINAL = exports.OPEN_TERMINAL = exports.INIT_TERMINAL = void 0;
@@ -6754,7 +7047,7 @@ exports.ROOT_TERMINAL = "[Terminal action] Root Terminal";
 exports.CONTENT_TERMINAL = "[Terminal action] Content Terminal";
 exports.ADD_PORT = "[Terminal action] Add Port";
 
-},{}],160:[function(require,module,exports){
+},{}],166:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var sim = {
@@ -6786,14 +7079,14 @@ const Import = require("./BEE");
 const state_1 = require("./99.core/state");
 module.exports = sim;
 
-},{"./99.core/state":155,"./BEE":156}],161:[function(require,module,exports){
+},{"./99.core/state":161,"./BEE":162}],167:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HORIZONTAL = exports.VERTICAL = void 0;
 exports.VERTICAL = "vertical";
 exports.HORIZONTAL = "horizontal";
 
-},{}],162:[function(require,module,exports){
+},{}],168:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BLUE = exports.WHITE = exports.CYAN = exports.MAGENTA = exports.YELLOW = exports.GREEN = exports.RED = exports.BLACK = void 0;
@@ -6806,7 +7099,7 @@ exports.CYAN = "cyan";
 exports.WHITE = "white";
 exports.BLUE = "blue";
 
-},{}],163:[function(require,module,exports){
+},{}],169:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WISE_NORTH_EAST = exports.WISE_NORTH = exports.WISE_NORTH_WEST = exports.WISE_WEST = exports.WISE_SOUTH_WEST = exports.WISE_SOUTH = exports.WISE_SOUTH_EAST = exports.WISE_EAST = exports.NORTH_EAST = exports.NORTH = exports.NORTH_WEST = exports.WEST = exports.SOUTH_WEST = exports.SOUTH = exports.SOUTH_EAST = exports.EAST = void 0;
@@ -6827,7 +7120,7 @@ exports.WISE_NORTH_WEST = "Wise NW";
 exports.WISE_NORTH = "Wise N";
 exports.WISE_NORTH_EAST = "Wise NE";
 
-},{}],164:[function(require,module,exports){
+},{}],170:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CIRCLE = exports.ROUNDED_RECTANGLE = exports.RECTANGLE = void 0;
@@ -6835,7 +7128,7 @@ exports.RECTANGLE = "rectangle";
 exports.ROUNDED_RECTANGLE = "rounded-rectangle";
 exports.CIRCLE = "circle";
 
-},{}],165:[function(require,module,exports){
+},{}],171:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BOT_FULL_BIT = exports.MID_FULL_BIT = exports.TOP_FULL_BIT = exports.BOT_FULL_IDX = exports.MID_FULL_IDX = exports.TOP_FULL_IDX = void 0;
@@ -6846,14 +7139,14 @@ exports.TOP_FULL_BIT = { x: 0, y: 0, xSpan: 12, ySpan: 4 };
 exports.MID_FULL_BIT = { x: 0, y: 4, xSpan: 12, ySpan: 5 };
 exports.BOT_FULL_BIT = { x: 0, y: 8, xSpan: 12, ySpan: 4 };
 
-},{}],166:[function(require,module,exports){
+},{}],172:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HEXMAP = exports.FOCUS = void 0;
 exports.FOCUS = "focus";
 exports.HEXMAP = "hexmap";
 
-},{}],167:[function(require,module,exports){
+},{}],173:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LOOP = exports.VIDEO = exports.HEXAGON = exports.SPRITE = exports.TEXT = exports.GRAPHIC = exports.CONTAINER = exports.SURFACE = exports.VISAGE = void 0;
@@ -6867,7 +7160,7 @@ exports.HEXAGON = "hexagon";
 exports.VIDEO = "video";
 exports.LOOP = "loop";
 
-},{}],168:[function(require,module,exports){
+},{}],174:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MOUNT_WIDTH = exports.MOUNT_HEIGHT = exports.MOUNT_PART = exports.MOUNT_FULL = exports.SCREEN = void 0;
@@ -6877,13 +7170,13 @@ exports.MOUNT_PART = "mount-visage-part";
 exports.MOUNT_HEIGHT = "mount-visage-height";
 exports.MOUNT_WIDTH = "mount-visage-width";
 
-},{}],169:[function(require,module,exports){
+},{}],175:[function(require,module,exports){
 Object.defineProperty(exports,"__esModule",{value:!0});var r={grad:.9,turn:360,rad:360/(2*Math.PI)},t=function(r){return"string"==typeof r?r.length>0:"number"==typeof r},n=function(r,t,n){return void 0===t&&(t=0),void 0===n&&(n=Math.pow(10,t)),Math.round(n*r)/n+0},e=function(r,t,n){return void 0===t&&(t=0),void 0===n&&(n=1),r>n?n:r>t?r:t},u=function(r){return(r=isFinite(r)?r%360:0)>0?r:r+360},o=function(r){return{r:e(r.r,0,255),g:e(r.g,0,255),b:e(r.b,0,255),a:e(r.a)}},a=function(r){return{r:n(r.r),g:n(r.g),b:n(r.b),a:n(r.a,3)}},s=/^#([0-9a-f]{3,8})$/i,i=function(r){var t=r.toString(16);return t.length<2?"0"+t:t},h=function(r){var t=r.r,n=r.g,e=r.b,u=r.a,o=Math.max(t,n,e),a=o-Math.min(t,n,e),s=a?o===t?(n-e)/a:o===n?2+(e-t)/a:4+(t-n)/a:0;return{h:60*(s<0?s+6:s),s:o?a/o*100:0,v:o/255*100,a:u}},b=function(r){var t=r.h,n=r.s,e=r.v,u=r.a;t=t/360*6,n/=100,e/=100;var o=Math.floor(t),a=e*(1-n),s=e*(1-(t-o)*n),i=e*(1-(1-t+o)*n),h=o%6;return{r:255*[e,s,a,a,i,e][h],g:255*[i,e,e,s,a,a][h],b:255*[a,a,i,e,e,s][h],a:u}},d=function(r){return{h:u(r.h),s:e(r.s,0,100),l:e(r.l,0,100),a:e(r.a)}},g=function(r){return{h:n(r.h),s:n(r.s),l:n(r.l),a:n(r.a,3)}},f=function(r){return b((n=(t=r).s,{h:t.h,s:(n*=((e=t.l)<50?e:100-e)/100)>0?2*n/(e+n)*100:0,v:e+n,a:t.a}));var t,n,e},p=function(r){return{h:(t=h(r)).h,s:(u=(200-(n=t.s))*(e=t.v)/100)>0&&u<200?n*e/100/(u<=100?u:200-u)*100:0,l:u/2,a:t.a};var t,n,e,u},l=/^hsla?\(\s*([+-]?\d*\.?\d+)(deg|rad|grad|turn)?\s*,\s*([+-]?\d*\.?\d+)%\s*,\s*([+-]?\d*\.?\d+)%\s*(?:,\s*([+-]?\d*\.?\d+)(%)?\s*)?\)$/i,c=/^hsla?\(\s*([+-]?\d*\.?\d+)(deg|rad|grad|turn)?\s+([+-]?\d*\.?\d+)%\s+([+-]?\d*\.?\d+)%\s*(?:\/\s*([+-]?\d*\.?\d+)(%)?\s*)?\)$/i,v=/^rgba?\(\s*([+-]?\d*\.?\d+)(%)?\s*,\s*([+-]?\d*\.?\d+)(%)?\s*,\s*([+-]?\d*\.?\d+)(%)?\s*(?:,\s*([+-]?\d*\.?\d+)(%)?\s*)?\)$/i,m=/^rgba?\(\s*([+-]?\d*\.?\d+)(%)?\s+([+-]?\d*\.?\d+)(%)?\s+([+-]?\d*\.?\d+)(%)?\s*(?:\/\s*([+-]?\d*\.?\d+)(%)?\s*)?\)$/i,y={string:[[function(r){var t=s.exec(r);return t?(r=t[1]).length<=4?{r:parseInt(r[0]+r[0],16),g:parseInt(r[1]+r[1],16),b:parseInt(r[2]+r[2],16),a:4===r.length?n(parseInt(r[3]+r[3],16)/255,2):1}:6===r.length||8===r.length?{r:parseInt(r.substr(0,2),16),g:parseInt(r.substr(2,2),16),b:parseInt(r.substr(4,2),16),a:8===r.length?n(parseInt(r.substr(6,2),16)/255,2):1}:null:null},"hex"],[function(r){var t=v.exec(r)||m.exec(r);return t?t[2]!==t[4]||t[4]!==t[6]?null:o({r:Number(t[1])/(t[2]?100/255:1),g:Number(t[3])/(t[4]?100/255:1),b:Number(t[5])/(t[6]?100/255:1),a:void 0===t[7]?1:Number(t[7])/(t[8]?100:1)}):null},"rgb"],[function(t){var n=l.exec(t)||c.exec(t);if(!n)return null;var e,u,o=d({h:(e=n[1],u=n[2],void 0===u&&(u="deg"),Number(e)*(r[u]||1)),s:Number(n[3]),l:Number(n[4]),a:void 0===n[5]?1:Number(n[5])/(n[6]?100:1)});return f(o)},"hsl"]],object:[[function(r){var n=r.r,e=r.g,u=r.b,a=r.a,s=void 0===a?1:a;return t(n)&&t(e)&&t(u)?o({r:Number(n),g:Number(e),b:Number(u),a:Number(s)}):null},"rgb"],[function(r){var n=r.h,e=r.s,u=r.l,o=r.a,a=void 0===o?1:o;if(!t(n)||!t(e)||!t(u))return null;var s=d({h:Number(n),s:Number(e),l:Number(u),a:Number(a)});return f(s)},"hsl"],[function(r){var n=r.h,o=r.s,a=r.v,s=r.a,i=void 0===s?1:s;if(!t(n)||!t(o)||!t(a))return null;var h=function(r){return{h:u(r.h),s:e(r.s,0,100),v:e(r.v,0,100),a:e(r.a)}}({h:Number(n),s:Number(o),v:Number(a),a:Number(i)});return b(h)},"hsv"]]},N=function(r,t){for(var n=0;n<t.length;n++){var e=t[n][0](r);if(e)return[e,t[n][1]]}return[null,void 0]},x=function(r){return"string"==typeof r?N(r.trim(),y.string):"object"==typeof r&&null!==r?N(r,y.object):[null,void 0]},M=function(r,t){var n=p(r);return{h:n.h,s:e(n.s+100*t,0,100),l:n.l,a:n.a}},I=function(r){return(299*r.r+587*r.g+114*r.b)/1e3/255},H=function(r,t){var n=p(r);return{h:n.h,s:n.s,l:e(n.l+100*t,0,100),a:n.a}},$=function(){function r(r){this.parsed=x(r)[0],this.rgba=this.parsed||{r:0,g:0,b:0,a:1}}return r.prototype.isValid=function(){return null!==this.parsed},r.prototype.brightness=function(){return n(I(this.rgba),2)},r.prototype.isDark=function(){return I(this.rgba)<.5},r.prototype.isLight=function(){return I(this.rgba)>=.5},r.prototype.toHex=function(){return r=a(this.rgba),t=r.r,e=r.g,u=r.b,s=(o=r.a)<1?i(n(255*o)):"","#"+i(t)+i(e)+i(u)+s;var r,t,e,u,o,s},r.prototype.toRgb=function(){return a(this.rgba)},r.prototype.toRgbString=function(){return r=a(this.rgba),t=r.r,n=r.g,e=r.b,(u=r.a)<1?"rgba("+t+", "+n+", "+e+", "+u+")":"rgb("+t+", "+n+", "+e+")";var r,t,n,e,u},r.prototype.toHsl=function(){return g(p(this.rgba))},r.prototype.toHslString=function(){return r=g(p(this.rgba)),t=r.h,n=r.s,e=r.l,(u=r.a)<1?"hsla("+t+", "+n+"%, "+e+"%, "+u+")":"hsl("+t+", "+n+"%, "+e+"%)";var r,t,n,e,u},r.prototype.toHsv=function(){return r=h(this.rgba),{h:n(r.h),s:n(r.s),v:n(r.v),a:n(r.a,3)};var r},r.prototype.invert=function(){return j({r:255-(r=this.rgba).r,g:255-r.g,b:255-r.b,a:r.a});var r},r.prototype.saturate=function(r){return void 0===r&&(r=.1),j(M(this.rgba,r))},r.prototype.desaturate=function(r){return void 0===r&&(r=.1),j(M(this.rgba,-r))},r.prototype.grayscale=function(){return j(M(this.rgba,-1))},r.prototype.lighten=function(r){return void 0===r&&(r=.1),j(H(this.rgba,r))},r.prototype.darken=function(r){return void 0===r&&(r=.1),j(H(this.rgba,-r))},r.prototype.rotate=function(r){return void 0===r&&(r=15),this.hue(this.hue()+r)},r.prototype.alpha=function(r){return"number"==typeof r?j({r:(t=this.rgba).r,g:t.g,b:t.b,a:r}):n(this.rgba.a,3);var t},r.prototype.hue=function(r){var t=p(this.rgba);return"number"==typeof r?j({h:r,s:t.s,l:t.l,a:t.a}):n(t.h)},r.prototype.isEqual=function(r){return this.toHex()===j(r).toHex()},r}(),j=function(r){return r instanceof $?r:new $(r)},w=[];exports.Colord=$,exports.colord=j,exports.extend=function(r){r.forEach(function(r){w.indexOf(r)<0&&(r($,y),w.push(r))})},exports.getFormat=function(r){return x(r)[1]},exports.random=function(){return new $({r:255*Math.random(),g:255*Math.random(),b:255*Math.random()})};
 
-},{}],170:[function(require,module,exports){
+},{}],176:[function(require,module,exports){
 module.exports=function(e,f){var a={white:"#ffffff",bisque:"#ffe4c4",blue:"#0000ff",cadetblue:"#5f9ea0",chartreuse:"#7fff00",chocolate:"#d2691e",coral:"#ff7f50",antiquewhite:"#faebd7",aqua:"#00ffff",azure:"#f0ffff",whitesmoke:"#f5f5f5",papayawhip:"#ffefd5",plum:"#dda0dd",blanchedalmond:"#ffebcd",black:"#000000",gold:"#ffd700",goldenrod:"#daa520",gainsboro:"#dcdcdc",cornsilk:"#fff8dc",cornflowerblue:"#6495ed",burlywood:"#deb887",aquamarine:"#7fffd4",beige:"#f5f5dc",crimson:"#dc143c",cyan:"#00ffff",darkblue:"#00008b",darkcyan:"#008b8b",darkgoldenrod:"#b8860b",darkkhaki:"#bdb76b",darkgray:"#a9a9a9",darkgreen:"#006400",darkgrey:"#a9a9a9",peachpuff:"#ffdab9",darkmagenta:"#8b008b",darkred:"#8b0000",darkorchid:"#9932cc",darkorange:"#ff8c00",darkslateblue:"#483d8b",gray:"#808080",darkslategray:"#2f4f4f",darkslategrey:"#2f4f4f",deeppink:"#ff1493",deepskyblue:"#00bfff",wheat:"#f5deb3",firebrick:"#b22222",floralwhite:"#fffaf0",ghostwhite:"#f8f8ff",darkviolet:"#9400d3",magenta:"#ff00ff",green:"#008000",dodgerblue:"#1e90ff",grey:"#808080",honeydew:"#f0fff0",hotpink:"#ff69b4",blueviolet:"#8a2be2",forestgreen:"#228b22",lawngreen:"#7cfc00",indianred:"#cd5c5c",indigo:"#4b0082",fuchsia:"#ff00ff",brown:"#a52a2a",maroon:"#800000",mediumblue:"#0000cd",lightcoral:"#f08080",darkturquoise:"#00ced1",lightcyan:"#e0ffff",ivory:"#fffff0",lightyellow:"#ffffe0",lightsalmon:"#ffa07a",lightseagreen:"#20b2aa",linen:"#faf0e6",mediumaquamarine:"#66cdaa",lemonchiffon:"#fffacd",lime:"#00ff00",khaki:"#f0e68c",mediumseagreen:"#3cb371",limegreen:"#32cd32",mediumspringgreen:"#00fa9a",lightskyblue:"#87cefa",lightblue:"#add8e6",midnightblue:"#191970",lightpink:"#ffb6c1",mistyrose:"#ffe4e1",moccasin:"#ffe4b5",mintcream:"#f5fffa",lightslategray:"#778899",lightslategrey:"#778899",navajowhite:"#ffdead",navy:"#000080",mediumvioletred:"#c71585",powderblue:"#b0e0e6",palegoldenrod:"#eee8aa",oldlace:"#fdf5e6",paleturquoise:"#afeeee",mediumturquoise:"#48d1cc",mediumorchid:"#ba55d3",rebeccapurple:"#663399",lightsteelblue:"#b0c4de",mediumslateblue:"#7b68ee",thistle:"#d8bfd8",tan:"#d2b48c",orchid:"#da70d6",mediumpurple:"#9370db",purple:"#800080",pink:"#ffc0cb",skyblue:"#87ceeb",springgreen:"#00ff7f",palegreen:"#98fb98",red:"#ff0000",yellow:"#ffff00",slateblue:"#6a5acd",lavenderblush:"#fff0f5",peru:"#cd853f",palevioletred:"#db7093",violet:"#ee82ee",teal:"#008080",slategray:"#708090",slategrey:"#708090",aliceblue:"#f0f8ff",darkseagreen:"#8fbc8f",darkolivegreen:"#556b2f",greenyellow:"#adff2f",seagreen:"#2e8b57",seashell:"#fff5ee",tomato:"#ff6347",silver:"#c0c0c0",sienna:"#a0522d",lavender:"#e6e6fa",lightgreen:"#90ee90",orange:"#ffa500",orangered:"#ff4500",steelblue:"#4682b4",royalblue:"#4169e1",turquoise:"#40e0d0",yellowgreen:"#9acd32",salmon:"#fa8072",saddlebrown:"#8b4513",sandybrown:"#f4a460",rosybrown:"#bc8f8f",darksalmon:"#e9967a",lightgoldenrodyellow:"#fafad2",snow:"#fffafa",lightgrey:"#d3d3d3",lightgray:"#d3d3d3",dimgray:"#696969",dimgrey:"#696969",olivedrab:"#6b8e23",olive:"#808000"},r={};for(var d in a)r[a[d]]=d;var l={};e.prototype.toName=function(f){if(!(this.rgba.a||this.rgba.r||this.rgba.g||this.rgba.b))return"transparent";var d,i,o=r[this.toHex()];if(o)return o;if(null==f?void 0:f.closest){var n=this.toRgb(),t=1/0,b="black";if(!l.length)for(var c in a)l[c]=new e(a[c]).toRgb();for(var g in a){var u=(d=n,i=l[g],Math.pow(d.r-i.r,2)+Math.pow(d.g-i.g,2)+Math.pow(d.b-i.b,2));u<t&&(t=u,b=g)}return b}};f.string.push([function(f){var r=f.toLowerCase(),d="transparent"===r?"#0000":a[r];return d?new e(d).toRgb():null},"name"])};
 
-},{}],171:[function(require,module,exports){
+},{}],177:[function(require,module,exports){
 'use strict'
 
 /**
@@ -7088,7 +7381,7 @@ exports.freeze = freeze;
 exports.MIME_TYPE = MIME_TYPE;
 exports.NAMESPACE = NAMESPACE;
 
-},{}],172:[function(require,module,exports){
+},{}],178:[function(require,module,exports){
 var conventions = require("./conventions");
 var dom = require('./dom')
 var entities = require('./entities');
@@ -7412,7 +7705,7 @@ exports.__DOMHandler = DOMHandler;
 exports.normalizeLineEndings = normalizeLineEndings;
 exports.DOMParser = DOMParser;
 
-},{"./conventions":171,"./dom":173,"./entities":174,"./sax":176}],173:[function(require,module,exports){
+},{"./conventions":177,"./dom":179,"./entities":180,"./sax":182}],179:[function(require,module,exports){
 var conventions = require("./conventions");
 
 var find = conventions.find;
@@ -9254,7 +9547,7 @@ try{
 	exports.XMLSerializer = XMLSerializer;
 //}
 
-},{"./conventions":171}],174:[function(require,module,exports){
+},{"./conventions":177}],180:[function(require,module,exports){
 'use strict';
 
 var freeze = require('./conventions').freeze;
@@ -11422,13 +11715,13 @@ exports.HTML_ENTITIES = freeze({
  */
 exports.entityMap = exports.HTML_ENTITIES;
 
-},{"./conventions":171}],175:[function(require,module,exports){
+},{"./conventions":177}],181:[function(require,module,exports){
 var dom = require('./dom')
 exports.DOMImplementation = dom.DOMImplementation
 exports.XMLSerializer = dom.XMLSerializer
 exports.DOMParser = require('./dom-parser').DOMParser
 
-},{"./dom":173,"./dom-parser":172}],176:[function(require,module,exports){
+},{"./dom":179,"./dom-parser":178}],182:[function(require,module,exports){
 var NAMESPACE = require("./conventions").NAMESPACE;
 
 //[4]   	NameStartChar	   ::=   	":" | [A-Z] | "_" | [a-z] | [#xC0-#xD6] | [#xD8-#xF6] | [#xF8-#x2FF] | [#x370-#x37D] | [#x37F-#x1FFF] | [#x200C-#x200D] | [#x2070-#x218F] | [#x2C00-#x2FEF] | [#x3001-#xD7FF] | [#xF900-#xFDCF] | [#xFDF0-#xFFFD] | [#x10000-#xEFFFF]
@@ -12092,7 +12385,7 @@ function split(source,start){
 exports.XMLReader = XMLReader;
 exports.ParseError = ParseError;
 
-},{"./conventions":171}],177:[function(require,module,exports){
+},{"./conventions":177}],183:[function(require,module,exports){
 'use strict'
 
 const mqtt = require('mqtt');
@@ -12281,7 +12574,7 @@ module.exports = {
   AsyncClient
 };
 
-},{"mqtt":266}],178:[function(require,module,exports){
+},{"mqtt":272}],184:[function(require,module,exports){
 'use strict'
 
 exports.byteLength = byteLength
@@ -12433,7 +12726,7 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],179:[function(require,module,exports){
+},{}],185:[function(require,module,exports){
 'use strict'
 
 const { Buffer } = require('buffer')
@@ -12831,7 +13124,7 @@ BufferList.isBufferList = function isBufferList (b) {
 
 module.exports = BufferList
 
-},{"buffer":182}],180:[function(require,module,exports){
+},{"buffer":188}],186:[function(require,module,exports){
 'use strict'
 
 const DuplexStream = require('readable-stream').Duplex
@@ -12917,9 +13210,9 @@ module.exports = BufferListStream
 module.exports.BufferListStream = BufferListStream
 module.exports.BufferList = BufferList
 
-},{"./BufferList":179,"inherits":222,"readable-stream":934}],181:[function(require,module,exports){
+},{"./BufferList":185,"inherits":228,"readable-stream":940}],187:[function(require,module,exports){
 
-},{}],182:[function(require,module,exports){
+},{}],188:[function(require,module,exports){
 (function (Buffer){(function (){
 /*!
  * The buffer module from node.js, for the browser.
@@ -14700,7 +14993,7 @@ function numberIsNaN (obj) {
 }
 
 }).call(this)}).call(this,require("buffer").Buffer)
-},{"base64-js":178,"buffer":182,"ieee754":221}],183:[function(require,module,exports){
+},{"base64-js":184,"buffer":188,"ieee754":227}],189:[function(require,module,exports){
 'use strict';
 
 var bind = require('function-bind');
@@ -14712,19 +15005,19 @@ var $reflectApply = require('./reflectApply');
 /** @type {import('./actualApply')} */
 module.exports = $reflectApply || bind.call($call, $apply);
 
-},{"./functionApply":184,"./functionCall":185,"./reflectApply":187,"function-bind":209}],184:[function(require,module,exports){
+},{"./functionApply":190,"./functionCall":191,"./reflectApply":193,"function-bind":215}],190:[function(require,module,exports){
 'use strict';
 
 /** @type {import('./functionApply')} */
 module.exports = Function.prototype.apply;
 
-},{}],185:[function(require,module,exports){
+},{}],191:[function(require,module,exports){
 'use strict';
 
 /** @type {import('./functionCall')} */
 module.exports = Function.prototype.call;
 
-},{}],186:[function(require,module,exports){
+},{}],192:[function(require,module,exports){
 'use strict';
 
 var bind = require('function-bind');
@@ -14741,13 +15034,13 @@ module.exports = function callBindBasic(args) {
 	return $actualApply(bind, $call, args);
 };
 
-},{"./actualApply":183,"./functionCall":185,"es-errors/type":203,"function-bind":209}],187:[function(require,module,exports){
+},{"./actualApply":189,"./functionCall":191,"es-errors/type":209,"function-bind":215}],193:[function(require,module,exports){
 'use strict';
 
 /** @type {import('./reflectApply')} */
 module.exports = typeof Reflect !== 'undefined' && Reflect && Reflect.apply;
 
-},{}],188:[function(require,module,exports){
+},{}],194:[function(require,module,exports){
 'use strict';
 
 var GetIntrinsic = require('get-intrinsic');
@@ -14767,7 +15060,7 @@ module.exports = function callBoundIntrinsic(name, allowMissing) {
 	return intrinsic;
 };
 
-},{"call-bind-apply-helpers":186,"get-intrinsic":210}],189:[function(require,module,exports){
+},{"call-bind-apply-helpers":192,"get-intrinsic":216}],195:[function(require,module,exports){
 'use strict';
 
 /**
@@ -14818,7 +15111,7 @@ function cloneArrayDeep(val, instanceClone) {
 
 module.exports = cloneDeep;
 
-},{"is-plain-object":223,"kind-of":247,"shallow-clone":940}],190:[function(require,module,exports){
+},{"is-plain-object":229,"kind-of":253,"shallow-clone":946}],196:[function(require,module,exports){
 (function (process){(function (){
 /* eslint-env browser */
 
@@ -15094,7 +15387,7 @@ formatters.j = function (v) {
 };
 
 }).call(this)}).call(this,require('_process'))
-},{"./common":191,"_process":913}],191:[function(require,module,exports){
+},{"./common":197,"_process":919}],197:[function(require,module,exports){
 
 /**
  * This is the common logic for both the Node.js and web browser
@@ -15388,7 +15681,7 @@ function setup(env) {
 
 module.exports = setup;
 
-},{"ms":276}],192:[function(require,module,exports){
+},{"ms":282}],198:[function(require,module,exports){
 // doT.js
 // 2011-2014, Laura Doktorova, https://github.com/olado/doT
 // Licensed under the MIT license.
@@ -15534,7 +15827,7 @@ module.exports = setup;
 	};
 }());
 
-},{}],193:[function(require,module,exports){
+},{}],199:[function(require,module,exports){
 'use strict';
 
 var callBind = require('call-bind-apply-helpers');
@@ -15566,7 +15859,7 @@ module.exports = desc && typeof desc.get === 'function'
 		}
 		: false;
 
-},{"call-bind-apply-helpers":186,"gopd":215}],194:[function(require,module,exports){
+},{"call-bind-apply-helpers":192,"gopd":221}],200:[function(require,module,exports){
 (function (process,Buffer){(function (){
 var stream = require('readable-stream')
 var eos = require('end-of-stream')
@@ -15808,7 +16101,7 @@ Duplexify.prototype.end = function(data, enc, cb) {
 module.exports = Duplexify
 
 }).call(this)}).call(this,require('_process'),require("buffer").Buffer)
-},{"_process":913,"buffer":182,"end-of-stream":196,"inherits":222,"readable-stream":934,"stream-shift":945}],195:[function(require,module,exports){
+},{"_process":919,"buffer":188,"end-of-stream":202,"inherits":228,"readable-stream":940,"stream-shift":951}],201:[function(require,module,exports){
 'use strict';
 
 module.exports = earcut;
@@ -16491,7 +16784,7 @@ earcut.flatten = function (data) {
     return result;
 };
 
-},{}],196:[function(require,module,exports){
+},{}],202:[function(require,module,exports){
 (function (process){(function (){
 var once = require('once');
 
@@ -16589,7 +16882,7 @@ var eos = function(stream, opts, callback) {
 module.exports = eos;
 
 }).call(this)}).call(this,require('_process'))
-},{"_process":913,"once":280}],197:[function(require,module,exports){
+},{"_process":919,"once":286}],203:[function(require,module,exports){
 'use strict';
 
 /** @type {import('.')} */
@@ -16605,55 +16898,55 @@ if ($defineProperty) {
 
 module.exports = $defineProperty;
 
-},{}],198:[function(require,module,exports){
+},{}],204:[function(require,module,exports){
 'use strict';
 
 /** @type {import('./eval')} */
 module.exports = EvalError;
 
-},{}],199:[function(require,module,exports){
+},{}],205:[function(require,module,exports){
 'use strict';
 
 /** @type {import('.')} */
 module.exports = Error;
 
-},{}],200:[function(require,module,exports){
+},{}],206:[function(require,module,exports){
 'use strict';
 
 /** @type {import('./range')} */
 module.exports = RangeError;
 
-},{}],201:[function(require,module,exports){
+},{}],207:[function(require,module,exports){
 'use strict';
 
 /** @type {import('./ref')} */
 module.exports = ReferenceError;
 
-},{}],202:[function(require,module,exports){
+},{}],208:[function(require,module,exports){
 'use strict';
 
 /** @type {import('./syntax')} */
 module.exports = SyntaxError;
 
-},{}],203:[function(require,module,exports){
+},{}],209:[function(require,module,exports){
 'use strict';
 
 /** @type {import('./type')} */
 module.exports = TypeError;
 
-},{}],204:[function(require,module,exports){
+},{}],210:[function(require,module,exports){
 'use strict';
 
 /** @type {import('./uri')} */
 module.exports = URIError;
 
-},{}],205:[function(require,module,exports){
+},{}],211:[function(require,module,exports){
 'use strict';
 
 /** @type {import('.')} */
 module.exports = Object;
 
-},{}],206:[function(require,module,exports){
+},{}],212:[function(require,module,exports){
 'use strict';
 
 var has = Object.prototype.hasOwnProperty
@@ -16991,7 +17284,7 @@ if ('undefined' !== typeof module) {
   module.exports = EventEmitter;
 }
 
-},{}],207:[function(require,module,exports){
+},{}],213:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -17490,7 +17783,7 @@ function eventTargetAgnosticAddListener(emitter, name, listener, flags) {
   }
 }
 
-},{}],208:[function(require,module,exports){
+},{}],214:[function(require,module,exports){
 'use strict';
 
 /* eslint no-invalid-this: 1 */
@@ -17576,14 +17869,14 @@ module.exports = function bind(that) {
     return bound;
 };
 
-},{}],209:[function(require,module,exports){
+},{}],215:[function(require,module,exports){
 'use strict';
 
 var implementation = require('./implementation');
 
 module.exports = Function.prototype.bind || implementation;
 
-},{"./implementation":208}],210:[function(require,module,exports){
+},{"./implementation":214}],216:[function(require,module,exports){
 'use strict';
 
 var undefined;
@@ -17962,7 +18255,7 @@ module.exports = function GetIntrinsic(name, allowMissing) {
 	return value;
 };
 
-},{"call-bind-apply-helpers/functionApply":184,"call-bind-apply-helpers/functionCall":185,"es-define-property":197,"es-errors":199,"es-errors/eval":198,"es-errors/range":200,"es-errors/ref":201,"es-errors/syntax":202,"es-errors/type":203,"es-errors/uri":204,"es-object-atoms":205,"function-bind":209,"get-proto":213,"get-proto/Object.getPrototypeOf":211,"get-proto/Reflect.getPrototypeOf":212,"gopd":215,"has-symbols":217,"hasown":219,"math-intrinsics/abs":249,"math-intrinsics/floor":250,"math-intrinsics/max":252,"math-intrinsics/min":253,"math-intrinsics/pow":254,"math-intrinsics/round":255,"math-intrinsics/sign":256}],211:[function(require,module,exports){
+},{"call-bind-apply-helpers/functionApply":190,"call-bind-apply-helpers/functionCall":191,"es-define-property":203,"es-errors":205,"es-errors/eval":204,"es-errors/range":206,"es-errors/ref":207,"es-errors/syntax":208,"es-errors/type":209,"es-errors/uri":210,"es-object-atoms":211,"function-bind":215,"get-proto":219,"get-proto/Object.getPrototypeOf":217,"get-proto/Reflect.getPrototypeOf":218,"gopd":221,"has-symbols":223,"hasown":225,"math-intrinsics/abs":255,"math-intrinsics/floor":256,"math-intrinsics/max":258,"math-intrinsics/min":259,"math-intrinsics/pow":260,"math-intrinsics/round":261,"math-intrinsics/sign":262}],217:[function(require,module,exports){
 'use strict';
 
 var $Object = require('es-object-atoms');
@@ -17970,13 +18263,13 @@ var $Object = require('es-object-atoms');
 /** @type {import('./Object.getPrototypeOf')} */
 module.exports = $Object.getPrototypeOf || null;
 
-},{"es-object-atoms":205}],212:[function(require,module,exports){
+},{"es-object-atoms":211}],218:[function(require,module,exports){
 'use strict';
 
 /** @type {import('./Reflect.getPrototypeOf')} */
 module.exports = (typeof Reflect !== 'undefined' && Reflect.getPrototypeOf) || null;
 
-},{}],213:[function(require,module,exports){
+},{}],219:[function(require,module,exports){
 'use strict';
 
 var reflectGetProto = require('./Reflect.getPrototypeOf');
@@ -18005,13 +18298,13 @@ module.exports = reflectGetProto
 			}
 			: null;
 
-},{"./Object.getPrototypeOf":211,"./Reflect.getPrototypeOf":212,"dunder-proto/get":193}],214:[function(require,module,exports){
+},{"./Object.getPrototypeOf":217,"./Reflect.getPrototypeOf":218,"dunder-proto/get":199}],220:[function(require,module,exports){
 'use strict';
 
 /** @type {import('./gOPD')} */
 module.exports = Object.getOwnPropertyDescriptor;
 
-},{}],215:[function(require,module,exports){
+},{}],221:[function(require,module,exports){
 'use strict';
 
 /** @type {import('.')} */
@@ -18028,7 +18321,7 @@ if ($gOPD) {
 
 module.exports = $gOPD;
 
-},{"./gOPD":214}],216:[function(require,module,exports){
+},{"./gOPD":220}],222:[function(require,module,exports){
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
@@ -23646,7 +23939,7 @@ module.exports = $gOPD;
 
 })));
 
-},{}],217:[function(require,module,exports){
+},{}],223:[function(require,module,exports){
 'use strict';
 
 var origSymbol = typeof Symbol !== 'undefined' && Symbol;
@@ -23662,7 +23955,7 @@ module.exports = function hasNativeSymbols() {
 	return hasSymbolSham();
 };
 
-},{"./shams":218}],218:[function(require,module,exports){
+},{"./shams":224}],224:[function(require,module,exports){
 'use strict';
 
 /** @type {import('./shams')} */
@@ -23709,7 +24002,7 @@ module.exports = function hasSymbols() {
 	return true;
 };
 
-},{}],219:[function(require,module,exports){
+},{}],225:[function(require,module,exports){
 'use strict';
 
 var call = Function.prototype.call;
@@ -23719,7 +24012,7 @@ var bind = require('function-bind');
 /** @type {import('.')} */
 module.exports = bind.call(call, $hasOwn);
 
-},{"function-bind":209}],220:[function(require,module,exports){
+},{"function-bind":215}],226:[function(require,module,exports){
 (function (global){(function (){
 !function(t,n){"object"==typeof exports&&"undefined"!=typeof module?n(exports):"function"==typeof define&&define.amd?define(["exports"],n):n((t=t||self).Honeycomb={})}(this,(function(t){"use strict";"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self&&self;var n=function(t,n){return t(n={exports:{}},n.exports),n.exports}((function(t,n){
 /*! axis.js v1.2.1 | (c) 2016 @toddmotto | https://github.com/toddmotto/axis */
@@ -23727,7 +24020,7 @@ t.exports=function(){var t={},n="Array Object String Date RegExp Function Boolea
 
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],221:[function(require,module,exports){
+},{}],227:[function(require,module,exports){
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
@@ -23814,7 +24107,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],222:[function(require,module,exports){
+},{}],228:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -23843,7 +24136,7 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],223:[function(require,module,exports){
+},{}],229:[function(require,module,exports){
 /*!
  * is-plain-object <https://github.com/jonschlinkert/is-plain-object>
  *
@@ -23882,7 +24175,7 @@ module.exports = function isPlainObject(o) {
   return true;
 };
 
-},{"isobject":226}],224:[function(require,module,exports){
+},{"isobject":232}],230:[function(require,module,exports){
 "use strict";
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
@@ -23892,7 +24185,7 @@ __export(require("./isMobile"));
 var isMobile_1 = require("./isMobile");
 exports["default"] = isMobile_1["default"];
 
-},{"./isMobile":225}],225:[function(require,module,exports){
+},{"./isMobile":231}],231:[function(require,module,exports){
 "use strict";
 exports.__esModule = true;
 var appleIphone = /iPhone/i;
@@ -24021,7 +24314,7 @@ function isMobile(param) {
 }
 exports["default"] = isMobile;
 
-},{}],226:[function(require,module,exports){
+},{}],232:[function(require,module,exports){
 /*!
  * isobject <https://github.com/jonschlinkert/isobject>
  *
@@ -24035,7 +24328,7 @@ module.exports = function isObject(val) {
   return val != null && typeof val === 'object' && Array.isArray(val) === false;
 };
 
-},{}],227:[function(require,module,exports){
+},{}],233:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -24077,7 +24370,7 @@ class Container extends Base {}
 exports.Container = Container;
 
 
-},{}],228:[function(require,module,exports){
+},{}],234:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -24267,7 +24560,7 @@ class HashContainer extends _ContainerBase.Container {
 exports.HashContainer = HashContainer;
 
 
-},{"../../../utils/checkObject":245,"../../../utils/throwError":246,"../../ContainerBase":227}],229:[function(require,module,exports){
+},{"../../../utils/checkObject":251,"../../../utils/throwError":252,"../../ContainerBase":233}],235:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -24394,7 +24687,7 @@ var _default = HashMap;
 exports.default = _default;
 
 
-},{"../../utils/checkObject":245,"../../utils/throwError":246,"./Base":228}],230:[function(require,module,exports){
+},{"../../utils/checkObject":251,"../../utils/throwError":252,"./Base":234}],236:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -24490,7 +24783,7 @@ var _default = HashSet;
 exports.default = _default;
 
 
-},{"../../utils/throwError":246,"./Base":228}],231:[function(require,module,exports){
+},{"../../utils/throwError":252,"./Base":234}],237:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -24610,7 +24903,7 @@ var _default = PriorityQueue;
 exports.default = _default;
 
 
-},{"../ContainerBase":227}],232:[function(require,module,exports){
+},{"../ContainerBase":233}],238:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -24664,7 +24957,7 @@ var _default = Queue;
 exports.default = _default;
 
 
-},{"../ContainerBase":227}],233:[function(require,module,exports){
+},{"../ContainerBase":233}],239:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -24708,7 +25001,7 @@ var _default = Stack;
 exports.default = _default;
 
 
-},{"../ContainerBase":227}],234:[function(require,module,exports){
+},{"../ContainerBase":233}],240:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -24768,7 +25061,7 @@ class RandomIterator extends _ContainerBase.ContainerIterator {
 exports.RandomIterator = RandomIterator;
 
 
-},{"../../../utils/throwError":246,"../../ContainerBase":227}],235:[function(require,module,exports){
+},{"../../../utils/throwError":252,"../../ContainerBase":233}],241:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -24786,7 +25079,7 @@ var _default = SequentialContainer;
 exports.default = _default;
 
 
-},{"../../ContainerBase":227}],236:[function(require,module,exports){
+},{"../../ContainerBase":233}],242:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -25126,7 +25419,7 @@ var _default = Deque;
 exports.default = _default;
 
 
-},{"./Base":235,"./Base/RandomIterator":234}],237:[function(require,module,exports){
+},{"./Base":241,"./Base/RandomIterator":240}],243:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -25458,7 +25751,7 @@ var _default = LinkList;
 exports.default = _default;
 
 
-},{"../../utils/throwError":246,"../ContainerBase":227,"./Base":235}],238:[function(require,module,exports){
+},{"../../utils/throwError":252,"../ContainerBase":233,"./Base":241}],244:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -25618,7 +25911,7 @@ var _default = Vector;
 exports.default = _default;
 
 
-},{"./Base":235,"./Base/RandomIterator":234}],239:[function(require,module,exports){
+},{"./Base":241,"./Base/RandomIterator":240}],245:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -25700,7 +25993,7 @@ var _default = TreeIterator;
 exports.default = _default;
 
 
-},{"../../../utils/throwError":246,"../../ContainerBase":227}],240:[function(require,module,exports){
+},{"../../../utils/throwError":252,"../../ContainerBase":233}],246:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -25817,7 +26110,7 @@ class TreeNodeEnableIndex extends TreeNode {
 exports.TreeNodeEnableIndex = TreeNodeEnableIndex;
 
 
-},{}],241:[function(require,module,exports){
+},{}],247:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -26333,7 +26626,7 @@ var _default = TreeContainer;
 exports.default = _default;
 
 
-},{"../../../utils/throwError":246,"../../ContainerBase":227,"./TreeNode":240}],242:[function(require,module,exports){
+},{"../../../utils/throwError":252,"../../ContainerBase":233,"./TreeNode":246}],248:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -26462,7 +26755,7 @@ var _default = OrderedMap;
 exports.default = _default;
 
 
-},{"../../utils/throwError":246,"./Base":241,"./Base/TreeIterator":239}],243:[function(require,module,exports){
+},{"../../utils/throwError":252,"./Base":247,"./Base/TreeIterator":245}],249:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -26571,7 +26864,7 @@ var _default = OrderedSet;
 exports.default = _default;
 
 
-},{"../../utils/throwError":246,"./Base":241,"./Base/TreeIterator":239}],244:[function(require,module,exports){
+},{"../../utils/throwError":252,"./Base":247,"./Base/TreeIterator":245}],250:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -26675,7 +26968,7 @@ function _interopRequireDefault(e) {
 }
 
 
-},{"./container/HashContainer/HashMap":229,"./container/HashContainer/HashSet":230,"./container/OtherContainer/PriorityQueue":231,"./container/OtherContainer/Queue":232,"./container/OtherContainer/Stack":233,"./container/SequentialContainer/Deque":236,"./container/SequentialContainer/LinkList":237,"./container/SequentialContainer/Vector":238,"./container/TreeContainer/OrderedMap":242,"./container/TreeContainer/OrderedSet":243}],245:[function(require,module,exports){
+},{"./container/HashContainer/HashMap":235,"./container/HashContainer/HashSet":236,"./container/OtherContainer/PriorityQueue":237,"./container/OtherContainer/Queue":238,"./container/OtherContainer/Stack":239,"./container/SequentialContainer/Deque":242,"./container/SequentialContainer/LinkList":243,"./container/SequentialContainer/Vector":244,"./container/TreeContainer/OrderedMap":248,"./container/TreeContainer/OrderedSet":249}],251:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -26690,7 +26983,7 @@ function checkObject(e) {
 }
 
 
-},{}],246:[function(require,module,exports){
+},{}],252:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "t", {
@@ -26704,7 +26997,7 @@ function throwIteratorAccessError() {
 }
 
 
-},{}],247:[function(require,module,exports){
+},{}],253:[function(require,module,exports){
 var toString = Object.prototype.toString;
 
 module.exports = function kindOf(val) {
@@ -26835,7 +27128,7 @@ function isBuffer(val) {
   return false;
 }
 
-},{}],248:[function(require,module,exports){
+},{}],254:[function(require,module,exports){
 'use strict'
 
 // A linked list to keep track of recently-used-ness
@@ -27171,19 +27464,19 @@ const forEachStep = (self, fn, node, thisp) => {
 
 module.exports = LRUCache
 
-},{"yallist":957}],249:[function(require,module,exports){
+},{"yallist":963}],255:[function(require,module,exports){
 'use strict';
 
 /** @type {import('./abs')} */
 module.exports = Math.abs;
 
-},{}],250:[function(require,module,exports){
+},{}],256:[function(require,module,exports){
 'use strict';
 
 /** @type {import('./floor')} */
 module.exports = Math.floor;
 
-},{}],251:[function(require,module,exports){
+},{}],257:[function(require,module,exports){
 'use strict';
 
 /** @type {import('./isNaN')} */
@@ -27191,31 +27484,31 @@ module.exports = Number.isNaN || function isNaN(a) {
 	return a !== a;
 };
 
-},{}],252:[function(require,module,exports){
+},{}],258:[function(require,module,exports){
 'use strict';
 
 /** @type {import('./max')} */
 module.exports = Math.max;
 
-},{}],253:[function(require,module,exports){
+},{}],259:[function(require,module,exports){
 'use strict';
 
 /** @type {import('./min')} */
 module.exports = Math.min;
 
-},{}],254:[function(require,module,exports){
+},{}],260:[function(require,module,exports){
 'use strict';
 
 /** @type {import('./pow')} */
 module.exports = Math.pow;
 
-},{}],255:[function(require,module,exports){
+},{}],261:[function(require,module,exports){
 'use strict';
 
 /** @type {import('./round')} */
 module.exports = Math.round;
 
-},{}],256:[function(require,module,exports){
+},{}],262:[function(require,module,exports){
 'use strict';
 
 var $isNaN = require('./isNaN');
@@ -27228,7 +27521,7 @@ module.exports = function sign(number) {
 	return number < 0 ? -1 : +1;
 };
 
-},{"./isNaN":251}],257:[function(require,module,exports){
+},{"./isNaN":257}],263:[function(require,module,exports){
 (function (Buffer){(function (){
 /* Protocol - protocol constants */
 const protocol = module.exports
@@ -27419,7 +27712,7 @@ protocol.EMPTY = {
 }
 
 }).call(this)}).call(this,require("buffer").Buffer)
-},{"buffer":182}],258:[function(require,module,exports){
+},{"buffer":188}],264:[function(require,module,exports){
 (function (Buffer){(function (){
 const writeToStream = require('./writeToStream')
 const EventEmitter = require('events')
@@ -27475,12 +27768,12 @@ class Accumulator extends EventEmitter {
 module.exports = generate
 
 }).call(this)}).call(this,require("buffer").Buffer)
-},{"./writeToStream":263,"buffer":182,"events":207}],259:[function(require,module,exports){
+},{"./writeToStream":269,"buffer":188,"events":213}],265:[function(require,module,exports){
 exports.parser = require('./parser').parser
 exports.generate = require('./generate')
 exports.writeToStream = require('./writeToStream')
 
-},{"./generate":258,"./parser":262,"./writeToStream":263}],260:[function(require,module,exports){
+},{"./generate":264,"./parser":268,"./writeToStream":269}],266:[function(require,module,exports){
 (function (Buffer){(function (){
 const max = 65536
 const cache = {}
@@ -27542,7 +27835,7 @@ module.exports = {
 }
 
 }).call(this)}).call(this,require("buffer").Buffer)
-},{"buffer":182}],261:[function(require,module,exports){
+},{"buffer":188}],267:[function(require,module,exports){
 class Packet {
   constructor () {
     this.cmd = null
@@ -27557,7 +27850,7 @@ class Packet {
 
 module.exports = Packet
 
-},{}],262:[function(require,module,exports){
+},{}],268:[function(require,module,exports){
 const bl = require('bl')
 const EventEmitter = require('events')
 const Packet = require('./packet')
@@ -28275,7 +28568,7 @@ class Parser extends EventEmitter {
 
 module.exports = Parser
 
-},{"./constants":257,"./packet":261,"bl":180,"debug":190,"events":207}],263:[function(require,module,exports){
+},{"./constants":263,"./packet":267,"bl":186,"debug":196,"events":213}],269:[function(require,module,exports){
 (function (Buffer){(function (){
 const protocol = require('./constants')
 const empty = Buffer.allocUnsafe(0)
@@ -29396,7 +29689,7 @@ function isStringOrBuffer (field) {
 module.exports = generate
 
 }).call(this)}).call(this,require("buffer").Buffer)
-},{"./constants":257,"./numbers":260,"buffer":182,"debug":190,"process-nextick-args":912}],264:[function(require,module,exports){
+},{"./constants":263,"./numbers":266,"buffer":188,"debug":196,"process-nextick-args":918}],270:[function(require,module,exports){
 (function (process,global){(function (){
 'use strict'
 
@@ -31291,7 +31584,7 @@ MqttClient.prototype._flushStoreProcessingQueue = function () {
 module.exports = MqttClient
 
 }).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./default-message-id-provider":271,"./store":272,"./topic-alias-recv":273,"./topic-alias-send":274,"./validations":275,"_process":913,"debug":190,"events":207,"inherits":222,"mqtt-packet":259,"readable-stream":934,"reinterval":935,"rfdc/default":936,"xtend":955}],265:[function(require,module,exports){
+},{"./default-message-id-provider":277,"./store":278,"./topic-alias-recv":279,"./topic-alias-send":280,"./validations":281,"_process":919,"debug":196,"events":213,"inherits":228,"mqtt-packet":265,"readable-stream":940,"reinterval":941,"rfdc/default":942,"xtend":961}],271:[function(require,module,exports){
 'use strict'
 
 const { Buffer } = require('buffer')
@@ -31422,7 +31715,7 @@ function buildStream (client, opts) {
 
 module.exports = buildStream
 
-},{"buffer":182,"duplexify":194,"readable-stream":934}],266:[function(require,module,exports){
+},{"buffer":188,"duplexify":200,"readable-stream":940}],272:[function(require,module,exports){
 (function (process){(function (){
 'use strict'
 
@@ -31591,7 +31884,7 @@ module.exports.MqttClient = MqttClient
 module.exports.Store = Store
 
 }).call(this)}).call(this,require('_process'))
-},{"../client":264,"../store":272,"./ali":265,"./tcp":267,"./tls":268,"./ws":269,"./wx":270,"_process":913,"debug":190,"url":951,"xtend":955}],267:[function(require,module,exports){
+},{"../client":270,"../store":278,"./ali":271,"./tcp":273,"./tls":274,"./ws":275,"./wx":276,"_process":919,"debug":196,"url":957,"xtend":961}],273:[function(require,module,exports){
 'use strict'
 const net = require('net')
 const debug = require('debug')('mqttjs:tcp')
@@ -31613,7 +31906,7 @@ function streamBuilder (client, opts) {
 
 module.exports = streamBuilder
 
-},{"debug":190,"net":181}],268:[function(require,module,exports){
+},{"debug":196,"net":187}],274:[function(require,module,exports){
 'use strict'
 const tls = require('tls')
 const net = require('net')
@@ -31663,7 +31956,7 @@ function buildBuilder (mqttClient, opts) {
 
 module.exports = buildBuilder
 
-},{"debug":190,"net":181,"tls":181}],269:[function(require,module,exports){
+},{"debug":196,"net":187,"tls":187}],275:[function(require,module,exports){
 (function (process){(function (){
 'use strict'
 
@@ -31924,7 +32217,7 @@ if (IS_BROWSER) {
 }
 
 }).call(this)}).call(this,require('_process'))
-},{"_process":913,"buffer":182,"debug":190,"duplexify":194,"readable-stream":934,"ws":954}],270:[function(require,module,exports){
+},{"_process":919,"buffer":188,"debug":196,"duplexify":200,"readable-stream":940,"ws":960}],276:[function(require,module,exports){
 'use strict'
 
 const { Buffer } = require('buffer')
@@ -32059,7 +32352,7 @@ function buildStream (client, opts) {
 
 module.exports = buildStream
 
-},{"buffer":182,"duplexify":194,"readable-stream":934}],271:[function(require,module,exports){
+},{"buffer":188,"duplexify":200,"readable-stream":940}],277:[function(require,module,exports){
 'use strict'
 
 /**
@@ -32130,7 +32423,7 @@ DefaultMessageIdProvider.prototype.clear = function () {
 
 module.exports = DefaultMessageIdProvider
 
-},{}],272:[function(require,module,exports){
+},{}],278:[function(require,module,exports){
 'use strict'
 
 /**
@@ -32260,7 +32553,7 @@ Store.prototype.close = function (cb) {
 
 module.exports = Store
 
-},{"readable-stream":934,"xtend":955}],273:[function(require,module,exports){
+},{"readable-stream":940,"xtend":961}],279:[function(require,module,exports){
 'use strict'
 
 /**
@@ -32309,7 +32602,7 @@ TopicAliasRecv.prototype.clear = function () {
 
 module.exports = TopicAliasRecv
 
-},{}],274:[function(require,module,exports){
+},{}],280:[function(require,module,exports){
 'use strict'
 
 /**
@@ -32402,7 +32695,7 @@ TopicAliasSend.prototype.getLruAlias = function () {
 
 module.exports = TopicAliasSend
 
-},{"lru-cache":248,"number-allocator":277}],275:[function(require,module,exports){
+},{"lru-cache":254,"number-allocator":283}],281:[function(require,module,exports){
 'use strict'
 
 /**
@@ -32456,7 +32749,7 @@ module.exports = {
   validateTopics: validateTopics
 }
 
-},{}],276:[function(require,module,exports){
+},{}],282:[function(require,module,exports){
 /**
  * Helpers.
  */
@@ -32620,7 +32913,7 @@ function plural(ms, msAbs, n, name) {
   return Math.round(ms / n) + ' ' + name + (isPlural ? 's' : '');
 }
 
-},{}],277:[function(require,module,exports){
+},{}],283:[function(require,module,exports){
 // Copyright Takatoshi Kondo 2021
 //
 // Distributed under the MIT License
@@ -32629,7 +32922,7 @@ const NumberAllocator = require('./lib/number-allocator.js')
 
 module.exports.NumberAllocator = NumberAllocator
 
-},{"./lib/number-allocator.js":278}],278:[function(require,module,exports){
+},{"./lib/number-allocator.js":284}],284:[function(require,module,exports){
 // Copyright Takatoshi Kondo 2021
 //
 // Distributed under the MIT License
@@ -32880,7 +33173,7 @@ NumberAllocator.prototype.dump = function () {
 
 module.exports = NumberAllocator
 
-},{"debug":190,"js-sdsl":244}],279:[function(require,module,exports){
+},{"debug":196,"js-sdsl":250}],285:[function(require,module,exports){
 (function (global){(function (){
 var hasMap = typeof Map === 'function' && Map.prototype;
 var mapSizeDescriptor = Object.getOwnPropertyDescriptor && hasMap ? Object.getOwnPropertyDescriptor(Map.prototype, 'size') : null;
@@ -33428,7 +33721,7 @@ function arrObjKeys(obj, inspect) {
 }
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./util.inspect":181}],280:[function(require,module,exports){
+},{"./util.inspect":187}],286:[function(require,module,exports){
 var wrappy = require('wrappy')
 module.exports = wrappy(once)
 module.exports.strict = wrappy(onceStrict)
@@ -33472,7 +33765,7 @@ function onceStrict (fn) {
   return f
 }
 
-},{"wrappy":953}],281:[function(require,module,exports){
+},{"wrappy":959}],287:[function(require,module,exports){
 
 module.exports = parse
 
@@ -33531,7 +33824,7 @@ function parseValues(args) {
 	return numbers ? numbers.map(Number) : []
 }
 
-},{}],282:[function(require,module,exports){
+},{}],288:[function(require,module,exports){
 (function (process){(function (){
 // 'path' module extracted from Node.js v8.11.1 (only the posix part)
 // transplited with Babel
@@ -34064,7 +34357,7 @@ posix.posix = posix;
 module.exports = posix;
 
 }).call(this)}).call(this,require('_process'))
-},{"_process":913}],283:[function(require,module,exports){
+},{"_process":919}],289:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -34094,7 +34387,7 @@ WorkerInstance.revokeObjectURL = function revokeObjectURL()
 exports.default = WorkerInstance;
 
 
-},{}],284:[function(require,module,exports){
+},{}],290:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -34124,7 +34417,7 @@ WorkerInstance.revokeObjectURL = function revokeObjectURL()
 exports.default = WorkerInstance;
 
 
-},{}],285:[function(require,module,exports){
+},{}],291:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -34154,7 +34447,7 @@ WorkerInstance.revokeObjectURL = function revokeObjectURL()
 exports.default = WorkerInstance;
 
 
-},{}],286:[function(require,module,exports){
+},{}],292:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -34184,7 +34477,7 @@ WorkerInstance.revokeObjectURL = function revokeObjectURL()
 exports.default = WorkerInstance;
 
 
-},{}],287:[function(require,module,exports){
+},{}],293:[function(require,module,exports){
 'use strict';
 
 var FederatedEvent = require('../events/FederatedEvent.js');
@@ -34717,7 +35010,7 @@ let AccessibilitySystem = _AccessibilitySystem;
 exports.AccessibilitySystem = AccessibilitySystem;
 
 
-},{"../events/FederatedEvent.js":409,"../extensions/Extensions.js":418,"../utils/browser/isMobile.js":885,"../utils/data/removeItems.js":894}],288:[function(require,module,exports){
+},{"../events/FederatedEvent.js":415,"../extensions/Extensions.js":424,"../utils/browser/isMobile.js":891,"../utils/data/removeItems.js":900}],294:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -34800,7 +35093,7 @@ const accessibilityTarget = {
 exports.accessibilityTarget = accessibilityTarget;
 
 
-},{}],289:[function(require,module,exports){
+},{}],295:[function(require,module,exports){
 'use strict';
 
 var AccessibilitySystem = require('./AccessibilitySystem.js');
@@ -34812,7 +35105,7 @@ exports.AccessibilitySystem = AccessibilitySystem.AccessibilitySystem;
 exports.accessibilityTarget = accessibilityTarget.accessibilityTarget;
 
 
-},{"./AccessibilitySystem.js":287,"./accessibilityTarget.js":288}],290:[function(require,module,exports){
+},{"./AccessibilitySystem.js":293,"./accessibilityTarget.js":294}],296:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -34825,7 +35118,7 @@ Extensions.extensions.add(AccessibilitySystem.AccessibilitySystem);
 Extensions.extensions.mixin(Container.Container, accessibilityTarget.accessibilityTarget);
 
 
-},{"../extensions/Extensions.js":418,"../scene/container/Container.js":701,"./AccessibilitySystem.js":287,"./accessibilityTarget.js":288}],291:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../scene/container/Container.js":707,"./AccessibilitySystem.js":293,"./accessibilityTarget.js":294}],297:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -34875,7 +35168,7 @@ ColorBlend.extension = {
 exports.ColorBlend = ColorBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424,"../filters/blend-modes/hls/GLhls.js":428,"../filters/blend-modes/hls/GPUhls.js":429}],292:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430,"../filters/blend-modes/hls/GLhls.js":434,"../filters/blend-modes/hls/GPUhls.js":435}],298:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -34941,7 +35234,7 @@ ColorBurnBlend.extension = {
 exports.ColorBurnBlend = ColorBurnBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424}],293:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430}],299:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -35007,7 +35300,7 @@ ColorDodgeBlend.extension = {
 exports.ColorDodgeBlend = ColorDodgeBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424}],294:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430}],300:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -35051,7 +35344,7 @@ DarkenBlend.extension = {
 exports.DarkenBlend = DarkenBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424}],295:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430}],301:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -35095,7 +35388,7 @@ DifferenceBlend.extension = {
 exports.DifferenceBlend = DifferenceBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424}],296:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430}],302:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -35160,7 +35453,7 @@ DivideBlend.extension = {
 exports.DivideBlend = DivideBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424}],297:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430}],303:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -35214,7 +35507,7 @@ ExclusionBlend.extension = {
 exports.ExclusionBlend = ExclusionBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424}],298:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430}],304:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -35279,7 +35572,7 @@ HardLightBlend.extension = {
 exports.HardLightBlend = HardLightBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424}],299:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430}],305:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -35343,7 +35636,7 @@ HardMixBlend.extension = {
 exports.HardMixBlend = HardMixBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424}],300:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430}],306:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -35387,7 +35680,7 @@ LightenBlend.extension = {
 exports.LightenBlend = LightenBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424}],301:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430}],307:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -35453,7 +35746,7 @@ LinearBurnBlend.extension = {
 exports.LinearBurnBlend = LinearBurnBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424}],302:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430}],308:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -35516,7 +35809,7 @@ LinearDodgeBlend.extension = {
 exports.LinearDodgeBlend = LinearDodgeBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424}],303:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430}],309:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -35598,7 +35891,7 @@ LinearLightBlend.extension = {
 exports.LinearLightBlend = LinearLightBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424}],304:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430}],310:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -35650,7 +35943,7 @@ LuminosityBlend.extension = {
 exports.LuminosityBlend = LuminosityBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424,"../filters/blend-modes/hls/GLhls.js":428,"../filters/blend-modes/hls/GPUhls.js":429}],305:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430,"../filters/blend-modes/hls/GLhls.js":434,"../filters/blend-modes/hls/GPUhls.js":435}],311:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -35704,7 +35997,7 @@ NegationBlend.extension = {
 exports.NegationBlend = NegationBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424}],306:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430}],312:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -35770,7 +36063,7 @@ OverlayBlend.extension = {
 exports.OverlayBlend = OverlayBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424}],307:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430}],313:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -35836,7 +36129,7 @@ PinLightBlend.extension = {
 exports.PinLightBlend = PinLightBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424}],308:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430}],314:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -35888,7 +36181,7 @@ SaturationBlend.extension = {
 exports.SaturationBlend = SaturationBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424,"../filters/blend-modes/hls/GLhls.js":428,"../filters/blend-modes/hls/GPUhls.js":429}],309:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430,"../filters/blend-modes/hls/GLhls.js":434,"../filters/blend-modes/hls/GPUhls.js":435}],315:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -35954,7 +36247,7 @@ SoftLightBlend.extension = {
 exports.SoftLightBlend = SoftLightBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424}],310:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430}],316:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -36020,7 +36313,7 @@ SubtractBlend.extension = {
 exports.SubtractBlend = SubtractBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424}],311:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430}],317:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -36106,7 +36399,7 @@ VividLightBlend.extension = {
 exports.VividLightBlend = VividLightBlend;
 
 
-},{"../extensions/Extensions.js":418,"../filters/blend-modes/BlendModeFilter.js":424}],312:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../filters/blend-modes/BlendModeFilter.js":430}],318:[function(require,module,exports){
 'use strict';
 
 var ColorBlend = require('./ColorBlend.js');
@@ -36156,7 +36449,7 @@ exports.SubtractBlend = SubtractBlend.SubtractBlend;
 exports.VividLightBlend = VividLightBlend.VividLightBlend;
 
 
-},{"./ColorBlend.js":291,"./ColorBurnBlend.js":292,"./ColorDodgeBlend.js":293,"./DarkenBlend.js":294,"./DifferenceBlend.js":295,"./DivideBlend.js":296,"./ExclusionBlend.js":297,"./HardLightBlend.js":298,"./HardMixBlend.js":299,"./LightenBlend.js":300,"./LinearBurnBlend.js":301,"./LinearDodgeBlend.js":302,"./LinearLightBlend.js":303,"./LuminosityBlend.js":304,"./NegationBlend.js":305,"./OverlayBlend.js":306,"./PinLightBlend.js":307,"./SaturationBlend.js":308,"./SoftLightBlend.js":309,"./SubtractBlend.js":310,"./VividLightBlend.js":311}],313:[function(require,module,exports){
+},{"./ColorBlend.js":297,"./ColorBurnBlend.js":298,"./ColorDodgeBlend.js":299,"./DarkenBlend.js":300,"./DifferenceBlend.js":301,"./DivideBlend.js":302,"./ExclusionBlend.js":303,"./HardLightBlend.js":304,"./HardMixBlend.js":305,"./LightenBlend.js":306,"./LinearBurnBlend.js":307,"./LinearDodgeBlend.js":308,"./LinearLightBlend.js":309,"./LuminosityBlend.js":310,"./NegationBlend.js":311,"./OverlayBlend.js":312,"./PinLightBlend.js":313,"./SaturationBlend.js":314,"./SoftLightBlend.js":315,"./SubtractBlend.js":316,"./VividLightBlend.js":317}],319:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -36254,7 +36547,7 @@ Extensions.extensions.add(globalHooks.ApplicationInitHook);
 exports.Application = Application;
 
 
-},{"../extensions/Extensions.js":418,"../rendering/renderers/autoDetectRenderer.js":525,"../scene/container/Container.js":701,"../utils/global/globalHooks.js":897,"../utils/logging/deprecation.js":899}],314:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../rendering/renderers/autoDetectRenderer.js":531,"../scene/container/Container.js":707,"../utils/global/globalHooks.js":903,"../utils/logging/deprecation.js":905}],320:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -36347,7 +36640,7 @@ ResizePlugin.extension = Extensions.ExtensionType.Application;
 exports.ResizePlugin = ResizePlugin;
 
 
-},{"../extensions/Extensions.js":418}],315:[function(require,module,exports){
+},{"../extensions/Extensions.js":424}],321:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -36416,7 +36709,7 @@ TickerPlugin.extension = Extensions.ExtensionType.Application;
 exports.TickerPlugin = TickerPlugin;
 
 
-},{"../extensions/Extensions.js":418,"../ticker/Ticker.js":880,"../ticker/const.js":882}],316:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../ticker/Ticker.js":886,"../ticker/const.js":888}],322:[function(require,module,exports){
 'use strict';
 
 var Application = require('./Application.js');
@@ -36430,7 +36723,7 @@ exports.ResizePlugin = ResizePlugin.ResizePlugin;
 exports.TickerPlugin = TickerPlugin.TickerPlugin;
 
 
-},{"./Application.js":313,"./ResizePlugin.js":314,"./TickerPlugin.js":315}],317:[function(require,module,exports){
+},{"./Application.js":319,"./ResizePlugin.js":320,"./TickerPlugin.js":321}],323:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -36442,13 +36735,13 @@ Extensions.extensions.add(ResizePlugin.ResizePlugin);
 Extensions.extensions.add(TickerPlugin.TickerPlugin);
 
 
-},{"../extensions/Extensions.js":418,"./ResizePlugin.js":314,"./TickerPlugin.js":315}],318:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"./ResizePlugin.js":320,"./TickerPlugin.js":321}],324:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],319:[function(require,module,exports){
+},{}],325:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -36963,7 +37256,7 @@ exports.Assets = Assets;
 exports.AssetsClass = AssetsClass;
 
 
-},{"../extensions/Extensions.js":418,"../scene/text-bitmap/asset/loadBitmapFont.js":840,"../utils/logging/warn.js":902,"./BackgroundLoader.js":320,"./cache/Cache.js":321,"./cache/parsers/cacheTextureArray.js":323,"./detections/parsers/detectAvif.js":324,"./detections/parsers/detectDefaults.js":325,"./detections/parsers/detectMp4.js":326,"./detections/parsers/detectOgv.js":327,"./detections/parsers/detectWebm.js":328,"./detections/parsers/detectWebp.js":329,"./loader/Loader.js":334,"./loader/parsers/loadJson.js":336,"./loader/parsers/loadTxt.js":337,"./loader/parsers/loadWebFont.js":338,"./loader/parsers/textures/loadSVG.js":339,"./loader/parsers/textures/loadTextures.js":340,"./loader/parsers/textures/loadVideoTextures.js":341,"./resolver/Resolver.js":345,"./resolver/parsers/resolveJsonUrl.js":346,"./resolver/parsers/resolveTextureUrl.js":347,"./utils/convertToList.js":352,"./utils/isSingleItem.js":355}],320:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../scene/text-bitmap/asset/loadBitmapFont.js":846,"../utils/logging/warn.js":908,"./BackgroundLoader.js":326,"./cache/Cache.js":327,"./cache/parsers/cacheTextureArray.js":329,"./detections/parsers/detectAvif.js":330,"./detections/parsers/detectDefaults.js":331,"./detections/parsers/detectMp4.js":332,"./detections/parsers/detectOgv.js":333,"./detections/parsers/detectWebm.js":334,"./detections/parsers/detectWebp.js":335,"./loader/Loader.js":340,"./loader/parsers/loadJson.js":342,"./loader/parsers/loadTxt.js":343,"./loader/parsers/loadWebFont.js":344,"./loader/parsers/textures/loadSVG.js":345,"./loader/parsers/textures/loadTextures.js":346,"./loader/parsers/textures/loadVideoTextures.js":347,"./resolver/Resolver.js":351,"./resolver/parsers/resolveJsonUrl.js":352,"./resolver/parsers/resolveTextureUrl.js":353,"./utils/convertToList.js":358,"./utils/isSingleItem.js":361}],326:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -37032,7 +37325,7 @@ class BackgroundLoader {
 exports.BackgroundLoader = BackgroundLoader;
 
 
-},{}],321:[function(require,module,exports){
+},{}],327:[function(require,module,exports){
 'use strict';
 
 var warn = require('../../utils/logging/warn.js');
@@ -37135,13 +37428,13 @@ const Cache = new CacheClass();
 exports.Cache = Cache;
 
 
-},{"../../utils/logging/warn.js":902,"../utils/convertToList.js":352}],322:[function(require,module,exports){
+},{"../../utils/logging/warn.js":908,"../utils/convertToList.js":358}],328:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],323:[function(require,module,exports){
+},{}],329:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -37168,7 +37461,7 @@ const cacheTextureArray = {
 exports.cacheTextureArray = cacheTextureArray;
 
 
-},{"../../../extensions/Extensions.js":418,"../../../rendering/renderers/shared/texture/Texture.js":678}],324:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../../rendering/renderers/shared/texture/Texture.js":684}],330:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -37191,7 +37484,7 @@ const detectAvif = {
 exports.detectAvif = detectAvif;
 
 
-},{"../../../extensions/Extensions.js":418,"../utils/testImageFormat.js":331}],325:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../utils/testImageFormat.js":337}],331:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -37211,7 +37504,7 @@ const detectDefaults = {
 exports.detectDefaults = detectDefaults;
 
 
-},{"../../../extensions/Extensions.js":418}],326:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424}],332:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -37231,7 +37524,7 @@ const detectMp4 = {
 exports.detectMp4 = detectMp4;
 
 
-},{"../../../extensions/Extensions.js":418,"../utils/testVideoFormat.js":332}],327:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../utils/testVideoFormat.js":338}],333:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -37251,7 +37544,7 @@ const detectOgv = {
 exports.detectOgv = detectOgv;
 
 
-},{"../../../extensions/Extensions.js":418,"../utils/testVideoFormat.js":332}],328:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../utils/testVideoFormat.js":338}],334:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -37271,7 +37564,7 @@ const detectWebm = {
 exports.detectWebm = detectWebm;
 
 
-},{"../../../extensions/Extensions.js":418,"../utils/testVideoFormat.js":332}],329:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../utils/testVideoFormat.js":338}],335:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -37293,13 +37586,13 @@ const detectWebp = {
 exports.detectWebp = detectWebp;
 
 
-},{"../../../extensions/Extensions.js":418,"../utils/testImageFormat.js":331}],330:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../utils/testImageFormat.js":337}],336:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],331:[function(require,module,exports){
+},{}],337:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -37331,7 +37624,7 @@ async function testImageFormat(imageData) {
 exports.testImageFormat = testImageFormat;
 
 
-},{}],332:[function(require,module,exports){
+},{}],338:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -37347,7 +37640,7 @@ function testVideoFormat(mimeType) {
 exports.testVideoFormat = testVideoFormat;
 
 
-},{}],333:[function(require,module,exports){
+},{}],339:[function(require,module,exports){
 'use strict';
 
 require('./AssetExtension.js');
@@ -37430,7 +37723,7 @@ exports.createStringVariations = createStringVariations.createStringVariations;
 exports.isSingleItem = isSingleItem.isSingleItem;
 
 
-},{"./AssetExtension.js":318,"./Assets.js":319,"./BackgroundLoader.js":320,"./cache/Cache.js":321,"./cache/CacheParser.js":322,"./cache/parsers/cacheTextureArray.js":323,"./detections/parsers/detectAvif.js":324,"./detections/parsers/detectDefaults.js":325,"./detections/parsers/detectMp4.js":326,"./detections/parsers/detectOgv.js":327,"./detections/parsers/detectWebm.js":328,"./detections/parsers/detectWebp.js":329,"./detections/types.js":330,"./detections/utils/testImageFormat.js":331,"./detections/utils/testVideoFormat.js":332,"./loader/Loader.js":334,"./loader/parsers/LoaderParser.js":335,"./loader/parsers/loadJson.js":336,"./loader/parsers/loadTxt.js":337,"./loader/parsers/loadWebFont.js":338,"./loader/parsers/textures/loadSVG.js":339,"./loader/parsers/textures/loadTextures.js":340,"./loader/parsers/textures/loadVideoTextures.js":341,"./loader/parsers/textures/utils/createTexture.js":342,"./loader/types.js":343,"./loader/workers/WorkerManager.js":344,"./resolver/Resolver.js":345,"./resolver/parsers/resolveJsonUrl.js":346,"./resolver/parsers/resolveTextureUrl.js":347,"./resolver/types.js":348,"./types.js":349,"./utils/checkDataUrl.js":350,"./utils/checkExtension.js":351,"./utils/convertToList.js":352,"./utils/copySearchParams.js":353,"./utils/createStringVariations.js":354,"./utils/isSingleItem.js":355}],334:[function(require,module,exports){
+},{"./AssetExtension.js":324,"./Assets.js":325,"./BackgroundLoader.js":326,"./cache/Cache.js":327,"./cache/CacheParser.js":328,"./cache/parsers/cacheTextureArray.js":329,"./detections/parsers/detectAvif.js":330,"./detections/parsers/detectDefaults.js":331,"./detections/parsers/detectMp4.js":332,"./detections/parsers/detectOgv.js":333,"./detections/parsers/detectWebm.js":334,"./detections/parsers/detectWebp.js":335,"./detections/types.js":336,"./detections/utils/testImageFormat.js":337,"./detections/utils/testVideoFormat.js":338,"./loader/Loader.js":340,"./loader/parsers/LoaderParser.js":341,"./loader/parsers/loadJson.js":342,"./loader/parsers/loadTxt.js":343,"./loader/parsers/loadWebFont.js":344,"./loader/parsers/textures/loadSVG.js":345,"./loader/parsers/textures/loadTextures.js":346,"./loader/parsers/textures/loadVideoTextures.js":347,"./loader/parsers/textures/utils/createTexture.js":348,"./loader/types.js":349,"./loader/workers/WorkerManager.js":350,"./resolver/Resolver.js":351,"./resolver/parsers/resolveJsonUrl.js":352,"./resolver/parsers/resolveTextureUrl.js":353,"./resolver/types.js":354,"./types.js":355,"./utils/checkDataUrl.js":356,"./utils/checkExtension.js":357,"./utils/convertToList.js":358,"./utils/copySearchParams.js":359,"./utils/createStringVariations.js":360,"./utils/isSingleItem.js":361}],340:[function(require,module,exports){
 'use strict';
 
 var warn = require('../../utils/logging/warn.js');
@@ -37589,7 +37882,7 @@ ${e}`);
 exports.Loader = Loader;
 
 
-},{"../../utils/logging/warn.js":902,"../../utils/path.js":906,"../utils/convertToList.js":352,"../utils/isSingleItem.js":355}],335:[function(require,module,exports){
+},{"../../utils/logging/warn.js":908,"../../utils/path.js":912,"../utils/convertToList.js":358,"../utils/isSingleItem.js":361}],341:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -37603,7 +37896,7 @@ var LoaderParserPriority = /* @__PURE__ */ ((LoaderParserPriority2) => {
 exports.LoaderParserPriority = LoaderParserPriority;
 
 
-},{}],336:[function(require,module,exports){
+},{}],342:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../environment/adapter.js');
@@ -37634,7 +37927,7 @@ const loadJson = {
 exports.loadJson = loadJson;
 
 
-},{"../../../environment/adapter.js":400,"../../../extensions/Extensions.js":418,"../../utils/checkDataUrl.js":350,"../../utils/checkExtension.js":351,"./LoaderParser.js":335}],337:[function(require,module,exports){
+},{"../../../environment/adapter.js":406,"../../../extensions/Extensions.js":424,"../../utils/checkDataUrl.js":356,"../../utils/checkExtension.js":357,"./LoaderParser.js":341}],343:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../environment/adapter.js');
@@ -37666,7 +37959,7 @@ const loadTxt = {
 exports.loadTxt = loadTxt;
 
 
-},{"../../../environment/adapter.js":400,"../../../extensions/Extensions.js":418,"../../utils/checkDataUrl.js":350,"../../utils/checkExtension.js":351,"./LoaderParser.js":335}],338:[function(require,module,exports){
+},{"../../../environment/adapter.js":406,"../../../extensions/Extensions.js":424,"../../utils/checkDataUrl.js":356,"../../utils/checkExtension.js":357,"./LoaderParser.js":341}],344:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../environment/adapter.js');
@@ -37772,7 +38065,7 @@ exports.getFontFamilyName = getFontFamilyName;
 exports.loadWebFont = loadWebFont;
 
 
-},{"../../../environment/adapter.js":400,"../../../extensions/Extensions.js":418,"../../../utils/logging/warn.js":902,"../../../utils/path.js":906,"../../cache/Cache.js":321,"../../utils/checkDataUrl.js":350,"../../utils/checkExtension.js":351,"./LoaderParser.js":335}],339:[function(require,module,exports){
+},{"../../../environment/adapter.js":406,"../../../extensions/Extensions.js":424,"../../../utils/logging/warn.js":908,"../../../utils/path.js":912,"../../cache/Cache.js":327,"../../utils/checkDataUrl.js":356,"../../utils/checkExtension.js":357,"./LoaderParser.js":341}],345:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../../environment/adapter.js');
@@ -37849,7 +38142,7 @@ async function loadAsGraphics(url) {
 exports.loadSvg = loadSvg;
 
 
-},{"../../../../environment/adapter.js":400,"../../../../extensions/Extensions.js":418,"../../../../rendering/renderers/shared/texture/sources/ImageSource.js":688,"../../../../scene/graphics/shared/GraphicsContext.js":746,"../../../../utils/network/getResolutionOfUrl.js":905,"../../../utils/checkDataUrl.js":350,"../../../utils/checkExtension.js":351,"../LoaderParser.js":335,"./utils/createTexture.js":342}],340:[function(require,module,exports){
+},{"../../../../environment/adapter.js":406,"../../../../extensions/Extensions.js":424,"../../../../rendering/renderers/shared/texture/sources/ImageSource.js":694,"../../../../scene/graphics/shared/GraphicsContext.js":752,"../../../../utils/network/getResolutionOfUrl.js":911,"../../../utils/checkDataUrl.js":356,"../../../utils/checkExtension.js":357,"../LoaderParser.js":341,"./utils/createTexture.js":348}],346:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../../environment/adapter.js');
@@ -37933,7 +38226,7 @@ exports.loadImageBitmap = loadImageBitmap;
 exports.loadTextures = loadTextures;
 
 
-},{"../../../../environment/adapter.js":400,"../../../../extensions/Extensions.js":418,"../../../../rendering/renderers/shared/texture/sources/ImageSource.js":688,"../../../../utils/network/getResolutionOfUrl.js":905,"../../../utils/checkDataUrl.js":350,"../../../utils/checkExtension.js":351,"../../workers/WorkerManager.js":344,"../LoaderParser.js":335,"./utils/createTexture.js":342}],341:[function(require,module,exports){
+},{"../../../../environment/adapter.js":406,"../../../../extensions/Extensions.js":424,"../../../../rendering/renderers/shared/texture/sources/ImageSource.js":694,"../../../../utils/network/getResolutionOfUrl.js":911,"../../../utils/checkDataUrl.js":356,"../../../utils/checkExtension.js":357,"../../workers/WorkerManager.js":350,"../LoaderParser.js":341,"./utils/createTexture.js":348}],347:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -38056,7 +38349,7 @@ exports.loadVideoTextures = loadVideoTextures;
 exports.preloadVideo = preloadVideo;
 
 
-},{"../../../../extensions/Extensions.js":418,"../../../../rendering/renderers/shared/texture/sources/VideoSource.js":690,"../../../../utils/browser/detectVideoAlphaMode.js":884,"../../../../utils/network/getResolutionOfUrl.js":905,"../../../utils/checkDataUrl.js":350,"../../../utils/checkExtension.js":351,"./utils/createTexture.js":342}],342:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424,"../../../../rendering/renderers/shared/texture/sources/VideoSource.js":696,"../../../../utils/browser/detectVideoAlphaMode.js":890,"../../../../utils/network/getResolutionOfUrl.js":911,"../../../utils/checkDataUrl.js":356,"../../../utils/checkExtension.js":357,"./utils/createTexture.js":348}],348:[function(require,module,exports){
 'use strict';
 
 var Texture = require('../../../../../rendering/renderers/shared/texture/Texture.js');
@@ -38095,9 +38388,9 @@ function createTexture(source, loader, url) {
 exports.createTexture = createTexture;
 
 
-},{"../../../../../rendering/renderers/shared/texture/Texture.js":678,"../../../../../utils/logging/warn.js":902,"../../../../cache/Cache.js":321}],343:[function(require,module,exports){
-arguments[4][330][0].apply(exports,arguments)
-},{"dup":330}],344:[function(require,module,exports){
+},{"../../../../../rendering/renderers/shared/texture/Texture.js":684,"../../../../../utils/logging/warn.js":908,"../../../../cache/Cache.js":327}],349:[function(require,module,exports){
+arguments[4][336][0].apply(exports,arguments)
+},{"dup":336}],350:[function(require,module,exports){
 'use strict';
 
 var checkImageBitmap_worker = require('../../../_virtual/checkImageBitmap.worker.js');
@@ -38192,7 +38485,7 @@ const WorkerManager = new WorkerManagerClass();
 exports.WorkerManager = WorkerManager;
 
 
-},{"../../../_virtual/checkImageBitmap.worker.js":284,"../../../_virtual/loadImageBitmap.worker.js":286}],345:[function(require,module,exports){
+},{"../../../_virtual/checkImageBitmap.worker.js":290,"../../../_virtual/loadImageBitmap.worker.js":292}],351:[function(require,module,exports){
 'use strict';
 
 var warn = require('../../utils/logging/warn.js');
@@ -38723,7 +39016,7 @@ exports.Resolver = Resolver;
 exports.getUrlExtension = getUrlExtension;
 
 
-},{"../../utils/logging/warn.js":902,"../../utils/path.js":906,"../utils/convertToList.js":352,"../utils/createStringVariations.js":354,"../utils/isSingleItem.js":355}],346:[function(require,module,exports){
+},{"../../utils/logging/warn.js":908,"../../utils/path.js":912,"../utils/convertToList.js":358,"../utils/createStringVariations.js":360,"../utils/isSingleItem.js":361}],352:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -38744,7 +39037,7 @@ const resolveJsonUrl = {
 exports.resolveJsonUrl = resolveJsonUrl;
 
 
-},{"../../../extensions/Extensions.js":418,"../Resolver.js":345,"./resolveTextureUrl.js":347}],347:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../Resolver.js":351,"./resolveTextureUrl.js":353}],353:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -38768,11 +39061,11 @@ const resolveTextureUrl = {
 exports.resolveTextureUrl = resolveTextureUrl;
 
 
-},{"../../../extensions/Extensions.js":418,"../../loader/parsers/textures/loadTextures.js":340,"../Resolver.js":345}],348:[function(require,module,exports){
-arguments[4][330][0].apply(exports,arguments)
-},{"dup":330}],349:[function(require,module,exports){
-arguments[4][330][0].apply(exports,arguments)
-},{"dup":330}],350:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../loader/parsers/textures/loadTextures.js":346,"../Resolver.js":351}],354:[function(require,module,exports){
+arguments[4][336][0].apply(exports,arguments)
+},{"dup":336}],355:[function(require,module,exports){
+arguments[4][336][0].apply(exports,arguments)
+},{"dup":336}],356:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -38790,7 +39083,7 @@ function checkDataUrl(url, mimes) {
 exports.checkDataUrl = checkDataUrl;
 
 
-},{}],351:[function(require,module,exports){
+},{}],357:[function(require,module,exports){
 'use strict';
 
 var path = require('../../utils/path.js');
@@ -38808,7 +39101,7 @@ function checkExtension(url, extension) {
 exports.checkExtension = checkExtension;
 
 
-},{"../../utils/path.js":906}],352:[function(require,module,exports){
+},{"../../utils/path.js":912}],358:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -38830,7 +39123,7 @@ const convertToList = (input, transform, forceTransform = false) => {
 exports.convertToList = convertToList;
 
 
-},{}],353:[function(require,module,exports){
+},{}],359:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -38845,7 +39138,7 @@ const copySearchParams = (targetUrl, sourceUrl) => {
 exports.copySearchParams = copySearchParams;
 
 
-},{}],354:[function(require,module,exports){
+},{}],360:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -38880,7 +39173,7 @@ function createStringVariations(string) {
 exports.createStringVariations = createStringVariations;
 
 
-},{}],355:[function(require,module,exports){
+},{}],361:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -38889,7 +39182,7 @@ const isSingleItem = (item) => !Array.isArray(item);
 exports.isSingleItem = isSingleItem;
 
 
-},{}],356:[function(require,module,exports){
+},{}],362:[function(require,module,exports){
 'use strict';
 
 var colord = require('@pixi/colord');
@@ -39287,7 +39580,7 @@ let Color = _Color;
 exports.Color = Color;
 
 
-},{"@pixi/colord":169,"@pixi/colord/plugins/names":170}],357:[function(require,module,exports){
+},{"@pixi/colord":175,"@pixi/colord/plugins/names":176}],363:[function(require,module,exports){
 'use strict';
 
 var Color = require('./Color.js');
@@ -39297,7 +39590,7 @@ var Color = require('./Color.js');
 exports.Color = Color.Color;
 
 
-},{"./Color.js":356}],358:[function(require,module,exports){
+},{"./Color.js":362}],364:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -39324,7 +39617,7 @@ const detectBasis = {
 exports.detectBasis = detectBasis;
 
 
-},{"../../extensions/Extensions.js":418,"../../utils/browser/isWebGLSupported.js":887,"../../utils/browser/isWebGPUSupported.js":888}],359:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424,"../../utils/browser/isWebGLSupported.js":893,"../../utils/browser/isWebGPUSupported.js":894}],365:[function(require,module,exports){
 'use strict';
 
 var LoaderParser = require('../../assets/loader/parsers/LoaderParser.js');
@@ -39364,9 +39657,9 @@ const loadBasis = {
 exports.loadBasis = loadBasis;
 
 
-},{"../../assets/loader/parsers/LoaderParser.js":335,"../../assets/loader/parsers/textures/utils/createTexture.js":342,"../../assets/utils/checkExtension.js":351,"../../extensions/Extensions.js":418,"../../rendering/renderers/shared/texture/sources/CompressedSource.js":687,"../../rendering/renderers/shared/texture/utils/getSupportedTextureFormats.js":694,"./worker/loadBasisOnWorker.js":364}],360:[function(require,module,exports){
-arguments[4][330][0].apply(exports,arguments)
-},{"dup":330}],361:[function(require,module,exports){
+},{"../../assets/loader/parsers/LoaderParser.js":341,"../../assets/loader/parsers/textures/utils/createTexture.js":348,"../../assets/utils/checkExtension.js":357,"../../extensions/Extensions.js":424,"../../rendering/renderers/shared/texture/sources/CompressedSource.js":693,"../../rendering/renderers/shared/texture/utils/getSupportedTextureFormats.js":700,"./worker/loadBasisOnWorker.js":370}],366:[function(require,module,exports){
+arguments[4][336][0].apply(exports,arguments)
+},{"dup":336}],367:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -39395,7 +39688,7 @@ function createLevelBuffers(basisTexture, basisTranscoderFormat) {
 exports.createLevelBuffers = createLevelBuffers;
 
 
-},{}],362:[function(require,module,exports){
+},{}],368:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -39425,7 +39718,7 @@ function gpuFormatToBasisTranscoderFormat(transcoderFormat) {
 exports.gpuFormatToBasisTranscoderFormat = gpuFormatToBasisTranscoderFormat;
 
 
-},{}],363:[function(require,module,exports){
+},{}],369:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -39441,7 +39734,7 @@ exports.basisTranscoderUrls = basisTranscoderUrls;
 exports.setBasisTranscoderPath = setBasisTranscoderPath;
 
 
-},{}],364:[function(require,module,exports){
+},{}],370:[function(require,module,exports){
 'use strict';
 
 var basis_worker = require('../../../_virtual/basis.worker.js');
@@ -39480,7 +39773,7 @@ function loadBasisOnWorker(url, supportedTextures) {
 exports.loadBasisOnWorker = loadBasisOnWorker;
 
 
-},{"../../../_virtual/basis.worker.js":283,"../utils/setBasisTranscoderPath.js":363}],365:[function(require,module,exports){
+},{"../../../_virtual/basis.worker.js":289,"../utils/setBasisTranscoderPath.js":369}],371:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -39809,7 +40102,7 @@ exports.FOURCC_TO_TEXTURE_FORMAT = FOURCC_TO_TEXTURE_FORMAT;
 exports.TEXTURE_FORMAT_BLOCK_SIZE = TEXTURE_FORMAT_BLOCK_SIZE;
 
 
-},{}],366:[function(require,module,exports){
+},{}],372:[function(require,module,exports){
 'use strict';
 
 var LoaderParser = require('../../assets/loader/parsers/LoaderParser.js');
@@ -39851,7 +40144,7 @@ const loadDDS = {
 exports.loadDDS = loadDDS;
 
 
-},{"../../assets/loader/parsers/LoaderParser.js":335,"../../assets/loader/parsers/textures/utils/createTexture.js":342,"../../assets/utils/checkExtension.js":351,"../../extensions/Extensions.js":418,"../../rendering/renderers/shared/texture/sources/CompressedSource.js":687,"../../rendering/renderers/shared/texture/utils/getSupportedTextureFormats.js":694,"./parseDDS.js":367}],367:[function(require,module,exports){
+},{"../../assets/loader/parsers/LoaderParser.js":341,"../../assets/loader/parsers/textures/utils/createTexture.js":348,"../../assets/utils/checkExtension.js":357,"../../extensions/Extensions.js":424,"../../rendering/renderers/shared/texture/sources/CompressedSource.js":693,"../../rendering/renderers/shared/texture/utils/getSupportedTextureFormats.js":700,"./parseDDS.js":373}],373:[function(require,module,exports){
 'use strict';
 
 var _const = require('./const.js');
@@ -40027,7 +40320,7 @@ function getUncompressedTextureFormat(header) {
 exports.parseDDS = parseDDS;
 
 
-},{"./const.js":365}],368:[function(require,module,exports){
+},{"./const.js":371}],374:[function(require,module,exports){
 'use strict';
 
 var detectBasis = require('./basis/detectBasis.js');
@@ -40093,7 +40386,7 @@ exports.resolveCompressedTextureUrl = resolveCompressedTextureUrl.resolveCompres
 exports.validFormats = resolveCompressedTextureUrl.validFormats;
 
 
-},{"./basis/detectBasis.js":358,"./basis/loadBasis.js":359,"./basis/types.js":360,"./basis/utils/createLevelBuffers.js":361,"./basis/utils/gpuFormatToBasisTranscoderFormat.js":362,"./basis/utils/setBasisTranscoderPath.js":363,"./basis/worker/loadBasisOnWorker.js":364,"./dds/const.js":365,"./dds/loadDDS.js":366,"./dds/parseDDS.js":367,"./ktx/loadKTX.js":380,"./ktx/parseKTX.js":381,"./ktx2/const.js":369,"./ktx2/loadKTX2.js":370,"./ktx2/types.js":371,"./ktx2/utils/convertFormatIfRequired.js":372,"./ktx2/utils/createLevelBuffersFromKTX.js":373,"./ktx2/utils/getTextureFormatFromKTXTexture.js":374,"./ktx2/utils/glFormatToGPUFormat.js":375,"./ktx2/utils/gpuFormatToKTXBasisTranscoderFormat.js":376,"./ktx2/utils/setKTXTranscoderPath.js":377,"./ktx2/utils/vkFormatToGPUFormat.js":378,"./ktx2/worker/loadKTX2onWorker.js":379,"./shared/detectCompressed.js":382,"./shared/resolveCompressedTextureUrl.js":383}],369:[function(require,module,exports){
+},{"./basis/detectBasis.js":364,"./basis/loadBasis.js":365,"./basis/types.js":366,"./basis/utils/createLevelBuffers.js":367,"./basis/utils/gpuFormatToBasisTranscoderFormat.js":368,"./basis/utils/setBasisTranscoderPath.js":369,"./basis/worker/loadBasisOnWorker.js":370,"./dds/const.js":371,"./dds/loadDDS.js":372,"./dds/parseDDS.js":373,"./ktx/loadKTX.js":386,"./ktx/parseKTX.js":387,"./ktx2/const.js":375,"./ktx2/loadKTX2.js":376,"./ktx2/types.js":377,"./ktx2/utils/convertFormatIfRequired.js":378,"./ktx2/utils/createLevelBuffersFromKTX.js":379,"./ktx2/utils/getTextureFormatFromKTXTexture.js":380,"./ktx2/utils/glFormatToGPUFormat.js":381,"./ktx2/utils/gpuFormatToKTXBasisTranscoderFormat.js":382,"./ktx2/utils/setKTXTranscoderPath.js":383,"./ktx2/utils/vkFormatToGPUFormat.js":384,"./ktx2/worker/loadKTX2onWorker.js":385,"./shared/detectCompressed.js":388,"./shared/resolveCompressedTextureUrl.js":389}],375:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -40372,7 +40665,7 @@ exports.GL_INTERNAL_FORMAT = GL_INTERNAL_FORMAT;
 exports.KTX = KTX;
 
 
-},{}],370:[function(require,module,exports){
+},{}],376:[function(require,module,exports){
 'use strict';
 
 var LoaderParser = require('../../assets/loader/parsers/LoaderParser.js');
@@ -40412,9 +40705,9 @@ const loadKTX2 = {
 exports.loadKTX2 = loadKTX2;
 
 
-},{"../../assets/loader/parsers/LoaderParser.js":335,"../../assets/loader/parsers/textures/utils/createTexture.js":342,"../../assets/utils/checkExtension.js":351,"../../extensions/Extensions.js":418,"../../rendering/renderers/shared/texture/sources/CompressedSource.js":687,"../../rendering/renderers/shared/texture/utils/getSupportedTextureFormats.js":694,"./worker/loadKTX2onWorker.js":379}],371:[function(require,module,exports){
-arguments[4][330][0].apply(exports,arguments)
-},{"dup":330}],372:[function(require,module,exports){
+},{"../../assets/loader/parsers/LoaderParser.js":341,"../../assets/loader/parsers/textures/utils/createTexture.js":348,"../../assets/utils/checkExtension.js":357,"../../extensions/Extensions.js":424,"../../rendering/renderers/shared/texture/sources/CompressedSource.js":693,"../../rendering/renderers/shared/texture/utils/getSupportedTextureFormats.js":700,"./worker/loadKTX2onWorker.js":385}],377:[function(require,module,exports){
+arguments[4][336][0].apply(exports,arguments)
+},{"dup":336}],378:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -40451,7 +40744,7 @@ function convertRGBtoRGBA(levelBuffer) {
 exports.convertFormatIfRequired = convertFormatIfRequired;
 
 
-},{}],373:[function(require,module,exports){
+},{}],379:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -40469,7 +40762,7 @@ function createLevelBuffersFromKTX(ktxTexture) {
 exports.createLevelBuffersFromKTX = createLevelBuffersFromKTX;
 
 
-},{}],374:[function(require,module,exports){
+},{}],380:[function(require,module,exports){
 'use strict';
 
 var glFormatToGPUFormat = require('./glFormatToGPUFormat.js');
@@ -40486,7 +40779,7 @@ function getTextureFormatFromKTXTexture(ktxTexture) {
 exports.getTextureFormatFromKTXTexture = getTextureFormatFromKTXTexture;
 
 
-},{"./glFormatToGPUFormat.js":375,"./vkFormatToGPUFormat.js":378}],375:[function(require,module,exports){
+},{"./glFormatToGPUFormat.js":381,"./vkFormatToGPUFormat.js":384}],381:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -40551,7 +40844,7 @@ function glFormatToGPUFormat(glInternalFormat) {
 exports.glFormatToGPUFormat = glFormatToGPUFormat;
 
 
-},{}],376:[function(require,module,exports){
+},{}],382:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -40575,7 +40868,7 @@ function gpuFormatToKTXBasisTranscoderFormat(transcoderFormat) {
 exports.gpuFormatToKTXBasisTranscoderFormat = gpuFormatToKTXBasisTranscoderFormat;
 
 
-},{}],377:[function(require,module,exports){
+},{}],383:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -40591,7 +40884,7 @@ exports.ktxTranscoderUrls = ktxTranscoderUrls;
 exports.setKTXTranscoderPath = setKTXTranscoderPath;
 
 
-},{}],378:[function(require,module,exports){
+},{}],384:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -40615,7 +40908,7 @@ function vkFormatToGPUFormat(vkFormat) {
 exports.vkFormatToGPUFormat = vkFormatToGPUFormat;
 
 
-},{}],379:[function(require,module,exports){
+},{}],385:[function(require,module,exports){
 'use strict';
 
 var ktx_worker = require('../../../_virtual/ktx.worker.js');
@@ -40654,7 +40947,7 @@ function loadKTX2onWorker(url, supportedTextures) {
 exports.loadKTX2onWorker = loadKTX2onWorker;
 
 
-},{"../../../_virtual/ktx.worker.js":285,"../utils/setKTXTranscoderPath.js":377}],380:[function(require,module,exports){
+},{"../../../_virtual/ktx.worker.js":291,"../utils/setKTXTranscoderPath.js":383}],386:[function(require,module,exports){
 'use strict';
 
 var LoaderParser = require('../../assets/loader/parsers/LoaderParser.js');
@@ -40696,7 +40989,7 @@ const loadKTX = {
 exports.loadKTX = loadKTX;
 
 
-},{"../../assets/loader/parsers/LoaderParser.js":335,"../../assets/loader/parsers/textures/utils/createTexture.js":342,"../../assets/utils/checkExtension.js":351,"../../extensions/Extensions.js":418,"../../rendering/renderers/shared/texture/sources/CompressedSource.js":687,"../../rendering/renderers/shared/texture/utils/getSupportedTextureFormats.js":694,"./parseKTX.js":381}],381:[function(require,module,exports){
+},{"../../assets/loader/parsers/LoaderParser.js":341,"../../assets/loader/parsers/textures/utils/createTexture.js":348,"../../assets/utils/checkExtension.js":357,"../../extensions/Extensions.js":424,"../../rendering/renderers/shared/texture/sources/CompressedSource.js":693,"../../rendering/renderers/shared/texture/utils/getSupportedTextureFormats.js":700,"./parseKTX.js":387}],387:[function(require,module,exports){
 'use strict';
 
 var _const = require('../ktx2/const.js');
@@ -40830,7 +41123,7 @@ function validate(dataView) {
 exports.parseKTX = parseKTX;
 
 
-},{"../ktx2/const.js":369}],382:[function(require,module,exports){
+},{"../ktx2/const.js":375}],388:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -40892,7 +41185,7 @@ function extractExtensionsForCompressedTextureFormats(formats) {
 exports.detectCompressed = detectCompressed;
 
 
-},{"../../extensions/Extensions.js":418,"../../rendering/renderers/shared/texture/utils/getSupportedCompressedTextureFormats.js":693,"../../utils/browser/isWebGLSupported.js":887,"../../utils/browser/isWebGPUSupported.js":888,"./resolveCompressedTextureUrl.js":383}],383:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424,"../../rendering/renderers/shared/texture/utils/getSupportedCompressedTextureFormats.js":699,"../../utils/browser/isWebGLSupported.js":893,"../../utils/browser/isWebGPUSupported.js":894,"./resolveCompressedTextureUrl.js":389}],389:[function(require,module,exports){
 'use strict';
 
 var Resolver = require('../../assets/resolver/Resolver.js');
@@ -40927,7 +41220,7 @@ exports.resolveCompressedTextureUrl = resolveCompressedTextureUrl;
 exports.validFormats = validFormats;
 
 
-},{"../../assets/resolver/Resolver.js":345,"../../assets/utils/checkExtension.js":351,"../../extensions/Extensions.js":418}],384:[function(require,module,exports){
+},{"../../assets/resolver/Resolver.js":351,"../../assets/utils/checkExtension.js":357,"../../extensions/Extensions.js":424}],390:[function(require,module,exports){
 'use strict';
 
 var Bounds = require('../scene/container/bounds/Bounds.js');
@@ -40967,7 +41260,7 @@ let Culler = _Culler;
 exports.Culler = Culler;
 
 
-},{"../scene/container/bounds/Bounds.js":708,"../scene/container/bounds/getGlobalBounds.js":710}],385:[function(require,module,exports){
+},{"../scene/container/bounds/Bounds.js":714,"../scene/container/bounds/getGlobalBounds.js":716}],391:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -40996,7 +41289,7 @@ CullerPlugin.extension = {
 exports.CullerPlugin = CullerPlugin;
 
 
-},{"../extensions/Extensions.js":418,"./Culler.js":384}],386:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"./Culler.js":390}],392:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -41009,7 +41302,7 @@ const cullingMixin = {
 exports.cullingMixin = cullingMixin;
 
 
-},{}],387:[function(require,module,exports){
+},{}],393:[function(require,module,exports){
 'use strict';
 
 var Culler = require('./Culler.js');
@@ -41023,7 +41316,7 @@ exports.CullerPlugin = CullerPlugin.CullerPlugin;
 exports.cullingMixin = cullingMixin.cullingMixin;
 
 
-},{"./Culler.js":384,"./CullerPlugin.js":385,"./cullingMixin.js":386}],388:[function(require,module,exports){
+},{"./Culler.js":390,"./CullerPlugin.js":391,"./cullingMixin.js":392}],394:[function(require,module,exports){
 'use strict';
 
 var Point = require('../maths/point/Point.js');
@@ -41108,7 +41401,7 @@ class DOMContainer extends ViewContainer.ViewContainer {
 exports.DOMContainer = DOMContainer;
 
 
-},{"../maths/point/Point.js":468,"../scene/view/ViewContainer.js":875}],389:[function(require,module,exports){
+},{"../maths/point/Point.js":474,"../scene/view/ViewContainer.js":881}],395:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -41232,7 +41525,7 @@ DOMPipe.extension = {
 exports.DOMPipe = DOMPipe;
 
 
-},{"../extensions/Extensions.js":418}],390:[function(require,module,exports){
+},{"../extensions/Extensions.js":424}],396:[function(require,module,exports){
 'use strict';
 
 var DOMContainer = require('./DOMContainer.js');
@@ -41244,7 +41537,7 @@ exports.DOMContainer = DOMContainer.DOMContainer;
 exports.DOMPipe = DOMPipe.DOMPipe;
 
 
-},{"./DOMContainer.js":388,"./DOMPipe.js":389}],391:[function(require,module,exports){
+},{"./DOMContainer.js":394,"./DOMPipe.js":395}],397:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -41259,7 +41552,7 @@ exports.DOMPipe = DOMPipe.DOMPipe;
 exports.DOMContainer = DOMContainer.DOMContainer;
 
 
-},{"../extensions/Extensions.js":418,"./DOMContainer.js":388,"./DOMPipe.js":389,"./index.js":390}],392:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"./DOMContainer.js":394,"./DOMPipe.js":395,"./index.js":396}],398:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -41285,7 +41578,7 @@ const BrowserAdapter = {
 exports.BrowserAdapter = BrowserAdapter;
 
 
-},{}],393:[function(require,module,exports){
+},{}],399:[function(require,module,exports){
 'use strict';
 
 require('../accessibility/init.js');
@@ -41307,7 +41600,7 @@ require('../filters/init.js');
 "use strict";
 
 
-},{"../accessibility/init.js":290,"../app/init.js":317,"../dom/init.js":391,"../events/init.js":417,"../filters/init.js":454,"../rendering/init.js":514,"../scene/graphics/init.js":742,"../scene/mesh/init.js":792,"../scene/particle-container/init.js":800,"../scene/sprite-nine-slice/init.js":818,"../scene/sprite-tiling/init.js":821,"../scene/text-bitmap/init.js":841,"../scene/text-html/init.js":849,"../scene/text/init.js":867,"../spritesheet/init.js":878}],394:[function(require,module,exports){
+},{"../accessibility/init.js":296,"../app/init.js":323,"../dom/init.js":397,"../events/init.js":423,"../filters/init.js":460,"../rendering/init.js":520,"../scene/graphics/init.js":748,"../scene/mesh/init.js":798,"../scene/particle-container/init.js":806,"../scene/sprite-nine-slice/init.js":824,"../scene/sprite-tiling/init.js":827,"../scene/text-bitmap/init.js":847,"../scene/text-html/init.js":855,"../scene/text/init.js":873,"../spritesheet/init.js":884}],400:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -41328,7 +41621,7 @@ const browserExt = {
 exports.browserExt = browserExt;
 
 
-},{"../extensions/Extensions.js":418,"./browserAll.js":393}],395:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"./browserAll.js":399}],401:[function(require,module,exports){
 'use strict';
 
 var BrowserAdapter = require('./BrowserAdapter.js');
@@ -41340,7 +41633,7 @@ exports.BrowserAdapter = BrowserAdapter.BrowserAdapter;
 exports.browserExt = browserExt.browserExt;
 
 
-},{"./BrowserAdapter.js":392,"./browserExt.js":394}],396:[function(require,module,exports){
+},{"./BrowserAdapter.js":398,"./browserExt.js":400}],402:[function(require,module,exports){
 'use strict';
 
 var xmldom = require('@xmldom/xmldom');
@@ -41363,7 +41656,7 @@ const WebWorkerAdapter = {
 exports.WebWorkerAdapter = WebWorkerAdapter;
 
 
-},{"@xmldom/xmldom":175}],397:[function(require,module,exports){
+},{"@xmldom/xmldom":181}],403:[function(require,module,exports){
 'use strict';
 
 var WebWorkerAdapter = require('./WebWorkerAdapter.js');
@@ -41375,7 +41668,7 @@ exports.WebWorkerAdapter = WebWorkerAdapter.WebWorkerAdapter;
 exports.webworkerExt = webworkerExt.webworkerExt;
 
 
-},{"./WebWorkerAdapter.js":396,"./webworkerExt.js":399}],398:[function(require,module,exports){
+},{"./WebWorkerAdapter.js":402,"./webworkerExt.js":405}],404:[function(require,module,exports){
 'use strict';
 
 require('../app/init.js');
@@ -41394,7 +41687,7 @@ require('../filters/init.js');
 "use strict";
 
 
-},{"../app/init.js":317,"../filters/init.js":454,"../rendering/init.js":514,"../scene/graphics/init.js":742,"../scene/mesh/init.js":792,"../scene/particle-container/init.js":800,"../scene/sprite-nine-slice/init.js":818,"../scene/sprite-tiling/init.js":821,"../scene/text-bitmap/init.js":841,"../scene/text-html/init.js":849,"../scene/text/init.js":867,"../spritesheet/init.js":878}],399:[function(require,module,exports){
+},{"../app/init.js":323,"../filters/init.js":460,"../rendering/init.js":520,"../scene/graphics/init.js":748,"../scene/mesh/init.js":798,"../scene/particle-container/init.js":806,"../scene/sprite-nine-slice/init.js":824,"../scene/sprite-tiling/init.js":827,"../scene/text-bitmap/init.js":847,"../scene/text-html/init.js":855,"../scene/text/init.js":873,"../spritesheet/init.js":884}],405:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -41415,7 +41708,7 @@ const webworkerExt = {
 exports.webworkerExt = webworkerExt;
 
 
-},{"../extensions/Extensions.js":418,"./webworkerAll.js":398}],400:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"./webworkerAll.js":404}],406:[function(require,module,exports){
 'use strict';
 
 var BrowserAdapter = require('../environment-browser/BrowserAdapter.js');
@@ -41442,7 +41735,7 @@ const DOMAdapter = {
 exports.DOMAdapter = DOMAdapter;
 
 
-},{"../environment-browser/BrowserAdapter.js":392}],401:[function(require,module,exports){
+},{"../environment-browser/BrowserAdapter.js":398}],407:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -41469,19 +41762,19 @@ exports.autoDetectEnvironment = autoDetectEnvironment;
 exports.loadEnvironmentExtensions = loadEnvironmentExtensions;
 
 
-},{"../extensions/Extensions.js":418}],402:[function(require,module,exports){
+},{"../extensions/Extensions.js":424}],408:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],403:[function(require,module,exports){
+},{}],409:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],404:[function(require,module,exports){
+},{}],410:[function(require,module,exports){
 'use strict';
 
 var adapter = require('./adapter.js');
@@ -41496,7 +41789,7 @@ exports.autoDetectEnvironment = autoDetectEnvironment.autoDetectEnvironment;
 exports.loadEnvironmentExtensions = autoDetectEnvironment.loadEnvironmentExtensions;
 
 
-},{"./adapter.js":400,"./autoDetectEnvironment.js":401,"./canvas/ICanvas.js":402,"./canvas/ICanvasRenderingContext2D.js":403}],405:[function(require,module,exports){
+},{"./adapter.js":406,"./autoDetectEnvironment.js":407,"./canvas/ICanvas.js":408,"./canvas/ICanvasRenderingContext2D.js":409}],411:[function(require,module,exports){
 'use strict';
 
 var EventEmitter = require('eventemitter3');
@@ -42454,13 +42747,13 @@ class EventBoundary {
 exports.EventBoundary = EventBoundary;
 
 
-},{"../maths/point/Point.js":468,"../utils/logging/warn.js":902,"./EventTicker.js":408,"./FederatedMouseEvent.js":412,"./FederatedPointerEvent.js":413,"./FederatedWheelEvent.js":414,"eventemitter3":206}],406:[function(require,module,exports){
+},{"../maths/point/Point.js":474,"../utils/logging/warn.js":908,"./EventTicker.js":414,"./FederatedMouseEvent.js":418,"./FederatedPointerEvent.js":419,"./FederatedWheelEvent.js":420,"eventemitter3":212}],412:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],407:[function(require,module,exports){
+},{}],413:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -42976,7 +43269,7 @@ let EventSystem = _EventSystem;
 exports.EventSystem = EventSystem;
 
 
-},{"../extensions/Extensions.js":418,"./EventBoundary.js":405,"./EventTicker.js":408,"./FederatedPointerEvent.js":413,"./FederatedWheelEvent.js":414}],408:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"./EventBoundary.js":411,"./EventTicker.js":414,"./FederatedPointerEvent.js":419,"./FederatedWheelEvent.js":420}],414:[function(require,module,exports){
 'use strict';
 
 var _const = require('../ticker/const.js');
@@ -43073,7 +43366,7 @@ const EventsTicker = new EventsTickerClass();
 exports.EventsTicker = EventsTicker;
 
 
-},{"../ticker/Ticker.js":880,"../ticker/const.js":882}],409:[function(require,module,exports){
+},{"../ticker/Ticker.js":886,"../ticker/const.js":888}],415:[function(require,module,exports){
 'use strict';
 
 var Point = require('../maths/point/Point.js');
@@ -43200,13 +43493,13 @@ class FederatedEvent {
 exports.FederatedEvent = FederatedEvent;
 
 
-},{"../maths/point/Point.js":468}],410:[function(require,module,exports){
+},{"../maths/point/Point.js":474}],416:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],411:[function(require,module,exports){
+},{}],417:[function(require,module,exports){
 'use strict';
 
 var EventSystem = require('./EventSystem.js');
@@ -43723,7 +44016,7 @@ const FederatedContainer = {
 exports.FederatedContainer = FederatedContainer;
 
 
-},{"./EventSystem.js":407,"./FederatedEvent.js":409}],412:[function(require,module,exports){
+},{"./EventSystem.js":413,"./FederatedEvent.js":415}],418:[function(require,module,exports){
 'use strict';
 
 var Point = require('../maths/point/Point.js');
@@ -43856,7 +44149,7 @@ class FederatedMouseEvent extends FederatedEvent.FederatedEvent {
 exports.FederatedMouseEvent = FederatedMouseEvent;
 
 
-},{"../maths/point/Point.js":468,"./FederatedEvent.js":409}],413:[function(require,module,exports){
+},{"../maths/point/Point.js":474,"./FederatedEvent.js":415}],419:[function(require,module,exports){
 'use strict';
 
 var FederatedMouseEvent = require('./FederatedMouseEvent.js');
@@ -43899,7 +44192,7 @@ class FederatedPointerEvent extends FederatedMouseEvent.FederatedMouseEvent {
 exports.FederatedPointerEvent = FederatedPointerEvent;
 
 
-},{"./FederatedMouseEvent.js":412}],414:[function(require,module,exports){
+},{"./FederatedMouseEvent.js":418}],420:[function(require,module,exports){
 'use strict';
 
 var FederatedMouseEvent = require('./FederatedMouseEvent.js');
@@ -43926,13 +44219,13 @@ FederatedWheelEvent.DOM_DELTA_PAGE = 2;
 exports.FederatedWheelEvent = FederatedWheelEvent;
 
 
-},{"./FederatedMouseEvent.js":412}],415:[function(require,module,exports){
+},{"./FederatedMouseEvent.js":418}],421:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],416:[function(require,module,exports){
+},{}],422:[function(require,module,exports){
 'use strict';
 
 require('./deprecatedTypes.js');
@@ -43959,7 +44252,7 @@ exports.FederatedPointerEvent = FederatedPointerEvent.FederatedPointerEvent;
 exports.FederatedWheelEvent = FederatedWheelEvent.FederatedWheelEvent;
 
 
-},{"./EventBoundary.js":405,"./EventBoundaryTypes.js":406,"./EventSystem.js":407,"./EventTicker.js":408,"./FederatedEvent.js":409,"./FederatedEventMap.js":410,"./FederatedEventTarget.js":411,"./FederatedMouseEvent.js":412,"./FederatedPointerEvent.js":413,"./FederatedWheelEvent.js":414,"./deprecatedTypes.js":415}],417:[function(require,module,exports){
+},{"./EventBoundary.js":411,"./EventBoundaryTypes.js":412,"./EventSystem.js":413,"./EventTicker.js":414,"./FederatedEvent.js":415,"./FederatedEventMap.js":416,"./FederatedEventTarget.js":417,"./FederatedMouseEvent.js":418,"./FederatedPointerEvent.js":419,"./FederatedWheelEvent.js":420,"./deprecatedTypes.js":421}],423:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -43972,7 +44265,7 @@ Extensions.extensions.add(EventSystem.EventSystem);
 Extensions.extensions.mixin(Container.Container, FederatedEventTarget.FederatedContainer);
 
 
-},{"../extensions/Extensions.js":418,"../scene/container/Container.js":701,"./EventSystem.js":407,"./FederatedEventTarget.js":411}],418:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../scene/container/Container.js":707,"./EventSystem.js":413,"./FederatedEventTarget.js":417}],424:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -44167,7 +44460,7 @@ exports.extensions = extensions;
 exports.normalizeExtensionPriority = normalizeExtensionPriority;
 
 
-},{}],419:[function(require,module,exports){
+},{}],425:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('./Extensions.js');
@@ -44179,7 +44472,7 @@ exports.extensions = Extensions.extensions;
 exports.normalizeExtensionPriority = Extensions.normalizeExtensionPriority;
 
 
-},{"./Extensions.js":418}],420:[function(require,module,exports){
+},{"./Extensions.js":424}],426:[function(require,module,exports){
 'use strict';
 
 var GlProgram = require('../rendering/renderers/gl/shader/GlProgram.js');
@@ -44275,7 +44568,7 @@ let Filter = _Filter;
 exports.Filter = Filter;
 
 
-},{"../rendering/renderers/gl/shader/GlProgram.js":545,"../rendering/renderers/gpu/shader/GpuProgram.js":609,"../rendering/renderers/shared/shader/Shader.js":655,"../rendering/renderers/shared/state/State.js":666}],421:[function(require,module,exports){
+},{"../rendering/renderers/gl/shader/GlProgram.js":551,"../rendering/renderers/gpu/shader/GpuProgram.js":615,"../rendering/renderers/shared/shader/Shader.js":661,"../rendering/renderers/shared/state/State.js":672}],427:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -44298,7 +44591,7 @@ class FilterEffect {
 exports.FilterEffect = FilterEffect;
 
 
-},{}],422:[function(require,module,exports){
+},{}],428:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -44350,7 +44643,7 @@ FilterPipe.extension = {
 exports.FilterPipe = FilterPipe;
 
 
-},{"../extensions/Extensions.js":418}],423:[function(require,module,exports){
+},{"../extensions/Extensions.js":424}],429:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -44713,7 +45006,7 @@ FilterSystem.extension = {
 exports.FilterSystem = FilterSystem;
 
 
-},{"../extensions/Extensions.js":418,"../maths/matrix/Matrix.js":461,"../maths/point/Point.js":468,"../rendering/renderers/gpu/shader/BindGroup.js":607,"../rendering/renderers/shared/geometry/Geometry.js":640,"../rendering/renderers/shared/shader/UniformGroup.js":658,"../rendering/renderers/shared/texture/Texture.js":678,"../rendering/renderers/shared/texture/TexturePool.js":681,"../rendering/renderers/types.js":700,"../scene/container/bounds/Bounds.js":708,"../scene/container/bounds/getRenderableBounds.js":712,"../utils/logging/warn.js":902}],424:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"../maths/matrix/Matrix.js":467,"../maths/point/Point.js":474,"../rendering/renderers/gpu/shader/BindGroup.js":613,"../rendering/renderers/shared/geometry/Geometry.js":646,"../rendering/renderers/shared/shader/UniformGroup.js":664,"../rendering/renderers/shared/texture/Texture.js":684,"../rendering/renderers/shared/texture/TexturePool.js":687,"../rendering/renderers/types.js":706,"../scene/container/bounds/Bounds.js":714,"../scene/container/bounds/getRenderableBounds.js":718,"../utils/logging/warn.js":908}],430:[function(require,module,exports){
 'use strict';
 
 var GlProgram = require('../../rendering/renderers/gl/shader/GlProgram.js');
@@ -44771,7 +45064,7 @@ function compileBlendModeShader(options) {
 exports.BlendModeFilter = BlendModeFilter;
 
 
-},{"../../rendering/renderers/gl/shader/GlProgram.js":545,"../../rendering/renderers/gpu/shader/GpuProgram.js":609,"../../rendering/renderers/shared/shader/UniformGroup.js":658,"../../rendering/renderers/shared/texture/Texture.js":678,"../Filter.js":420,"./blend-template.frag.js":425,"./blend-template.vert.js":426,"./blend-template.wgsl.js":427}],425:[function(require,module,exports){
+},{"../../rendering/renderers/gl/shader/GlProgram.js":551,"../../rendering/renderers/gpu/shader/GpuProgram.js":615,"../../rendering/renderers/shared/shader/UniformGroup.js":664,"../../rendering/renderers/shared/texture/Texture.js":684,"../Filter.js":426,"./blend-template.frag.js":431,"./blend-template.vert.js":432,"./blend-template.wgsl.js":433}],431:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -44781,7 +45074,7 @@ var blendTemplateFrag = "\nin vec2 vTextureCoord;\nin vec4 vColor;\n\nout vec4 f
 exports.default = blendTemplateFrag;
 
 
-},{}],426:[function(require,module,exports){
+},{}],432:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -44791,7 +45084,7 @@ var blendTemplateVert = "in vec2 aPosition;\nout vec2 vTextureCoord;\nout vec2 b
 exports.default = blendTemplateVert;
 
 
-},{}],427:[function(require,module,exports){
+},{}],433:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -44801,7 +45094,7 @@ var blendTemplate = "\nstruct GlobalFilterUniforms {\n  uInputSize:vec4<f32>,\n 
 exports.default = blendTemplate;
 
 
-},{}],428:[function(require,module,exports){
+},{}],434:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -44889,7 +45182,7 @@ const hslgl = `
 exports.hslgl = hslgl;
 
 
-},{}],429:[function(require,module,exports){
+},{}],435:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -44995,7 +45288,7 @@ const hslgpu = `
 exports.hslgpu = hslgpu;
 
 
-},{}],430:[function(require,module,exports){
+},{}],436:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -45005,7 +45298,7 @@ var hsl = "fn getLuminosity(c: vec3<f32>) -> f32 {\n  return 0.3 * c.r + 0.59 * 
 exports.default = hsl;
 
 
-},{}],431:[function(require,module,exports){
+},{}],437:[function(require,module,exports){
 'use strict';
 
 var GlProgram = require('../../../rendering/renderers/gl/shader/GlProgram.js');
@@ -45069,7 +45362,7 @@ let AlphaFilter = _AlphaFilter;
 exports.AlphaFilter = AlphaFilter;
 
 
-},{"../../../rendering/renderers/gl/shader/GlProgram.js":545,"../../../rendering/renderers/gpu/shader/GpuProgram.js":609,"../../../rendering/renderers/shared/shader/UniformGroup.js":658,"../../Filter.js":420,"../defaultFilter.vert.js":445,"./alpha.frag.js":432,"./alpha.wgsl.js":433}],432:[function(require,module,exports){
+},{"../../../rendering/renderers/gl/shader/GlProgram.js":551,"../../../rendering/renderers/gpu/shader/GpuProgram.js":615,"../../../rendering/renderers/shared/shader/UniformGroup.js":664,"../../Filter.js":426,"../defaultFilter.vert.js":451,"./alpha.frag.js":438,"./alpha.wgsl.js":439}],438:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -45079,7 +45372,7 @@ var fragment = "\nin vec2 vTextureCoord;\n\nout vec4 finalColor;\n\nuniform floa
 exports.default = fragment;
 
 
-},{}],433:[function(require,module,exports){
+},{}],439:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -45089,7 +45382,7 @@ var source = "struct GlobalFilterUniforms {\n  uInputSize:vec4<f32>,\n  uInputPi
 exports.default = source;
 
 
-},{}],434:[function(require,module,exports){
+},{}],440:[function(require,module,exports){
 'use strict';
 
 var TexturePool = require('../../../rendering/renderers/shared/texture/TexturePool.js');
@@ -45272,7 +45565,7 @@ BlurFilter.defaultOptions = {
 exports.BlurFilter = BlurFilter;
 
 
-},{"../../../rendering/renderers/shared/texture/TexturePool.js":681,"../../../rendering/renderers/types.js":700,"../../../utils/logging/deprecation.js":899,"../../Filter.js":420,"./BlurFilterPass.js":435}],435:[function(require,module,exports){
+},{"../../../rendering/renderers/shared/texture/TexturePool.js":687,"../../../rendering/renderers/types.js":706,"../../../utils/logging/deprecation.js":905,"../../Filter.js":426,"./BlurFilterPass.js":441}],441:[function(require,module,exports){
 'use strict';
 
 var TexturePool = require('../../../rendering/renderers/shared/texture/TexturePool.js');
@@ -45376,7 +45669,7 @@ let BlurFilterPass = _BlurFilterPass;
 exports.BlurFilterPass = BlurFilterPass;
 
 
-},{"../../../rendering/renderers/shared/texture/TexturePool.js":681,"../../../rendering/renderers/types.js":700,"../../Filter.js":420,"./gl/generateBlurGlProgram.js":438,"./gpu/generateBlurProgram.js":441}],436:[function(require,module,exports){
+},{"../../../rendering/renderers/shared/texture/TexturePool.js":687,"../../../rendering/renderers/types.js":706,"../../Filter.js":426,"./gl/generateBlurGlProgram.js":444,"./gpu/generateBlurProgram.js":447}],442:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -45392,7 +45685,7 @@ const GAUSSIAN_VALUES = {
 exports.GAUSSIAN_VALUES = GAUSSIAN_VALUES;
 
 
-},{}],437:[function(require,module,exports){
+},{}],443:[function(require,module,exports){
 'use strict';
 
 var _const = require('../const.js');
@@ -45433,7 +45726,7 @@ function generateBlurFragSource(kernelSize) {
 exports.generateBlurFragSource = generateBlurFragSource;
 
 
-},{"../const.js":436}],438:[function(require,module,exports){
+},{"../const.js":442}],444:[function(require,module,exports){
 'use strict';
 
 var GlProgram = require('../../../../rendering/renderers/gl/shader/GlProgram.js');
@@ -45454,7 +45747,7 @@ function generateBlurGlProgram(horizontal, kernelSize) {
 exports.generateBlurGlProgram = generateBlurGlProgram;
 
 
-},{"../../../../rendering/renderers/gl/shader/GlProgram.js":545,"./generateBlurFragSource.js":437,"./generateBlurVertSource.js":439}],439:[function(require,module,exports){
+},{"../../../../rendering/renderers/gl/shader/GlProgram.js":551,"./generateBlurFragSource.js":443,"./generateBlurVertSource.js":445}],445:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -45518,7 +45811,7 @@ function generateBlurVertSource(kernelSize, x) {
 exports.generateBlurVertSource = generateBlurVertSource;
 
 
-},{}],440:[function(require,module,exports){
+},{}],446:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -45528,7 +45821,7 @@ var source = "\n\nstruct GlobalFilterUniforms {\n  uInputSize:vec4<f32>,\n  uInp
 exports.default = source;
 
 
-},{}],441:[function(require,module,exports){
+},{}],447:[function(require,module,exports){
 'use strict';
 
 var GpuProgram = require('../../../../rendering/renderers/gpu/shader/GpuProgram.js');
@@ -45572,7 +45865,7 @@ function generateBlurProgram(horizontal, kernelSize) {
 exports.generateBlurProgram = generateBlurProgram;
 
 
-},{"../../../../rendering/renderers/gpu/shader/GpuProgram.js":609,"../const.js":436,"./blur-template.wgsl.js":440}],442:[function(require,module,exports){
+},{"../../../../rendering/renderers/gpu/shader/GpuProgram.js":615,"../const.js":442,"./blur-template.wgsl.js":446}],448:[function(require,module,exports){
 'use strict';
 
 var Color = require('../../../color/Color.js');
@@ -46394,7 +46687,7 @@ class ColorMatrixFilter extends Filter.Filter {
 exports.ColorMatrixFilter = ColorMatrixFilter;
 
 
-},{"../../../color/Color.js":356,"../../../rendering/renderers/gl/shader/GlProgram.js":545,"../../../rendering/renderers/gpu/shader/GpuProgram.js":609,"../../../rendering/renderers/shared/shader/UniformGroup.js":658,"../../Filter.js":420,"../defaultFilter.vert.js":445,"./colorMatrixFilter.frag.js":443,"./colorMatrixFilter.wgsl.js":444}],443:[function(require,module,exports){
+},{"../../../color/Color.js":362,"../../../rendering/renderers/gl/shader/GlProgram.js":551,"../../../rendering/renderers/gpu/shader/GpuProgram.js":615,"../../../rendering/renderers/shared/shader/UniformGroup.js":664,"../../Filter.js":426,"../defaultFilter.vert.js":451,"./colorMatrixFilter.frag.js":449,"./colorMatrixFilter.wgsl.js":450}],449:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -46404,7 +46697,7 @@ var fragment = "\nin vec2 vTextureCoord;\nin vec4 vColor;\n\nout vec4 finalColor
 exports.default = fragment;
 
 
-},{}],444:[function(require,module,exports){
+},{}],450:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -46414,7 +46707,7 @@ var source = "struct GlobalFilterUniforms {\n  uInputSize:vec4<f32>,\n  uInputPi
 exports.default = source;
 
 
-},{}],445:[function(require,module,exports){
+},{}],451:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -46424,7 +46717,7 @@ var vertex = "in vec2 aPosition;\nout vec2 vTextureCoord;\n\nuniform vec4 uInput
 exports.default = vertex;
 
 
-},{}],446:[function(require,module,exports){
+},{}],452:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('../../../maths/matrix/Matrix.js');
@@ -46522,7 +46815,7 @@ class DisplacementFilter extends Filter.Filter {
 exports.DisplacementFilter = DisplacementFilter;
 
 
-},{"../../../maths/matrix/Matrix.js":461,"../../../maths/point/Point.js":468,"../../../rendering/renderers/gl/shader/GlProgram.js":545,"../../../rendering/renderers/gpu/shader/GpuProgram.js":609,"../../../rendering/renderers/shared/shader/UniformGroup.js":658,"../../../scene/sprite/Sprite.js":829,"../../../utils/logging/deprecation.js":899,"../../Filter.js":420,"./displacement.frag.js":447,"./displacement.vert.js":448,"./displacement.wgsl.js":449}],447:[function(require,module,exports){
+},{"../../../maths/matrix/Matrix.js":467,"../../../maths/point/Point.js":474,"../../../rendering/renderers/gl/shader/GlProgram.js":551,"../../../rendering/renderers/gpu/shader/GpuProgram.js":615,"../../../rendering/renderers/shared/shader/UniformGroup.js":664,"../../../scene/sprite/Sprite.js":835,"../../../utils/logging/deprecation.js":905,"../../Filter.js":426,"./displacement.frag.js":453,"./displacement.vert.js":454,"./displacement.wgsl.js":455}],453:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -46532,7 +46825,7 @@ var fragment = "\nin vec2 vTextureCoord;\nin vec2 vFilterUv;\n\nout vec4 finalCo
 exports.default = fragment;
 
 
-},{}],448:[function(require,module,exports){
+},{}],454:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -46542,7 +46835,7 @@ var vertex = "in vec2 aPosition;\nout vec2 vTextureCoord;\nout vec2 vFilterUv;\n
 exports.default = vertex;
 
 
-},{}],449:[function(require,module,exports){
+},{}],455:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -46552,7 +46845,7 @@ var source = "\nstruct GlobalFilterUniforms {\n  uInputSize:vec4<f32>,\n  uInput
 exports.default = source;
 
 
-},{}],450:[function(require,module,exports){
+},{}],456:[function(require,module,exports){
 'use strict';
 
 var GlProgram = require('../../../rendering/renderers/gl/shader/GlProgram.js');
@@ -46626,7 +46919,7 @@ let NoiseFilter = _NoiseFilter;
 exports.NoiseFilter = NoiseFilter;
 
 
-},{"../../../rendering/renderers/gl/shader/GlProgram.js":545,"../../../rendering/renderers/gpu/shader/GpuProgram.js":609,"../../../rendering/renderers/shared/shader/UniformGroup.js":658,"../../Filter.js":420,"../defaultFilter.vert.js":445,"./noise.frag.js":451,"./noise.wgsl.js":452}],451:[function(require,module,exports){
+},{"../../../rendering/renderers/gl/shader/GlProgram.js":551,"../../../rendering/renderers/gpu/shader/GpuProgram.js":615,"../../../rendering/renderers/shared/shader/UniformGroup.js":664,"../../Filter.js":426,"../defaultFilter.vert.js":451,"./noise.frag.js":457,"./noise.wgsl.js":458}],457:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -46636,7 +46929,7 @@ var fragment = "\nin vec2 vTextureCoord;\nin vec4 vColor;\n\nout vec4 finalColor
 exports.default = fragment;
 
 
-},{}],452:[function(require,module,exports){
+},{}],458:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -46646,7 +46939,7 @@ var source = "\n\nstruct GlobalFilterUniforms {\n  uInputSize:vec4<f32>,\n  uInp
 exports.default = source;
 
 
-},{}],453:[function(require,module,exports){
+},{}],459:[function(require,module,exports){
 'use strict';
 
 var BlendModeFilter = require('./blend-modes/BlendModeFilter.js');
@@ -46728,7 +47021,7 @@ exports.maskVert = mask$1.default;
 exports.maskWgsl = mask$2.default;
 
 
-},{"./Filter.js":420,"./FilterEffect.js":421,"./FilterPipe.js":422,"./FilterSystem.js":423,"./blend-modes/BlendModeFilter.js":424,"./blend-modes/blend-template.frag.js":425,"./blend-modes/blend-template.vert.js":426,"./blend-modes/blend-template.wgsl.js":427,"./blend-modes/hls/GLhls.js":428,"./blend-modes/hls/GPUhls.js":429,"./blend-modes/hsl.wgsl.js":430,"./defaults/alpha/AlphaFilter.js":431,"./defaults/alpha/alpha.frag.js":432,"./defaults/alpha/alpha.wgsl.js":433,"./defaults/blur/BlurFilter.js":434,"./defaults/blur/BlurFilterPass.js":435,"./defaults/blur/const.js":436,"./defaults/blur/gl/generateBlurFragSource.js":437,"./defaults/blur/gl/generateBlurGlProgram.js":438,"./defaults/blur/gl/generateBlurVertSource.js":439,"./defaults/blur/gpu/blur-template.wgsl.js":440,"./defaults/blur/gpu/generateBlurProgram.js":441,"./defaults/color-matrix/ColorMatrixFilter.js":442,"./defaults/color-matrix/colorMatrixFilter.frag.js":443,"./defaults/color-matrix/colorMatrixFilter.wgsl.js":444,"./defaults/defaultFilter.vert.js":445,"./defaults/displacement/DisplacementFilter.js":446,"./defaults/displacement/displacement.frag.js":447,"./defaults/displacement/displacement.vert.js":448,"./defaults/displacement/displacement.wgsl.js":449,"./defaults/noise/NoiseFilter.js":450,"./defaults/noise/noise.frag.js":451,"./defaults/noise/noise.wgsl.js":452,"./mask/MaskFilter.js":455,"./mask/mask.frag.js":456,"./mask/mask.vert.js":457,"./mask/mask.wgsl.js":458}],454:[function(require,module,exports){
+},{"./Filter.js":426,"./FilterEffect.js":427,"./FilterPipe.js":428,"./FilterSystem.js":429,"./blend-modes/BlendModeFilter.js":430,"./blend-modes/blend-template.frag.js":431,"./blend-modes/blend-template.vert.js":432,"./blend-modes/blend-template.wgsl.js":433,"./blend-modes/hls/GLhls.js":434,"./blend-modes/hls/GPUhls.js":435,"./blend-modes/hsl.wgsl.js":436,"./defaults/alpha/AlphaFilter.js":437,"./defaults/alpha/alpha.frag.js":438,"./defaults/alpha/alpha.wgsl.js":439,"./defaults/blur/BlurFilter.js":440,"./defaults/blur/BlurFilterPass.js":441,"./defaults/blur/const.js":442,"./defaults/blur/gl/generateBlurFragSource.js":443,"./defaults/blur/gl/generateBlurGlProgram.js":444,"./defaults/blur/gl/generateBlurVertSource.js":445,"./defaults/blur/gpu/blur-template.wgsl.js":446,"./defaults/blur/gpu/generateBlurProgram.js":447,"./defaults/color-matrix/ColorMatrixFilter.js":448,"./defaults/color-matrix/colorMatrixFilter.frag.js":449,"./defaults/color-matrix/colorMatrixFilter.wgsl.js":450,"./defaults/defaultFilter.vert.js":451,"./defaults/displacement/DisplacementFilter.js":452,"./defaults/displacement/displacement.frag.js":453,"./defaults/displacement/displacement.vert.js":454,"./defaults/displacement/displacement.wgsl.js":455,"./defaults/noise/NoiseFilter.js":456,"./defaults/noise/noise.frag.js":457,"./defaults/noise/noise.wgsl.js":458,"./mask/MaskFilter.js":461,"./mask/mask.frag.js":462,"./mask/mask.vert.js":463,"./mask/mask.wgsl.js":464}],460:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -46740,7 +47033,7 @@ Extensions.extensions.add(FilterSystem.FilterSystem);
 Extensions.extensions.add(FilterPipe.FilterPipe);
 
 
-},{"../extensions/Extensions.js":418,"./FilterPipe.js":422,"./FilterSystem.js":423}],455:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"./FilterPipe.js":428,"./FilterSystem.js":429}],461:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('../../maths/matrix/Matrix.js');
@@ -46811,7 +47104,7 @@ class MaskFilter extends Filter.Filter {
 exports.MaskFilter = MaskFilter;
 
 
-},{"../../maths/matrix/Matrix.js":461,"../../rendering/renderers/gl/shader/GlProgram.js":545,"../../rendering/renderers/gpu/shader/GpuProgram.js":609,"../../rendering/renderers/shared/shader/UniformGroup.js":658,"../../rendering/renderers/shared/texture/TextureMatrix.js":680,"../Filter.js":420,"./mask.frag.js":456,"./mask.vert.js":457,"./mask.wgsl.js":458}],456:[function(require,module,exports){
+},{"../../maths/matrix/Matrix.js":467,"../../rendering/renderers/gl/shader/GlProgram.js":551,"../../rendering/renderers/gpu/shader/GpuProgram.js":615,"../../rendering/renderers/shared/shader/UniformGroup.js":664,"../../rendering/renderers/shared/texture/TextureMatrix.js":686,"../Filter.js":426,"./mask.frag.js":462,"./mask.vert.js":463,"./mask.wgsl.js":464}],462:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -46821,7 +47114,7 @@ var fragment = "in vec2 vMaskCoord;\nin vec2 vTextureCoord;\n\nuniform sampler2D
 exports.default = fragment;
 
 
-},{}],457:[function(require,module,exports){
+},{}],463:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -46831,7 +47124,7 @@ var vertex = "in vec2 aPosition;\n\nout vec2 vTextureCoord;\nout vec2 vMaskCoord
 exports.default = vertex;
 
 
-},{}],458:[function(require,module,exports){
+},{}],464:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -46841,7 +47134,7 @@ var source = "struct GlobalFilterUniforms {\n  uInputSize:vec4<f32>,\n  uInputPi
 exports.default = source;
 
 
-},{}],459:[function(require,module,exports){
+},{}],465:[function(require,module,exports){
 'use strict';
 
 var browserExt = require('./environment-browser/browserExt.js');
@@ -48081,7 +48374,7 @@ exports.sayHello = sayHello.sayHello;
 exports.earcut = earcut;
 
 
-},{"./accessibility/AccessibilitySystem.js":287,"./accessibility/accessibilityTarget.js":288,"./accessibility/index.js":289,"./advanced-blend-modes/ColorBlend.js":291,"./advanced-blend-modes/ColorBurnBlend.js":292,"./advanced-blend-modes/ColorDodgeBlend.js":293,"./advanced-blend-modes/DarkenBlend.js":294,"./advanced-blend-modes/DifferenceBlend.js":295,"./advanced-blend-modes/DivideBlend.js":296,"./advanced-blend-modes/ExclusionBlend.js":297,"./advanced-blend-modes/HardLightBlend.js":298,"./advanced-blend-modes/HardMixBlend.js":299,"./advanced-blend-modes/LightenBlend.js":300,"./advanced-blend-modes/LinearBurnBlend.js":301,"./advanced-blend-modes/LinearDodgeBlend.js":302,"./advanced-blend-modes/LinearLightBlend.js":303,"./advanced-blend-modes/LuminosityBlend.js":304,"./advanced-blend-modes/NegationBlend.js":305,"./advanced-blend-modes/OverlayBlend.js":306,"./advanced-blend-modes/PinLightBlend.js":307,"./advanced-blend-modes/SaturationBlend.js":308,"./advanced-blend-modes/SoftLightBlend.js":309,"./advanced-blend-modes/SubtractBlend.js":310,"./advanced-blend-modes/VividLightBlend.js":311,"./advanced-blend-modes/index.js":312,"./app/Application.js":313,"./app/ResizePlugin.js":314,"./app/TickerPlugin.js":315,"./app/index.js":316,"./assets/Assets.js":319,"./assets/BackgroundLoader.js":320,"./assets/cache/Cache.js":321,"./assets/cache/parsers/cacheTextureArray.js":323,"./assets/detections/parsers/detectAvif.js":324,"./assets/detections/parsers/detectDefaults.js":325,"./assets/detections/parsers/detectMp4.js":326,"./assets/detections/parsers/detectOgv.js":327,"./assets/detections/parsers/detectWebm.js":328,"./assets/detections/parsers/detectWebp.js":329,"./assets/detections/utils/testImageFormat.js":331,"./assets/detections/utils/testVideoFormat.js":332,"./assets/index.js":333,"./assets/loader/Loader.js":334,"./assets/loader/parsers/LoaderParser.js":335,"./assets/loader/parsers/loadJson.js":336,"./assets/loader/parsers/loadTxt.js":337,"./assets/loader/parsers/loadWebFont.js":338,"./assets/loader/parsers/textures/loadSVG.js":339,"./assets/loader/parsers/textures/loadTextures.js":340,"./assets/loader/parsers/textures/loadVideoTextures.js":341,"./assets/loader/parsers/textures/utils/createTexture.js":342,"./assets/loader/workers/WorkerManager.js":344,"./assets/resolver/Resolver.js":345,"./assets/resolver/parsers/resolveJsonUrl.js":346,"./assets/resolver/parsers/resolveTextureUrl.js":347,"./assets/utils/checkDataUrl.js":350,"./assets/utils/checkExtension.js":351,"./assets/utils/convertToList.js":352,"./assets/utils/copySearchParams.js":353,"./assets/utils/createStringVariations.js":354,"./assets/utils/isSingleItem.js":355,"./color/Color.js":356,"./color/index.js":357,"./compressed-textures/basis/detectBasis.js":358,"./compressed-textures/basis/loadBasis.js":359,"./compressed-textures/basis/utils/createLevelBuffers.js":361,"./compressed-textures/basis/utils/gpuFormatToBasisTranscoderFormat.js":362,"./compressed-textures/basis/utils/setBasisTranscoderPath.js":363,"./compressed-textures/basis/worker/loadBasisOnWorker.js":364,"./compressed-textures/dds/const.js":365,"./compressed-textures/dds/loadDDS.js":366,"./compressed-textures/dds/parseDDS.js":367,"./compressed-textures/index.js":368,"./compressed-textures/ktx/loadKTX.js":380,"./compressed-textures/ktx/parseKTX.js":381,"./compressed-textures/ktx2/const.js":369,"./compressed-textures/ktx2/loadKTX2.js":370,"./compressed-textures/ktx2/utils/convertFormatIfRequired.js":372,"./compressed-textures/ktx2/utils/createLevelBuffersFromKTX.js":373,"./compressed-textures/ktx2/utils/getTextureFormatFromKTXTexture.js":374,"./compressed-textures/ktx2/utils/glFormatToGPUFormat.js":375,"./compressed-textures/ktx2/utils/gpuFormatToKTXBasisTranscoderFormat.js":376,"./compressed-textures/ktx2/utils/setKTXTranscoderPath.js":377,"./compressed-textures/ktx2/utils/vkFormatToGPUFormat.js":378,"./compressed-textures/ktx2/worker/loadKTX2onWorker.js":379,"./compressed-textures/shared/detectCompressed.js":382,"./compressed-textures/shared/resolveCompressedTextureUrl.js":383,"./culling/Culler.js":384,"./culling/CullerPlugin.js":385,"./culling/cullingMixin.js":386,"./culling/index.js":387,"./dom/DOMContainer.js":388,"./dom/DOMPipe.js":389,"./dom/index.js":390,"./environment-browser/BrowserAdapter.js":392,"./environment-browser/browserExt.js":394,"./environment-browser/index.js":395,"./environment-webworker/WebWorkerAdapter.js":396,"./environment-webworker/index.js":397,"./environment-webworker/webworkerExt.js":399,"./environment/adapter.js":400,"./environment/autoDetectEnvironment.js":401,"./environment/index.js":404,"./events/EventBoundary.js":405,"./events/EventSystem.js":407,"./events/EventTicker.js":408,"./events/FederatedEvent.js":409,"./events/FederatedEventTarget.js":411,"./events/FederatedMouseEvent.js":412,"./events/FederatedPointerEvent.js":413,"./events/FederatedWheelEvent.js":414,"./events/index.js":416,"./extensions/Extensions.js":418,"./extensions/index.js":419,"./filters/Filter.js":420,"./filters/FilterEffect.js":421,"./filters/FilterPipe.js":422,"./filters/FilterSystem.js":423,"./filters/blend-modes/BlendModeFilter.js":424,"./filters/blend-modes/blend-template.frag.js":425,"./filters/blend-modes/blend-template.vert.js":426,"./filters/blend-modes/blend-template.wgsl.js":427,"./filters/blend-modes/hls/GLhls.js":428,"./filters/blend-modes/hls/GPUhls.js":429,"./filters/blend-modes/hsl.wgsl.js":430,"./filters/defaults/alpha/AlphaFilter.js":431,"./filters/defaults/alpha/alpha.frag.js":432,"./filters/defaults/alpha/alpha.wgsl.js":433,"./filters/defaults/blur/BlurFilter.js":434,"./filters/defaults/blur/BlurFilterPass.js":435,"./filters/defaults/blur/const.js":436,"./filters/defaults/blur/gl/generateBlurFragSource.js":437,"./filters/defaults/blur/gl/generateBlurGlProgram.js":438,"./filters/defaults/blur/gl/generateBlurVertSource.js":439,"./filters/defaults/blur/gpu/blur-template.wgsl.js":440,"./filters/defaults/blur/gpu/generateBlurProgram.js":441,"./filters/defaults/color-matrix/ColorMatrixFilter.js":442,"./filters/defaults/color-matrix/colorMatrixFilter.frag.js":443,"./filters/defaults/color-matrix/colorMatrixFilter.wgsl.js":444,"./filters/defaults/defaultFilter.vert.js":445,"./filters/defaults/displacement/DisplacementFilter.js":446,"./filters/defaults/displacement/displacement.frag.js":447,"./filters/defaults/displacement/displacement.vert.js":448,"./filters/defaults/displacement/displacement.wgsl.js":449,"./filters/defaults/noise/NoiseFilter.js":450,"./filters/defaults/noise/noise.frag.js":451,"./filters/defaults/noise/noise.wgsl.js":452,"./filters/index.js":453,"./filters/mask/MaskFilter.js":455,"./filters/mask/mask.frag.js":456,"./filters/mask/mask.vert.js":457,"./filters/mask/mask.wgsl.js":458,"./maths/index.js":460,"./maths/matrix/Matrix.js":461,"./maths/matrix/groupD8.js":462,"./maths/misc/const.js":464,"./maths/misc/pow2.js":465,"./maths/misc/squaredDistanceToLineSegment.js":466,"./maths/point/ObservablePoint.js":467,"./maths/point/Point.js":468,"./maths/point/pointInTriangle.js":471,"./maths/shapes/Circle.js":472,"./maths/shapes/Ellipse.js":473,"./maths/shapes/Polygon.js":474,"./maths/shapes/Rectangle.js":475,"./maths/shapes/RoundedRectangle.js":476,"./maths/shapes/Triangle.js":478,"./prepare/PrepareBase.js":479,"./prepare/PrepareQueue.js":480,"./prepare/PrepareSystem.js":481,"./prepare/PrepareUpload.js":482,"./prepare/index.js":483,"./rendering/batcher/gl/GlBatchAdaptor.js":484,"./rendering/batcher/gl/utils/checkMaxIfStatementsInShader.js":485,"./rendering/batcher/gl/utils/maxRecommendedTextures.js":486,"./rendering/batcher/gpu/GpuBatchAdaptor.js":487,"./rendering/batcher/gpu/generateGPULayout.js":488,"./rendering/batcher/gpu/generateLayout.js":489,"./rendering/batcher/gpu/getTextureBatchBindGroup.js":490,"./rendering/batcher/shared/BatchGeometry.js":491,"./rendering/batcher/shared/BatchTextureArray.js":492,"./rendering/batcher/shared/Batcher.js":493,"./rendering/batcher/shared/BatcherPipe.js":494,"./rendering/batcher/shared/DefaultBatcher.js":495,"./rendering/batcher/shared/DefaultShader.js":496,"./rendering/high-shader/compileHighShaderToProgram.js":497,"./rendering/high-shader/compiler/compileHighShader.js":498,"./rendering/high-shader/compiler/utils/addBits.js":500,"./rendering/high-shader/compiler/utils/compileHooks.js":501,"./rendering/high-shader/compiler/utils/compileInputs.js":502,"./rendering/high-shader/compiler/utils/compileOutputs.js":503,"./rendering/high-shader/compiler/utils/formatShader.js":504,"./rendering/high-shader/compiler/utils/injectBits.js":505,"./rendering/high-shader/defaultProgramTemplate.js":506,"./rendering/high-shader/shader-bits/colorBit.js":507,"./rendering/high-shader/shader-bits/generateTextureBatchBit.js":508,"./rendering/high-shader/shader-bits/globalUniformsBit.js":509,"./rendering/high-shader/shader-bits/localUniformBit.js":510,"./rendering/high-shader/shader-bits/roundPixelsBit.js":511,"./rendering/high-shader/shader-bits/textureBit.js":512,"./rendering/index.js":513,"./rendering/init.js":514,"./rendering/mask/MaskEffectManager.js":515,"./rendering/mask/alpha/AlphaMask.js":516,"./rendering/mask/alpha/AlphaMaskPipe.js":517,"./rendering/mask/color/ColorMask.js":518,"./rendering/mask/color/ColorMaskPipe.js":519,"./rendering/mask/scissor/ScissorMask.js":520,"./rendering/mask/stencil/StencilMask.js":521,"./rendering/mask/stencil/StencilMaskPipe.js":522,"./rendering/mask/utils/addMaskBounds.js":523,"./rendering/mask/utils/addMaskLocalBounds.js":524,"./rendering/renderers/autoDetectRenderer.js":525,"./rendering/renderers/gl/GlBackBufferSystem.js":526,"./rendering/renderers/gl/GlColorMaskSystem.js":527,"./rendering/renderers/gl/GlEncoderSystem.js":528,"./rendering/renderers/gl/GlRenderTarget.js":529,"./rendering/renderers/gl/GlStencilSystem.js":530,"./rendering/renderers/gl/GlUboSystem.js":531,"./rendering/renderers/gl/WebGLRenderer.js":532,"./rendering/renderers/gl/buffer/GlBuffer.js":533,"./rendering/renderers/gl/buffer/GlBufferSystem.js":534,"./rendering/renderers/gl/buffer/const.js":535,"./rendering/renderers/gl/const.js":536,"./rendering/renderers/gl/context/GlContextSystem.js":537,"./rendering/renderers/gl/geometry/GlGeometrySystem.js":540,"./rendering/renderers/gl/geometry/utils/getGlTypeFromFormat.js":541,"./rendering/renderers/gl/renderTarget/GlRenderTargetAdaptor.js":542,"./rendering/renderers/gl/renderTarget/GlRenderTargetSystem.js":543,"./rendering/renderers/gl/shader/GenerateShaderSyncCode.js":544,"./rendering/renderers/gl/shader/GlProgram.js":545,"./rendering/renderers/gl/shader/GlProgramData.js":546,"./rendering/renderers/gl/shader/GlShaderSystem.js":547,"./rendering/renderers/gl/shader/GlUniformGroupSystem.js":548,"./rendering/renderers/gl/shader/getBatchSamplersUniformGroup.js":550,"./rendering/renderers/gl/shader/migrateFragmentFromV7toV8.js":551,"./rendering/renderers/gl/shader/program/compileShader.js":552,"./rendering/renderers/gl/shader/program/defaultValue.js":553,"./rendering/renderers/gl/shader/program/ensureAttributes.js":554,"./rendering/renderers/gl/shader/program/extractAttributesFromGlProgram.js":555,"./rendering/renderers/gl/shader/program/generateProgram.js":556,"./rendering/renderers/gl/shader/program/getMaxFragmentPrecision.js":557,"./rendering/renderers/gl/shader/program/getTestContext.js":558,"./rendering/renderers/gl/shader/program/getUboData.js":559,"./rendering/renderers/gl/shader/program/getUniformData.js":560,"./rendering/renderers/gl/shader/program/logProgramError.js":561,"./rendering/renderers/gl/shader/program/mapSize.js":562,"./rendering/renderers/gl/shader/program/mapType.js":563,"./rendering/renderers/gl/shader/program/preprocessors/addProgramDefines.js":564,"./rendering/renderers/gl/shader/program/preprocessors/ensurePrecision.js":565,"./rendering/renderers/gl/shader/program/preprocessors/insertVersion.js":566,"./rendering/renderers/gl/shader/program/preprocessors/setProgramName.js":567,"./rendering/renderers/gl/shader/program/preprocessors/stripVersion.js":568,"./rendering/renderers/gl/shader/utils/createUboElementsSTD40.js":569,"./rendering/renderers/gl/shader/utils/createUboSyncSTD40.js":570,"./rendering/renderers/gl/shader/utils/generateArraySyncSTD40.js":571,"./rendering/renderers/gl/shader/utils/generateUniformsSync.js":572,"./rendering/renderers/gl/shader/utils/generateUniformsSyncTypes.js":573,"./rendering/renderers/gl/state/GlStateSystem.js":574,"./rendering/renderers/gl/state/mapWebGLBlendModesToPixi.js":575,"./rendering/renderers/gl/texture/GlTexture.js":576,"./rendering/renderers/gl/texture/GlTextureSystem.js":577,"./rendering/renderers/gl/texture/const.js":578,"./rendering/renderers/gl/texture/uploaders/glUploadBufferImageResource.js":580,"./rendering/renderers/gl/texture/uploaders/glUploadCompressedTextureResource.js":581,"./rendering/renderers/gl/texture/uploaders/glUploadImageResource.js":582,"./rendering/renderers/gl/texture/uploaders/glUploadVideoResource.js":583,"./rendering/renderers/gl/texture/utils/applyStyleParams.js":584,"./rendering/renderers/gl/texture/utils/getSupportedGlCompressedTextureFormats.js":585,"./rendering/renderers/gl/texture/utils/mapFormatToGlFormat.js":586,"./rendering/renderers/gl/texture/utils/mapFormatToGlInternalFormat.js":587,"./rendering/renderers/gl/texture/utils/mapFormatToGlType.js":588,"./rendering/renderers/gl/texture/utils/pixiToGlMaps.js":589,"./rendering/renderers/gl/texture/utils/unpremultiplyAlpha.js":590,"./rendering/renderers/gpu/BindGroupSystem.js":591,"./rendering/renderers/gpu/GpuColorMaskSystem.js":592,"./rendering/renderers/gpu/GpuDeviceSystem.js":593,"./rendering/renderers/gpu/GpuEncoderSystem.js":594,"./rendering/renderers/gpu/GpuStencilSystem.js":595,"./rendering/renderers/gpu/GpuUboSystem.js":596,"./rendering/renderers/gpu/GpuUniformBatchPipe.js":597,"./rendering/renderers/gpu/WebGPURenderer.js":598,"./rendering/renderers/gpu/buffer/GpuBufferSystem.js":599,"./rendering/renderers/gpu/buffer/GpuReadBuffer.js":600,"./rendering/renderers/gpu/buffer/UboBatch.js":601,"./rendering/renderers/gpu/pipeline/PipelineSystem.js":602,"./rendering/renderers/gpu/renderTarget/GpuRenderTarget.js":603,"./rendering/renderers/gpu/renderTarget/GpuRenderTargetAdaptor.js":604,"./rendering/renderers/gpu/renderTarget/GpuRenderTargetSystem.js":605,"./rendering/renderers/gpu/renderTarget/calculateProjection.js":606,"./rendering/renderers/gpu/shader/BindGroup.js":607,"./rendering/renderers/gpu/shader/GpuProgram.js":609,"./rendering/renderers/gpu/shader/GpuShaderSystem.js":610,"./rendering/renderers/gpu/shader/utils/createUboElementsWGSL.js":611,"./rendering/renderers/gpu/shader/utils/createUboSyncFunctionWGSL.js":612,"./rendering/renderers/gpu/shader/utils/extractAttributesFromGpuProgram.js":613,"./rendering/renderers/gpu/shader/utils/extractStructAndGroups.js":614,"./rendering/renderers/gpu/shader/utils/generateArraySyncWGSL.js":615,"./rendering/renderers/gpu/shader/utils/generateGpuLayoutGroups.js":616,"./rendering/renderers/gpu/shader/utils/generateLayoutHash.js":617,"./rendering/renderers/gpu/shader/utils/removeStructAndGroupDuplicates.js":618,"./rendering/renderers/gpu/state/GpuBlendModesToPixi.js":619,"./rendering/renderers/gpu/state/GpuStateSystem.js":620,"./rendering/renderers/gpu/state/GpuStencilModesToPixi.js":621,"./rendering/renderers/gpu/texture/GpuTextureSystem.js":622,"./rendering/renderers/gpu/texture/uploaders/gpuUploadBufferImageResource.js":624,"./rendering/renderers/gpu/texture/uploaders/gpuUploadCompressedTextureResource.js":625,"./rendering/renderers/gpu/texture/uploaders/gpuUploadImageSource.js":626,"./rendering/renderers/gpu/texture/uploaders/gpuUploadVideoSource.js":627,"./rendering/renderers/gpu/texture/utils/GpuMipmapGenerator.js":628,"./rendering/renderers/gpu/texture/utils/getSupportedGPUCompressedTextureFormats.js":629,"./rendering/renderers/shared/SchedulerSystem.js":631,"./rendering/renderers/shared/background/BackgroundSystem.js":632,"./rendering/renderers/shared/blendModes/BlendModePipe.js":633,"./rendering/renderers/shared/buffer/Buffer.js":634,"./rendering/renderers/shared/buffer/BufferResource.js":635,"./rendering/renderers/shared/buffer/const.js":636,"./rendering/renderers/shared/buffer/utils/fastCopy.js":637,"./rendering/renderers/shared/extract/ExtractSystem.js":638,"./rendering/renderers/shared/extract/GenerateTextureSystem.js":639,"./rendering/renderers/shared/geometry/Geometry.js":640,"./rendering/renderers/shared/geometry/const.js":641,"./rendering/renderers/shared/geometry/utils/buildUvs.js":642,"./rendering/renderers/shared/geometry/utils/ensureIsBuffer.js":643,"./rendering/renderers/shared/geometry/utils/getAttributeInfoFromFormat.js":644,"./rendering/renderers/shared/geometry/utils/getGeometryBounds.js":645,"./rendering/renderers/shared/geometry/utils/transformVertices.js":646,"./rendering/renderers/shared/instructions/InstructionSet.js":648,"./rendering/renderers/shared/renderTarget/GlobalUniformSystem.js":650,"./rendering/renderers/shared/renderTarget/RenderTarget.js":651,"./rendering/renderers/shared/renderTarget/RenderTargetSystem.js":652,"./rendering/renderers/shared/renderTarget/isRenderingToScreen.js":653,"./rendering/renderers/shared/renderTarget/viewportFromFrame.js":654,"./rendering/renderers/shared/shader/Shader.js":655,"./rendering/renderers/shared/shader/UboSystem.js":657,"./rendering/renderers/shared/shader/UniformGroup.js":658,"./rendering/renderers/shared/shader/const.js":659,"./rendering/renderers/shared/shader/types.js":660,"./rendering/renderers/shared/shader/utils/createUboSyncFunction.js":661,"./rendering/renderers/shared/shader/utils/getDefaultUniformValue.js":662,"./rendering/renderers/shared/shader/utils/uboSyncFunctions.js":663,"./rendering/renderers/shared/shader/utils/uniformParsers.js":664,"./rendering/renderers/shared/startup/HelloSystem.js":665,"./rendering/renderers/shared/state/State.js":666,"./rendering/renderers/shared/state/const.js":667,"./rendering/renderers/shared/state/getAdjustedBlendModeBlend.js":668,"./rendering/renderers/shared/system/AbstractRenderer.js":669,"./rendering/renderers/shared/system/SharedSystems.js":670,"./rendering/renderers/shared/system/SystemRunner.js":672,"./rendering/renderers/shared/texture/CanvasPool.js":674,"./rendering/renderers/shared/texture/RenderTexture.js":676,"./rendering/renderers/shared/texture/RenderableGCSystem.js":677,"./rendering/renderers/shared/texture/Texture.js":678,"./rendering/renderers/shared/texture/TextureGCSystem.js":679,"./rendering/renderers/shared/texture/TextureMatrix.js":680,"./rendering/renderers/shared/texture/TexturePool.js":681,"./rendering/renderers/shared/texture/TextureStyle.js":682,"./rendering/renderers/shared/texture/TextureUvs.js":683,"./rendering/renderers/shared/texture/const.js":684,"./rendering/renderers/shared/texture/sources/BufferImageSource.js":685,"./rendering/renderers/shared/texture/sources/CanvasSource.js":686,"./rendering/renderers/shared/texture/sources/CompressedSource.js":687,"./rendering/renderers/shared/texture/sources/ImageSource.js":688,"./rendering/renderers/shared/texture/sources/TextureSource.js":689,"./rendering/renderers/shared/texture/sources/VideoSource.js":690,"./rendering/renderers/shared/texture/utils/generateUID.js":691,"./rendering/renderers/shared/texture/utils/getCanvasTexture.js":692,"./rendering/renderers/shared/texture/utils/getSupportedCompressedTextureFormats.js":693,"./rendering/renderers/shared/texture/utils/getSupportedTextureFormats.js":694,"./rendering/renderers/shared/texture/utils/textureFrom.js":695,"./rendering/renderers/shared/utils/createIdFromString.js":696,"./rendering/renderers/shared/utils/parseFunctionBody.js":697,"./rendering/renderers/shared/view/ViewSystem.js":699,"./rendering/renderers/types.js":700,"./scene/container/Container.js":701,"./scene/container/CustomRenderPipe.js":702,"./scene/container/RenderContainer.js":704,"./scene/container/RenderGroup.js":705,"./scene/container/RenderGroupPipe.js":706,"./scene/container/RenderGroupSystem.js":707,"./scene/container/bounds/Bounds.js":708,"./scene/container/bounds/getFastGlobalBounds.js":709,"./scene/container/bounds/getGlobalBounds.js":710,"./scene/container/bounds/getLocalBounds.js":711,"./scene/container/bounds/getRenderableBounds.js":712,"./scene/container/bounds/utils/matrixAndBoundsPool.js":713,"./scene/container/container-mixins/cacheAsTextureMixin.js":714,"./scene/container/container-mixins/childrenHelperMixin.js":715,"./scene/container/container-mixins/collectRenderablesMixin.js":716,"./scene/container/container-mixins/effectsMixin.js":717,"./scene/container/container-mixins/findMixin.js":718,"./scene/container/container-mixins/getFastGlobalBoundsMixin.js":719,"./scene/container/container-mixins/getGlobalMixin.js":720,"./scene/container/container-mixins/measureMixin.js":721,"./scene/container/container-mixins/onRenderMixin.js":722,"./scene/container/container-mixins/sortMixin.js":723,"./scene/container/container-mixins/toLocalGlobalMixin.js":724,"./scene/container/utils/assignWithIgnore.js":726,"./scene/container/utils/checkChildrenDidChange.js":727,"./scene/container/utils/clearList.js":728,"./scene/container/utils/collectAllRenderables.js":729,"./scene/container/utils/definedProps.js":730,"./scene/container/utils/executeInstructions.js":731,"./scene/container/utils/mixHexColors.js":732,"./scene/container/utils/multiplyColors.js":733,"./scene/container/utils/multiplyHexColors.js":734,"./scene/container/utils/updateLocalTransform.js":735,"./scene/container/utils/updateRenderGroupTransforms.js":736,"./scene/container/utils/updateWorldTransform.js":737,"./scene/container/utils/validateRenderables.js":738,"./scene/graphics/gl/GlGraphicsAdaptor.js":739,"./scene/graphics/gpu/GpuGraphicsAdaptor.js":740,"./scene/graphics/gpu/colorToUniform.js":741,"./scene/graphics/shared/BatchableGraphics.js":743,"./scene/graphics/shared/Graphics.js":745,"./scene/graphics/shared/GraphicsContext.js":746,"./scene/graphics/shared/GraphicsContextSystem.js":747,"./scene/graphics/shared/GraphicsPipe.js":748,"./scene/graphics/shared/buildCommands/buildAdaptiveBezier.js":750,"./scene/graphics/shared/buildCommands/buildAdaptiveQuadratic.js":751,"./scene/graphics/shared/buildCommands/buildArc.js":752,"./scene/graphics/shared/buildCommands/buildArcTo.js":753,"./scene/graphics/shared/buildCommands/buildArcToSvg.js":754,"./scene/graphics/shared/buildCommands/buildCircle.js":755,"./scene/graphics/shared/buildCommands/buildLine.js":756,"./scene/graphics/shared/buildCommands/buildPixelLine.js":757,"./scene/graphics/shared/buildCommands/buildPolygon.js":758,"./scene/graphics/shared/buildCommands/buildRectangle.js":759,"./scene/graphics/shared/buildCommands/buildTriangle.js":760,"./scene/graphics/shared/const.js":761,"./scene/graphics/shared/fill/FillGradient.js":762,"./scene/graphics/shared/fill/FillPattern.js":763,"./scene/graphics/shared/path/GraphicsPath.js":764,"./scene/graphics/shared/path/ShapePath.js":765,"./scene/graphics/shared/path/roundShape.js":766,"./scene/graphics/shared/svg/SVGParser.js":767,"./scene/graphics/shared/svg/parseSVGDefinitions.js":768,"./scene/graphics/shared/svg/parseSVGFloatAttribute.js":769,"./scene/graphics/shared/svg/parseSVGPath.js":770,"./scene/graphics/shared/svg/parseSVGStyle.js":771,"./scene/graphics/shared/svg/utils/extractSvgUrlId.js":772,"./scene/graphics/shared/utils/buildContextBatches.js":773,"./scene/graphics/shared/utils/buildGeometryFromPath.js":774,"./scene/graphics/shared/utils/convertFillInputToFillStyle.js":775,"./scene/graphics/shared/utils/generateTextureFillMatrix.js":776,"./scene/graphics/shared/utils/getOrientationOfPoints.js":777,"./scene/graphics/shared/utils/triangulateWithHoles.js":778,"./scene/index.js":779,"./scene/layers/RenderLayer.js":780,"./scene/mesh-perspective/PerspectiveMesh.js":781,"./scene/mesh-perspective/PerspectivePlaneGeometry.js":782,"./scene/mesh-perspective/utils/applyProjectiveTransformationToPlane.js":783,"./scene/mesh-perspective/utils/compute2DProjections.js":784,"./scene/mesh-plane/MeshPlane.js":785,"./scene/mesh-plane/PlaneGeometry.js":786,"./scene/mesh-simple/MeshRope.js":787,"./scene/mesh-simple/MeshSimple.js":788,"./scene/mesh-simple/RopeGeometry.js":789,"./scene/mesh/gl/GlMeshAdaptor.js":790,"./scene/mesh/gpu/GpuMeshAdapter.js":791,"./scene/mesh/shared/BatchableMesh.js":793,"./scene/mesh/shared/Mesh.js":794,"./scene/mesh/shared/MeshGeometry.js":795,"./scene/mesh/shared/MeshPipe.js":796,"./scene/mesh/shared/getTextureDefaultMatrix.js":797,"./scene/particle-container/gl/GlParticleContainerAdaptor.js":798,"./scene/particle-container/gpu/GpuParticleContainerAdaptor.js":799,"./scene/particle-container/shared/GlParticleContainerPipe.js":801,"./scene/particle-container/shared/GpuParticleContainerPipe.js":802,"./scene/particle-container/shared/Particle.js":803,"./scene/particle-container/shared/ParticleBuffer.js":804,"./scene/particle-container/shared/ParticleContainer.js":805,"./scene/particle-container/shared/ParticleContainerPipe.js":806,"./scene/particle-container/shared/particleData.js":807,"./scene/particle-container/shared/shader/ParticleShader.js":808,"./scene/particle-container/shared/shader/particles.frag.js":809,"./scene/particle-container/shared/shader/particles.vert.js":810,"./scene/particle-container/shared/shader/particles.wgsl.js":811,"./scene/particle-container/shared/utils/createIndicesForQuads.js":812,"./scene/particle-container/shared/utils/generateParticleUpdateFunction.js":813,"./scene/sprite-animated/AnimatedSprite.js":814,"./scene/sprite-nine-slice/NineSliceGeometry.js":815,"./scene/sprite-nine-slice/NineSliceSprite.js":816,"./scene/sprite-nine-slice/NineSliceSpritePipe.js":817,"./scene/sprite-tiling/TilingSprite.js":819,"./scene/sprite-tiling/TilingSpritePipe.js":820,"./scene/sprite-tiling/shader/TilingSpriteShader.js":822,"./scene/sprite-tiling/shader/tilingBit.js":823,"./scene/sprite-tiling/utils/QuadGeometry.js":824,"./scene/sprite-tiling/utils/applyMatrix.js":825,"./scene/sprite-tiling/utils/setPositions.js":826,"./scene/sprite-tiling/utils/setUvs.js":827,"./scene/sprite/BatchableSprite.js":828,"./scene/sprite/Sprite.js":829,"./scene/sprite/SpritePipe.js":830,"./scene/text-bitmap/AbstractBitmapFont.js":831,"./scene/text-bitmap/BitmapFont.js":832,"./scene/text-bitmap/BitmapFontManager.js":833,"./scene/text-bitmap/BitmapText.js":834,"./scene/text-bitmap/BitmapTextPipe.js":835,"./scene/text-bitmap/DynamicBitmapFont.js":836,"./scene/text-bitmap/asset/bitmapFontTextParser.js":837,"./scene/text-bitmap/asset/bitmapFontXMLParser.js":838,"./scene/text-bitmap/asset/bitmapFontXMLStringParser.js":839,"./scene/text-bitmap/asset/loadBitmapFont.js":840,"./scene/text-bitmap/utils/getBitmapTextLayout.js":842,"./scene/text-bitmap/utils/resolveCharacters.js":843,"./scene/text-html/HTMLText.js":844,"./scene/text-html/HTMLTextPipe.js":845,"./scene/text-html/HTMLTextRenderData.js":846,"./scene/text-html/HTMLTextStyle.js":847,"./scene/text-html/HTMLTextSystem.js":848,"./scene/text-html/utils/extractFontFamilies.js":850,"./scene/text-html/utils/getFontCss.js":851,"./scene/text-html/utils/getSVGUrl.js":852,"./scene/text-html/utils/getTemporaryCanvasFromImage.js":853,"./scene/text-html/utils/loadFontAsBase64.js":854,"./scene/text-html/utils/loadFontCSS.js":855,"./scene/text-html/utils/loadSVGImage.js":856,"./scene/text-html/utils/measureHtmlText.js":857,"./scene/text-html/utils/textStyleToCSS.js":858,"./scene/text/AbstractText.js":859,"./scene/text/Text.js":860,"./scene/text/TextStyle.js":861,"./scene/text/canvas/CanvasTextMetrics.js":862,"./scene/text/canvas/CanvasTextPipe.js":863,"./scene/text/canvas/CanvasTextSystem.js":864,"./scene/text/canvas/utils/fontStringFromTextStyle.js":865,"./scene/text/canvas/utils/getCanvasFillStyle.js":866,"./scene/text/sdfShader/SdfShader.js":868,"./scene/text/sdfShader/shader-bits/localUniformMSDFBit.js":869,"./scene/text/sdfShader/shader-bits/mSDFBit.js":870,"./scene/text/utils/ensureTextStyle.js":871,"./scene/text/utils/generateTextStyleKey.js":872,"./scene/text/utils/getPo2TextureFromSource.js":873,"./scene/text/utils/updateTextBounds.js":874,"./scene/view/ViewContainer.js":875,"./spritesheet/Spritesheet.js":876,"./spritesheet/index.js":877,"./spritesheet/init.js":878,"./spritesheet/spritesheetAsset.js":879,"./ticker/Ticker.js":880,"./ticker/TickerListener.js":881,"./ticker/const.js":882,"./ticker/index.js":883,"./utils/browser/detectVideoAlphaMode.js":884,"./utils/browser/isMobile.js":885,"./utils/browser/isSafari.js":886,"./utils/browser/isWebGLSupported.js":887,"./utils/browser/isWebGPUSupported.js":888,"./utils/browser/unsafeEvalSupported.js":889,"./utils/canvas/getCanvasBoundingBox.js":890,"./utils/const.js":891,"./utils/data/ViewableBuffer.js":892,"./utils/data/clean.js":893,"./utils/data/removeItems.js":894,"./utils/data/uid.js":895,"./utils/data/updateQuadBounds.js":896,"./utils/global/globalHooks.js":897,"./utils/index.js":898,"./utils/logging/deprecation.js":899,"./utils/logging/logDebugTexture.js":900,"./utils/logging/logScene.js":901,"./utils/logging/warn.js":902,"./utils/misc/NOOP.js":903,"./utils/misc/Transform.js":904,"./utils/network/getResolutionOfUrl.js":905,"./utils/path.js":906,"./utils/pool/Pool.js":907,"./utils/pool/PoolGroup.js":908,"./utils/sayHello.js":909,"earcut":195,"eventemitter3":206}],460:[function(require,module,exports){
+},{"./accessibility/AccessibilitySystem.js":293,"./accessibility/accessibilityTarget.js":294,"./accessibility/index.js":295,"./advanced-blend-modes/ColorBlend.js":297,"./advanced-blend-modes/ColorBurnBlend.js":298,"./advanced-blend-modes/ColorDodgeBlend.js":299,"./advanced-blend-modes/DarkenBlend.js":300,"./advanced-blend-modes/DifferenceBlend.js":301,"./advanced-blend-modes/DivideBlend.js":302,"./advanced-blend-modes/ExclusionBlend.js":303,"./advanced-blend-modes/HardLightBlend.js":304,"./advanced-blend-modes/HardMixBlend.js":305,"./advanced-blend-modes/LightenBlend.js":306,"./advanced-blend-modes/LinearBurnBlend.js":307,"./advanced-blend-modes/LinearDodgeBlend.js":308,"./advanced-blend-modes/LinearLightBlend.js":309,"./advanced-blend-modes/LuminosityBlend.js":310,"./advanced-blend-modes/NegationBlend.js":311,"./advanced-blend-modes/OverlayBlend.js":312,"./advanced-blend-modes/PinLightBlend.js":313,"./advanced-blend-modes/SaturationBlend.js":314,"./advanced-blend-modes/SoftLightBlend.js":315,"./advanced-blend-modes/SubtractBlend.js":316,"./advanced-blend-modes/VividLightBlend.js":317,"./advanced-blend-modes/index.js":318,"./app/Application.js":319,"./app/ResizePlugin.js":320,"./app/TickerPlugin.js":321,"./app/index.js":322,"./assets/Assets.js":325,"./assets/BackgroundLoader.js":326,"./assets/cache/Cache.js":327,"./assets/cache/parsers/cacheTextureArray.js":329,"./assets/detections/parsers/detectAvif.js":330,"./assets/detections/parsers/detectDefaults.js":331,"./assets/detections/parsers/detectMp4.js":332,"./assets/detections/parsers/detectOgv.js":333,"./assets/detections/parsers/detectWebm.js":334,"./assets/detections/parsers/detectWebp.js":335,"./assets/detections/utils/testImageFormat.js":337,"./assets/detections/utils/testVideoFormat.js":338,"./assets/index.js":339,"./assets/loader/Loader.js":340,"./assets/loader/parsers/LoaderParser.js":341,"./assets/loader/parsers/loadJson.js":342,"./assets/loader/parsers/loadTxt.js":343,"./assets/loader/parsers/loadWebFont.js":344,"./assets/loader/parsers/textures/loadSVG.js":345,"./assets/loader/parsers/textures/loadTextures.js":346,"./assets/loader/parsers/textures/loadVideoTextures.js":347,"./assets/loader/parsers/textures/utils/createTexture.js":348,"./assets/loader/workers/WorkerManager.js":350,"./assets/resolver/Resolver.js":351,"./assets/resolver/parsers/resolveJsonUrl.js":352,"./assets/resolver/parsers/resolveTextureUrl.js":353,"./assets/utils/checkDataUrl.js":356,"./assets/utils/checkExtension.js":357,"./assets/utils/convertToList.js":358,"./assets/utils/copySearchParams.js":359,"./assets/utils/createStringVariations.js":360,"./assets/utils/isSingleItem.js":361,"./color/Color.js":362,"./color/index.js":363,"./compressed-textures/basis/detectBasis.js":364,"./compressed-textures/basis/loadBasis.js":365,"./compressed-textures/basis/utils/createLevelBuffers.js":367,"./compressed-textures/basis/utils/gpuFormatToBasisTranscoderFormat.js":368,"./compressed-textures/basis/utils/setBasisTranscoderPath.js":369,"./compressed-textures/basis/worker/loadBasisOnWorker.js":370,"./compressed-textures/dds/const.js":371,"./compressed-textures/dds/loadDDS.js":372,"./compressed-textures/dds/parseDDS.js":373,"./compressed-textures/index.js":374,"./compressed-textures/ktx/loadKTX.js":386,"./compressed-textures/ktx/parseKTX.js":387,"./compressed-textures/ktx2/const.js":375,"./compressed-textures/ktx2/loadKTX2.js":376,"./compressed-textures/ktx2/utils/convertFormatIfRequired.js":378,"./compressed-textures/ktx2/utils/createLevelBuffersFromKTX.js":379,"./compressed-textures/ktx2/utils/getTextureFormatFromKTXTexture.js":380,"./compressed-textures/ktx2/utils/glFormatToGPUFormat.js":381,"./compressed-textures/ktx2/utils/gpuFormatToKTXBasisTranscoderFormat.js":382,"./compressed-textures/ktx2/utils/setKTXTranscoderPath.js":383,"./compressed-textures/ktx2/utils/vkFormatToGPUFormat.js":384,"./compressed-textures/ktx2/worker/loadKTX2onWorker.js":385,"./compressed-textures/shared/detectCompressed.js":388,"./compressed-textures/shared/resolveCompressedTextureUrl.js":389,"./culling/Culler.js":390,"./culling/CullerPlugin.js":391,"./culling/cullingMixin.js":392,"./culling/index.js":393,"./dom/DOMContainer.js":394,"./dom/DOMPipe.js":395,"./dom/index.js":396,"./environment-browser/BrowserAdapter.js":398,"./environment-browser/browserExt.js":400,"./environment-browser/index.js":401,"./environment-webworker/WebWorkerAdapter.js":402,"./environment-webworker/index.js":403,"./environment-webworker/webworkerExt.js":405,"./environment/adapter.js":406,"./environment/autoDetectEnvironment.js":407,"./environment/index.js":410,"./events/EventBoundary.js":411,"./events/EventSystem.js":413,"./events/EventTicker.js":414,"./events/FederatedEvent.js":415,"./events/FederatedEventTarget.js":417,"./events/FederatedMouseEvent.js":418,"./events/FederatedPointerEvent.js":419,"./events/FederatedWheelEvent.js":420,"./events/index.js":422,"./extensions/Extensions.js":424,"./extensions/index.js":425,"./filters/Filter.js":426,"./filters/FilterEffect.js":427,"./filters/FilterPipe.js":428,"./filters/FilterSystem.js":429,"./filters/blend-modes/BlendModeFilter.js":430,"./filters/blend-modes/blend-template.frag.js":431,"./filters/blend-modes/blend-template.vert.js":432,"./filters/blend-modes/blend-template.wgsl.js":433,"./filters/blend-modes/hls/GLhls.js":434,"./filters/blend-modes/hls/GPUhls.js":435,"./filters/blend-modes/hsl.wgsl.js":436,"./filters/defaults/alpha/AlphaFilter.js":437,"./filters/defaults/alpha/alpha.frag.js":438,"./filters/defaults/alpha/alpha.wgsl.js":439,"./filters/defaults/blur/BlurFilter.js":440,"./filters/defaults/blur/BlurFilterPass.js":441,"./filters/defaults/blur/const.js":442,"./filters/defaults/blur/gl/generateBlurFragSource.js":443,"./filters/defaults/blur/gl/generateBlurGlProgram.js":444,"./filters/defaults/blur/gl/generateBlurVertSource.js":445,"./filters/defaults/blur/gpu/blur-template.wgsl.js":446,"./filters/defaults/blur/gpu/generateBlurProgram.js":447,"./filters/defaults/color-matrix/ColorMatrixFilter.js":448,"./filters/defaults/color-matrix/colorMatrixFilter.frag.js":449,"./filters/defaults/color-matrix/colorMatrixFilter.wgsl.js":450,"./filters/defaults/defaultFilter.vert.js":451,"./filters/defaults/displacement/DisplacementFilter.js":452,"./filters/defaults/displacement/displacement.frag.js":453,"./filters/defaults/displacement/displacement.vert.js":454,"./filters/defaults/displacement/displacement.wgsl.js":455,"./filters/defaults/noise/NoiseFilter.js":456,"./filters/defaults/noise/noise.frag.js":457,"./filters/defaults/noise/noise.wgsl.js":458,"./filters/index.js":459,"./filters/mask/MaskFilter.js":461,"./filters/mask/mask.frag.js":462,"./filters/mask/mask.vert.js":463,"./filters/mask/mask.wgsl.js":464,"./maths/index.js":466,"./maths/matrix/Matrix.js":467,"./maths/matrix/groupD8.js":468,"./maths/misc/const.js":470,"./maths/misc/pow2.js":471,"./maths/misc/squaredDistanceToLineSegment.js":472,"./maths/point/ObservablePoint.js":473,"./maths/point/Point.js":474,"./maths/point/pointInTriangle.js":477,"./maths/shapes/Circle.js":478,"./maths/shapes/Ellipse.js":479,"./maths/shapes/Polygon.js":480,"./maths/shapes/Rectangle.js":481,"./maths/shapes/RoundedRectangle.js":482,"./maths/shapes/Triangle.js":484,"./prepare/PrepareBase.js":485,"./prepare/PrepareQueue.js":486,"./prepare/PrepareSystem.js":487,"./prepare/PrepareUpload.js":488,"./prepare/index.js":489,"./rendering/batcher/gl/GlBatchAdaptor.js":490,"./rendering/batcher/gl/utils/checkMaxIfStatementsInShader.js":491,"./rendering/batcher/gl/utils/maxRecommendedTextures.js":492,"./rendering/batcher/gpu/GpuBatchAdaptor.js":493,"./rendering/batcher/gpu/generateGPULayout.js":494,"./rendering/batcher/gpu/generateLayout.js":495,"./rendering/batcher/gpu/getTextureBatchBindGroup.js":496,"./rendering/batcher/shared/BatchGeometry.js":497,"./rendering/batcher/shared/BatchTextureArray.js":498,"./rendering/batcher/shared/Batcher.js":499,"./rendering/batcher/shared/BatcherPipe.js":500,"./rendering/batcher/shared/DefaultBatcher.js":501,"./rendering/batcher/shared/DefaultShader.js":502,"./rendering/high-shader/compileHighShaderToProgram.js":503,"./rendering/high-shader/compiler/compileHighShader.js":504,"./rendering/high-shader/compiler/utils/addBits.js":506,"./rendering/high-shader/compiler/utils/compileHooks.js":507,"./rendering/high-shader/compiler/utils/compileInputs.js":508,"./rendering/high-shader/compiler/utils/compileOutputs.js":509,"./rendering/high-shader/compiler/utils/formatShader.js":510,"./rendering/high-shader/compiler/utils/injectBits.js":511,"./rendering/high-shader/defaultProgramTemplate.js":512,"./rendering/high-shader/shader-bits/colorBit.js":513,"./rendering/high-shader/shader-bits/generateTextureBatchBit.js":514,"./rendering/high-shader/shader-bits/globalUniformsBit.js":515,"./rendering/high-shader/shader-bits/localUniformBit.js":516,"./rendering/high-shader/shader-bits/roundPixelsBit.js":517,"./rendering/high-shader/shader-bits/textureBit.js":518,"./rendering/index.js":519,"./rendering/init.js":520,"./rendering/mask/MaskEffectManager.js":521,"./rendering/mask/alpha/AlphaMask.js":522,"./rendering/mask/alpha/AlphaMaskPipe.js":523,"./rendering/mask/color/ColorMask.js":524,"./rendering/mask/color/ColorMaskPipe.js":525,"./rendering/mask/scissor/ScissorMask.js":526,"./rendering/mask/stencil/StencilMask.js":527,"./rendering/mask/stencil/StencilMaskPipe.js":528,"./rendering/mask/utils/addMaskBounds.js":529,"./rendering/mask/utils/addMaskLocalBounds.js":530,"./rendering/renderers/autoDetectRenderer.js":531,"./rendering/renderers/gl/GlBackBufferSystem.js":532,"./rendering/renderers/gl/GlColorMaskSystem.js":533,"./rendering/renderers/gl/GlEncoderSystem.js":534,"./rendering/renderers/gl/GlRenderTarget.js":535,"./rendering/renderers/gl/GlStencilSystem.js":536,"./rendering/renderers/gl/GlUboSystem.js":537,"./rendering/renderers/gl/WebGLRenderer.js":538,"./rendering/renderers/gl/buffer/GlBuffer.js":539,"./rendering/renderers/gl/buffer/GlBufferSystem.js":540,"./rendering/renderers/gl/buffer/const.js":541,"./rendering/renderers/gl/const.js":542,"./rendering/renderers/gl/context/GlContextSystem.js":543,"./rendering/renderers/gl/geometry/GlGeometrySystem.js":546,"./rendering/renderers/gl/geometry/utils/getGlTypeFromFormat.js":547,"./rendering/renderers/gl/renderTarget/GlRenderTargetAdaptor.js":548,"./rendering/renderers/gl/renderTarget/GlRenderTargetSystem.js":549,"./rendering/renderers/gl/shader/GenerateShaderSyncCode.js":550,"./rendering/renderers/gl/shader/GlProgram.js":551,"./rendering/renderers/gl/shader/GlProgramData.js":552,"./rendering/renderers/gl/shader/GlShaderSystem.js":553,"./rendering/renderers/gl/shader/GlUniformGroupSystem.js":554,"./rendering/renderers/gl/shader/getBatchSamplersUniformGroup.js":556,"./rendering/renderers/gl/shader/migrateFragmentFromV7toV8.js":557,"./rendering/renderers/gl/shader/program/compileShader.js":558,"./rendering/renderers/gl/shader/program/defaultValue.js":559,"./rendering/renderers/gl/shader/program/ensureAttributes.js":560,"./rendering/renderers/gl/shader/program/extractAttributesFromGlProgram.js":561,"./rendering/renderers/gl/shader/program/generateProgram.js":562,"./rendering/renderers/gl/shader/program/getMaxFragmentPrecision.js":563,"./rendering/renderers/gl/shader/program/getTestContext.js":564,"./rendering/renderers/gl/shader/program/getUboData.js":565,"./rendering/renderers/gl/shader/program/getUniformData.js":566,"./rendering/renderers/gl/shader/program/logProgramError.js":567,"./rendering/renderers/gl/shader/program/mapSize.js":568,"./rendering/renderers/gl/shader/program/mapType.js":569,"./rendering/renderers/gl/shader/program/preprocessors/addProgramDefines.js":570,"./rendering/renderers/gl/shader/program/preprocessors/ensurePrecision.js":571,"./rendering/renderers/gl/shader/program/preprocessors/insertVersion.js":572,"./rendering/renderers/gl/shader/program/preprocessors/setProgramName.js":573,"./rendering/renderers/gl/shader/program/preprocessors/stripVersion.js":574,"./rendering/renderers/gl/shader/utils/createUboElementsSTD40.js":575,"./rendering/renderers/gl/shader/utils/createUboSyncSTD40.js":576,"./rendering/renderers/gl/shader/utils/generateArraySyncSTD40.js":577,"./rendering/renderers/gl/shader/utils/generateUniformsSync.js":578,"./rendering/renderers/gl/shader/utils/generateUniformsSyncTypes.js":579,"./rendering/renderers/gl/state/GlStateSystem.js":580,"./rendering/renderers/gl/state/mapWebGLBlendModesToPixi.js":581,"./rendering/renderers/gl/texture/GlTexture.js":582,"./rendering/renderers/gl/texture/GlTextureSystem.js":583,"./rendering/renderers/gl/texture/const.js":584,"./rendering/renderers/gl/texture/uploaders/glUploadBufferImageResource.js":586,"./rendering/renderers/gl/texture/uploaders/glUploadCompressedTextureResource.js":587,"./rendering/renderers/gl/texture/uploaders/glUploadImageResource.js":588,"./rendering/renderers/gl/texture/uploaders/glUploadVideoResource.js":589,"./rendering/renderers/gl/texture/utils/applyStyleParams.js":590,"./rendering/renderers/gl/texture/utils/getSupportedGlCompressedTextureFormats.js":591,"./rendering/renderers/gl/texture/utils/mapFormatToGlFormat.js":592,"./rendering/renderers/gl/texture/utils/mapFormatToGlInternalFormat.js":593,"./rendering/renderers/gl/texture/utils/mapFormatToGlType.js":594,"./rendering/renderers/gl/texture/utils/pixiToGlMaps.js":595,"./rendering/renderers/gl/texture/utils/unpremultiplyAlpha.js":596,"./rendering/renderers/gpu/BindGroupSystem.js":597,"./rendering/renderers/gpu/GpuColorMaskSystem.js":598,"./rendering/renderers/gpu/GpuDeviceSystem.js":599,"./rendering/renderers/gpu/GpuEncoderSystem.js":600,"./rendering/renderers/gpu/GpuStencilSystem.js":601,"./rendering/renderers/gpu/GpuUboSystem.js":602,"./rendering/renderers/gpu/GpuUniformBatchPipe.js":603,"./rendering/renderers/gpu/WebGPURenderer.js":604,"./rendering/renderers/gpu/buffer/GpuBufferSystem.js":605,"./rendering/renderers/gpu/buffer/GpuReadBuffer.js":606,"./rendering/renderers/gpu/buffer/UboBatch.js":607,"./rendering/renderers/gpu/pipeline/PipelineSystem.js":608,"./rendering/renderers/gpu/renderTarget/GpuRenderTarget.js":609,"./rendering/renderers/gpu/renderTarget/GpuRenderTargetAdaptor.js":610,"./rendering/renderers/gpu/renderTarget/GpuRenderTargetSystem.js":611,"./rendering/renderers/gpu/renderTarget/calculateProjection.js":612,"./rendering/renderers/gpu/shader/BindGroup.js":613,"./rendering/renderers/gpu/shader/GpuProgram.js":615,"./rendering/renderers/gpu/shader/GpuShaderSystem.js":616,"./rendering/renderers/gpu/shader/utils/createUboElementsWGSL.js":617,"./rendering/renderers/gpu/shader/utils/createUboSyncFunctionWGSL.js":618,"./rendering/renderers/gpu/shader/utils/extractAttributesFromGpuProgram.js":619,"./rendering/renderers/gpu/shader/utils/extractStructAndGroups.js":620,"./rendering/renderers/gpu/shader/utils/generateArraySyncWGSL.js":621,"./rendering/renderers/gpu/shader/utils/generateGpuLayoutGroups.js":622,"./rendering/renderers/gpu/shader/utils/generateLayoutHash.js":623,"./rendering/renderers/gpu/shader/utils/removeStructAndGroupDuplicates.js":624,"./rendering/renderers/gpu/state/GpuBlendModesToPixi.js":625,"./rendering/renderers/gpu/state/GpuStateSystem.js":626,"./rendering/renderers/gpu/state/GpuStencilModesToPixi.js":627,"./rendering/renderers/gpu/texture/GpuTextureSystem.js":628,"./rendering/renderers/gpu/texture/uploaders/gpuUploadBufferImageResource.js":630,"./rendering/renderers/gpu/texture/uploaders/gpuUploadCompressedTextureResource.js":631,"./rendering/renderers/gpu/texture/uploaders/gpuUploadImageSource.js":632,"./rendering/renderers/gpu/texture/uploaders/gpuUploadVideoSource.js":633,"./rendering/renderers/gpu/texture/utils/GpuMipmapGenerator.js":634,"./rendering/renderers/gpu/texture/utils/getSupportedGPUCompressedTextureFormats.js":635,"./rendering/renderers/shared/SchedulerSystem.js":637,"./rendering/renderers/shared/background/BackgroundSystem.js":638,"./rendering/renderers/shared/blendModes/BlendModePipe.js":639,"./rendering/renderers/shared/buffer/Buffer.js":640,"./rendering/renderers/shared/buffer/BufferResource.js":641,"./rendering/renderers/shared/buffer/const.js":642,"./rendering/renderers/shared/buffer/utils/fastCopy.js":643,"./rendering/renderers/shared/extract/ExtractSystem.js":644,"./rendering/renderers/shared/extract/GenerateTextureSystem.js":645,"./rendering/renderers/shared/geometry/Geometry.js":646,"./rendering/renderers/shared/geometry/const.js":647,"./rendering/renderers/shared/geometry/utils/buildUvs.js":648,"./rendering/renderers/shared/geometry/utils/ensureIsBuffer.js":649,"./rendering/renderers/shared/geometry/utils/getAttributeInfoFromFormat.js":650,"./rendering/renderers/shared/geometry/utils/getGeometryBounds.js":651,"./rendering/renderers/shared/geometry/utils/transformVertices.js":652,"./rendering/renderers/shared/instructions/InstructionSet.js":654,"./rendering/renderers/shared/renderTarget/GlobalUniformSystem.js":656,"./rendering/renderers/shared/renderTarget/RenderTarget.js":657,"./rendering/renderers/shared/renderTarget/RenderTargetSystem.js":658,"./rendering/renderers/shared/renderTarget/isRenderingToScreen.js":659,"./rendering/renderers/shared/renderTarget/viewportFromFrame.js":660,"./rendering/renderers/shared/shader/Shader.js":661,"./rendering/renderers/shared/shader/UboSystem.js":663,"./rendering/renderers/shared/shader/UniformGroup.js":664,"./rendering/renderers/shared/shader/const.js":665,"./rendering/renderers/shared/shader/types.js":666,"./rendering/renderers/shared/shader/utils/createUboSyncFunction.js":667,"./rendering/renderers/shared/shader/utils/getDefaultUniformValue.js":668,"./rendering/renderers/shared/shader/utils/uboSyncFunctions.js":669,"./rendering/renderers/shared/shader/utils/uniformParsers.js":670,"./rendering/renderers/shared/startup/HelloSystem.js":671,"./rendering/renderers/shared/state/State.js":672,"./rendering/renderers/shared/state/const.js":673,"./rendering/renderers/shared/state/getAdjustedBlendModeBlend.js":674,"./rendering/renderers/shared/system/AbstractRenderer.js":675,"./rendering/renderers/shared/system/SharedSystems.js":676,"./rendering/renderers/shared/system/SystemRunner.js":678,"./rendering/renderers/shared/texture/CanvasPool.js":680,"./rendering/renderers/shared/texture/RenderTexture.js":682,"./rendering/renderers/shared/texture/RenderableGCSystem.js":683,"./rendering/renderers/shared/texture/Texture.js":684,"./rendering/renderers/shared/texture/TextureGCSystem.js":685,"./rendering/renderers/shared/texture/TextureMatrix.js":686,"./rendering/renderers/shared/texture/TexturePool.js":687,"./rendering/renderers/shared/texture/TextureStyle.js":688,"./rendering/renderers/shared/texture/TextureUvs.js":689,"./rendering/renderers/shared/texture/const.js":690,"./rendering/renderers/shared/texture/sources/BufferImageSource.js":691,"./rendering/renderers/shared/texture/sources/CanvasSource.js":692,"./rendering/renderers/shared/texture/sources/CompressedSource.js":693,"./rendering/renderers/shared/texture/sources/ImageSource.js":694,"./rendering/renderers/shared/texture/sources/TextureSource.js":695,"./rendering/renderers/shared/texture/sources/VideoSource.js":696,"./rendering/renderers/shared/texture/utils/generateUID.js":697,"./rendering/renderers/shared/texture/utils/getCanvasTexture.js":698,"./rendering/renderers/shared/texture/utils/getSupportedCompressedTextureFormats.js":699,"./rendering/renderers/shared/texture/utils/getSupportedTextureFormats.js":700,"./rendering/renderers/shared/texture/utils/textureFrom.js":701,"./rendering/renderers/shared/utils/createIdFromString.js":702,"./rendering/renderers/shared/utils/parseFunctionBody.js":703,"./rendering/renderers/shared/view/ViewSystem.js":705,"./rendering/renderers/types.js":706,"./scene/container/Container.js":707,"./scene/container/CustomRenderPipe.js":708,"./scene/container/RenderContainer.js":710,"./scene/container/RenderGroup.js":711,"./scene/container/RenderGroupPipe.js":712,"./scene/container/RenderGroupSystem.js":713,"./scene/container/bounds/Bounds.js":714,"./scene/container/bounds/getFastGlobalBounds.js":715,"./scene/container/bounds/getGlobalBounds.js":716,"./scene/container/bounds/getLocalBounds.js":717,"./scene/container/bounds/getRenderableBounds.js":718,"./scene/container/bounds/utils/matrixAndBoundsPool.js":719,"./scene/container/container-mixins/cacheAsTextureMixin.js":720,"./scene/container/container-mixins/childrenHelperMixin.js":721,"./scene/container/container-mixins/collectRenderablesMixin.js":722,"./scene/container/container-mixins/effectsMixin.js":723,"./scene/container/container-mixins/findMixin.js":724,"./scene/container/container-mixins/getFastGlobalBoundsMixin.js":725,"./scene/container/container-mixins/getGlobalMixin.js":726,"./scene/container/container-mixins/measureMixin.js":727,"./scene/container/container-mixins/onRenderMixin.js":728,"./scene/container/container-mixins/sortMixin.js":729,"./scene/container/container-mixins/toLocalGlobalMixin.js":730,"./scene/container/utils/assignWithIgnore.js":732,"./scene/container/utils/checkChildrenDidChange.js":733,"./scene/container/utils/clearList.js":734,"./scene/container/utils/collectAllRenderables.js":735,"./scene/container/utils/definedProps.js":736,"./scene/container/utils/executeInstructions.js":737,"./scene/container/utils/mixHexColors.js":738,"./scene/container/utils/multiplyColors.js":739,"./scene/container/utils/multiplyHexColors.js":740,"./scene/container/utils/updateLocalTransform.js":741,"./scene/container/utils/updateRenderGroupTransforms.js":742,"./scene/container/utils/updateWorldTransform.js":743,"./scene/container/utils/validateRenderables.js":744,"./scene/graphics/gl/GlGraphicsAdaptor.js":745,"./scene/graphics/gpu/GpuGraphicsAdaptor.js":746,"./scene/graphics/gpu/colorToUniform.js":747,"./scene/graphics/shared/BatchableGraphics.js":749,"./scene/graphics/shared/Graphics.js":751,"./scene/graphics/shared/GraphicsContext.js":752,"./scene/graphics/shared/GraphicsContextSystem.js":753,"./scene/graphics/shared/GraphicsPipe.js":754,"./scene/graphics/shared/buildCommands/buildAdaptiveBezier.js":756,"./scene/graphics/shared/buildCommands/buildAdaptiveQuadratic.js":757,"./scene/graphics/shared/buildCommands/buildArc.js":758,"./scene/graphics/shared/buildCommands/buildArcTo.js":759,"./scene/graphics/shared/buildCommands/buildArcToSvg.js":760,"./scene/graphics/shared/buildCommands/buildCircle.js":761,"./scene/graphics/shared/buildCommands/buildLine.js":762,"./scene/graphics/shared/buildCommands/buildPixelLine.js":763,"./scene/graphics/shared/buildCommands/buildPolygon.js":764,"./scene/graphics/shared/buildCommands/buildRectangle.js":765,"./scene/graphics/shared/buildCommands/buildTriangle.js":766,"./scene/graphics/shared/const.js":767,"./scene/graphics/shared/fill/FillGradient.js":768,"./scene/graphics/shared/fill/FillPattern.js":769,"./scene/graphics/shared/path/GraphicsPath.js":770,"./scene/graphics/shared/path/ShapePath.js":771,"./scene/graphics/shared/path/roundShape.js":772,"./scene/graphics/shared/svg/SVGParser.js":773,"./scene/graphics/shared/svg/parseSVGDefinitions.js":774,"./scene/graphics/shared/svg/parseSVGFloatAttribute.js":775,"./scene/graphics/shared/svg/parseSVGPath.js":776,"./scene/graphics/shared/svg/parseSVGStyle.js":777,"./scene/graphics/shared/svg/utils/extractSvgUrlId.js":778,"./scene/graphics/shared/utils/buildContextBatches.js":779,"./scene/graphics/shared/utils/buildGeometryFromPath.js":780,"./scene/graphics/shared/utils/convertFillInputToFillStyle.js":781,"./scene/graphics/shared/utils/generateTextureFillMatrix.js":782,"./scene/graphics/shared/utils/getOrientationOfPoints.js":783,"./scene/graphics/shared/utils/triangulateWithHoles.js":784,"./scene/index.js":785,"./scene/layers/RenderLayer.js":786,"./scene/mesh-perspective/PerspectiveMesh.js":787,"./scene/mesh-perspective/PerspectivePlaneGeometry.js":788,"./scene/mesh-perspective/utils/applyProjectiveTransformationToPlane.js":789,"./scene/mesh-perspective/utils/compute2DProjections.js":790,"./scene/mesh-plane/MeshPlane.js":791,"./scene/mesh-plane/PlaneGeometry.js":792,"./scene/mesh-simple/MeshRope.js":793,"./scene/mesh-simple/MeshSimple.js":794,"./scene/mesh-simple/RopeGeometry.js":795,"./scene/mesh/gl/GlMeshAdaptor.js":796,"./scene/mesh/gpu/GpuMeshAdapter.js":797,"./scene/mesh/shared/BatchableMesh.js":799,"./scene/mesh/shared/Mesh.js":800,"./scene/mesh/shared/MeshGeometry.js":801,"./scene/mesh/shared/MeshPipe.js":802,"./scene/mesh/shared/getTextureDefaultMatrix.js":803,"./scene/particle-container/gl/GlParticleContainerAdaptor.js":804,"./scene/particle-container/gpu/GpuParticleContainerAdaptor.js":805,"./scene/particle-container/shared/GlParticleContainerPipe.js":807,"./scene/particle-container/shared/GpuParticleContainerPipe.js":808,"./scene/particle-container/shared/Particle.js":809,"./scene/particle-container/shared/ParticleBuffer.js":810,"./scene/particle-container/shared/ParticleContainer.js":811,"./scene/particle-container/shared/ParticleContainerPipe.js":812,"./scene/particle-container/shared/particleData.js":813,"./scene/particle-container/shared/shader/ParticleShader.js":814,"./scene/particle-container/shared/shader/particles.frag.js":815,"./scene/particle-container/shared/shader/particles.vert.js":816,"./scene/particle-container/shared/shader/particles.wgsl.js":817,"./scene/particle-container/shared/utils/createIndicesForQuads.js":818,"./scene/particle-container/shared/utils/generateParticleUpdateFunction.js":819,"./scene/sprite-animated/AnimatedSprite.js":820,"./scene/sprite-nine-slice/NineSliceGeometry.js":821,"./scene/sprite-nine-slice/NineSliceSprite.js":822,"./scene/sprite-nine-slice/NineSliceSpritePipe.js":823,"./scene/sprite-tiling/TilingSprite.js":825,"./scene/sprite-tiling/TilingSpritePipe.js":826,"./scene/sprite-tiling/shader/TilingSpriteShader.js":828,"./scene/sprite-tiling/shader/tilingBit.js":829,"./scene/sprite-tiling/utils/QuadGeometry.js":830,"./scene/sprite-tiling/utils/applyMatrix.js":831,"./scene/sprite-tiling/utils/setPositions.js":832,"./scene/sprite-tiling/utils/setUvs.js":833,"./scene/sprite/BatchableSprite.js":834,"./scene/sprite/Sprite.js":835,"./scene/sprite/SpritePipe.js":836,"./scene/text-bitmap/AbstractBitmapFont.js":837,"./scene/text-bitmap/BitmapFont.js":838,"./scene/text-bitmap/BitmapFontManager.js":839,"./scene/text-bitmap/BitmapText.js":840,"./scene/text-bitmap/BitmapTextPipe.js":841,"./scene/text-bitmap/DynamicBitmapFont.js":842,"./scene/text-bitmap/asset/bitmapFontTextParser.js":843,"./scene/text-bitmap/asset/bitmapFontXMLParser.js":844,"./scene/text-bitmap/asset/bitmapFontXMLStringParser.js":845,"./scene/text-bitmap/asset/loadBitmapFont.js":846,"./scene/text-bitmap/utils/getBitmapTextLayout.js":848,"./scene/text-bitmap/utils/resolveCharacters.js":849,"./scene/text-html/HTMLText.js":850,"./scene/text-html/HTMLTextPipe.js":851,"./scene/text-html/HTMLTextRenderData.js":852,"./scene/text-html/HTMLTextStyle.js":853,"./scene/text-html/HTMLTextSystem.js":854,"./scene/text-html/utils/extractFontFamilies.js":856,"./scene/text-html/utils/getFontCss.js":857,"./scene/text-html/utils/getSVGUrl.js":858,"./scene/text-html/utils/getTemporaryCanvasFromImage.js":859,"./scene/text-html/utils/loadFontAsBase64.js":860,"./scene/text-html/utils/loadFontCSS.js":861,"./scene/text-html/utils/loadSVGImage.js":862,"./scene/text-html/utils/measureHtmlText.js":863,"./scene/text-html/utils/textStyleToCSS.js":864,"./scene/text/AbstractText.js":865,"./scene/text/Text.js":866,"./scene/text/TextStyle.js":867,"./scene/text/canvas/CanvasTextMetrics.js":868,"./scene/text/canvas/CanvasTextPipe.js":869,"./scene/text/canvas/CanvasTextSystem.js":870,"./scene/text/canvas/utils/fontStringFromTextStyle.js":871,"./scene/text/canvas/utils/getCanvasFillStyle.js":872,"./scene/text/sdfShader/SdfShader.js":874,"./scene/text/sdfShader/shader-bits/localUniformMSDFBit.js":875,"./scene/text/sdfShader/shader-bits/mSDFBit.js":876,"./scene/text/utils/ensureTextStyle.js":877,"./scene/text/utils/generateTextStyleKey.js":878,"./scene/text/utils/getPo2TextureFromSource.js":879,"./scene/text/utils/updateTextBounds.js":880,"./scene/view/ViewContainer.js":881,"./spritesheet/Spritesheet.js":882,"./spritesheet/index.js":883,"./spritesheet/init.js":884,"./spritesheet/spritesheetAsset.js":885,"./ticker/Ticker.js":886,"./ticker/TickerListener.js":887,"./ticker/const.js":888,"./ticker/index.js":889,"./utils/browser/detectVideoAlphaMode.js":890,"./utils/browser/isMobile.js":891,"./utils/browser/isSafari.js":892,"./utils/browser/isWebGLSupported.js":893,"./utils/browser/isWebGPUSupported.js":894,"./utils/browser/unsafeEvalSupported.js":895,"./utils/canvas/getCanvasBoundingBox.js":896,"./utils/const.js":897,"./utils/data/ViewableBuffer.js":898,"./utils/data/clean.js":899,"./utils/data/removeItems.js":900,"./utils/data/uid.js":901,"./utils/data/updateQuadBounds.js":902,"./utils/global/globalHooks.js":903,"./utils/index.js":904,"./utils/logging/deprecation.js":905,"./utils/logging/logDebugTexture.js":906,"./utils/logging/logScene.js":907,"./utils/logging/warn.js":908,"./utils/misc/NOOP.js":909,"./utils/misc/Transform.js":910,"./utils/network/getResolutionOfUrl.js":911,"./utils/path.js":912,"./utils/pool/Pool.js":913,"./utils/pool/PoolGroup.js":914,"./utils/sayHello.js":915,"earcut":201,"eventemitter3":212}],466:[function(require,module,exports){
 'use strict';
 
 var groupD8 = require('./matrix/groupD8.js');
@@ -48125,7 +48418,7 @@ exports.RoundedRectangle = RoundedRectangle.RoundedRectangle;
 exports.Triangle = Triangle.Triangle;
 
 
-},{"./matrix/Matrix.js":461,"./matrix/groupD8.js":462,"./misc/Size.js":463,"./misc/const.js":464,"./misc/pow2.js":465,"./misc/squaredDistanceToLineSegment.js":466,"./point/ObservablePoint.js":467,"./point/Point.js":468,"./point/PointData.js":469,"./point/PointLike.js":470,"./point/pointInTriangle.js":471,"./shapes/Circle.js":472,"./shapes/Ellipse.js":473,"./shapes/Polygon.js":474,"./shapes/Rectangle.js":475,"./shapes/RoundedRectangle.js":476,"./shapes/ShapePrimitive.js":477,"./shapes/Triangle.js":478}],461:[function(require,module,exports){
+},{"./matrix/Matrix.js":467,"./matrix/groupD8.js":468,"./misc/Size.js":469,"./misc/const.js":470,"./misc/pow2.js":471,"./misc/squaredDistanceToLineSegment.js":472,"./point/ObservablePoint.js":473,"./point/Point.js":474,"./point/PointData.js":475,"./point/PointLike.js":476,"./point/pointInTriangle.js":477,"./shapes/Circle.js":478,"./shapes/Ellipse.js":479,"./shapes/Polygon.js":480,"./shapes/Rectangle.js":481,"./shapes/RoundedRectangle.js":482,"./shapes/ShapePrimitive.js":483,"./shapes/Triangle.js":484}],467:[function(require,module,exports){
 'use strict';
 
 var _const = require('../misc/const.js');
@@ -48531,7 +48824,7 @@ const identityMatrix = new Matrix();
 exports.Matrix = Matrix;
 
 
-},{"../misc/const.js":464,"../point/Point.js":468}],462:[function(require,module,exports){
+},{"../misc/const.js":470,"../point/Point.js":474}],468:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('./Matrix.js');
@@ -48797,13 +49090,13 @@ const groupD8 = {
 exports.groupD8 = groupD8;
 
 
-},{"./Matrix.js":461}],463:[function(require,module,exports){
+},{"./Matrix.js":467}],469:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],464:[function(require,module,exports){
+},{}],470:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -48816,7 +49109,7 @@ exports.PI_2 = PI_2;
 exports.RAD_TO_DEG = RAD_TO_DEG;
 
 
-},{}],465:[function(require,module,exports){
+},{}],471:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -48853,7 +49146,7 @@ exports.log2 = log2;
 exports.nextPow2 = nextPow2;
 
 
-},{}],466:[function(require,module,exports){
+},{}],472:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -48888,7 +49181,7 @@ function squaredDistanceToLineSegment(x, y, x1, y1, x2, y2) {
 exports.squaredDistanceToLineSegment = squaredDistanceToLineSegment;
 
 
-},{}],467:[function(require,module,exports){
+},{}],473:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -48985,7 +49278,7 @@ class ObservablePoint {
 exports.ObservablePoint = ObservablePoint;
 
 
-},{}],468:[function(require,module,exports){
+},{}],474:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -49066,19 +49359,19 @@ const tempPoint = new Point();
 exports.Point = Point;
 
 
-},{}],469:[function(require,module,exports){
+},{}],475:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],470:[function(require,module,exports){
+},{}],476:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],471:[function(require,module,exports){
+},{}],477:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -49103,7 +49396,7 @@ function pointInTriangle(px, py, x1, y1, x2, y2, x3, y3) {
 exports.pointInTriangle = pointInTriangle;
 
 
-},{}],472:[function(require,module,exports){
+},{}],478:[function(require,module,exports){
 'use strict';
 
 var Rectangle = require('./Rectangle.js');
@@ -49207,7 +49500,7 @@ class Circle {
 exports.Circle = Circle;
 
 
-},{"./Rectangle.js":475}],473:[function(require,module,exports){
+},{"./Rectangle.js":481}],479:[function(require,module,exports){
 'use strict';
 
 var Rectangle = require('./Rectangle.js');
@@ -49321,7 +49614,7 @@ class Ellipse {
 exports.Ellipse = Ellipse;
 
 
-},{"./Rectangle.js":475}],474:[function(require,module,exports){
+},{"./Rectangle.js":481}],480:[function(require,module,exports){
 'use strict';
 
 var squaredDistanceToLineSegment = require('../misc/squaredDistanceToLineSegment.js');
@@ -49548,7 +49841,7 @@ class Polygon {
 exports.Polygon = Polygon;
 
 
-},{"../misc/squaredDistanceToLineSegment.js":466,"./Rectangle.js":475}],475:[function(require,module,exports){
+},{"../misc/squaredDistanceToLineSegment.js":472,"./Rectangle.js":481}],481:[function(require,module,exports){
 'use strict';
 
 var Point = require('../point/Point.js');
@@ -49853,7 +50146,7 @@ class Rectangle {
 exports.Rectangle = Rectangle;
 
 
-},{"../point/Point.js":468}],476:[function(require,module,exports){
+},{"../point/Point.js":474}],482:[function(require,module,exports){
 'use strict';
 
 var Rectangle = require('./Rectangle.js');
@@ -50033,13 +50326,13 @@ class RoundedRectangle {
 exports.RoundedRectangle = RoundedRectangle;
 
 
-},{"./Rectangle.js":475}],477:[function(require,module,exports){
+},{"./Rectangle.js":481}],483:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],478:[function(require,module,exports){
+},{}],484:[function(require,module,exports){
 'use strict';
 
 var squaredDistanceToLineSegment = require('../misc/squaredDistanceToLineSegment.js');
@@ -50160,7 +50453,7 @@ class Triangle {
 exports.Triangle = Triangle;
 
 
-},{"../misc/squaredDistanceToLineSegment.js":466,"./Rectangle.js":475}],479:[function(require,module,exports){
+},{"../misc/squaredDistanceToLineSegment.js":472,"./Rectangle.js":481}],485:[function(require,module,exports){
 'use strict';
 
 var Container = require('../scene/container/Container.js');
@@ -50276,7 +50569,7 @@ let PrepareBase = _PrepareBase;
 exports.PrepareBase = PrepareBase;
 
 
-},{"../scene/container/Container.js":701,"../ticker/Ticker.js":880,"../ticker/const.js":882}],480:[function(require,module,exports){
+},{"../scene/container/Container.js":707,"../ticker/Ticker.js":886,"../ticker/const.js":888}],486:[function(require,module,exports){
 'use strict';
 
 var TextureSource = require('../rendering/renderers/shared/texture/sources/TextureSource.js');
@@ -50353,7 +50646,7 @@ class PrepareQueue extends PrepareBase.PrepareBase {
 exports.PrepareQueue = PrepareQueue;
 
 
-},{"../rendering/renderers/shared/texture/Texture.js":678,"../rendering/renderers/shared/texture/sources/TextureSource.js":689,"../scene/container/Container.js":701,"../scene/graphics/shared/Graphics.js":745,"../scene/graphics/shared/GraphicsContext.js":746,"../scene/mesh/shared/Mesh.js":794,"../scene/sprite-animated/AnimatedSprite.js":814,"../scene/sprite-tiling/TilingSprite.js":819,"../scene/sprite/Sprite.js":829,"../scene/text/Text.js":860,"./PrepareBase.js":479}],481:[function(require,module,exports){
+},{"../rendering/renderers/shared/texture/Texture.js":684,"../rendering/renderers/shared/texture/sources/TextureSource.js":695,"../scene/container/Container.js":707,"../scene/graphics/shared/Graphics.js":751,"../scene/graphics/shared/GraphicsContext.js":752,"../scene/mesh/shared/Mesh.js":800,"../scene/sprite-animated/AnimatedSprite.js":820,"../scene/sprite-tiling/TilingSprite.js":825,"../scene/sprite/Sprite.js":835,"../scene/text/Text.js":866,"./PrepareBase.js":485}],487:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -50381,7 +50674,7 @@ PrepareSystem.extension = {
 exports.PrepareSystem = PrepareSystem;
 
 
-},{"../extensions/Extensions.js":418,"./PrepareUpload.js":482}],482:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"./PrepareUpload.js":488}],488:[function(require,module,exports){
 'use strict';
 
 var TextureSource = require('../rendering/renderers/shared/texture/sources/TextureSource.js');
@@ -50445,7 +50738,7 @@ class PrepareUpload extends PrepareQueue.PrepareQueue {
 exports.PrepareUpload = PrepareUpload;
 
 
-},{"../rendering/renderers/shared/texture/sources/TextureSource.js":689,"../scene/graphics/shared/GraphicsContext.js":746,"../scene/text-bitmap/BitmapText.js":834,"../scene/text-html/HTMLText.js":844,"../scene/text/Text.js":860,"./PrepareQueue.js":480}],483:[function(require,module,exports){
+},{"../rendering/renderers/shared/texture/sources/TextureSource.js":695,"../scene/graphics/shared/GraphicsContext.js":752,"../scene/text-bitmap/BitmapText.js":840,"../scene/text-html/HTMLText.js":850,"../scene/text/Text.js":866,"./PrepareQueue.js":486}],489:[function(require,module,exports){
 'use strict';
 
 var PrepareBase = require('./PrepareBase.js');
@@ -50461,7 +50754,7 @@ exports.PrepareSystem = PrepareSystem.PrepareSystem;
 exports.PrepareUpload = PrepareUpload.PrepareUpload;
 
 
-},{"./PrepareBase.js":479,"./PrepareQueue.js":480,"./PrepareSystem.js":481,"./PrepareUpload.js":482}],484:[function(require,module,exports){
+},{"./PrepareBase.js":485,"./PrepareQueue.js":486,"./PrepareSystem.js":487,"./PrepareUpload.js":488}],490:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -50517,7 +50810,7 @@ GlBatchAdaptor.extension = {
 exports.GlBatchAdaptor = GlBatchAdaptor;
 
 
-},{"../../../extensions/Extensions.js":418,"../../renderers/shared/state/State.js":666}],485:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../renderers/shared/state/State.js":672}],491:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -50566,7 +50859,7 @@ function checkMaxIfStatementsInShader(maxIfs, gl) {
 exports.checkMaxIfStatementsInShader = checkMaxIfStatementsInShader;
 
 
-},{}],486:[function(require,module,exports){
+},{}],492:[function(require,module,exports){
 'use strict';
 
 var getTestContext = require('../../../renderers/gl/shader/program/getTestContext.js');
@@ -50590,7 +50883,7 @@ function getMaxTexturesPerBatch() {
 exports.getMaxTexturesPerBatch = getMaxTexturesPerBatch;
 
 
-},{"../../../renderers/gl/shader/program/getTestContext.js":558,"./checkMaxIfStatementsInShader.js":485}],487:[function(require,module,exports){
+},{"../../../renderers/gl/shader/program/getTestContext.js":564,"./checkMaxIfStatementsInShader.js":491}],493:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -50654,7 +50947,7 @@ GpuBatchAdaptor.extension = {
 exports.GpuBatchAdaptor = GpuBatchAdaptor;
 
 
-},{"../../../extensions/Extensions.js":418,"../../renderers/shared/state/State.js":666,"./getTextureBatchBindGroup.js":490}],488:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../renderers/shared/state/State.js":672,"./getTextureBatchBindGroup.js":496}],494:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -50687,7 +50980,7 @@ function generateGPULayout(maxTextures) {
 exports.generateGPULayout = generateGPULayout;
 
 
-},{}],489:[function(require,module,exports){
+},{}],495:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -50704,7 +50997,7 @@ function generateLayout(maxTextures) {
 exports.generateLayout = generateLayout;
 
 
-},{}],490:[function(require,module,exports){
+},{}],496:[function(require,module,exports){
 'use strict';
 
 var BindGroup = require('../../renderers/gpu/shader/BindGroup.js');
@@ -50741,7 +51034,7 @@ function generateTextureBatchBindGroup(textures, size, key) {
 exports.getTextureBatchBindGroup = getTextureBatchBindGroup;
 
 
-},{"../../renderers/gpu/shader/BindGroup.js":607,"../../renderers/shared/texture/Texture.js":678,"../gl/utils/maxRecommendedTextures.js":486}],491:[function(require,module,exports){
+},{"../../renderers/gpu/shader/BindGroup.js":613,"../../renderers/shared/texture/Texture.js":684,"../gl/utils/maxRecommendedTextures.js":492}],497:[function(require,module,exports){
 'use strict';
 
 var Buffer = require('../../renderers/shared/buffer/Buffer.js');
@@ -50803,7 +51096,7 @@ class BatchGeometry extends Geometry.Geometry {
 exports.BatchGeometry = BatchGeometry;
 
 
-},{"../../renderers/shared/buffer/Buffer.js":634,"../../renderers/shared/buffer/const.js":636,"../../renderers/shared/geometry/Geometry.js":640}],492:[function(require,module,exports){
+},{"../../renderers/shared/buffer/Buffer.js":640,"../../renderers/shared/buffer/const.js":642,"../../renderers/shared/geometry/Geometry.js":646}],498:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -50828,7 +51121,7 @@ class BatchTextureArray {
 exports.BatchTextureArray = BatchTextureArray;
 
 
-},{}],493:[function(require,module,exports){
+},{}],499:[function(require,module,exports){
 'use strict';
 
 var uid = require('../../../utils/data/uid.js');
@@ -51177,7 +51470,7 @@ exports.Batch = Batch;
 exports.Batcher = Batcher;
 
 
-},{"../../../utils/data/ViewableBuffer.js":892,"../../../utils/data/uid.js":895,"../../renderers/shared/buffer/utils/fastCopy.js":637,"../../renderers/shared/state/getAdjustedBlendModeBlend.js":668,"../gl/utils/maxRecommendedTextures.js":486,"./BatchTextureArray.js":492}],494:[function(require,module,exports){
+},{"../../../utils/data/ViewableBuffer.js":898,"../../../utils/data/uid.js":901,"../../renderers/shared/buffer/utils/fastCopy.js":643,"../../renderers/shared/state/getAdjustedBlendModeBlend.js":674,"../gl/utils/maxRecommendedTextures.js":492,"./BatchTextureArray.js":498}],500:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -51282,7 +51575,7 @@ Extensions.extensions.add(DefaultBatcher.DefaultBatcher);
 exports.BatcherPipe = BatcherPipe;
 
 
-},{"../../../extensions/Extensions.js":418,"../../renderers/shared/state/State.js":666,"./DefaultBatcher.js":495}],495:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../renderers/shared/state/State.js":672,"./DefaultBatcher.js":501}],501:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -51397,7 +51690,7 @@ let DefaultBatcher = _DefaultBatcher;
 exports.DefaultBatcher = DefaultBatcher;
 
 
-},{"../../../extensions/Extensions.js":418,"./BatchGeometry.js":491,"./Batcher.js":493,"./DefaultShader.js":496}],496:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"./BatchGeometry.js":497,"./Batcher.js":499,"./DefaultShader.js":502}],502:[function(require,module,exports){
 'use strict';
 
 var compileHighShaderToProgram = require('../../high-shader/compileHighShaderToProgram.js');
@@ -51439,7 +51732,7 @@ class DefaultShader extends Shader.Shader {
 exports.DefaultShader = DefaultShader;
 
 
-},{"../../high-shader/compileHighShaderToProgram.js":497,"../../high-shader/shader-bits/colorBit.js":507,"../../high-shader/shader-bits/generateTextureBatchBit.js":508,"../../high-shader/shader-bits/roundPixelsBit.js":511,"../../renderers/gl/shader/getBatchSamplersUniformGroup.js":550,"../../renderers/shared/shader/Shader.js":655}],497:[function(require,module,exports){
+},{"../../high-shader/compileHighShaderToProgram.js":503,"../../high-shader/shader-bits/colorBit.js":513,"../../high-shader/shader-bits/generateTextureBatchBit.js":514,"../../high-shader/shader-bits/roundPixelsBit.js":517,"../../renderers/gl/shader/getBatchSamplersUniformGroup.js":556,"../../renderers/shared/shader/Shader.js":661}],503:[function(require,module,exports){
 'use strict';
 
 var GlProgram = require('../renderers/gl/shader/GlProgram.js');
@@ -51492,7 +51785,7 @@ exports.compileHighShaderGlProgram = compileHighShaderGlProgram;
 exports.compileHighShaderGpuProgram = compileHighShaderGpuProgram;
 
 
-},{"../renderers/gl/shader/GlProgram.js":545,"../renderers/gpu/shader/GpuProgram.js":609,"./compiler/compileHighShader.js":498,"./defaultProgramTemplate.js":506,"./shader-bits/globalUniformsBit.js":509}],498:[function(require,module,exports){
+},{"../renderers/gl/shader/GlProgram.js":551,"../renderers/gpu/shader/GpuProgram.js":615,"./compiler/compileHighShader.js":504,"./defaultProgramTemplate.js":512,"./shader-bits/globalUniformsBit.js":515}],504:[function(require,module,exports){
 'use strict';
 
 var addBits = require('./utils/addBits.js');
@@ -51562,9 +51855,9 @@ exports.compileHighShader = compileHighShader;
 exports.compileHighShaderGl = compileHighShaderGl;
 
 
-},{"./utils/addBits.js":500,"./utils/compileHooks.js":501,"./utils/compileInputs.js":502,"./utils/compileOutputs.js":503,"./utils/injectBits.js":505}],499:[function(require,module,exports){
-arguments[4][330][0].apply(exports,arguments)
-},{"dup":330}],500:[function(require,module,exports){
+},{"./utils/addBits.js":506,"./utils/compileHooks.js":507,"./utils/compileInputs.js":508,"./utils/compileOutputs.js":509,"./utils/injectBits.js":511}],505:[function(require,module,exports){
+arguments[4][336][0].apply(exports,arguments)
+},{"dup":336}],506:[function(require,module,exports){
 'use strict';
 
 var warn = require('../../../../utils/logging/warn.js');
@@ -51594,7 +51887,7 @@ function addBits(srcParts, parts, name) {
 exports.addBits = addBits;
 
 
-},{"../../../../utils/logging/warn.js":902}],501:[function(require,module,exports){
+},{"../../../../utils/logging/warn.js":908}],507:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -51612,7 +51905,7 @@ exports.compileHooks = compileHooks;
 exports.findHooksRx = findHooksRx;
 
 
-},{}],502:[function(require,module,exports){
+},{}],508:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -51646,7 +51939,7 @@ ${finalString}
 exports.compileInputs = compileInputs;
 
 
-},{}],503:[function(require,module,exports){
+},{}],509:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -51700,7 +51993,7 @@ ${mainEnd}
 exports.compileOutputs = compileOutputs;
 
 
-},{}],504:[function(require,module,exports){
+},{}],510:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -51723,7 +52016,7 @@ function formatShader(shader) {
 exports.formatShader = formatShader;
 
 
-},{}],505:[function(require,module,exports){
+},{}],511:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -51746,7 +52039,7 @@ ${parts.join("\n")}
 exports.injectBits = injectBits;
 
 
-},{}],506:[function(require,module,exports){
+},{}],512:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -51897,7 +52190,7 @@ exports.vertexGPUTemplate = vertexGPUTemplate;
 exports.vertexGlTemplate = vertexGlTemplate;
 
 
-},{}],507:[function(require,module,exports){
+},{}],513:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -51940,7 +52233,7 @@ exports.colorBit = colorBit;
 exports.colorBitGl = colorBitGl;
 
 
-},{}],508:[function(require,module,exports){
+},{}],514:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -52071,7 +52364,7 @@ exports.generateTextureBatchBit = generateTextureBatchBit;
 exports.generateTextureBatchBitGl = generateTextureBatchBitGl;
 
 
-},{}],509:[function(require,module,exports){
+},{}],515:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -52129,7 +52422,7 @@ exports.globalUniformsBitGl = globalUniformsBitGl;
 exports.globalUniformsUBOBitGl = globalUniformsUBOBitGl;
 
 
-},{}],510:[function(require,module,exports){
+},{}],516:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -52211,7 +52504,7 @@ exports.localUniformBitGl = localUniformBitGl;
 exports.localUniformBitGroup2 = localUniformBitGroup2;
 
 
-},{}],511:[function(require,module,exports){
+},{}],517:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -52248,7 +52541,7 @@ exports.roundPixelsBit = roundPixelsBit;
 exports.roundPixelsBitGl = roundPixelsBitGl;
 
 
-},{}],512:[function(require,module,exports){
+},{}],518:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -52329,7 +52622,7 @@ exports.textureBit = textureBit;
 exports.textureBitGl = textureBitGl;
 
 
-},{}],513:[function(require,module,exports){
+},{}],519:[function(require,module,exports){
 'use strict';
 
 var GlBatchAdaptor = require('./batcher/gl/GlBatchAdaptor.js');
@@ -52796,7 +53089,7 @@ exports.ViewSystem = ViewSystem.ViewSystem;
 exports.RendererType = types$1.RendererType;
 
 
-},{"./batcher/gl/GlBatchAdaptor.js":484,"./batcher/gl/utils/checkMaxIfStatementsInShader.js":485,"./batcher/gl/utils/maxRecommendedTextures.js":486,"./batcher/gpu/GpuBatchAdaptor.js":487,"./batcher/gpu/generateGPULayout.js":488,"./batcher/gpu/generateLayout.js":489,"./batcher/gpu/getTextureBatchBindGroup.js":490,"./batcher/shared/BatchGeometry.js":491,"./batcher/shared/BatchTextureArray.js":492,"./batcher/shared/Batcher.js":493,"./batcher/shared/BatcherPipe.js":494,"./batcher/shared/DefaultBatcher.js":495,"./batcher/shared/DefaultShader.js":496,"./high-shader/compileHighShaderToProgram.js":497,"./high-shader/compiler/compileHighShader.js":498,"./high-shader/compiler/types.js":499,"./high-shader/compiler/utils/addBits.js":500,"./high-shader/compiler/utils/compileHooks.js":501,"./high-shader/compiler/utils/compileInputs.js":502,"./high-shader/compiler/utils/compileOutputs.js":503,"./high-shader/compiler/utils/formatShader.js":504,"./high-shader/compiler/utils/injectBits.js":505,"./high-shader/defaultProgramTemplate.js":506,"./high-shader/shader-bits/colorBit.js":507,"./high-shader/shader-bits/generateTextureBatchBit.js":508,"./high-shader/shader-bits/globalUniformsBit.js":509,"./high-shader/shader-bits/localUniformBit.js":510,"./high-shader/shader-bits/roundPixelsBit.js":511,"./high-shader/shader-bits/textureBit.js":512,"./mask/MaskEffectManager.js":515,"./mask/alpha/AlphaMask.js":516,"./mask/alpha/AlphaMaskPipe.js":517,"./mask/color/ColorMask.js":518,"./mask/color/ColorMaskPipe.js":519,"./mask/scissor/ScissorMask.js":520,"./mask/stencil/StencilMask.js":521,"./mask/stencil/StencilMaskPipe.js":522,"./mask/utils/addMaskBounds.js":523,"./mask/utils/addMaskLocalBounds.js":524,"./renderers/autoDetectRenderer.js":525,"./renderers/gl/GlBackBufferSystem.js":526,"./renderers/gl/GlColorMaskSystem.js":527,"./renderers/gl/GlEncoderSystem.js":528,"./renderers/gl/GlRenderTarget.js":529,"./renderers/gl/GlStencilSystem.js":530,"./renderers/gl/GlUboSystem.js":531,"./renderers/gl/WebGLRenderer.js":532,"./renderers/gl/buffer/GlBuffer.js":533,"./renderers/gl/buffer/GlBufferSystem.js":534,"./renderers/gl/buffer/const.js":535,"./renderers/gl/const.js":536,"./renderers/gl/context/GlContextSystem.js":537,"./renderers/gl/context/GlRenderingContext.js":538,"./renderers/gl/context/WebGLExtensions.js":539,"./renderers/gl/geometry/GlGeometrySystem.js":540,"./renderers/gl/geometry/utils/getGlTypeFromFormat.js":541,"./renderers/gl/renderTarget/GlRenderTargetAdaptor.js":542,"./renderers/gl/renderTarget/GlRenderTargetSystem.js":543,"./renderers/gl/shader/GenerateShaderSyncCode.js":544,"./renderers/gl/shader/GlProgram.js":545,"./renderers/gl/shader/GlProgramData.js":546,"./renderers/gl/shader/GlShaderSystem.js":547,"./renderers/gl/shader/GlUniformGroupSystem.js":548,"./renderers/gl/shader/const.js":549,"./renderers/gl/shader/getBatchSamplersUniformGroup.js":550,"./renderers/gl/shader/migrateFragmentFromV7toV8.js":551,"./renderers/gl/shader/program/compileShader.js":552,"./renderers/gl/shader/program/defaultValue.js":553,"./renderers/gl/shader/program/ensureAttributes.js":554,"./renderers/gl/shader/program/extractAttributesFromGlProgram.js":555,"./renderers/gl/shader/program/generateProgram.js":556,"./renderers/gl/shader/program/getMaxFragmentPrecision.js":557,"./renderers/gl/shader/program/getTestContext.js":558,"./renderers/gl/shader/program/getUboData.js":559,"./renderers/gl/shader/program/getUniformData.js":560,"./renderers/gl/shader/program/logProgramError.js":561,"./renderers/gl/shader/program/mapSize.js":562,"./renderers/gl/shader/program/mapType.js":563,"./renderers/gl/shader/program/preprocessors/addProgramDefines.js":564,"./renderers/gl/shader/program/preprocessors/ensurePrecision.js":565,"./renderers/gl/shader/program/preprocessors/insertVersion.js":566,"./renderers/gl/shader/program/preprocessors/setProgramName.js":567,"./renderers/gl/shader/program/preprocessors/stripVersion.js":568,"./renderers/gl/shader/utils/createUboElementsSTD40.js":569,"./renderers/gl/shader/utils/createUboSyncSTD40.js":570,"./renderers/gl/shader/utils/generateArraySyncSTD40.js":571,"./renderers/gl/shader/utils/generateUniformsSync.js":572,"./renderers/gl/shader/utils/generateUniformsSyncTypes.js":573,"./renderers/gl/state/GlStateSystem.js":574,"./renderers/gl/state/mapWebGLBlendModesToPixi.js":575,"./renderers/gl/texture/GlTexture.js":576,"./renderers/gl/texture/GlTextureSystem.js":577,"./renderers/gl/texture/const.js":578,"./renderers/gl/texture/uploaders/GLTextureUploader.js":579,"./renderers/gl/texture/uploaders/glUploadBufferImageResource.js":580,"./renderers/gl/texture/uploaders/glUploadCompressedTextureResource.js":581,"./renderers/gl/texture/uploaders/glUploadImageResource.js":582,"./renderers/gl/texture/uploaders/glUploadVideoResource.js":583,"./renderers/gl/texture/utils/applyStyleParams.js":584,"./renderers/gl/texture/utils/getSupportedGlCompressedTextureFormats.js":585,"./renderers/gl/texture/utils/mapFormatToGlFormat.js":586,"./renderers/gl/texture/utils/mapFormatToGlInternalFormat.js":587,"./renderers/gl/texture/utils/mapFormatToGlType.js":588,"./renderers/gl/texture/utils/pixiToGlMaps.js":589,"./renderers/gl/texture/utils/unpremultiplyAlpha.js":590,"./renderers/gpu/BindGroupSystem.js":591,"./renderers/gpu/GpuColorMaskSystem.js":592,"./renderers/gpu/GpuDeviceSystem.js":593,"./renderers/gpu/GpuEncoderSystem.js":594,"./renderers/gpu/GpuStencilSystem.js":595,"./renderers/gpu/GpuUboSystem.js":596,"./renderers/gpu/GpuUniformBatchPipe.js":597,"./renderers/gpu/WebGPURenderer.js":598,"./renderers/gpu/buffer/GpuBufferSystem.js":599,"./renderers/gpu/buffer/GpuReadBuffer.js":600,"./renderers/gpu/buffer/UboBatch.js":601,"./renderers/gpu/pipeline/PipelineSystem.js":602,"./renderers/gpu/renderTarget/GpuRenderTarget.js":603,"./renderers/gpu/renderTarget/GpuRenderTargetAdaptor.js":604,"./renderers/gpu/renderTarget/GpuRenderTargetSystem.js":605,"./renderers/gpu/renderTarget/calculateProjection.js":606,"./renderers/gpu/shader/BindGroup.js":607,"./renderers/gpu/shader/BindResource.js":608,"./renderers/gpu/shader/GpuProgram.js":609,"./renderers/gpu/shader/GpuShaderSystem.js":610,"./renderers/gpu/shader/utils/createUboElementsWGSL.js":611,"./renderers/gpu/shader/utils/createUboSyncFunctionWGSL.js":612,"./renderers/gpu/shader/utils/extractAttributesFromGpuProgram.js":613,"./renderers/gpu/shader/utils/extractStructAndGroups.js":614,"./renderers/gpu/shader/utils/generateArraySyncWGSL.js":615,"./renderers/gpu/shader/utils/generateGpuLayoutGroups.js":616,"./renderers/gpu/shader/utils/generateLayoutHash.js":617,"./renderers/gpu/shader/utils/removeStructAndGroupDuplicates.js":618,"./renderers/gpu/state/GpuBlendModesToPixi.js":619,"./renderers/gpu/state/GpuStateSystem.js":620,"./renderers/gpu/state/GpuStencilModesToPixi.js":621,"./renderers/gpu/texture/GpuTextureSystem.js":622,"./renderers/gpu/texture/uploaders/GpuTextureUploader.js":623,"./renderers/gpu/texture/uploaders/gpuUploadBufferImageResource.js":624,"./renderers/gpu/texture/uploaders/gpuUploadCompressedTextureResource.js":625,"./renderers/gpu/texture/uploaders/gpuUploadImageSource.js":626,"./renderers/gpu/texture/uploaders/gpuUploadVideoSource.js":627,"./renderers/gpu/texture/utils/GpuMipmapGenerator.js":628,"./renderers/gpu/texture/utils/getSupportedGPUCompressedTextureFormats.js":629,"./renderers/shared/Renderable.js":630,"./renderers/shared/SchedulerSystem.js":631,"./renderers/shared/background/BackgroundSystem.js":632,"./renderers/shared/blendModes/BlendModePipe.js":633,"./renderers/shared/buffer/Buffer.js":634,"./renderers/shared/buffer/BufferResource.js":635,"./renderers/shared/buffer/const.js":636,"./renderers/shared/buffer/utils/fastCopy.js":637,"./renderers/shared/extract/ExtractSystem.js":638,"./renderers/shared/extract/GenerateTextureSystem.js":639,"./renderers/shared/geometry/Geometry.js":640,"./renderers/shared/geometry/const.js":641,"./renderers/shared/geometry/utils/buildUvs.js":642,"./renderers/shared/geometry/utils/ensureIsBuffer.js":643,"./renderers/shared/geometry/utils/getAttributeInfoFromFormat.js":644,"./renderers/shared/geometry/utils/getGeometryBounds.js":645,"./renderers/shared/geometry/utils/transformVertices.js":646,"./renderers/shared/instructions/Instruction.js":647,"./renderers/shared/instructions/InstructionSet.js":648,"./renderers/shared/instructions/RenderPipe.js":649,"./renderers/shared/renderTarget/GlobalUniformSystem.js":650,"./renderers/shared/renderTarget/RenderTarget.js":651,"./renderers/shared/renderTarget/RenderTargetSystem.js":652,"./renderers/shared/renderTarget/isRenderingToScreen.js":653,"./renderers/shared/renderTarget/viewportFromFrame.js":654,"./renderers/shared/shader/Shader.js":655,"./renderers/shared/shader/ShaderSystem.js":656,"./renderers/shared/shader/UboSystem.js":657,"./renderers/shared/shader/UniformGroup.js":658,"./renderers/shared/shader/const.js":659,"./renderers/shared/shader/types.js":660,"./renderers/shared/shader/utils/createUboSyncFunction.js":661,"./renderers/shared/shader/utils/getDefaultUniformValue.js":662,"./renderers/shared/shader/utils/uboSyncFunctions.js":663,"./renderers/shared/shader/utils/uniformParsers.js":664,"./renderers/shared/startup/HelloSystem.js":665,"./renderers/shared/state/State.js":666,"./renderers/shared/state/const.js":667,"./renderers/shared/state/getAdjustedBlendModeBlend.js":668,"./renderers/shared/system/AbstractRenderer.js":669,"./renderers/shared/system/SharedSystems.js":670,"./renderers/shared/system/System.js":671,"./renderers/shared/system/SystemRunner.js":672,"./renderers/shared/system/utils/typeUtils.js":673,"./renderers/shared/texture/CanvasPool.js":674,"./renderers/shared/texture/GenerateCanvas.js":675,"./renderers/shared/texture/RenderTexture.js":676,"./renderers/shared/texture/RenderableGCSystem.js":677,"./renderers/shared/texture/Texture.js":678,"./renderers/shared/texture/TextureGCSystem.js":679,"./renderers/shared/texture/TextureMatrix.js":680,"./renderers/shared/texture/TexturePool.js":681,"./renderers/shared/texture/TextureStyle.js":682,"./renderers/shared/texture/TextureUvs.js":683,"./renderers/shared/texture/const.js":684,"./renderers/shared/texture/sources/BufferImageSource.js":685,"./renderers/shared/texture/sources/CanvasSource.js":686,"./renderers/shared/texture/sources/CompressedSource.js":687,"./renderers/shared/texture/sources/ImageSource.js":688,"./renderers/shared/texture/sources/TextureSource.js":689,"./renderers/shared/texture/sources/VideoSource.js":690,"./renderers/shared/texture/utils/generateUID.js":691,"./renderers/shared/texture/utils/getCanvasTexture.js":692,"./renderers/shared/texture/utils/getSupportedCompressedTextureFormats.js":693,"./renderers/shared/texture/utils/getSupportedTextureFormats.js":694,"./renderers/shared/texture/utils/textureFrom.js":695,"./renderers/shared/utils/createIdFromString.js":696,"./renderers/shared/utils/parseFunctionBody.js":697,"./renderers/shared/view/View.js":698,"./renderers/shared/view/ViewSystem.js":699,"./renderers/types.js":700}],514:[function(require,module,exports){
+},{"./batcher/gl/GlBatchAdaptor.js":490,"./batcher/gl/utils/checkMaxIfStatementsInShader.js":491,"./batcher/gl/utils/maxRecommendedTextures.js":492,"./batcher/gpu/GpuBatchAdaptor.js":493,"./batcher/gpu/generateGPULayout.js":494,"./batcher/gpu/generateLayout.js":495,"./batcher/gpu/getTextureBatchBindGroup.js":496,"./batcher/shared/BatchGeometry.js":497,"./batcher/shared/BatchTextureArray.js":498,"./batcher/shared/Batcher.js":499,"./batcher/shared/BatcherPipe.js":500,"./batcher/shared/DefaultBatcher.js":501,"./batcher/shared/DefaultShader.js":502,"./high-shader/compileHighShaderToProgram.js":503,"./high-shader/compiler/compileHighShader.js":504,"./high-shader/compiler/types.js":505,"./high-shader/compiler/utils/addBits.js":506,"./high-shader/compiler/utils/compileHooks.js":507,"./high-shader/compiler/utils/compileInputs.js":508,"./high-shader/compiler/utils/compileOutputs.js":509,"./high-shader/compiler/utils/formatShader.js":510,"./high-shader/compiler/utils/injectBits.js":511,"./high-shader/defaultProgramTemplate.js":512,"./high-shader/shader-bits/colorBit.js":513,"./high-shader/shader-bits/generateTextureBatchBit.js":514,"./high-shader/shader-bits/globalUniformsBit.js":515,"./high-shader/shader-bits/localUniformBit.js":516,"./high-shader/shader-bits/roundPixelsBit.js":517,"./high-shader/shader-bits/textureBit.js":518,"./mask/MaskEffectManager.js":521,"./mask/alpha/AlphaMask.js":522,"./mask/alpha/AlphaMaskPipe.js":523,"./mask/color/ColorMask.js":524,"./mask/color/ColorMaskPipe.js":525,"./mask/scissor/ScissorMask.js":526,"./mask/stencil/StencilMask.js":527,"./mask/stencil/StencilMaskPipe.js":528,"./mask/utils/addMaskBounds.js":529,"./mask/utils/addMaskLocalBounds.js":530,"./renderers/autoDetectRenderer.js":531,"./renderers/gl/GlBackBufferSystem.js":532,"./renderers/gl/GlColorMaskSystem.js":533,"./renderers/gl/GlEncoderSystem.js":534,"./renderers/gl/GlRenderTarget.js":535,"./renderers/gl/GlStencilSystem.js":536,"./renderers/gl/GlUboSystem.js":537,"./renderers/gl/WebGLRenderer.js":538,"./renderers/gl/buffer/GlBuffer.js":539,"./renderers/gl/buffer/GlBufferSystem.js":540,"./renderers/gl/buffer/const.js":541,"./renderers/gl/const.js":542,"./renderers/gl/context/GlContextSystem.js":543,"./renderers/gl/context/GlRenderingContext.js":544,"./renderers/gl/context/WebGLExtensions.js":545,"./renderers/gl/geometry/GlGeometrySystem.js":546,"./renderers/gl/geometry/utils/getGlTypeFromFormat.js":547,"./renderers/gl/renderTarget/GlRenderTargetAdaptor.js":548,"./renderers/gl/renderTarget/GlRenderTargetSystem.js":549,"./renderers/gl/shader/GenerateShaderSyncCode.js":550,"./renderers/gl/shader/GlProgram.js":551,"./renderers/gl/shader/GlProgramData.js":552,"./renderers/gl/shader/GlShaderSystem.js":553,"./renderers/gl/shader/GlUniformGroupSystem.js":554,"./renderers/gl/shader/const.js":555,"./renderers/gl/shader/getBatchSamplersUniformGroup.js":556,"./renderers/gl/shader/migrateFragmentFromV7toV8.js":557,"./renderers/gl/shader/program/compileShader.js":558,"./renderers/gl/shader/program/defaultValue.js":559,"./renderers/gl/shader/program/ensureAttributes.js":560,"./renderers/gl/shader/program/extractAttributesFromGlProgram.js":561,"./renderers/gl/shader/program/generateProgram.js":562,"./renderers/gl/shader/program/getMaxFragmentPrecision.js":563,"./renderers/gl/shader/program/getTestContext.js":564,"./renderers/gl/shader/program/getUboData.js":565,"./renderers/gl/shader/program/getUniformData.js":566,"./renderers/gl/shader/program/logProgramError.js":567,"./renderers/gl/shader/program/mapSize.js":568,"./renderers/gl/shader/program/mapType.js":569,"./renderers/gl/shader/program/preprocessors/addProgramDefines.js":570,"./renderers/gl/shader/program/preprocessors/ensurePrecision.js":571,"./renderers/gl/shader/program/preprocessors/insertVersion.js":572,"./renderers/gl/shader/program/preprocessors/setProgramName.js":573,"./renderers/gl/shader/program/preprocessors/stripVersion.js":574,"./renderers/gl/shader/utils/createUboElementsSTD40.js":575,"./renderers/gl/shader/utils/createUboSyncSTD40.js":576,"./renderers/gl/shader/utils/generateArraySyncSTD40.js":577,"./renderers/gl/shader/utils/generateUniformsSync.js":578,"./renderers/gl/shader/utils/generateUniformsSyncTypes.js":579,"./renderers/gl/state/GlStateSystem.js":580,"./renderers/gl/state/mapWebGLBlendModesToPixi.js":581,"./renderers/gl/texture/GlTexture.js":582,"./renderers/gl/texture/GlTextureSystem.js":583,"./renderers/gl/texture/const.js":584,"./renderers/gl/texture/uploaders/GLTextureUploader.js":585,"./renderers/gl/texture/uploaders/glUploadBufferImageResource.js":586,"./renderers/gl/texture/uploaders/glUploadCompressedTextureResource.js":587,"./renderers/gl/texture/uploaders/glUploadImageResource.js":588,"./renderers/gl/texture/uploaders/glUploadVideoResource.js":589,"./renderers/gl/texture/utils/applyStyleParams.js":590,"./renderers/gl/texture/utils/getSupportedGlCompressedTextureFormats.js":591,"./renderers/gl/texture/utils/mapFormatToGlFormat.js":592,"./renderers/gl/texture/utils/mapFormatToGlInternalFormat.js":593,"./renderers/gl/texture/utils/mapFormatToGlType.js":594,"./renderers/gl/texture/utils/pixiToGlMaps.js":595,"./renderers/gl/texture/utils/unpremultiplyAlpha.js":596,"./renderers/gpu/BindGroupSystem.js":597,"./renderers/gpu/GpuColorMaskSystem.js":598,"./renderers/gpu/GpuDeviceSystem.js":599,"./renderers/gpu/GpuEncoderSystem.js":600,"./renderers/gpu/GpuStencilSystem.js":601,"./renderers/gpu/GpuUboSystem.js":602,"./renderers/gpu/GpuUniformBatchPipe.js":603,"./renderers/gpu/WebGPURenderer.js":604,"./renderers/gpu/buffer/GpuBufferSystem.js":605,"./renderers/gpu/buffer/GpuReadBuffer.js":606,"./renderers/gpu/buffer/UboBatch.js":607,"./renderers/gpu/pipeline/PipelineSystem.js":608,"./renderers/gpu/renderTarget/GpuRenderTarget.js":609,"./renderers/gpu/renderTarget/GpuRenderTargetAdaptor.js":610,"./renderers/gpu/renderTarget/GpuRenderTargetSystem.js":611,"./renderers/gpu/renderTarget/calculateProjection.js":612,"./renderers/gpu/shader/BindGroup.js":613,"./renderers/gpu/shader/BindResource.js":614,"./renderers/gpu/shader/GpuProgram.js":615,"./renderers/gpu/shader/GpuShaderSystem.js":616,"./renderers/gpu/shader/utils/createUboElementsWGSL.js":617,"./renderers/gpu/shader/utils/createUboSyncFunctionWGSL.js":618,"./renderers/gpu/shader/utils/extractAttributesFromGpuProgram.js":619,"./renderers/gpu/shader/utils/extractStructAndGroups.js":620,"./renderers/gpu/shader/utils/generateArraySyncWGSL.js":621,"./renderers/gpu/shader/utils/generateGpuLayoutGroups.js":622,"./renderers/gpu/shader/utils/generateLayoutHash.js":623,"./renderers/gpu/shader/utils/removeStructAndGroupDuplicates.js":624,"./renderers/gpu/state/GpuBlendModesToPixi.js":625,"./renderers/gpu/state/GpuStateSystem.js":626,"./renderers/gpu/state/GpuStencilModesToPixi.js":627,"./renderers/gpu/texture/GpuTextureSystem.js":628,"./renderers/gpu/texture/uploaders/GpuTextureUploader.js":629,"./renderers/gpu/texture/uploaders/gpuUploadBufferImageResource.js":630,"./renderers/gpu/texture/uploaders/gpuUploadCompressedTextureResource.js":631,"./renderers/gpu/texture/uploaders/gpuUploadImageSource.js":632,"./renderers/gpu/texture/uploaders/gpuUploadVideoSource.js":633,"./renderers/gpu/texture/utils/GpuMipmapGenerator.js":634,"./renderers/gpu/texture/utils/getSupportedGPUCompressedTextureFormats.js":635,"./renderers/shared/Renderable.js":636,"./renderers/shared/SchedulerSystem.js":637,"./renderers/shared/background/BackgroundSystem.js":638,"./renderers/shared/blendModes/BlendModePipe.js":639,"./renderers/shared/buffer/Buffer.js":640,"./renderers/shared/buffer/BufferResource.js":641,"./renderers/shared/buffer/const.js":642,"./renderers/shared/buffer/utils/fastCopy.js":643,"./renderers/shared/extract/ExtractSystem.js":644,"./renderers/shared/extract/GenerateTextureSystem.js":645,"./renderers/shared/geometry/Geometry.js":646,"./renderers/shared/geometry/const.js":647,"./renderers/shared/geometry/utils/buildUvs.js":648,"./renderers/shared/geometry/utils/ensureIsBuffer.js":649,"./renderers/shared/geometry/utils/getAttributeInfoFromFormat.js":650,"./renderers/shared/geometry/utils/getGeometryBounds.js":651,"./renderers/shared/geometry/utils/transformVertices.js":652,"./renderers/shared/instructions/Instruction.js":653,"./renderers/shared/instructions/InstructionSet.js":654,"./renderers/shared/instructions/RenderPipe.js":655,"./renderers/shared/renderTarget/GlobalUniformSystem.js":656,"./renderers/shared/renderTarget/RenderTarget.js":657,"./renderers/shared/renderTarget/RenderTargetSystem.js":658,"./renderers/shared/renderTarget/isRenderingToScreen.js":659,"./renderers/shared/renderTarget/viewportFromFrame.js":660,"./renderers/shared/shader/Shader.js":661,"./renderers/shared/shader/ShaderSystem.js":662,"./renderers/shared/shader/UboSystem.js":663,"./renderers/shared/shader/UniformGroup.js":664,"./renderers/shared/shader/const.js":665,"./renderers/shared/shader/types.js":666,"./renderers/shared/shader/utils/createUboSyncFunction.js":667,"./renderers/shared/shader/utils/getDefaultUniformValue.js":668,"./renderers/shared/shader/utils/uboSyncFunctions.js":669,"./renderers/shared/shader/utils/uniformParsers.js":670,"./renderers/shared/startup/HelloSystem.js":671,"./renderers/shared/state/State.js":672,"./renderers/shared/state/const.js":673,"./renderers/shared/state/getAdjustedBlendModeBlend.js":674,"./renderers/shared/system/AbstractRenderer.js":675,"./renderers/shared/system/SharedSystems.js":676,"./renderers/shared/system/System.js":677,"./renderers/shared/system/SystemRunner.js":678,"./renderers/shared/system/utils/typeUtils.js":679,"./renderers/shared/texture/CanvasPool.js":680,"./renderers/shared/texture/GenerateCanvas.js":681,"./renderers/shared/texture/RenderTexture.js":682,"./renderers/shared/texture/RenderableGCSystem.js":683,"./renderers/shared/texture/Texture.js":684,"./renderers/shared/texture/TextureGCSystem.js":685,"./renderers/shared/texture/TextureMatrix.js":686,"./renderers/shared/texture/TexturePool.js":687,"./renderers/shared/texture/TextureStyle.js":688,"./renderers/shared/texture/TextureUvs.js":689,"./renderers/shared/texture/const.js":690,"./renderers/shared/texture/sources/BufferImageSource.js":691,"./renderers/shared/texture/sources/CanvasSource.js":692,"./renderers/shared/texture/sources/CompressedSource.js":693,"./renderers/shared/texture/sources/ImageSource.js":694,"./renderers/shared/texture/sources/TextureSource.js":695,"./renderers/shared/texture/sources/VideoSource.js":696,"./renderers/shared/texture/utils/generateUID.js":697,"./renderers/shared/texture/utils/getCanvasTexture.js":698,"./renderers/shared/texture/utils/getSupportedCompressedTextureFormats.js":699,"./renderers/shared/texture/utils/getSupportedTextureFormats.js":700,"./renderers/shared/texture/utils/textureFrom.js":701,"./renderers/shared/utils/createIdFromString.js":702,"./renderers/shared/utils/parseFunctionBody.js":703,"./renderers/shared/view/View.js":704,"./renderers/shared/view/ViewSystem.js":705,"./renderers/types.js":706}],520:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -52814,7 +53107,7 @@ require('./mask/MaskEffectManager.js');
 Extensions.extensions.add(AlphaMask.AlphaMask, ColorMask.ColorMask, StencilMask.StencilMask, VideoSource.VideoSource, ImageSource.ImageSource, CanvasSource.CanvasSource, BufferImageSource.BufferImageSource);
 
 
-},{"../extensions/Extensions.js":418,"./mask/MaskEffectManager.js":515,"./mask/alpha/AlphaMask.js":516,"./mask/color/ColorMask.js":518,"./mask/stencil/StencilMask.js":521,"./renderers/shared/texture/sources/BufferImageSource.js":685,"./renderers/shared/texture/sources/CanvasSource.js":686,"./renderers/shared/texture/sources/ImageSource.js":688,"./renderers/shared/texture/sources/VideoSource.js":690,"./renderers/shared/texture/utils/textureFrom.js":695}],515:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"./mask/MaskEffectManager.js":521,"./mask/alpha/AlphaMask.js":522,"./mask/color/ColorMask.js":524,"./mask/stencil/StencilMask.js":527,"./renderers/shared/texture/sources/BufferImageSource.js":691,"./renderers/shared/texture/sources/CanvasSource.js":692,"./renderers/shared/texture/sources/ImageSource.js":694,"./renderers/shared/texture/sources/VideoSource.js":696,"./renderers/shared/texture/utils/textureFrom.js":701}],521:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -52866,7 +53159,7 @@ exports.MaskEffectManager = MaskEffectManager;
 exports.MaskEffectManagerClass = MaskEffectManagerClass;
 
 
-},{"../../extensions/Extensions.js":418,"../../utils/pool/PoolGroup.js":908}],516:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424,"../../utils/pool/PoolGroup.js":914}],522:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -52919,7 +53212,7 @@ AlphaMask.extension = Extensions.ExtensionType.MaskEffect;
 exports.AlphaMask = AlphaMask;
 
 
-},{"../../../extensions/Extensions.js":418,"../../../scene/sprite/Sprite.js":829,"../utils/addMaskBounds.js":523,"../utils/addMaskLocalBounds.js":524}],517:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../../scene/sprite/Sprite.js":835,"../utils/addMaskBounds.js":529,"../utils/addMaskLocalBounds.js":530}],523:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -53088,7 +53381,7 @@ AlphaMaskPipe.extension = {
 exports.AlphaMaskPipe = AlphaMaskPipe;
 
 
-},{"../../../extensions/Extensions.js":418,"../../../filters/FilterEffect.js":421,"../../../filters/mask/MaskFilter.js":455,"../../../scene/container/bounds/Bounds.js":708,"../../../scene/container/bounds/getGlobalBounds.js":710,"../../../scene/sprite/Sprite.js":829,"../../../utils/pool/PoolGroup.js":908,"../../renderers/shared/texture/Texture.js":678,"../../renderers/shared/texture/TexturePool.js":681,"../../renderers/types.js":700}],518:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../../filters/FilterEffect.js":427,"../../../filters/mask/MaskFilter.js":461,"../../../scene/container/bounds/Bounds.js":714,"../../../scene/container/bounds/getGlobalBounds.js":716,"../../../scene/sprite/Sprite.js":835,"../../../utils/pool/PoolGroup.js":914,"../../renderers/shared/texture/Texture.js":684,"../../renderers/shared/texture/TexturePool.js":687,"../../renderers/types.js":706}],524:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -53116,7 +53409,7 @@ ColorMask.extension = Extensions.ExtensionType.MaskEffect;
 exports.ColorMask = ColorMask;
 
 
-},{"../../../extensions/Extensions.js":418}],519:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424}],525:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -53186,7 +53479,7 @@ ColorMaskPipe.extension = {
 exports.ColorMaskPipe = ColorMaskPipe;
 
 
-},{"../../../extensions/Extensions.js":418}],520:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424}],526:[function(require,module,exports){
 'use strict';
 
 var addMaskBounds = require('../utils/addMaskBounds.js');
@@ -53223,7 +53516,7 @@ class ScissorMask {
 exports.ScissorMask = ScissorMask;
 
 
-},{"../utils/addMaskBounds.js":523,"../utils/addMaskLocalBounds.js":524}],521:[function(require,module,exports){
+},{"../utils/addMaskBounds.js":529,"../utils/addMaskLocalBounds.js":530}],527:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -53272,7 +53565,7 @@ StencilMask.extension = Extensions.ExtensionType.MaskEffect;
 exports.StencilMask = StencilMask;
 
 
-},{"../../../extensions/Extensions.js":418,"../../../scene/container/Container.js":701,"../utils/addMaskBounds.js":523,"../utils/addMaskLocalBounds.js":524}],522:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../../scene/container/Container.js":707,"../utils/addMaskBounds.js":529,"../utils/addMaskLocalBounds.js":530}],528:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -53404,7 +53697,7 @@ StencilMaskPipe.extension = {
 exports.StencilMaskPipe = StencilMaskPipe;
 
 
-},{"../../../extensions/Extensions.js":418,"../../renderers/gl/const.js":536,"../../renderers/shared/state/const.js":667}],523:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../renderers/gl/const.js":542,"../../renderers/shared/state/const.js":673}],529:[function(require,module,exports){
 'use strict';
 
 var Bounds = require('../../../scene/container/bounds/Bounds.js');
@@ -53423,7 +53716,7 @@ function addMaskBounds(mask, bounds, skipUpdateTransform) {
 exports.addMaskBounds = addMaskBounds;
 
 
-},{"../../../scene/container/bounds/Bounds.js":708,"../../../scene/container/bounds/getGlobalBounds.js":710}],524:[function(require,module,exports){
+},{"../../../scene/container/bounds/Bounds.js":714,"../../../scene/container/bounds/getGlobalBounds.js":716}],530:[function(require,module,exports){
 'use strict';
 
 var getLocalBounds = require('../../../scene/container/bounds/getLocalBounds.js');
@@ -53459,7 +53752,7 @@ exports.addMaskLocalBounds = addMaskLocalBounds;
 exports.getMatrixRelativeToParent = getMatrixRelativeToParent;
 
 
-},{"../../../scene/container/bounds/getLocalBounds.js":711,"../../../scene/container/bounds/utils/matrixAndBoundsPool.js":713,"../../../utils/logging/warn.js":902}],525:[function(require,module,exports){
+},{"../../../scene/container/bounds/getLocalBounds.js":717,"../../../scene/container/bounds/utils/matrixAndBoundsPool.js":719,"../../../utils/logging/warn.js":908}],531:[function(require,module,exports){
 'use strict';
 
 var isWebGLSupported = require('../../utils/browser/isWebGLSupported.js');
@@ -53514,7 +53807,7 @@ async function autoDetectRenderer(options) {
 exports.autoDetectRenderer = autoDetectRenderer;
 
 
-},{"../../utils/browser/isWebGLSupported.js":887,"../../utils/browser/isWebGPUSupported.js":888,"./gl/WebGLRenderer.js":532,"./gpu/WebGPURenderer.js":598,"./shared/system/AbstractRenderer.js":669}],526:[function(require,module,exports){
+},{"../../utils/browser/isWebGLSupported.js":893,"../../utils/browser/isWebGPUSupported.js":894,"./gl/WebGLRenderer.js":538,"./gpu/WebGPURenderer.js":604,"./shared/system/AbstractRenderer.js":675}],532:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -53661,7 +53954,7 @@ let GlBackBufferSystem = _GlBackBufferSystem;
 exports.GlBackBufferSystem = GlBackBufferSystem;
 
 
-},{"../../../extensions/Extensions.js":418,"../../../utils/logging/warn.js":902,"../shared/geometry/Geometry.js":640,"../shared/shader/Shader.js":655,"../shared/state/State.js":666,"../shared/texture/Texture.js":678,"../shared/texture/sources/TextureSource.js":689,"./shader/GlProgram.js":545}],527:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../../utils/logging/warn.js":908,"../shared/geometry/Geometry.js":646,"../shared/shader/Shader.js":661,"../shared/state/State.js":672,"../shared/texture/Texture.js":684,"../shared/texture/sources/TextureSource.js":695,"./shader/GlProgram.js":551}],533:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -53695,7 +53988,7 @@ GlColorMaskSystem.extension = {
 exports.GlColorMaskSystem = GlColorMaskSystem;
 
 
-},{"../../../extensions/Extensions.js":418}],528:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424}],534:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -53736,7 +54029,7 @@ GlEncoderSystem.extension = {
 exports.GlEncoderSystem = GlEncoderSystem;
 
 
-},{"../../../extensions/Extensions.js":418}],529:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424}],535:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -53752,7 +54045,7 @@ class GlRenderTarget {
 exports.GlRenderTarget = GlRenderTarget;
 
 
-},{}],530:[function(require,module,exports){
+},{}],536:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -53849,7 +54142,7 @@ GlStencilSystem.extension = {
 exports.GlStencilSystem = GlStencilSystem;
 
 
-},{"../../../extensions/Extensions.js":418,"../gpu/state/GpuStencilModesToPixi.js":621,"../shared/state/const.js":667}],531:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../gpu/state/GpuStencilModesToPixi.js":627,"../shared/state/const.js":673}],537:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -53875,7 +54168,7 @@ GlUboSystem.extension = {
 exports.GlUboSystem = GlUboSystem;
 
 
-},{"../../../extensions/Extensions.js":418,"../shared/shader/UboSystem.js":657,"./shader/utils/createUboElementsSTD40.js":569,"./shader/utils/createUboSyncSTD40.js":570}],532:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../shared/shader/UboSystem.js":663,"./shader/utils/createUboElementsSTD40.js":575,"./shader/utils/createUboSyncSTD40.js":576}],538:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -53941,7 +54234,7 @@ class WebGLRenderer extends AbstractRenderer.AbstractRenderer {
 exports.WebGLRenderer = WebGLRenderer;
 
 
-},{"../../../extensions/Extensions.js":418,"../../../scene/graphics/gl/GlGraphicsAdaptor.js":739,"../../../scene/mesh/gl/GlMeshAdaptor.js":790,"../../batcher/gl/GlBatchAdaptor.js":484,"../shared/system/AbstractRenderer.js":669,"../shared/system/SharedSystems.js":670,"../types.js":700,"./GlBackBufferSystem.js":526,"./GlColorMaskSystem.js":527,"./GlEncoderSystem.js":528,"./GlStencilSystem.js":530,"./GlUboSystem.js":531,"./buffer/GlBufferSystem.js":534,"./context/GlContextSystem.js":537,"./geometry/GlGeometrySystem.js":540,"./renderTarget/GlRenderTargetSystem.js":543,"./shader/GlShaderSystem.js":547,"./shader/GlUniformGroupSystem.js":548,"./state/GlStateSystem.js":574,"./texture/GlTextureSystem.js":577}],533:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../../scene/graphics/gl/GlGraphicsAdaptor.js":745,"../../../scene/mesh/gl/GlMeshAdaptor.js":796,"../../batcher/gl/GlBatchAdaptor.js":490,"../shared/system/AbstractRenderer.js":675,"../shared/system/SharedSystems.js":676,"../types.js":706,"./GlBackBufferSystem.js":532,"./GlColorMaskSystem.js":533,"./GlEncoderSystem.js":534,"./GlStencilSystem.js":536,"./GlUboSystem.js":537,"./buffer/GlBufferSystem.js":540,"./context/GlContextSystem.js":543,"./geometry/GlGeometrySystem.js":546,"./renderTarget/GlRenderTargetSystem.js":549,"./shader/GlShaderSystem.js":553,"./shader/GlUniformGroupSystem.js":554,"./state/GlStateSystem.js":580,"./texture/GlTextureSystem.js":583}],539:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -53959,7 +54252,7 @@ class GlBuffer {
 exports.GlBuffer = GlBuffer;
 
 
-},{}],534:[function(require,module,exports){
+},{}],540:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -54167,7 +54460,7 @@ GlBufferSystem.extension = {
 exports.GlBufferSystem = GlBufferSystem;
 
 
-},{"../../../../extensions/Extensions.js":418,"../../shared/buffer/const.js":636,"./GlBuffer.js":533,"./const.js":535}],535:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424,"../../shared/buffer/const.js":642,"./GlBuffer.js":539,"./const.js":541}],541:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -54181,7 +54474,7 @@ var BUFFER_TYPE = /* @__PURE__ */ ((BUFFER_TYPE2) => {
 exports.BUFFER_TYPE = BUFFER_TYPE;
 
 
-},{}],536:[function(require,module,exports){
+},{}],542:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -54200,7 +54493,7 @@ var CLEAR = /* @__PURE__ */ ((CLEAR2) => {
 exports.CLEAR = CLEAR;
 
 
-},{}],537:[function(require,module,exports){
+},{}],543:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../../environment/adapter.js');
@@ -54482,19 +54775,19 @@ let GlContextSystem = _GlContextSystem;
 exports.GlContextSystem = GlContextSystem;
 
 
-},{"../../../../environment/adapter.js":400,"../../../../extensions/Extensions.js":418,"../../../../utils/logging/warn.js":902}],538:[function(require,module,exports){
+},{"../../../../environment/adapter.js":406,"../../../../extensions/Extensions.js":424,"../../../../utils/logging/warn.js":908}],544:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],539:[function(require,module,exports){
+},{}],545:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],540:[function(require,module,exports){
+},{}],546:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -54796,7 +55089,7 @@ GlGeometrySystem.extension = {
 exports.GlGeometrySystem = GlGeometrySystem;
 
 
-},{"../../../../extensions/Extensions.js":418,"../../shared/geometry/utils/getAttributeInfoFromFormat.js":644,"../shader/program/ensureAttributes.js":554,"./utils/getGlTypeFromFormat.js":541}],541:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424,"../../shared/geometry/utils/getAttributeInfoFromFormat.js":650,"../shader/program/ensureAttributes.js":560,"./utils/getGlTypeFromFormat.js":547}],547:[function(require,module,exports){
 'use strict';
 
 var _const = require('../../texture/const.js');
@@ -54841,7 +55134,7 @@ function getGlTypeFromFormat(format) {
 exports.getGlTypeFromFormat = getGlTypeFromFormat;
 
 
-},{"../../texture/const.js":578}],542:[function(require,module,exports){
+},{"../../texture/const.js":584}],548:[function(require,module,exports){
 'use strict';
 
 var Rectangle = require('../../../../maths/shapes/Rectangle.js');
@@ -55150,7 +55443,7 @@ class GlRenderTargetAdaptor {
 exports.GlRenderTargetAdaptor = GlRenderTargetAdaptor;
 
 
-},{"../../../../maths/shapes/Rectangle.js":475,"../../../../utils/logging/warn.js":902,"../../shared/texture/sources/CanvasSource.js":686,"../GlRenderTarget.js":529,"../const.js":536}],543:[function(require,module,exports){
+},{"../../../../maths/shapes/Rectangle.js":481,"../../../../utils/logging/warn.js":908,"../../shared/texture/sources/CanvasSource.js":692,"../GlRenderTarget.js":535,"../const.js":542}],549:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -55174,7 +55467,7 @@ GlRenderTargetSystem.extension = {
 exports.GlRenderTargetSystem = GlRenderTargetSystem;
 
 
-},{"../../../../extensions/Extensions.js":418,"../../shared/renderTarget/RenderTargetSystem.js":652,"./GlRenderTargetAdaptor.js":542}],544:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424,"../../shared/renderTarget/RenderTargetSystem.js":658,"./GlRenderTargetAdaptor.js":548}],550:[function(require,module,exports){
 'use strict';
 
 var BufferResource = require('../../shared/buffer/BufferResource.js');
@@ -55251,7 +55544,7 @@ function generateShaderSyncCode(shader, shaderSystem) {
 exports.generateShaderSyncCode = generateShaderSyncCode;
 
 
-},{"../../shared/buffer/BufferResource.js":635,"../../shared/shader/UniformGroup.js":658,"../../shared/texture/sources/TextureSource.js":689}],545:[function(require,module,exports){
+},{"../../shared/buffer/BufferResource.js":641,"../../shared/shader/UniformGroup.js":664,"../../shared/texture/sources/TextureSource.js":695}],551:[function(require,module,exports){
 'use strict';
 
 var createIdFromString = require('../../shared/utils/createIdFromString.js');
@@ -55344,7 +55637,7 @@ let GlProgram = _GlProgram;
 exports.GlProgram = GlProgram;
 
 
-},{"../../shared/utils/createIdFromString.js":696,"./program/getMaxFragmentPrecision.js":557,"./program/preprocessors/addProgramDefines.js":564,"./program/preprocessors/ensurePrecision.js":565,"./program/preprocessors/insertVersion.js":566,"./program/preprocessors/setProgramName.js":567,"./program/preprocessors/stripVersion.js":568}],546:[function(require,module,exports){
+},{"../../shared/utils/createIdFromString.js":702,"./program/getMaxFragmentPrecision.js":563,"./program/preprocessors/addProgramDefines.js":570,"./program/preprocessors/ensurePrecision.js":571,"./program/preprocessors/insertVersion.js":572,"./program/preprocessors/setProgramName.js":573,"./program/preprocessors/stripVersion.js":574}],552:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -55377,7 +55670,7 @@ exports.GlProgramData = GlProgramData;
 exports.IGLUniformData = IGLUniformData;
 
 
-},{}],547:[function(require,module,exports){
+},{}],553:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -55521,7 +55814,7 @@ GlShaderSystem.extension = {
 exports.GlShaderSystem = GlShaderSystem;
 
 
-},{"../../../../extensions/Extensions.js":418,"../../../batcher/gl/utils/maxRecommendedTextures.js":486,"./GenerateShaderSyncCode.js":544,"./program/generateProgram.js":556}],548:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424,"../../../batcher/gl/utils/maxRecommendedTextures.js":492,"./GenerateShaderSyncCode.js":550,"./program/generateProgram.js":562}],554:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -55612,13 +55905,13 @@ GlUniformGroupSystem.extension = {
 exports.GlUniformGroupSystem = GlUniformGroupSystem;
 
 
-},{"../../../../extensions/Extensions.js":418,"./utils/generateUniformsSync.js":572}],549:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424,"./utils/generateUniformsSync.js":578}],555:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],550:[function(require,module,exports){
+},{}],556:[function(require,module,exports){
 'use strict';
 
 var UniformGroup = require('../../shared/shader/UniformGroup.js');
@@ -55642,7 +55935,7 @@ function getBatchSamplersUniformGroup(maxTextures) {
 exports.getBatchSamplersUniformGroup = getBatchSamplersUniformGroup;
 
 
-},{"../../shared/shader/UniformGroup.js":658}],551:[function(require,module,exports){
+},{"../../shared/shader/UniformGroup.js":664}],557:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -55658,7 +55951,7 @@ function migrateFragmentFromV7toV8(fragmentShader) {
 exports.migrateFragmentFromV7toV8 = migrateFragmentFromV7toV8;
 
 
-},{}],552:[function(require,module,exports){
+},{}],558:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -55672,7 +55965,7 @@ function compileShader(gl, type, src) {
 exports.compileShader = compileShader;
 
 
-},{}],553:[function(require,module,exports){
+},{}],559:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -55763,7 +56056,7 @@ function defaultValue(type, size) {
 exports.defaultValue = defaultValue;
 
 
-},{}],554:[function(require,module,exports){
+},{}],560:[function(require,module,exports){
 'use strict';
 
 var warn = require('../../../../../utils/logging/warn.js');
@@ -55808,7 +56101,7 @@ function ensureStartAndStride(geometry) {
 exports.ensureAttributes = ensureAttributes;
 
 
-},{"../../../../../utils/logging/warn.js":902,"../../../shared/geometry/utils/getAttributeInfoFromFormat.js":644}],555:[function(require,module,exports){
+},{"../../../../../utils/logging/warn.js":908,"../../../shared/geometry/utils/getAttributeInfoFromFormat.js":650}],561:[function(require,module,exports){
 'use strict';
 
 var getAttributeInfoFromFormat = require('../../../shared/geometry/utils/getAttributeInfoFromFormat.js');
@@ -55853,7 +56146,7 @@ function extractAttributesFromGlProgram(program, gl, sortAttributes = false) {
 exports.extractAttributesFromGlProgram = extractAttributesFromGlProgram;
 
 
-},{"../../../shared/geometry/utils/getAttributeInfoFromFormat.js":644,"./mapType.js":563}],556:[function(require,module,exports){
+},{"../../../shared/geometry/utils/getAttributeInfoFromFormat.js":650,"./mapType.js":569}],562:[function(require,module,exports){
 'use strict';
 
 var warn = require('../../../../../utils/logging/warn.js');
@@ -55912,7 +56205,7 @@ function generateProgram(gl, program) {
 exports.generateProgram = generateProgram;
 
 
-},{"../../../../../utils/logging/warn.js":902,"../GlProgramData.js":546,"./compileShader.js":552,"./defaultValue.js":553,"./extractAttributesFromGlProgram.js":555,"./getUboData.js":559,"./getUniformData.js":560,"./logProgramError.js":561}],557:[function(require,module,exports){
+},{"../../../../../utils/logging/warn.js":908,"../GlProgramData.js":552,"./compileShader.js":558,"./defaultValue.js":559,"./extractAttributesFromGlProgram.js":561,"./getUboData.js":565,"./getUniformData.js":566,"./logProgramError.js":567}],563:[function(require,module,exports){
 'use strict';
 
 var getTestContext = require('./getTestContext.js');
@@ -55936,7 +56229,7 @@ function getMaxFragmentPrecision() {
 exports.getMaxFragmentPrecision = getMaxFragmentPrecision;
 
 
-},{"./getTestContext.js":558}],558:[function(require,module,exports){
+},{"./getTestContext.js":564}],564:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../../../environment/adapter.js');
@@ -55954,7 +56247,7 @@ function getTestContext() {
 exports.getTestContext = getTestContext;
 
 
-},{"../../../../../environment/adapter.js":400}],559:[function(require,module,exports){
+},{"../../../../../environment/adapter.js":406}],565:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -55979,7 +56272,7 @@ function getUboData(program, gl) {
 exports.getUboData = getUboData;
 
 
-},{}],560:[function(require,module,exports){
+},{}],566:[function(require,module,exports){
 'use strict';
 
 var defaultValue = require('./defaultValue.js');
@@ -56009,7 +56302,7 @@ function getUniformData(program, gl) {
 exports.getUniformData = getUniformData;
 
 
-},{"./defaultValue.js":553,"./mapType.js":563}],561:[function(require,module,exports){
+},{"./defaultValue.js":559,"./mapType.js":569}],567:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -56055,7 +56348,7 @@ function logProgramError(gl, program, vertexShader, fragmentShader) {
 exports.logProgramError = logProgramError;
 
 
-},{}],562:[function(require,module,exports){
+},{}],568:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -56088,7 +56381,7 @@ function mapSize(type) {
 exports.mapSize = mapSize;
 
 
-},{}],563:[function(require,module,exports){
+},{}],569:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -56161,7 +56454,7 @@ exports.mapGlToVertexFormat = mapGlToVertexFormat;
 exports.mapType = mapType;
 
 
-},{}],564:[function(require,module,exports){
+},{}],570:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -56193,7 +56486,7 @@ function addProgramDefines(src, isES300, isFragment) {
 exports.addProgramDefines = addProgramDefines;
 
 
-},{}],565:[function(require,module,exports){
+},{}],571:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -56215,7 +56508,7 @@ ${src}`;
 exports.ensurePrecision = ensurePrecision;
 
 
-},{}],566:[function(require,module,exports){
+},{}],572:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -56229,7 +56522,7 @@ ${src}`;
 exports.insertVersion = insertVersion;
 
 
-},{}],567:[function(require,module,exports){
+},{}],573:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -56255,7 +56548,7 @@ ${src}`;
 exports.setProgramName = setProgramName;
 
 
-},{}],568:[function(require,module,exports){
+},{}],574:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -56268,7 +56561,7 @@ function stripVersion(src, isES300) {
 exports.stripVersion = stripVersion;
 
 
-},{}],569:[function(require,module,exports){
+},{}],575:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -56338,7 +56631,7 @@ exports.WGSL_TO_STD40_SIZE = WGSL_TO_STD40_SIZE;
 exports.createUboElementsSTD40 = createUboElementsSTD40;
 
 
-},{}],570:[function(require,module,exports){
+},{}],576:[function(require,module,exports){
 'use strict';
 
 var createUboSyncFunction = require('../../../shared/shader/utils/createUboSyncFunction.js');
@@ -56358,7 +56651,7 @@ function createUboSyncFunctionSTD40(uboElements) {
 exports.createUboSyncFunctionSTD40 = createUboSyncFunctionSTD40;
 
 
-},{"../../../shared/shader/utils/createUboSyncFunction.js":661,"../../../shared/shader/utils/uboSyncFunctions.js":663,"./generateArraySyncSTD40.js":571}],571:[function(require,module,exports){
+},{"../../../shared/shader/utils/createUboSyncFunction.js":667,"../../../shared/shader/utils/uboSyncFunctions.js":669,"./generateArraySyncSTD40.js":577}],577:[function(require,module,exports){
 'use strict';
 
 var createUboElementsSTD40 = require('./createUboElementsSTD40.js');
@@ -56391,7 +56684,7 @@ function generateArraySyncSTD40(uboElement, offsetToAdd) {
 exports.generateArraySyncSTD40 = generateArraySyncSTD40;
 
 
-},{"./createUboElementsSTD40.js":569}],572:[function(require,module,exports){
+},{"./createUboElementsSTD40.js":575}],578:[function(require,module,exports){
 'use strict';
 
 var BufferResource = require('../../../shared/buffer/BufferResource.js');
@@ -56454,7 +56747,7 @@ function generateUniformsSync(group, uniformData) {
 exports.generateUniformsSync = generateUniformsSync;
 
 
-},{"../../../shared/buffer/BufferResource.js":635,"../../../shared/shader/UniformGroup.js":658,"../../../shared/shader/utils/uniformParsers.js":664,"./generateUniformsSyncTypes.js":573}],573:[function(require,module,exports){
+},{"../../../shared/buffer/BufferResource.js":641,"../../../shared/shader/UniformGroup.js":664,"../../../shared/shader/utils/uniformParsers.js":670,"./generateUniformsSyncTypes.js":579}],579:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -56577,7 +56870,7 @@ exports.UNIFORM_TO_ARRAY_SETTERS = UNIFORM_TO_ARRAY_SETTERS;
 exports.UNIFORM_TO_SINGLE_SETTERS = UNIFORM_TO_SINGLE_SETTERS;
 
 
-},{}],574:[function(require,module,exports){
+},{}],580:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -56821,7 +57114,7 @@ let GlStateSystem = _GlStateSystem;
 exports.GlStateSystem = GlStateSystem;
 
 
-},{"../../../../extensions/Extensions.js":418,"../../shared/state/State.js":666,"./mapWebGLBlendModesToPixi.js":575}],575:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424,"../../shared/state/State.js":672,"./mapWebGLBlendModesToPixi.js":581}],581:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../../environment/adapter.js');
@@ -56855,7 +57148,7 @@ function mapWebGLBlendModesToPixi(gl) {
 exports.mapWebGLBlendModesToPixi = mapWebGLBlendModesToPixi;
 
 
-},{"../../../../environment/adapter.js":400}],576:[function(require,module,exports){
+},{"../../../../environment/adapter.js":406}],582:[function(require,module,exports){
 'use strict';
 
 var _const = require('./const.js');
@@ -56877,7 +57170,7 @@ class GlTexture {
 exports.GlTexture = GlTexture;
 
 
-},{"./const.js":578}],577:[function(require,module,exports){
+},{"./const.js":584}],583:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../../environment/adapter.js');
@@ -57164,7 +57457,7 @@ GlTextureSystem.extension = {
 exports.GlTextureSystem = GlTextureSystem;
 
 
-},{"../../../../environment/adapter.js":400,"../../../../extensions/Extensions.js":418,"../../shared/texture/Texture.js":678,"./GlTexture.js":576,"./uploaders/glUploadBufferImageResource.js":580,"./uploaders/glUploadCompressedTextureResource.js":581,"./uploaders/glUploadImageResource.js":582,"./uploaders/glUploadVideoResource.js":583,"./utils/applyStyleParams.js":584,"./utils/mapFormatToGlFormat.js":586,"./utils/mapFormatToGlInternalFormat.js":587,"./utils/mapFormatToGlType.js":588,"./utils/unpremultiplyAlpha.js":590}],578:[function(require,module,exports){
+},{"../../../../environment/adapter.js":406,"../../../../extensions/Extensions.js":424,"../../shared/texture/Texture.js":684,"./GlTexture.js":582,"./uploaders/glUploadBufferImageResource.js":586,"./uploaders/glUploadCompressedTextureResource.js":587,"./uploaders/glUploadImageResource.js":588,"./uploaders/glUploadVideoResource.js":589,"./utils/applyStyleParams.js":590,"./utils/mapFormatToGlFormat.js":592,"./utils/mapFormatToGlInternalFormat.js":593,"./utils/mapFormatToGlType.js":594,"./utils/unpremultiplyAlpha.js":596}],584:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -57228,13 +57521,13 @@ exports.GL_TYPES = GL_TYPES;
 exports.GL_WRAP_MODES = GL_WRAP_MODES;
 
 
-},{}],579:[function(require,module,exports){
+},{}],585:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],580:[function(require,module,exports){
+},{}],586:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -57274,7 +57567,7 @@ const glUploadBufferImageResource = {
 exports.glUploadBufferImageResource = glUploadBufferImageResource;
 
 
-},{}],581:[function(require,module,exports){
+},{}],587:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -57377,7 +57670,7 @@ const glUploadCompressedTextureResource = {
 exports.glUploadCompressedTextureResource = glUploadCompressedTextureResource;
 
 
-},{}],582:[function(require,module,exports){
+},{}],588:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -57467,7 +57760,7 @@ const glUploadImageResource = {
 exports.glUploadImageResource = glUploadImageResource;
 
 
-},{}],583:[function(require,module,exports){
+},{}],589:[function(require,module,exports){
 'use strict';
 
 var glUploadImageResource = require('./glUploadImageResource.js');
@@ -57497,7 +57790,7 @@ const glUploadVideoResource = {
 exports.glUploadVideoResource = glUploadVideoResource;
 
 
-},{"./glUploadImageResource.js":582}],584:[function(require,module,exports){
+},{"./glUploadImageResource.js":588}],590:[function(require,module,exports){
 'use strict';
 
 var pixiToGlMaps = require('./pixiToGlMaps.js');
@@ -57537,7 +57830,7 @@ function applyStyleParams(style, gl, mipmaps, anisotropicExt, glFunctionName, fi
 exports.applyStyleParams = applyStyleParams;
 
 
-},{"./pixiToGlMaps.js":589}],585:[function(require,module,exports){
+},{"./pixiToGlMaps.js":595}],591:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -57640,7 +57933,7 @@ function getSupportedGlCompressedTextureFormats() {
 exports.getSupportedGlCompressedTextureFormats = getSupportedGlCompressedTextureFormats;
 
 
-},{}],586:[function(require,module,exports){
+},{}],592:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -57701,7 +57994,7 @@ function mapFormatToGlFormat(gl) {
 exports.mapFormatToGlFormat = mapFormatToGlFormat;
 
 
-},{}],587:[function(require,module,exports){
+},{}],593:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../../../environment/adapter.js');
@@ -57842,7 +58135,7 @@ function mapFormatToGlInternalFormat(gl, extensions) {
 exports.mapFormatToGlInternalFormat = mapFormatToGlInternalFormat;
 
 
-},{"../../../../../environment/adapter.js":400}],588:[function(require,module,exports){
+},{"../../../../../environment/adapter.js":406}],594:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -57903,7 +58196,7 @@ function mapFormatToGlType(gl) {
 exports.mapFormatToGlType = mapFormatToGlType;
 
 
-},{}],589:[function(require,module,exports){
+},{}],595:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -57943,7 +58236,7 @@ exports.scaleModeToGlFilter = scaleModeToGlFilter;
 exports.wrapModeToGlAddress = wrapModeToGlAddress;
 
 
-},{}],590:[function(require,module,exports){
+},{}],596:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -57966,7 +58259,7 @@ function unpremultiplyAlpha(pixels) {
 exports.unpremultiplyAlpha = unpremultiplyAlpha;
 
 
-},{}],591:[function(require,module,exports){
+},{}],597:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -58056,7 +58349,7 @@ BindGroupSystem.extension = {
 exports.BindGroupSystem = BindGroupSystem;
 
 
-},{"../../../extensions/Extensions.js":418}],592:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424}],598:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -58089,7 +58382,7 @@ GpuColorMaskSystem.extension = {
 exports.GpuColorMaskSystem = GpuColorMaskSystem;
 
 
-},{"../../../extensions/Extensions.js":418}],593:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424}],599:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../environment/adapter.js');
@@ -58170,7 +58463,7 @@ GpuDeviceSystem.defaultOptions = {
 exports.GpuDeviceSystem = GpuDeviceSystem;
 
 
-},{"../../../environment/adapter.js":400,"../../../extensions/Extensions.js":418}],594:[function(require,module,exports){
+},{"../../../environment/adapter.js":406,"../../../extensions/Extensions.js":424}],600:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -58345,7 +58638,7 @@ GpuEncoderSystem.extension = {
 exports.GpuEncoderSystem = GpuEncoderSystem;
 
 
-},{"../../../extensions/Extensions.js":418}],595:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424}],601:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -58395,7 +58688,7 @@ GpuStencilSystem.extension = {
 exports.GpuStencilSystem = GpuStencilSystem;
 
 
-},{"../../../extensions/Extensions.js":418,"../shared/state/const.js":667}],596:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../shared/state/const.js":673}],602:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -58421,7 +58714,7 @@ GpuUboSystem.extension = {
 exports.GpuUboSystem = GpuUboSystem;
 
 
-},{"../../../extensions/Extensions.js":418,"../shared/shader/UboSystem.js":657,"./shader/utils/createUboElementsWGSL.js":611,"./shader/utils/createUboSyncFunctionWGSL.js":612}],597:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../shared/shader/UboSystem.js":663,"./shader/utils/createUboElementsWGSL.js":617,"./shader/utils/createUboSyncFunctionWGSL.js":618}],603:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -58559,7 +58852,7 @@ GpuUniformBatchPipe.extension = {
 exports.GpuUniformBatchPipe = GpuUniformBatchPipe;
 
 
-},{"../../../extensions/Extensions.js":418,"../shared/buffer/Buffer.js":634,"../shared/buffer/BufferResource.js":635,"../shared/buffer/const.js":636,"./buffer/UboBatch.js":601,"./shader/BindGroup.js":607}],598:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../shared/buffer/Buffer.js":640,"../shared/buffer/BufferResource.js":641,"../shared/buffer/const.js":642,"./buffer/UboBatch.js":607,"./shader/BindGroup.js":613}],604:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -58624,7 +58917,7 @@ class WebGPURenderer extends AbstractRenderer.AbstractRenderer {
 exports.WebGPURenderer = WebGPURenderer;
 
 
-},{"../../../extensions/Extensions.js":418,"../../../scene/graphics/gpu/GpuGraphicsAdaptor.js":740,"../../../scene/mesh/gpu/GpuMeshAdapter.js":791,"../../batcher/gpu/GpuBatchAdaptor.js":487,"../shared/system/AbstractRenderer.js":669,"../shared/system/SharedSystems.js":670,"../types.js":700,"./BindGroupSystem.js":591,"./GpuColorMaskSystem.js":592,"./GpuDeviceSystem.js":593,"./GpuEncoderSystem.js":594,"./GpuStencilSystem.js":595,"./GpuUboSystem.js":596,"./GpuUniformBatchPipe.js":597,"./buffer/GpuBufferSystem.js":599,"./pipeline/PipelineSystem.js":602,"./renderTarget/GpuRenderTargetSystem.js":605,"./shader/GpuShaderSystem.js":610,"./state/GpuStateSystem.js":620,"./texture/GpuTextureSystem.js":622}],599:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../../scene/graphics/gpu/GpuGraphicsAdaptor.js":746,"../../../scene/mesh/gpu/GpuMeshAdapter.js":797,"../../batcher/gpu/GpuBatchAdaptor.js":493,"../shared/system/AbstractRenderer.js":675,"../shared/system/SharedSystems.js":676,"../types.js":706,"./BindGroupSystem.js":597,"./GpuColorMaskSystem.js":598,"./GpuDeviceSystem.js":599,"./GpuEncoderSystem.js":600,"./GpuStencilSystem.js":601,"./GpuUboSystem.js":602,"./GpuUniformBatchPipe.js":603,"./buffer/GpuBufferSystem.js":605,"./pipeline/PipelineSystem.js":608,"./renderTarget/GpuRenderTargetSystem.js":611,"./shader/GpuShaderSystem.js":616,"./state/GpuStateSystem.js":626,"./texture/GpuTextureSystem.js":628}],605:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -58721,7 +59014,7 @@ GpuBufferSystem.extension = {
 exports.GpuBufferSystem = GpuBufferSystem;
 
 
-},{"../../../../extensions/Extensions.js":418,"../../shared/buffer/utils/fastCopy.js":637}],600:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424,"../../shared/buffer/utils/fastCopy.js":643}],606:[function(require,module,exports){
 'use strict';
 
 var Buffer = require('../../shared/buffer/Buffer.js');
@@ -58762,7 +59055,7 @@ function GpuReadBuffer(buffer, renderer) {
 exports.GpuReadBuffer = GpuReadBuffer;
 
 
-},{"../../shared/buffer/Buffer.js":634,"../../shared/buffer/const.js":636}],601:[function(require,module,exports){
+},{"../../shared/buffer/Buffer.js":640,"../../shared/buffer/const.js":642}],607:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -58804,7 +59097,7 @@ class UboBatch {
 exports.UboBatch = UboBatch;
 
 
-},{}],602:[function(require,module,exports){
+},{}],608:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -59059,7 +59352,7 @@ PipelineSystem.extension = {
 exports.PipelineSystem = PipelineSystem;
 
 
-},{"../../../../extensions/Extensions.js":418,"../../../../utils/logging/warn.js":902,"../../gl/shader/program/ensureAttributes.js":554,"../../shared/state/const.js":667,"../../shared/utils/createIdFromString.js":696,"../state/GpuStencilModesToPixi.js":621}],603:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424,"../../../../utils/logging/warn.js":908,"../../gl/shader/program/ensureAttributes.js":560,"../../shared/state/const.js":673,"../../shared/utils/createIdFromString.js":702,"../state/GpuStencilModesToPixi.js":627}],609:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -59074,7 +59367,7 @@ class GpuRenderTarget {
 exports.GpuRenderTarget = GpuRenderTarget;
 
 
-},{}],604:[function(require,module,exports){
+},{}],610:[function(require,module,exports){
 'use strict';
 
 var _const = require('../../gl/const.js');
@@ -59289,7 +59582,7 @@ class GpuRenderTargetAdaptor {
 exports.GpuRenderTargetAdaptor = GpuRenderTargetAdaptor;
 
 
-},{"../../gl/const.js":536,"../../shared/texture/sources/CanvasSource.js":686,"../../shared/texture/sources/TextureSource.js":689,"./GpuRenderTarget.js":603}],605:[function(require,module,exports){
+},{"../../gl/const.js":542,"../../shared/texture/sources/CanvasSource.js":692,"../../shared/texture/sources/TextureSource.js":695,"./GpuRenderTarget.js":609}],611:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -59313,7 +59606,7 @@ GpuRenderTargetSystem.extension = {
 exports.GpuRenderTargetSystem = GpuRenderTargetSystem;
 
 
-},{"../../../../extensions/Extensions.js":418,"../../shared/renderTarget/RenderTargetSystem.js":652,"./GpuRenderTargetAdaptor.js":604}],606:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424,"../../shared/renderTarget/RenderTargetSystem.js":658,"./GpuRenderTargetAdaptor.js":610}],612:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -59330,7 +59623,7 @@ function calculateProjection(pm, x, y, width, height, flipY) {
 exports.calculateProjection = calculateProjection;
 
 
-},{}],607:[function(require,module,exports){
+},{}],613:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -59433,13 +59726,13 @@ class BindGroup {
 exports.BindGroup = BindGroup;
 
 
-},{}],608:[function(require,module,exports){
+},{}],614:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],609:[function(require,module,exports){
+},{}],615:[function(require,module,exports){
 'use strict';
 
 var createIdFromString = require('../../shared/utils/createIdFromString.js');
@@ -59522,7 +59815,7 @@ class GpuProgram {
 exports.GpuProgram = GpuProgram;
 
 
-},{"../../shared/utils/createIdFromString.js":696,"./utils/extractAttributesFromGpuProgram.js":613,"./utils/extractStructAndGroups.js":614,"./utils/generateGpuLayoutGroups.js":616,"./utils/generateLayoutHash.js":617,"./utils/removeStructAndGroupDuplicates.js":618}],610:[function(require,module,exports){
+},{"../../shared/utils/createIdFromString.js":702,"./utils/extractAttributesFromGpuProgram.js":619,"./utils/extractStructAndGroups.js":620,"./utils/generateGpuLayoutGroups.js":622,"./utils/generateLayoutHash.js":623,"./utils/removeStructAndGroupDuplicates.js":624}],616:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -59565,7 +59858,7 @@ GpuShaderSystem.extension = {
 exports.GpuShaderSystem = GpuShaderSystem;
 
 
-},{"../../../../extensions/Extensions.js":418}],611:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424}],617:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -59635,7 +59928,7 @@ exports.WGSL_ALIGN_SIZE_DATA = WGSL_ALIGN_SIZE_DATA;
 exports.createUboElementsWGSL = createUboElementsWGSL;
 
 
-},{}],612:[function(require,module,exports){
+},{}],618:[function(require,module,exports){
 'use strict';
 
 var createUboSyncFunction = require('../../../shared/shader/utils/createUboSyncFunction.js');
@@ -59655,7 +59948,7 @@ function createUboSyncFunctionWGSL(uboElements) {
 exports.createUboSyncFunctionWGSL = createUboSyncFunctionWGSL;
 
 
-},{"../../../shared/shader/utils/createUboSyncFunction.js":661,"../../../shared/shader/utils/uboSyncFunctions.js":663,"./generateArraySyncWGSL.js":615}],613:[function(require,module,exports){
+},{"../../../shared/shader/utils/createUboSyncFunction.js":667,"../../../shared/shader/utils/uboSyncFunctions.js":669,"./generateArraySyncWGSL.js":621}],619:[function(require,module,exports){
 'use strict';
 
 var getAttributeInfoFromFormat = require('../../../shared/geometry/utils/getAttributeInfoFromFormat.js');
@@ -59710,7 +60003,7 @@ function extractAttributesFromGpuProgram({ source, entryPoint }) {
 exports.extractAttributesFromGpuProgram = extractAttributesFromGpuProgram;
 
 
-},{"../../../shared/geometry/utils/getAttributeInfoFromFormat.js":644}],614:[function(require,module,exports){
+},{"../../../shared/geometry/utils/getAttributeInfoFromFormat.js":650}],620:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -59757,7 +60050,7 @@ function extractStructAndGroups(wgsl) {
 exports.extractStructAndGroups = extractStructAndGroups;
 
 
-},{}],615:[function(require,module,exports){
+},{}],621:[function(require,module,exports){
 'use strict';
 
 var createUboElementsWGSL = require('./createUboElementsWGSL.js');
@@ -59789,7 +60082,7 @@ function generateArraySyncWGSL(uboElement, offsetToAdd) {
 exports.generateArraySyncWGSL = generateArraySyncWGSL;
 
 
-},{"./createUboElementsWGSL.js":611}],616:[function(require,module,exports){
+},{"./createUboElementsWGSL.js":617}],622:[function(require,module,exports){
 'use strict';
 
 var _const = require('../../../shared/shader/const.js');
@@ -59836,7 +60129,7 @@ function generateGpuLayoutGroups({ groups }) {
 exports.generateGpuLayoutGroups = generateGpuLayoutGroups;
 
 
-},{"../../../shared/shader/const.js":659}],617:[function(require,module,exports){
+},{"../../../shared/shader/const.js":665}],623:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -59855,7 +60148,7 @@ function generateLayoutHash({ groups }) {
 exports.generateLayoutHash = generateLayoutHash;
 
 
-},{}],618:[function(require,module,exports){
+},{}],624:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -59883,7 +60176,7 @@ function removeStructAndGroupDuplicates(vertexStructsAndGroups, fragmentStructsA
 exports.removeStructAndGroupDuplicates = removeStructAndGroupDuplicates;
 
 
-},{}],619:[function(require,module,exports){
+},{}],625:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -60036,7 +60329,7 @@ GpuBlendModesToPixi.max = {
 exports.GpuBlendModesToPixi = GpuBlendModesToPixi;
 
 
-},{}],620:[function(require,module,exports){
+},{}],626:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -60081,7 +60374,7 @@ GpuStateSystem.extension = {
 exports.GpuStateSystem = GpuStateSystem;
 
 
-},{"../../../../extensions/Extensions.js":418,"../../shared/state/State.js":666,"./GpuBlendModesToPixi.js":619}],621:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424,"../../shared/state/State.js":672,"./GpuBlendModesToPixi.js":625}],627:[function(require,module,exports){
 'use strict';
 
 var _const = require('../../shared/state/const.js');
@@ -60139,7 +60432,7 @@ GpuStencilModesToPixi[_const.STENCIL_MODES.INVERSE_MASK_ACTIVE] = {
 exports.GpuStencilModesToPixi = GpuStencilModesToPixi;
 
 
-},{"../../shared/state/const.js":667}],622:[function(require,module,exports){
+},{"../../shared/state/const.js":673}],628:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../../environment/adapter.js');
@@ -60364,13 +60657,13 @@ GpuTextureSystem.extension = {
 exports.GpuTextureSystem = GpuTextureSystem;
 
 
-},{"../../../../environment/adapter.js":400,"../../../../extensions/Extensions.js":418,"../../shared/shader/UniformGroup.js":658,"../../shared/texture/CanvasPool.js":674,"../shader/BindGroup.js":607,"./uploaders/gpuUploadBufferImageResource.js":624,"./uploaders/gpuUploadCompressedTextureResource.js":625,"./uploaders/gpuUploadImageSource.js":626,"./uploaders/gpuUploadVideoSource.js":627,"./utils/GpuMipmapGenerator.js":628}],623:[function(require,module,exports){
+},{"../../../../environment/adapter.js":406,"../../../../extensions/Extensions.js":424,"../../shared/shader/UniformGroup.js":664,"../../shared/texture/CanvasPool.js":680,"../shader/BindGroup.js":613,"./uploaders/gpuUploadBufferImageResource.js":630,"./uploaders/gpuUploadCompressedTextureResource.js":631,"./uploaders/gpuUploadImageSource.js":632,"./uploaders/gpuUploadVideoSource.js":633,"./utils/GpuMipmapGenerator.js":634}],629:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],624:[function(require,module,exports){
+},{}],630:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -60400,7 +60693,7 @@ const gpuUploadBufferImageResource = {
 exports.gpuUploadBufferImageResource = gpuUploadBufferImageResource;
 
 
-},{}],625:[function(require,module,exports){
+},{}],631:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -60449,7 +60742,7 @@ exports.blockDataMap = blockDataMap;
 exports.gpuUploadCompressedTextureResource = gpuUploadCompressedTextureResource;
 
 
-},{}],626:[function(require,module,exports){
+},{}],632:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -60476,7 +60769,7 @@ const gpuUploadImageResource = {
 exports.gpuUploadImageResource = gpuUploadImageResource;
 
 
-},{}],627:[function(require,module,exports){
+},{}],633:[function(require,module,exports){
 'use strict';
 
 var gpuUploadImageSource = require('./gpuUploadImageSource.js');
@@ -60492,7 +60785,7 @@ const gpuUploadVideoResource = {
 exports.gpuUploadVideoResource = gpuUploadVideoResource;
 
 
-},{"./gpuUploadImageSource.js":626}],628:[function(require,module,exports){
+},{"./gpuUploadImageSource.js":632}],634:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -60652,7 +60945,7 @@ class GpuMipmapGenerator {
 exports.GpuMipmapGenerator = GpuMipmapGenerator;
 
 
-},{}],629:[function(require,module,exports){
+},{}],635:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../../../environment/adapter.js');
@@ -60735,13 +61028,13 @@ async function getSupportedGPUCompressedTextureFormats() {
 exports.getSupportedGPUCompressedTextureFormats = getSupportedGPUCompressedTextureFormats;
 
 
-},{"../../../../../environment/adapter.js":400}],630:[function(require,module,exports){
+},{"../../../../../environment/adapter.js":406}],636:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],631:[function(require,module,exports){
+},{}],637:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -60835,7 +61128,7 @@ SchedulerSystem.extension = {
 exports.SchedulerSystem = SchedulerSystem;
 
 
-},{"../../../extensions/Extensions.js":418,"../../../ticker/Ticker.js":880}],632:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../../ticker/Ticker.js":886}],638:[function(require,module,exports){
 'use strict';
 
 var Color = require('../../../../color/Color.js');
@@ -60919,7 +61212,7 @@ let BackgroundSystem = _BackgroundSystem;
 exports.BackgroundSystem = BackgroundSystem;
 
 
-},{"../../../../color/Color.js":356,"../../../../extensions/Extensions.js":418}],633:[function(require,module,exports){
+},{"../../../../color/Color.js":362,"../../../../extensions/Extensions.js":424}],639:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -61046,7 +61339,7 @@ BlendModePipe.extension = {
 exports.BlendModePipe = BlendModePipe;
 
 
-},{"../../../../extensions/Extensions.js":418,"../../../../filters/FilterEffect.js":421,"../../../../utils/logging/warn.js":902}],634:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424,"../../../../filters/FilterEffect.js":427,"../../../../utils/logging/warn.js":908}],640:[function(require,module,exports){
 'use strict';
 
 var EventEmitter = require('eventemitter3');
@@ -61212,7 +61505,7 @@ class Buffer extends EventEmitter {
 exports.Buffer = Buffer;
 
 
-},{"../../../../utils/data/uid.js":895,"./const.js":636,"eventemitter3":206}],635:[function(require,module,exports){
+},{"../../../../utils/data/uid.js":901,"./const.js":642,"eventemitter3":212}],641:[function(require,module,exports){
 'use strict';
 
 var EventEmitter = require('eventemitter3');
@@ -61294,7 +61587,7 @@ class BufferResource extends EventEmitter {
 exports.BufferResource = BufferResource;
 
 
-},{"../../../../utils/data/uid.js":895,"eventemitter3":206}],636:[function(require,module,exports){
+},{"../../../../utils/data/uid.js":901,"eventemitter3":212}],642:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -61316,7 +61609,7 @@ var BufferUsage = /* @__PURE__ */ ((BufferUsage2) => {
 exports.BufferUsage = BufferUsage;
 
 
-},{}],637:[function(require,module,exports){
+},{}],643:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -61336,7 +61629,7 @@ function fastCopy(sourceBuffer, destinationBuffer) {
 exports.fastCopy = fastCopy;
 
 
-},{}],638:[function(require,module,exports){
+},{}],644:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -61517,7 +61810,7 @@ let ExtractSystem = _ExtractSystem;
 exports.ExtractSystem = ExtractSystem;
 
 
-},{"../../../../extensions/Extensions.js":418,"../../../../scene/container/Container.js":701,"../texture/Texture.js":678}],639:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424,"../../../../scene/container/Container.js":707,"../texture/Texture.js":684}],645:[function(require,module,exports){
 'use strict';
 
 var Color = require('../../../../color/Color.js');
@@ -61603,7 +61896,7 @@ GenerateTextureSystem.extension = {
 exports.GenerateTextureSystem = GenerateTextureSystem;
 
 
-},{"../../../../color/Color.js":356,"../../../../extensions/Extensions.js":418,"../../../../maths/matrix/Matrix.js":461,"../../../../maths/shapes/Rectangle.js":475,"../../../../scene/container/Container.js":701,"../../../../scene/container/bounds/Bounds.js":708,"../../../../scene/container/bounds/getLocalBounds.js":711,"../texture/RenderTexture.js":676}],640:[function(require,module,exports){
+},{"../../../../color/Color.js":362,"../../../../extensions/Extensions.js":424,"../../../../maths/matrix/Matrix.js":467,"../../../../maths/shapes/Rectangle.js":481,"../../../../scene/container/Container.js":707,"../../../../scene/container/bounds/Bounds.js":714,"../../../../scene/container/bounds/getLocalBounds.js":717,"../texture/RenderTexture.js":682}],646:[function(require,module,exports){
 'use strict';
 
 var EventEmitter = require('eventemitter3');
@@ -61746,7 +62039,7 @@ class Geometry extends EventEmitter {
 exports.Geometry = Geometry;
 
 
-},{"../../../../scene/container/bounds/Bounds.js":708,"../../../../utils/data/uid.js":895,"../buffer/Buffer.js":634,"./utils/ensureIsBuffer.js":643,"./utils/getGeometryBounds.js":645,"eventemitter3":206}],641:[function(require,module,exports){
+},{"../../../../scene/container/bounds/Bounds.js":714,"../../../../utils/data/uid.js":901,"../buffer/Buffer.js":640,"./utils/ensureIsBuffer.js":649,"./utils/getGeometryBounds.js":651,"eventemitter3":212}],647:[function(require,module,exports){
 'use strict';
 
 var deprecation = require('../../../../utils/logging/deprecation.js');
@@ -61769,7 +62062,7 @@ const DRAW_MODES = new Proxy(DEPRECATED_DRAW_MODES, {
 exports.DRAW_MODES = DRAW_MODES;
 
 
-},{"../../../../utils/logging/deprecation.js":899}],642:[function(require,module,exports){
+},{"../../../../utils/logging/deprecation.js":905}],648:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -61808,7 +62101,7 @@ exports.buildSimpleUvs = buildSimpleUvs;
 exports.buildUvs = buildUvs;
 
 
-},{}],643:[function(require,module,exports){
+},{}],649:[function(require,module,exports){
 'use strict';
 
 var Buffer = require('../../buffer/Buffer.js');
@@ -61839,7 +62132,7 @@ function ensureIsBuffer(buffer, index) {
 exports.ensureIsBuffer = ensureIsBuffer;
 
 
-},{"../../buffer/Buffer.js":634,"../../buffer/const.js":636}],644:[function(require,module,exports){
+},{"../../buffer/Buffer.js":640,"../../buffer/const.js":642}],650:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -61882,7 +62175,7 @@ function getAttributeInfoFromFormat(format) {
 exports.getAttributeInfoFromFormat = getAttributeInfoFromFormat;
 
 
-},{}],645:[function(require,module,exports){
+},{}],651:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -61925,7 +62218,7 @@ function getGeometryBounds(geometry, attributeId, bounds) {
 exports.getGeometryBounds = getGeometryBounds;
 
 
-},{}],646:[function(require,module,exports){
+},{}],652:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -61952,13 +62245,13 @@ function transformVertices(vertices, m, offset, stride, size) {
 exports.transformVertices = transformVertices;
 
 
-},{}],647:[function(require,module,exports){
+},{}],653:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],648:[function(require,module,exports){
+},{}],654:[function(require,module,exports){
 'use strict';
 
 var uid = require('../../../../utils/data/uid.js');
@@ -62001,13 +62294,13 @@ class InstructionSet {
 exports.InstructionSet = InstructionSet;
 
 
-},{"../../../../utils/data/uid.js":895}],649:[function(require,module,exports){
+},{"../../../../utils/data/uid.js":901}],655:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],650:[function(require,module,exports){
+},{}],656:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -62139,7 +62432,7 @@ GlobalUniformSystem.extension = {
 exports.GlobalUniformSystem = GlobalUniformSystem;
 
 
-},{"../../../../extensions/Extensions.js":418,"../../../../maths/matrix/Matrix.js":461,"../../../../maths/point/Point.js":468,"../../../../scene/graphics/gpu/colorToUniform.js":741,"../../gpu/shader/BindGroup.js":607,"../../types.js":700,"../shader/UniformGroup.js":658}],651:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424,"../../../../maths/matrix/Matrix.js":467,"../../../../maths/point/Point.js":474,"../../../../scene/graphics/gpu/colorToUniform.js":747,"../../gpu/shader/BindGroup.js":613,"../../types.js":706,"../shader/UniformGroup.js":664}],657:[function(require,module,exports){
 'use strict';
 
 var uid = require('../../../../utils/data/uid.js');
@@ -62290,7 +62583,7 @@ let RenderTarget = _RenderTarget;
 exports.RenderTarget = RenderTarget;
 
 
-},{"../../../../utils/data/uid.js":895,"../texture/Texture.js":678,"../texture/sources/TextureSource.js":689}],652:[function(require,module,exports){
+},{"../../../../utils/data/uid.js":901,"../texture/Texture.js":684,"../texture/sources/TextureSource.js":695}],658:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('../../../../maths/matrix/Matrix.js');
@@ -62597,7 +62890,7 @@ class RenderTargetSystem {
 exports.RenderTargetSystem = RenderTargetSystem;
 
 
-},{"../../../../maths/matrix/Matrix.js":461,"../../../../maths/shapes/Rectangle.js":475,"../../gl/const.js":536,"../../gpu/renderTarget/calculateProjection.js":606,"../system/SystemRunner.js":672,"../texture/Texture.js":678,"../texture/sources/CanvasSource.js":686,"../texture/sources/TextureSource.js":689,"../texture/utils/getCanvasTexture.js":692,"./RenderTarget.js":651,"./isRenderingToScreen.js":653}],653:[function(require,module,exports){
+},{"../../../../maths/matrix/Matrix.js":467,"../../../../maths/shapes/Rectangle.js":481,"../../gl/const.js":542,"../../gpu/renderTarget/calculateProjection.js":612,"../system/SystemRunner.js":678,"../texture/Texture.js":684,"../texture/sources/CanvasSource.js":692,"../texture/sources/TextureSource.js":695,"../texture/utils/getCanvasTexture.js":698,"./RenderTarget.js":657,"./isRenderingToScreen.js":659}],659:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -62609,7 +62902,7 @@ function isRenderingToScreen(renderTarget) {
 exports.isRenderingToScreen = isRenderingToScreen;
 
 
-},{}],654:[function(require,module,exports){
+},{}],660:[function(require,module,exports){
 'use strict';
 
 var Rectangle = require('../../../../maths/shapes/Rectangle.js');
@@ -62630,7 +62923,7 @@ function viewportFromFrame(viewport, source, frame) {
 exports.viewportFromFrame = viewportFromFrame;
 
 
-},{"../../../../maths/shapes/Rectangle.js":475}],655:[function(require,module,exports){
+},{"../../../../maths/shapes/Rectangle.js":481}],661:[function(require,module,exports){
 'use strict';
 
 var EventEmitter = require('eventemitter3');
@@ -62819,13 +63112,13 @@ class Shader extends EventEmitter {
 exports.Shader = Shader;
 
 
-},{"../../../../utils/data/uid.js":895,"../../gl/shader/GlProgram.js":545,"../../gpu/shader/BindGroup.js":607,"../../gpu/shader/GpuProgram.js":609,"../../types.js":700,"./UniformGroup.js":658,"eventemitter3":206}],656:[function(require,module,exports){
+},{"../../../../utils/data/uid.js":901,"../../gl/shader/GlProgram.js":551,"../../gpu/shader/BindGroup.js":613,"../../gpu/shader/GpuProgram.js":615,"../../types.js":706,"./UniformGroup.js":664,"eventemitter3":212}],662:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],657:[function(require,module,exports){
+},{}],663:[function(require,module,exports){
 'use strict';
 
 var unsafeEvalSupported = require('../../../../utils/browser/unsafeEvalSupported.js');
@@ -62908,7 +63201,7 @@ class UboSystem {
 exports.UboSystem = UboSystem;
 
 
-},{"../../../../utils/browser/unsafeEvalSupported.js":889,"../buffer/Buffer.js":634,"../buffer/const.js":636}],658:[function(require,module,exports){
+},{"../../../../utils/browser/unsafeEvalSupported.js":895,"../buffer/Buffer.js":640,"../buffer/const.js":642}],664:[function(require,module,exports){
 'use strict';
 
 var uid = require('../../../../utils/data/uid.js');
@@ -62980,7 +63273,7 @@ let UniformGroup = _UniformGroup;
 exports.UniformGroup = UniformGroup;
 
 
-},{"../../../../utils/data/uid.js":895,"../utils/createIdFromString.js":696,"./types.js":660,"./utils/getDefaultUniformValue.js":662}],659:[function(require,module,exports){
+},{"../../../../utils/data/uid.js":901,"../utils/createIdFromString.js":702,"./types.js":666,"./utils/getDefaultUniformValue.js":668}],665:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -62994,7 +63287,7 @@ var ShaderStage = /* @__PURE__ */ ((ShaderStage2) => {
 exports.ShaderStage = ShaderStage;
 
 
-},{}],660:[function(require,module,exports){
+},{}],666:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -63026,7 +63319,7 @@ exports.UNIFORM_TYPES_MAP = UNIFORM_TYPES_MAP;
 exports.UNIFORM_TYPES_VALUES = UNIFORM_TYPES_VALUES;
 
 
-},{}],661:[function(require,module,exports){
+},{}],667:[function(require,module,exports){
 'use strict';
 
 var uniformParsers = require('./uniformParsers.js');
@@ -63092,7 +63385,7 @@ function createUboSyncFunction(uboElements, parserCode, arrayGenerationFunction,
 exports.createUboSyncFunction = createUboSyncFunction;
 
 
-},{"./uniformParsers.js":664}],662:[function(require,module,exports){
+},{"./uniformParsers.js":670}],668:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -63151,7 +63444,7 @@ function getDefaultUniformValue(type, size) {
 exports.getDefaultUniformValue = getDefaultUniformValue;
 
 
-},{}],663:[function(require,module,exports){
+},{}],669:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -63232,7 +63525,7 @@ exports.uboSyncFunctionsSTD40 = uboSyncFunctionsSTD40;
 exports.uboSyncFunctionsWGSL = uboSyncFunctionsWGSL;
 
 
-},{}],664:[function(require,module,exports){
+},{}],670:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -63351,7 +63644,7 @@ const uniformParsers = [
 exports.uniformParsers = uniformParsers;
 
 
-},{}],665:[function(require,module,exports){
+},{}],671:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -63396,7 +63689,7 @@ HelloSystem.defaultOptions = {
 exports.HelloSystem = HelloSystem;
 
 
-},{"../../../../extensions/Extensions.js":418,"../../../../utils/sayHello.js":909,"../../types.js":700}],666:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424,"../../../../utils/sayHello.js":915,"../../types.js":706}],672:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -63558,7 +63851,7 @@ let State = _State;
 exports.State = State;
 
 
-},{}],667:[function(require,module,exports){
+},{}],673:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -63581,7 +63874,7 @@ exports.BLEND_TO_NPM = BLEND_TO_NPM;
 exports.STENCIL_MODES = STENCIL_MODES;
 
 
-},{}],668:[function(require,module,exports){
+},{}],674:[function(require,module,exports){
 'use strict';
 
 var _const = require('./const.js');
@@ -63597,7 +63890,7 @@ function getAdjustedBlendModeBlend(blendMode, textureSource) {
 exports.getAdjustedBlendModeBlend = getAdjustedBlendModeBlend;
 
 
-},{"./const.js":667}],669:[function(require,module,exports){
+},{"./const.js":673}],675:[function(require,module,exports){
 'use strict';
 
 var Color = require('../../../../color/Color.js');
@@ -63926,7 +64219,7 @@ let AbstractRenderer = _AbstractRenderer;
 exports.AbstractRenderer = AbstractRenderer;
 
 
-},{"../../../../color/Color.js":356,"../../../../environment/autoDetectEnvironment.js":401,"../../../../scene/container/Container.js":701,"../../../../utils/browser/unsafeEvalSupported.js":889,"../../../../utils/logging/deprecation.js":899,"../../../../utils/utils.js":911,"../../gl/const.js":536,"./SystemRunner.js":672,"eventemitter3":206}],670:[function(require,module,exports){
+},{"../../../../color/Color.js":362,"../../../../environment/autoDetectEnvironment.js":407,"../../../../scene/container/Container.js":707,"../../../../utils/browser/unsafeEvalSupported.js":895,"../../../../utils/logging/deprecation.js":905,"../../../../utils/utils.js":917,"../../gl/const.js":542,"./SystemRunner.js":678,"eventemitter3":212}],676:[function(require,module,exports){
 'use strict';
 
 var CustomRenderPipe = require('../../../../scene/container/CustomRenderPipe.js');
@@ -63978,13 +64271,13 @@ exports.SharedRenderPipes = SharedRenderPipes;
 exports.SharedSystems = SharedSystems;
 
 
-},{"../../../../scene/container/CustomRenderPipe.js":702,"../../../../scene/container/RenderGroupPipe.js":706,"../../../../scene/container/RenderGroupSystem.js":707,"../../../../scene/sprite/SpritePipe.js":830,"../../../../utils/global/globalHooks.js":897,"../../../batcher/shared/BatcherPipe.js":494,"../../../mask/alpha/AlphaMaskPipe.js":517,"../../../mask/color/ColorMaskPipe.js":519,"../../../mask/stencil/StencilMaskPipe.js":522,"../SchedulerSystem.js":631,"../background/BackgroundSystem.js":632,"../blendModes/BlendModePipe.js":633,"../extract/ExtractSystem.js":638,"../extract/GenerateTextureSystem.js":639,"../renderTarget/GlobalUniformSystem.js":650,"../startup/HelloSystem.js":665,"../texture/RenderableGCSystem.js":677,"../texture/TextureGCSystem.js":679,"../view/ViewSystem.js":699}],671:[function(require,module,exports){
+},{"../../../../scene/container/CustomRenderPipe.js":708,"../../../../scene/container/RenderGroupPipe.js":712,"../../../../scene/container/RenderGroupSystem.js":713,"../../../../scene/sprite/SpritePipe.js":836,"../../../../utils/global/globalHooks.js":903,"../../../batcher/shared/BatcherPipe.js":500,"../../../mask/alpha/AlphaMaskPipe.js":523,"../../../mask/color/ColorMaskPipe.js":525,"../../../mask/stencil/StencilMaskPipe.js":528,"../SchedulerSystem.js":637,"../background/BackgroundSystem.js":638,"../blendModes/BlendModePipe.js":639,"../extract/ExtractSystem.js":644,"../extract/GenerateTextureSystem.js":645,"../renderTarget/GlobalUniformSystem.js":656,"../startup/HelloSystem.js":671,"../texture/RenderableGCSystem.js":683,"../texture/TextureGCSystem.js":685,"../view/ViewSystem.js":705}],677:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],672:[function(require,module,exports){
+},{}],678:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -64082,13 +64375,13 @@ class SystemRunner {
 exports.SystemRunner = SystemRunner;
 
 
-},{}],673:[function(require,module,exports){
+},{}],679:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],674:[function(require,module,exports){
+},{}],680:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../../environment/adapter.js');
@@ -64156,13 +64449,13 @@ exports.CanvasPool = CanvasPool;
 exports.CanvasPoolClass = CanvasPoolClass;
 
 
-},{"../../../../environment/adapter.js":400,"../../../../maths/misc/pow2.js":465}],675:[function(require,module,exports){
+},{"../../../../environment/adapter.js":406,"../../../../maths/misc/pow2.js":471}],681:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],676:[function(require,module,exports){
+},{}],682:[function(require,module,exports){
 'use strict';
 
 var TextureSource = require('./sources/TextureSource.js');
@@ -64191,7 +64484,7 @@ class RenderTexture extends Texture.Texture {
 exports.RenderTexture = RenderTexture;
 
 
-},{"./Texture.js":678,"./sources/TextureSource.js":689}],677:[function(require,module,exports){
+},{"./Texture.js":684,"./sources/TextureSource.js":695}],683:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -64403,7 +64696,7 @@ let RenderableGCSystem = _RenderableGCSystem;
 exports.RenderableGCSystem = RenderableGCSystem;
 
 
-},{"../../../../extensions/Extensions.js":418,"../../../../utils/data/clean.js":893}],678:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424,"../../../../utils/data/clean.js":899}],684:[function(require,module,exports){
 'use strict';
 
 var EventEmitter = require('eventemitter3');
@@ -64603,7 +64896,7 @@ Texture.WHITE.destroy = NOOP.NOOP;
 exports.Texture = Texture;
 
 
-},{"../../../../maths/matrix/groupD8.js":462,"../../../../maths/shapes/Rectangle.js":475,"../../../../utils/data/uid.js":895,"../../../../utils/logging/deprecation.js":899,"../../../../utils/misc/NOOP.js":903,"./TextureMatrix.js":680,"./sources/BufferImageSource.js":685,"./sources/TextureSource.js":689,"eventemitter3":206}],679:[function(require,module,exports){
+},{"../../../../maths/matrix/groupD8.js":468,"../../../../maths/shapes/Rectangle.js":481,"../../../../utils/data/uid.js":901,"../../../../utils/logging/deprecation.js":905,"../../../../utils/misc/NOOP.js":909,"./TextureMatrix.js":686,"./sources/BufferImageSource.js":691,"./sources/TextureSource.js":695,"eventemitter3":212}],685:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -64693,7 +64986,7 @@ let TextureGCSystem = _TextureGCSystem;
 exports.TextureGCSystem = TextureGCSystem;
 
 
-},{"../../../../extensions/Extensions.js":418}],680:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424}],686:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('../../../../maths/matrix/Matrix.js');
@@ -64791,7 +65084,7 @@ class TextureMatrix {
 exports.TextureMatrix = TextureMatrix;
 
 
-},{"../../../../maths/matrix/Matrix.js":461}],681:[function(require,module,exports){
+},{"../../../../maths/matrix/Matrix.js":467}],687:[function(require,module,exports){
 'use strict';
 
 var pow2 = require('../../../../maths/misc/pow2.js');
@@ -64908,7 +65201,7 @@ exports.TexturePool = TexturePool;
 exports.TexturePoolClass = TexturePoolClass;
 
 
-},{"../../../../maths/misc/pow2.js":465,"./Texture.js":678,"./sources/TextureSource.js":689}],682:[function(require,module,exports){
+},{"../../../../maths/misc/pow2.js":471,"./Texture.js":684,"./sources/TextureSource.js":695}],688:[function(require,module,exports){
 'use strict';
 
 var EventEmitter = require('eventemitter3');
@@ -65026,7 +65319,7 @@ let TextureStyle = _TextureStyle;
 exports.TextureStyle = TextureStyle;
 
 
-},{"../../../../utils/data/uid.js":895,"../../../../utils/logging/deprecation.js":899,"eventemitter3":206}],683:[function(require,module,exports){
+},{"../../../../utils/data/uid.js":901,"../../../../utils/logging/deprecation.js":905,"eventemitter3":212}],689:[function(require,module,exports){
 'use strict';
 
 var groupD8 = require('../../../../maths/matrix/groupD8.js');
@@ -65098,7 +65391,7 @@ class TextureUvs {
 exports.TextureUvs = TextureUvs;
 
 
-},{"../../../../maths/matrix/groupD8.js":462}],684:[function(require,module,exports){
+},{"../../../../maths/matrix/groupD8.js":468}],690:[function(require,module,exports){
 'use strict';
 
 var deprecation = require('../../../../utils/logging/deprecation.js');
@@ -65142,7 +65435,7 @@ exports.SCALE_MODES = SCALE_MODES;
 exports.WRAP_MODES = WRAP_MODES;
 
 
-},{"../../../../utils/logging/deprecation.js":899}],685:[function(require,module,exports){
+},{"../../../../utils/logging/deprecation.js":905}],691:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../../extensions/Extensions.js');
@@ -65186,7 +65479,7 @@ BufferImageSource.extension = Extensions.ExtensionType.TextureSource;
 exports.BufferImageSource = BufferImageSource;
 
 
-},{"../../../../../extensions/Extensions.js":418,"./TextureSource.js":689}],686:[function(require,module,exports){
+},{"../../../../../extensions/Extensions.js":424,"./TextureSource.js":695}],692:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../../../environment/adapter.js');
@@ -65251,7 +65544,7 @@ CanvasSource.extension = Extensions.ExtensionType.TextureSource;
 exports.CanvasSource = CanvasSource;
 
 
-},{"../../../../../environment/adapter.js":400,"../../../../../extensions/Extensions.js":418,"./TextureSource.js":689}],687:[function(require,module,exports){
+},{"../../../../../environment/adapter.js":406,"../../../../../extensions/Extensions.js":424,"./TextureSource.js":695}],693:[function(require,module,exports){
 'use strict';
 
 var TextureSource = require('./TextureSource.js');
@@ -65269,7 +65562,7 @@ class CompressedSource extends TextureSource.TextureSource {
 exports.CompressedSource = CompressedSource;
 
 
-},{"./TextureSource.js":689}],688:[function(require,module,exports){
+},{"./TextureSource.js":695}],694:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../../../environment/adapter.js');
@@ -65300,7 +65593,7 @@ ImageSource.extension = Extensions.ExtensionType.TextureSource;
 exports.ImageSource = ImageSource;
 
 
-},{"../../../../../environment/adapter.js":400,"../../../../../extensions/Extensions.js":418,"../../../../../utils/logging/warn.js":902,"./TextureSource.js":689}],689:[function(require,module,exports){
+},{"../../../../../environment/adapter.js":406,"../../../../../extensions/Extensions.js":424,"../../../../../utils/logging/warn.js":908,"./TextureSource.js":695}],695:[function(require,module,exports){
 'use strict';
 
 var EventEmitter = require('eventemitter3');
@@ -65636,7 +65929,7 @@ let TextureSource = _TextureSource;
 exports.TextureSource = TextureSource;
 
 
-},{"../../../../../maths/misc/pow2.js":465,"../../../../../scene/container/utils/definedProps.js":730,"../../../../../utils/data/uid.js":895,"../TextureStyle.js":682,"eventemitter3":206}],690:[function(require,module,exports){
+},{"../../../../../maths/misc/pow2.js":471,"../../../../../scene/container/utils/definedProps.js":736,"../../../../../utils/data/uid.js":901,"../TextureStyle.js":688,"eventemitter3":212}],696:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../../extensions/Extensions.js');
@@ -65965,7 +66258,7 @@ let VideoSource = _VideoSource;
 exports.VideoSource = VideoSource;
 
 
-},{"../../../../../extensions/Extensions.js":418,"../../../../../ticker/Ticker.js":880,"../../../../../utils/browser/detectVideoAlphaMode.js":884,"./TextureSource.js":689}],691:[function(require,module,exports){
+},{"../../../../../extensions/Extensions.js":424,"../../../../../ticker/Ticker.js":886,"../../../../../utils/browser/detectVideoAlphaMode.js":890,"./TextureSource.js":695}],697:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -65977,7 +66270,7 @@ function generateUID() {
 exports.generateUID = generateUID;
 
 
-},{}],692:[function(require,module,exports){
+},{}],698:[function(require,module,exports){
 'use strict';
 
 var CanvasSource = require('../sources/CanvasSource.js');
@@ -66012,7 +66305,7 @@ exports.getCanvasTexture = getCanvasTexture;
 exports.hasCachedCanvasTexture = hasCachedCanvasTexture;
 
 
-},{"../Texture.js":678,"../sources/CanvasSource.js":686}],693:[function(require,module,exports){
+},{"../Texture.js":684,"../sources/CanvasSource.js":692}],699:[function(require,module,exports){
 'use strict';
 
 var isWebGLSupported = require('../../../../../utils/browser/isWebGLSupported.js');
@@ -66045,7 +66338,7 @@ async function getSupportedCompressedTextureFormats() {
 exports.getSupportedCompressedTextureFormats = getSupportedCompressedTextureFormats;
 
 
-},{"../../../../../utils/browser/isWebGLSupported.js":887,"../../../../../utils/browser/isWebGPUSupported.js":888,"../../../gl/texture/utils/getSupportedGlCompressedTextureFormats.js":585,"../../../gpu/texture/utils/getSupportedGPUCompressedTextureFormats.js":629}],694:[function(require,module,exports){
+},{"../../../../../utils/browser/isWebGLSupported.js":893,"../../../../../utils/browser/isWebGPUSupported.js":894,"../../../gl/texture/utils/getSupportedGlCompressedTextureFormats.js":591,"../../../gpu/texture/utils/getSupportedGPUCompressedTextureFormats.js":635}],700:[function(require,module,exports){
 'use strict';
 
 var getSupportedCompressedTextureFormats = require('./getSupportedCompressedTextureFormats.js');
@@ -66119,7 +66412,7 @@ exports.getSupportedTextureFormats = getSupportedTextureFormats;
 exports.nonCompressedFormats = nonCompressedFormats;
 
 
-},{"./getSupportedCompressedTextureFormats.js":693}],695:[function(require,module,exports){
+},{"./getSupportedCompressedTextureFormats.js":699}],701:[function(require,module,exports){
 'use strict';
 
 var Cache = require('../../../../../assets/cache/Cache.js');
@@ -66179,7 +66472,7 @@ exports.resourceToTexture = resourceToTexture;
 exports.textureFrom = textureFrom;
 
 
-},{"../../../../../assets/cache/Cache.js":321,"../../../../../extensions/Extensions.js":418,"../Texture.js":678,"../sources/TextureSource.js":689}],696:[function(require,module,exports){
+},{"../../../../../assets/cache/Cache.js":327,"../../../../../extensions/Extensions.js":424,"../Texture.js":684,"../sources/TextureSource.js":695}],702:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -66199,7 +66492,7 @@ function createIdFromString(value, groupId) {
 exports.createIdFromString = createIdFromString;
 
 
-},{}],697:[function(require,module,exports){
+},{}],703:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -66216,13 +66509,13 @@ function parseFunctionBody(fn) {
 exports.parseFunctionBody = parseFunctionBody;
 
 
-},{}],698:[function(require,module,exports){
+},{}],704:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],699:[function(require,module,exports){
+},{}],705:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../../environment/adapter.js');
@@ -66342,7 +66635,7 @@ let ViewSystem = _ViewSystem;
 exports.ViewSystem = ViewSystem;
 
 
-},{"../../../../environment/adapter.js":400,"../../../../extensions/Extensions.js":418,"../../../../maths/shapes/Rectangle.js":475,"../../../../utils/logging/deprecation.js":899,"../renderTarget/RenderTarget.js":651,"../texture/utils/getCanvasTexture.js":692}],700:[function(require,module,exports){
+},{"../../../../environment/adapter.js":406,"../../../../extensions/Extensions.js":424,"../../../../maths/shapes/Rectangle.js":481,"../../../../utils/logging/deprecation.js":905,"../renderTarget/RenderTarget.js":657,"../texture/utils/getCanvasTexture.js":698}],706:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -66356,7 +66649,7 @@ var RendererType = /* @__PURE__ */ ((RendererType2) => {
 exports.RendererType = RendererType;
 
 
-},{}],701:[function(require,module,exports){
+},{}],707:[function(require,module,exports){
 'use strict';
 
 var EventEmitter = require('eventemitter3');
@@ -67161,7 +67454,7 @@ exports.UPDATE_TRANSFORM = UPDATE_TRANSFORM;
 exports.UPDATE_VISIBLE = UPDATE_VISIBLE;
 
 
-},{"../../color/Color.js":356,"../../culling/cullingMixin.js":386,"../../extensions/Extensions.js":418,"../../maths/matrix/Matrix.js":461,"../../maths/misc/const.js":464,"../../maths/point/ObservablePoint.js":467,"../../utils/data/uid.js":895,"../../utils/logging/deprecation.js":899,"../../utils/pool/PoolGroup.js":908,"./RenderGroup.js":705,"./container-mixins/cacheAsTextureMixin.js":714,"./container-mixins/childrenHelperMixin.js":715,"./container-mixins/collectRenderablesMixin.js":716,"./container-mixins/effectsMixin.js":717,"./container-mixins/findMixin.js":718,"./container-mixins/getFastGlobalBoundsMixin.js":719,"./container-mixins/getGlobalMixin.js":720,"./container-mixins/measureMixin.js":721,"./container-mixins/onRenderMixin.js":722,"./container-mixins/sortMixin.js":723,"./container-mixins/toLocalGlobalMixin.js":724,"./utils/assignWithIgnore.js":726,"eventemitter3":206}],702:[function(require,module,exports){
+},{"../../color/Color.js":362,"../../culling/cullingMixin.js":392,"../../extensions/Extensions.js":424,"../../maths/matrix/Matrix.js":467,"../../maths/misc/const.js":470,"../../maths/point/ObservablePoint.js":473,"../../utils/data/uid.js":901,"../../utils/logging/deprecation.js":905,"../../utils/pool/PoolGroup.js":914,"./RenderGroup.js":711,"./container-mixins/cacheAsTextureMixin.js":720,"./container-mixins/childrenHelperMixin.js":721,"./container-mixins/collectRenderablesMixin.js":722,"./container-mixins/effectsMixin.js":723,"./container-mixins/findMixin.js":724,"./container-mixins/getFastGlobalBoundsMixin.js":725,"./container-mixins/getGlobalMixin.js":726,"./container-mixins/measureMixin.js":727,"./container-mixins/onRenderMixin.js":728,"./container-mixins/sortMixin.js":729,"./container-mixins/toLocalGlobalMixin.js":730,"./utils/assignWithIgnore.js":732,"eventemitter3":212}],708:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -67203,13 +67496,13 @@ CustomRenderPipe.extension = {
 exports.CustomRenderPipe = CustomRenderPipe;
 
 
-},{"../../extensions/Extensions.js":418}],703:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424}],709:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],704:[function(require,module,exports){
+},{}],710:[function(require,module,exports){
 'use strict';
 
 var ViewContainer = require('../view/ViewContainer.js');
@@ -67251,7 +67544,7 @@ class RenderContainer extends ViewContainer.ViewContainer {
 exports.RenderContainer = RenderContainer;
 
 
-},{"../view/ViewContainer.js":875}],705:[function(require,module,exports){
+},{"../view/ViewContainer.js":881}],711:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('../../maths/matrix/Matrix.js');
@@ -67524,7 +67817,7 @@ class RenderGroup {
 exports.RenderGroup = RenderGroup;
 
 
-},{"../../maths/matrix/Matrix.js":461,"../../rendering/renderers/shared/instructions/InstructionSet.js":648,"../../rendering/renderers/shared/texture/TexturePool.js":681}],706:[function(require,module,exports){
+},{"../../maths/matrix/Matrix.js":467,"../../rendering/renderers/shared/instructions/InstructionSet.js":654,"../../rendering/renderers/shared/texture/TexturePool.js":687}],712:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -67616,7 +67909,7 @@ RenderGroupPipe.extension = {
 exports.RenderGroupPipe = RenderGroupPipe;
 
 
-},{"../../extensions/Extensions.js":418,"../../maths/matrix/Matrix.js":461,"../../utils/pool/PoolGroup.js":908,"../sprite/BatchableSprite.js":828,"./utils/executeInstructions.js":731}],707:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424,"../../maths/matrix/Matrix.js":467,"../../utils/pool/PoolGroup.js":914,"../sprite/BatchableSprite.js":834,"./utils/executeInstructions.js":737}],713:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -67771,7 +68064,7 @@ RenderGroupSystem.extension = {
 exports.RenderGroupSystem = RenderGroupSystem;
 
 
-},{"../../extensions/Extensions.js":418,"../../maths/matrix/Matrix.js":461,"../../rendering/renderers/shared/texture/TexturePool.js":681,"./bounds/Bounds.js":708,"./utils/clearList.js":728,"./utils/executeInstructions.js":731,"./utils/updateRenderGroupTransforms.js":736,"./utils/validateRenderables.js":738}],708:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424,"../../maths/matrix/Matrix.js":467,"../../rendering/renderers/shared/texture/TexturePool.js":687,"./bounds/Bounds.js":714,"./utils/clearList.js":734,"./utils/executeInstructions.js":737,"./utils/updateRenderGroupTransforms.js":742,"./utils/validateRenderables.js":744}],714:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('../../../maths/matrix/Matrix.js');
@@ -68156,7 +68449,7 @@ class Bounds {
 exports.Bounds = Bounds;
 
 
-},{"../../../maths/matrix/Matrix.js":461,"../../../maths/shapes/Rectangle.js":475}],709:[function(require,module,exports){
+},{"../../../maths/matrix/Matrix.js":467,"../../../maths/shapes/Rectangle.js":481}],715:[function(require,module,exports){
 'use strict';
 
 var deprecation = require('../../../utils/logging/deprecation.js');
@@ -68170,7 +68463,7 @@ function getFastGlobalBounds(target, bounds) {
 exports.getFastGlobalBounds = getFastGlobalBounds;
 
 
-},{"../../../utils/logging/deprecation.js":899}],710:[function(require,module,exports){
+},{"../../../utils/logging/deprecation.js":905}],716:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('../../../maths/matrix/Matrix.js');
@@ -68253,7 +68546,7 @@ exports.getGlobalBounds = getGlobalBounds;
 exports.updateTransformBackwards = updateTransformBackwards;
 
 
-},{"../../../maths/matrix/Matrix.js":461,"./utils/matrixAndBoundsPool.js":713}],711:[function(require,module,exports){
+},{"../../../maths/matrix/Matrix.js":467,"./utils/matrixAndBoundsPool.js":719}],717:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('../../../maths/matrix/Matrix.js');
@@ -68326,7 +68619,7 @@ exports.getLocalBounds = getLocalBounds;
 exports.getParent = getParent;
 
 
-},{"../../../maths/matrix/Matrix.js":461,"../../../utils/logging/warn.js":902,"./utils/matrixAndBoundsPool.js":713}],712:[function(require,module,exports){
+},{"../../../maths/matrix/Matrix.js":467,"../../../utils/logging/warn.js":908,"./utils/matrixAndBoundsPool.js":719}],718:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -68348,7 +68641,7 @@ function getGlobalRenderableBounds(renderables, bounds) {
 exports.getGlobalRenderableBounds = getGlobalRenderableBounds;
 
 
-},{}],713:[function(require,module,exports){
+},{}],719:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('../../../../maths/matrix/Matrix.js');
@@ -68363,7 +68656,7 @@ exports.boundsPool = boundsPool;
 exports.matrixPool = matrixPool;
 
 
-},{"../../../../maths/matrix/Matrix.js":461,"../../../../utils/pool/Pool.js":907,"../Bounds.js":708}],714:[function(require,module,exports){
+},{"../../../../maths/matrix/Matrix.js":467,"../../../../utils/pool/Pool.js":913,"../Bounds.js":714}],720:[function(require,module,exports){
 'use strict';
 
 var deprecation = require('../../../utils/logging/deprecation.js');
@@ -68414,7 +68707,7 @@ const cacheAsTextureMixin = {
 exports.cacheAsTextureMixin = cacheAsTextureMixin;
 
 
-},{"../../../utils/logging/deprecation.js":899}],715:[function(require,module,exports){
+},{"../../../utils/logging/deprecation.js":905}],721:[function(require,module,exports){
 'use strict';
 
 var removeItems = require('../../../utils/data/removeItems.js');
@@ -68618,7 +68911,7 @@ const childrenHelperMixin = {
 exports.childrenHelperMixin = childrenHelperMixin;
 
 
-},{"../../../utils/data/removeItems.js":894,"../../../utils/logging/deprecation.js":899}],716:[function(require,module,exports){
+},{"../../../utils/data/removeItems.js":900,"../../../utils/logging/deprecation.js":905}],722:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -68687,7 +68980,7 @@ const collectRenderablesMixin = {
 exports.collectRenderablesMixin = collectRenderablesMixin;
 
 
-},{}],717:[function(require,module,exports){
+},{}],723:[function(require,module,exports){
 'use strict';
 
 var FilterEffect = require('../../../filters/FilterEffect.js');
@@ -68854,7 +69147,7 @@ const effectsMixin = {
 exports.effectsMixin = effectsMixin;
 
 
-},{"../../../filters/FilterEffect.js":421,"../../../rendering/mask/MaskEffectManager.js":515}],718:[function(require,module,exports){
+},{"../../../filters/FilterEffect.js":427,"../../../rendering/mask/MaskEffectManager.js":521}],724:[function(require,module,exports){
 'use strict';
 
 var deprecation = require('../../../utils/logging/deprecation.js');
@@ -68949,7 +69242,7 @@ const findMixin = {
 exports.findMixin = findMixin;
 
 
-},{"../../../utils/logging/deprecation.js":899}],719:[function(require,module,exports){
+},{"../../../utils/logging/deprecation.js":905}],725:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('../../../maths/matrix/Matrix.js');
@@ -69045,7 +69338,7 @@ const getFastGlobalBoundsMixin = {
 exports.getFastGlobalBoundsMixin = getFastGlobalBoundsMixin;
 
 
-},{"../../../maths/matrix/Matrix.js":461,"../bounds/Bounds.js":708,"../bounds/utils/matrixAndBoundsPool.js":713}],720:[function(require,module,exports){
+},{"../../../maths/matrix/Matrix.js":467,"../bounds/Bounds.js":714,"../bounds/utils/matrixAndBoundsPool.js":719}],726:[function(require,module,exports){
 'use strict';
 
 var getGlobalBounds = require('../bounds/getGlobalBounds.js');
@@ -69155,7 +69448,7 @@ exports.bgr2rgb = bgr2rgb;
 exports.getGlobalMixin = getGlobalMixin;
 
 
-},{"../bounds/getGlobalBounds.js":710,"../bounds/utils/matrixAndBoundsPool.js":713,"../utils/multiplyColors.js":733}],721:[function(require,module,exports){
+},{"../bounds/getGlobalBounds.js":716,"../bounds/utils/matrixAndBoundsPool.js":719,"../utils/multiplyColors.js":739}],727:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('../../../maths/matrix/Matrix.js');
@@ -69229,7 +69522,7 @@ const measureMixin = {
 exports.measureMixin = measureMixin;
 
 
-},{"../../../maths/matrix/Matrix.js":461,"../bounds/Bounds.js":708,"../bounds/getGlobalBounds.js":710,"../bounds/getLocalBounds.js":711,"../utils/checkChildrenDidChange.js":727}],722:[function(require,module,exports){
+},{"../../../maths/matrix/Matrix.js":467,"../bounds/Bounds.js":714,"../bounds/getGlobalBounds.js":716,"../bounds/getLocalBounds.js":717,"../utils/checkChildrenDidChange.js":733}],728:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -69270,7 +69563,7 @@ const onRenderMixin = {
 exports.onRenderMixin = onRenderMixin;
 
 
-},{}],723:[function(require,module,exports){
+},{}],729:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -69343,7 +69636,7 @@ function sortChildren(a, b) {
 exports.sortMixin = sortMixin;
 
 
-},{}],724:[function(require,module,exports){
+},{}],730:[function(require,module,exports){
 'use strict';
 
 var Point = require('../../../maths/point/Point.js');
@@ -69406,13 +69699,13 @@ const toLocalGlobalMixin = {
 exports.toLocalGlobalMixin = toLocalGlobalMixin;
 
 
-},{"../../../maths/point/Point.js":468,"../bounds/utils/matrixAndBoundsPool.js":713}],725:[function(require,module,exports){
+},{"../../../maths/point/Point.js":474,"../bounds/utils/matrixAndBoundsPool.js":719}],731:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],726:[function(require,module,exports){
+},{}],732:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -69427,7 +69720,7 @@ function assignWithIgnore(target, options, ignore = {}) {
 exports.assignWithIgnore = assignWithIgnore;
 
 
-},{}],727:[function(require,module,exports){
+},{}],733:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -69454,7 +69747,7 @@ function checkChildrenDidChange(container, previousData) {
 exports.checkChildrenDidChange = checkChildrenDidChange;
 
 
-},{}],728:[function(require,module,exports){
+},{}],734:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -69472,7 +69765,7 @@ function clearList(list, index) {
 exports.clearList = clearList;
 
 
-},{}],729:[function(require,module,exports){
+},{}],735:[function(require,module,exports){
 'use strict';
 
 var deprecation = require('../../../utils/logging/deprecation.js');
@@ -69487,7 +69780,7 @@ function collectAllRenderables(container, instructionSet, rendererOrPipes) {
 exports.collectAllRenderables = collectAllRenderables;
 
 
-},{"../../../utils/logging/deprecation.js":899}],730:[function(require,module,exports){
+},{"../../../utils/logging/deprecation.js":905}],736:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -69504,7 +69797,7 @@ function definedProps(obj) {
 exports.definedProps = definedProps;
 
 
-},{}],731:[function(require,module,exports){
+},{}],737:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -69520,7 +69813,7 @@ function executeInstructions(renderGroup, renderer) {
 exports.executeInstructions = executeInstructions;
 
 
-},{}],732:[function(require,module,exports){
+},{}],738:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -69540,7 +69833,7 @@ function mixHexColors(color1, color2, ratio) {
 exports.mixHexColors = mixHexColors;
 
 
-},{}],733:[function(require,module,exports){
+},{}],739:[function(require,module,exports){
 'use strict';
 
 var multiplyHexColors = require('./multiplyHexColors.js');
@@ -69560,7 +69853,7 @@ function multiplyColors(localBGRColor, parentBGRColor) {
 exports.multiplyColors = multiplyColors;
 
 
-},{"./multiplyHexColors.js":734}],734:[function(require,module,exports){
+},{"./multiplyHexColors.js":740}],740:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -69584,7 +69877,7 @@ function multiplyHexColors(color1, color2) {
 exports.multiplyHexColors = multiplyHexColors;
 
 
-},{}],735:[function(require,module,exports){
+},{}],741:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -69607,7 +69900,7 @@ function updateLocalTransform(lt, container) {
 exports.updateLocalTransform = updateLocalTransform;
 
 
-},{}],736:[function(require,module,exports){
+},{}],742:[function(require,module,exports){
 'use strict';
 
 var Container = require('../Container.js');
@@ -69726,7 +70019,7 @@ exports.updateRenderGroupTransforms = updateRenderGroupTransforms;
 exports.updateTransformAndChildren = updateTransformAndChildren;
 
 
-},{"../Container.js":701,"./clearList.js":728,"./multiplyColors.js":733}],737:[function(require,module,exports){
+},{"../Container.js":707,"./clearList.js":734,"./multiplyColors.js":739}],743:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -69752,7 +70045,7 @@ function updateWorldTransform(local, parent, world) {
 exports.updateWorldTransform = updateWorldTransform;
 
 
-},{}],738:[function(require,module,exports){
+},{}],744:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -69775,7 +70068,7 @@ function validateRenderables(renderGroup, renderPipes) {
 exports.validateRenderables = validateRenderables;
 
 
-},{}],739:[function(require,module,exports){
+},{}],745:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -69856,7 +70149,7 @@ GlGraphicsAdaptor.extension = {
 exports.GlGraphicsAdaptor = GlGraphicsAdaptor;
 
 
-},{"../../../extensions/Extensions.js":418,"../../../maths/matrix/Matrix.js":461,"../../../rendering/batcher/gl/utils/maxRecommendedTextures.js":486,"../../../rendering/high-shader/compileHighShaderToProgram.js":497,"../../../rendering/high-shader/shader-bits/colorBit.js":507,"../../../rendering/high-shader/shader-bits/generateTextureBatchBit.js":508,"../../../rendering/high-shader/shader-bits/localUniformBit.js":510,"../../../rendering/high-shader/shader-bits/roundPixelsBit.js":511,"../../../rendering/renderers/gl/shader/getBatchSamplersUniformGroup.js":550,"../../../rendering/renderers/shared/shader/Shader.js":655,"../../../rendering/renderers/shared/shader/UniformGroup.js":658}],740:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../../maths/matrix/Matrix.js":467,"../../../rendering/batcher/gl/utils/maxRecommendedTextures.js":492,"../../../rendering/high-shader/compileHighShaderToProgram.js":503,"../../../rendering/high-shader/shader-bits/colorBit.js":513,"../../../rendering/high-shader/shader-bits/generateTextureBatchBit.js":514,"../../../rendering/high-shader/shader-bits/localUniformBit.js":516,"../../../rendering/high-shader/shader-bits/roundPixelsBit.js":517,"../../../rendering/renderers/gl/shader/getBatchSamplersUniformGroup.js":556,"../../../rendering/renderers/shared/shader/Shader.js":661,"../../../rendering/renderers/shared/shader/UniformGroup.js":664}],746:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -69954,7 +70247,7 @@ GpuGraphicsAdaptor.extension = {
 exports.GpuGraphicsAdaptor = GpuGraphicsAdaptor;
 
 
-},{"../../../extensions/Extensions.js":418,"../../../maths/matrix/Matrix.js":461,"../../../rendering/batcher/gl/utils/maxRecommendedTextures.js":486,"../../../rendering/batcher/gpu/getTextureBatchBindGroup.js":490,"../../../rendering/high-shader/compileHighShaderToProgram.js":497,"../../../rendering/high-shader/shader-bits/colorBit.js":507,"../../../rendering/high-shader/shader-bits/generateTextureBatchBit.js":508,"../../../rendering/high-shader/shader-bits/localUniformBit.js":510,"../../../rendering/high-shader/shader-bits/roundPixelsBit.js":511,"../../../rendering/renderers/shared/shader/Shader.js":655,"../../../rendering/renderers/shared/shader/UniformGroup.js":658}],741:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../../maths/matrix/Matrix.js":467,"../../../rendering/batcher/gl/utils/maxRecommendedTextures.js":492,"../../../rendering/batcher/gpu/getTextureBatchBindGroup.js":496,"../../../rendering/high-shader/compileHighShaderToProgram.js":503,"../../../rendering/high-shader/shader-bits/colorBit.js":513,"../../../rendering/high-shader/shader-bits/generateTextureBatchBit.js":514,"../../../rendering/high-shader/shader-bits/localUniformBit.js":516,"../../../rendering/high-shader/shader-bits/roundPixelsBit.js":517,"../../../rendering/renderers/shared/shader/Shader.js":661,"../../../rendering/renderers/shared/shader/UniformGroup.js":664}],747:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -69976,7 +70269,7 @@ exports.color32BitToUniform = color32BitToUniform;
 exports.colorToUniform = colorToUniform;
 
 
-},{}],742:[function(require,module,exports){
+},{}],748:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -69988,7 +70281,7 @@ Extensions.extensions.add(GraphicsPipe.GraphicsPipe);
 Extensions.extensions.add(GraphicsContextSystem.GraphicsContextSystem);
 
 
-},{"../../extensions/Extensions.js":418,"./shared/GraphicsContextSystem.js":747,"./shared/GraphicsPipe.js":748}],743:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424,"./shared/GraphicsContextSystem.js":753,"./shared/GraphicsPipe.js":754}],749:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('../../../maths/matrix/Matrix.js');
@@ -70054,13 +70347,13 @@ class BatchableGraphics {
 exports.BatchableGraphics = BatchableGraphics;
 
 
-},{"../../../maths/matrix/Matrix.js":461,"../../container/utils/multiplyHexColors.js":734}],744:[function(require,module,exports){
+},{"../../../maths/matrix/Matrix.js":467,"../../container/utils/multiplyHexColors.js":740}],750:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],745:[function(require,module,exports){
+},{}],751:[function(require,module,exports){
 'use strict';
 
 var deprecation = require('../../../utils/logging/deprecation.js');
@@ -70449,7 +70742,7 @@ class Graphics extends ViewContainer.ViewContainer {
 exports.Graphics = Graphics;
 
 
-},{"../../../utils/logging/deprecation.js":899,"../../view/ViewContainer.js":875,"./GraphicsContext.js":746}],746:[function(require,module,exports){
+},{"../../../utils/logging/deprecation.js":905,"../../view/ViewContainer.js":881,"./GraphicsContext.js":752}],752:[function(require,module,exports){
 'use strict';
 
 var EventEmitter = require('eventemitter3');
@@ -71269,7 +71562,7 @@ let GraphicsContext = _GraphicsContext;
 exports.GraphicsContext = GraphicsContext;
 
 
-},{"../../../color/Color.js":356,"../../../maths/matrix/Matrix.js":461,"../../../maths/point/Point.js":468,"../../../rendering/renderers/shared/texture/Texture.js":678,"../../../utils/data/uid.js":895,"../../../utils/logging/deprecation.js":899,"../../container/bounds/Bounds.js":708,"./path/GraphicsPath.js":764,"./svg/SVGParser.js":767,"./utils/convertFillInputToFillStyle.js":775,"eventemitter3":206}],747:[function(require,module,exports){
+},{"../../../color/Color.js":362,"../../../maths/matrix/Matrix.js":467,"../../../maths/point/Point.js":474,"../../../rendering/renderers/shared/texture/Texture.js":684,"../../../utils/data/uid.js":901,"../../../utils/logging/deprecation.js":905,"../../container/bounds/Bounds.js":714,"./path/GraphicsPath.js":770,"./svg/SVGParser.js":773,"./utils/convertFillInputToFillStyle.js":781,"eventemitter3":212}],753:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -71438,7 +71731,7 @@ exports.GraphicsContextRenderData = GraphicsContextRenderData;
 exports.GraphicsContextSystem = GraphicsContextSystem;
 
 
-},{"../../../extensions/Extensions.js":418,"../../../rendering/batcher/gpu/getTextureBatchBindGroup.js":490,"../../../rendering/batcher/shared/DefaultBatcher.js":495,"../../../rendering/renderers/shared/instructions/InstructionSet.js":648,"../../../utils/logging/deprecation.js":899,"../../../utils/pool/PoolGroup.js":908,"./utils/buildContextBatches.js":773}],748:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../../rendering/batcher/gpu/getTextureBatchBindGroup.js":496,"../../../rendering/batcher/shared/DefaultBatcher.js":501,"../../../rendering/renderers/shared/instructions/InstructionSet.js":654,"../../../utils/logging/deprecation.js":905,"../../../utils/pool/PoolGroup.js":914,"./utils/buildContextBatches.js":779}],754:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -71585,13 +71878,13 @@ GraphicsPipe.extension = {
 exports.GraphicsPipe = GraphicsPipe;
 
 
-},{"../../../extensions/Extensions.js":418,"../../../rendering/renderers/shared/state/State.js":666,"../../../utils/pool/PoolGroup.js":908,"../gpu/colorToUniform.js":741,"./BatchableGraphics.js":743}],749:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../../rendering/renderers/shared/state/State.js":672,"../../../utils/pool/PoolGroup.js":914,"../gpu/colorToUniform.js":747,"./BatchableGraphics.js":749}],755:[function(require,module,exports){
 'use strict';
 
 "use strict";
 
 
-},{}],750:[function(require,module,exports){
+},{}],756:[function(require,module,exports){
 'use strict';
 
 var GraphicsContextSystem = require('../GraphicsContextSystem.js');
@@ -71729,7 +72022,7 @@ function recursive(x1, y1, x2, y2, x3, y3, x4, y4, points, distanceTolerance, le
 exports.buildAdaptiveBezier = buildAdaptiveBezier;
 
 
-},{"../GraphicsContextSystem.js":747}],751:[function(require,module,exports){
+},{"../GraphicsContextSystem.js":753}],757:[function(require,module,exports){
 'use strict';
 
 var GraphicsContextSystem = require('../GraphicsContextSystem.js');
@@ -71799,7 +72092,7 @@ function recursive(points, x1, y1, x2, y2, x3, y3, distanceTolerance, level) {
 exports.buildAdaptiveQuadratic = buildAdaptiveQuadratic;
 
 
-},{"../GraphicsContextSystem.js":747}],752:[function(require,module,exports){
+},{"../GraphicsContextSystem.js":753}],758:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -71828,7 +72121,7 @@ function buildArc(points, x, y, radius, start, end, clockwise, steps) {
 exports.buildArc = buildArc;
 
 
-},{}],753:[function(require,module,exports){
+},{}],759:[function(require,module,exports){
 'use strict';
 
 var buildArc = require('./buildArc.js');
@@ -71877,7 +72170,7 @@ function buildArcTo(points, x1, y1, x2, y2, radius) {
 exports.buildArcTo = buildArcTo;
 
 
-},{"./buildArc.js":752}],754:[function(require,module,exports){
+},{"./buildArc.js":758}],760:[function(require,module,exports){
 'use strict';
 
 var buildAdaptiveBezier = require('./buildAdaptiveBezier.js');
@@ -72033,7 +72326,7 @@ function buildArcToSvg(points, px, py, cx, cy, rx, ry, xAxisRotation = 0, largeA
 exports.buildArcToSvg = buildArcToSvg;
 
 
-},{"./buildAdaptiveBezier.js":750}],755:[function(require,module,exports){
+},{"./buildAdaptiveBezier.js":756}],761:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -72183,7 +72476,7 @@ exports.buildEllipse = buildEllipse;
 exports.buildRoundedRectangle = buildRoundedRectangle;
 
 
-},{"../../../../extensions/Extensions.js":418}],756:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424}],762:[function(require,module,exports){
 'use strict';
 
 var Point = require('../../../../maths/point/Point.js');
@@ -72550,7 +72843,7 @@ function buildLine(points, lineStyle, flipAlignment, closed, vertices, indices) 
 exports.buildLine = buildLine;
 
 
-},{"../../../../maths/point/Point.js":468,"../const.js":761,"../utils/getOrientationOfPoints.js":777}],757:[function(require,module,exports){
+},{"../../../../maths/point/Point.js":474,"../const.js":767,"../utils/getOrientationOfPoints.js":783}],763:[function(require,module,exports){
 'use strict';
 
 var _const = require('../const.js');
@@ -72584,7 +72877,7 @@ function buildPixelLine(points, closed, vertices, indices) {
 exports.buildPixelLine = buildPixelLine;
 
 
-},{"../const.js":761}],758:[function(require,module,exports){
+},{"../const.js":767}],764:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -72611,7 +72904,7 @@ const buildPolygon = {
 exports.buildPolygon = buildPolygon;
 
 
-},{"../../../../extensions/Extensions.js":418,"../utils/triangulateWithHoles.js":778}],759:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424,"../utils/triangulateWithHoles.js":784}],765:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -72669,7 +72962,7 @@ const buildRectangle = {
 exports.buildRectangle = buildRectangle;
 
 
-},{"../../../../extensions/Extensions.js":418}],760:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424}],766:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -72710,7 +73003,7 @@ const buildTriangle = {
 exports.buildTriangle = buildTriangle;
 
 
-},{"../../../../extensions/Extensions.js":418}],761:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424}],767:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -72721,7 +73014,7 @@ exports.closePointEps = closePointEps;
 exports.curveEps = curveEps;
 
 
-},{}],762:[function(require,module,exports){
+},{}],768:[function(require,module,exports){
 'use strict';
 
 var Color = require('../../../../color/Color.js');
@@ -72964,7 +73257,7 @@ function ensureGradientOptions(args) {
 exports.FillGradient = FillGradient;
 
 
-},{"../../../../color/Color.js":356,"../../../../environment/adapter.js":400,"../../../../maths/matrix/Matrix.js":461,"../../../../rendering/renderers/shared/texture/Texture.js":678,"../../../../rendering/renderers/shared/texture/sources/ImageSource.js":688,"../../../../utils/data/uid.js":895,"../../../../utils/logging/deprecation.js":899,"../../../container/utils/definedProps.js":730}],763:[function(require,module,exports){
+},{"../../../../color/Color.js":362,"../../../../environment/adapter.js":406,"../../../../maths/matrix/Matrix.js":467,"../../../../rendering/renderers/shared/texture/Texture.js":684,"../../../../rendering/renderers/shared/texture/sources/ImageSource.js":694,"../../../../utils/data/uid.js":901,"../../../../utils/logging/deprecation.js":905,"../../../container/utils/definedProps.js":736}],769:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('../../../../maths/matrix/Matrix.js');
@@ -73026,7 +73319,7 @@ class FillPattern {
 exports.FillPattern = FillPattern;
 
 
-},{"../../../../maths/matrix/Matrix.js":461,"../../../../utils/data/uid.js":895}],764:[function(require,module,exports){
+},{"../../../../maths/matrix/Matrix.js":467,"../../../../utils/data/uid.js":901}],770:[function(require,module,exports){
 'use strict';
 
 var Point = require('../../../../maths/point/Point.js');
@@ -73483,7 +73776,7 @@ function adjustTransform(currentMatrix, transform) {
 exports.GraphicsPath = GraphicsPath;
 
 
-},{"../../../../maths/point/Point.js":468,"../../../../utils/data/uid.js":895,"../../../../utils/logging/warn.js":902,"../svg/parseSVGPath.js":770,"./ShapePath.js":765}],765:[function(require,module,exports){
+},{"../../../../maths/point/Point.js":474,"../../../../utils/data/uid.js":901,"../../../../utils/logging/warn.js":908,"../svg/parseSVGPath.js":776,"./ShapePath.js":771}],771:[function(require,module,exports){
 'use strict';
 
 var Circle = require('../../../../maths/shapes/Circle.js');
@@ -74029,7 +74322,7 @@ class ShapePath {
 exports.ShapePath = ShapePath;
 
 
-},{"../../../../maths/shapes/Circle.js":472,"../../../../maths/shapes/Ellipse.js":473,"../../../../maths/shapes/Polygon.js":474,"../../../../maths/shapes/Rectangle.js":475,"../../../../maths/shapes/RoundedRectangle.js":476,"../../../container/bounds/Bounds.js":708,"../buildCommands/buildAdaptiveBezier.js":750,"../buildCommands/buildAdaptiveQuadratic.js":751,"../buildCommands/buildArc.js":752,"../buildCommands/buildArcTo.js":753,"../buildCommands/buildArcToSvg.js":754,"./roundShape.js":766}],766:[function(require,module,exports){
+},{"../../../../maths/shapes/Circle.js":478,"../../../../maths/shapes/Ellipse.js":479,"../../../../maths/shapes/Polygon.js":480,"../../../../maths/shapes/Rectangle.js":481,"../../../../maths/shapes/RoundedRectangle.js":482,"../../../container/bounds/Bounds.js":714,"../buildCommands/buildAdaptiveBezier.js":756,"../buildCommands/buildAdaptiveQuadratic.js":757,"../buildCommands/buildArc.js":758,"../buildCommands/buildArcTo.js":759,"../buildCommands/buildArcToSvg.js":760,"./roundShape.js":772}],772:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -74163,7 +74456,7 @@ exports.roundedShapeArc = roundedShapeArc;
 exports.roundedShapeQuadraticCurve = roundedShapeQuadraticCurve;
 
 
-},{}],767:[function(require,module,exports){
+},{}],773:[function(require,module,exports){
 'use strict';
 
 var warn = require('../../../../utils/logging/warn.js');
@@ -74327,7 +74620,7 @@ function renderChildren(svg, session, fillStyle, strokeStyle) {
 exports.SVGParser = SVGParser;
 
 
-},{"../../../../utils/logging/warn.js":902,"../path/GraphicsPath.js":764,"./parseSVGDefinitions.js":768,"./parseSVGFloatAttribute.js":769,"./parseSVGStyle.js":771}],768:[function(require,module,exports){
+},{"../../../../utils/logging/warn.js":908,"../path/GraphicsPath.js":770,"./parseSVGDefinitions.js":774,"./parseSVGFloatAttribute.js":775,"./parseSVGStyle.js":777}],774:[function(require,module,exports){
 'use strict';
 
 var Color = require('../../../../color/Color.js');
@@ -74384,7 +74677,7 @@ function parseRadialGradient(_child) {
 exports.parseSVGDefinitions = parseSVGDefinitions;
 
 
-},{"../../../../color/Color.js":356,"../../../../utils/logging/warn.js":902,"../fill/FillGradient.js":762,"./parseSVGFloatAttribute.js":769}],769:[function(require,module,exports){
+},{"../../../../color/Color.js":362,"../../../../utils/logging/warn.js":908,"../fill/FillGradient.js":768,"./parseSVGFloatAttribute.js":775}],775:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -74396,7 +74689,7 @@ function parseSVGFloatAttribute(svg, id, defaultValue) {
 exports.parseSVGFloatAttribute = parseSVGFloatAttribute;
 
 
-},{}],770:[function(require,module,exports){
+},{}],776:[function(require,module,exports){
 'use strict';
 
 var parse = require('parse-svg-path');
@@ -74615,7 +74908,7 @@ function parseSVGPath(svgPath, path) {
 exports.parseSVGPath = parseSVGPath;
 
 
-},{"../../../../utils/logging/warn.js":902,"parse-svg-path":281}],771:[function(require,module,exports){
+},{"../../../../utils/logging/warn.js":908,"parse-svg-path":287}],777:[function(require,module,exports){
 'use strict';
 
 var Color = require('../../../../color/Color.js');
@@ -74727,7 +75020,7 @@ exports.parseSVGStyle = parseSVGStyle;
 exports.styleAttributes = styleAttributes;
 
 
-},{"../../../../color/Color.js":356,"./utils/extractSvgUrlId.js":772}],772:[function(require,module,exports){
+},{"../../../../color/Color.js":362,"./utils/extractSvgUrlId.js":778}],778:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -74739,7 +75032,7 @@ function extractSvgUrlId(url) {
 exports.extractSvgUrlId = extractSvgUrlId;
 
 
-},{}],773:[function(require,module,exports){
+},{}],779:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../../extensions/Extensions.js');
@@ -74902,7 +75195,7 @@ exports.buildContextBatches = buildContextBatches;
 exports.shapeBuilders = shapeBuilders;
 
 
-},{"../../../../extensions/Extensions.js":418,"../../../../maths/matrix/Matrix.js":461,"../../../../maths/shapes/Rectangle.js":475,"../../../../rendering/renderers/shared/geometry/utils/buildUvs.js":642,"../../../../rendering/renderers/shared/geometry/utils/transformVertices.js":646,"../../../../rendering/renderers/shared/texture/Texture.js":678,"../../../../utils/pool/PoolGroup.js":908,"../BatchableGraphics.js":743,"../buildCommands/buildCircle.js":755,"../buildCommands/buildLine.js":756,"../buildCommands/buildPixelLine.js":757,"../buildCommands/buildPolygon.js":758,"../buildCommands/buildRectangle.js":759,"../buildCommands/buildTriangle.js":760,"./generateTextureFillMatrix.js":776,"./triangulateWithHoles.js":778}],774:[function(require,module,exports){
+},{"../../../../extensions/Extensions.js":424,"../../../../maths/matrix/Matrix.js":467,"../../../../maths/shapes/Rectangle.js":481,"../../../../rendering/renderers/shared/geometry/utils/buildUvs.js":648,"../../../../rendering/renderers/shared/geometry/utils/transformVertices.js":652,"../../../../rendering/renderers/shared/texture/Texture.js":684,"../../../../utils/pool/PoolGroup.js":914,"../BatchableGraphics.js":749,"../buildCommands/buildCircle.js":761,"../buildCommands/buildLine.js":762,"../buildCommands/buildPixelLine.js":763,"../buildCommands/buildPolygon.js":764,"../buildCommands/buildRectangle.js":765,"../buildCommands/buildTriangle.js":766,"./generateTextureFillMatrix.js":782,"./triangulateWithHoles.js":784}],780:[function(require,module,exports){
 'use strict';
 
 var buildUvs = require('../../../../rendering/renderers/shared/geometry/utils/buildUvs.js');
@@ -74974,7 +75267,7 @@ function buildGeometryFromPath(options) {
 exports.buildGeometryFromPath = buildGeometryFromPath;
 
 
-},{"../../../../rendering/renderers/shared/geometry/utils/buildUvs.js":642,"../../../../rendering/renderers/shared/geometry/utils/transformVertices.js":646,"../../../mesh/shared/MeshGeometry.js":795,"../buildCommands/buildCircle.js":755,"../buildCommands/buildPolygon.js":758,"../buildCommands/buildRectangle.js":759,"../buildCommands/buildTriangle.js":760,"../path/GraphicsPath.js":764}],775:[function(require,module,exports){
+},{"../../../../rendering/renderers/shared/geometry/utils/buildUvs.js":648,"../../../../rendering/renderers/shared/geometry/utils/transformVertices.js":652,"../../../mesh/shared/MeshGeometry.js":801,"../buildCommands/buildCircle.js":761,"../buildCommands/buildPolygon.js":764,"../buildCommands/buildRectangle.js":765,"../buildCommands/buildTriangle.js":766,"../path/GraphicsPath.js":770}],781:[function(require,module,exports){
 'use strict';
 
 var Color = require('../../../../color/Color.js');
@@ -75071,7 +75364,7 @@ exports.toFillStyle = toFillStyle;
 exports.toStrokeStyle = toStrokeStyle;
 
 
-},{"../../../../color/Color.js":356,"../../../../rendering/renderers/shared/texture/Texture.js":678,"../fill/FillGradient.js":762,"../fill/FillPattern.js":763}],776:[function(require,module,exports){
+},{"../../../../color/Color.js":362,"../../../../rendering/renderers/shared/texture/Texture.js":684,"../fill/FillGradient.js":768,"../fill/FillPattern.js":769}],782:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('../../../../maths/matrix/Matrix.js');
@@ -75121,7 +75414,7 @@ function generateTextureMatrix(out, style, shape, matrix) {
 exports.generateTextureMatrix = generateTextureMatrix;
 
 
-},{"../../../../maths/matrix/Matrix.js":461,"../../../../maths/shapes/Rectangle.js":475,"../fill/FillGradient.js":762}],777:[function(require,module,exports){
+},{"../../../../maths/matrix/Matrix.js":467,"../../../../maths/shapes/Rectangle.js":481,"../fill/FillGradient.js":768}],783:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -75147,7 +75440,7 @@ function getOrientationOfPoints(points) {
 exports.getOrientationOfPoints = getOrientationOfPoints;
 
 
-},{}],778:[function(require,module,exports){
+},{}],784:[function(require,module,exports){
 'use strict';
 
 var earcut = require('earcut');
@@ -75174,7 +75467,7 @@ function triangulateWithHoles(points, holes, vertices, verticesStride, verticesO
 exports.triangulateWithHoles = triangulateWithHoles;
 
 
-},{"earcut":195}],779:[function(require,module,exports){
+},{"earcut":201}],785:[function(require,module,exports){
 'use strict';
 
 var Bounds = require('./container/bounds/Bounds.js');
@@ -75542,7 +75835,7 @@ exports.particlesVert = particles$1.default;
 exports.particlesWgsl = particles$2.default;
 
 
-},{"./container/Container.js":701,"./container/CustomRenderPipe.js":702,"./container/Effect.js":703,"./container/RenderContainer.js":704,"./container/RenderGroup.js":705,"./container/RenderGroupPipe.js":706,"./container/RenderGroupSystem.js":707,"./container/bounds/Bounds.js":708,"./container/bounds/getFastGlobalBounds.js":709,"./container/bounds/getGlobalBounds.js":710,"./container/bounds/getLocalBounds.js":711,"./container/bounds/getRenderableBounds.js":712,"./container/bounds/utils/matrixAndBoundsPool.js":713,"./container/container-mixins/cacheAsTextureMixin.js":714,"./container/container-mixins/childrenHelperMixin.js":715,"./container/container-mixins/collectRenderablesMixin.js":716,"./container/container-mixins/effectsMixin.js":717,"./container/container-mixins/findMixin.js":718,"./container/container-mixins/getFastGlobalBoundsMixin.js":719,"./container/container-mixins/getGlobalMixin.js":720,"./container/container-mixins/measureMixin.js":721,"./container/container-mixins/onRenderMixin.js":722,"./container/container-mixins/sortMixin.js":723,"./container/container-mixins/toLocalGlobalMixin.js":724,"./container/destroyTypes.js":725,"./container/utils/assignWithIgnore.js":726,"./container/utils/checkChildrenDidChange.js":727,"./container/utils/clearList.js":728,"./container/utils/collectAllRenderables.js":729,"./container/utils/definedProps.js":730,"./container/utils/executeInstructions.js":731,"./container/utils/mixHexColors.js":732,"./container/utils/multiplyColors.js":733,"./container/utils/multiplyHexColors.js":734,"./container/utils/updateLocalTransform.js":735,"./container/utils/updateRenderGroupTransforms.js":736,"./container/utils/updateWorldTransform.js":737,"./container/utils/validateRenderables.js":738,"./graphics/gl/GlGraphicsAdaptor.js":739,"./graphics/gpu/GpuGraphicsAdaptor.js":740,"./graphics/gpu/colorToUniform.js":741,"./graphics/shared/BatchableGraphics.js":743,"./graphics/shared/FillTypes.js":744,"./graphics/shared/Graphics.js":745,"./graphics/shared/GraphicsContext.js":746,"./graphics/shared/GraphicsContextSystem.js":747,"./graphics/shared/GraphicsPipe.js":748,"./graphics/shared/buildCommands/ShapeBuildCommand.js":749,"./graphics/shared/buildCommands/buildAdaptiveBezier.js":750,"./graphics/shared/buildCommands/buildAdaptiveQuadratic.js":751,"./graphics/shared/buildCommands/buildArc.js":752,"./graphics/shared/buildCommands/buildArcTo.js":753,"./graphics/shared/buildCommands/buildArcToSvg.js":754,"./graphics/shared/buildCommands/buildCircle.js":755,"./graphics/shared/buildCommands/buildLine.js":756,"./graphics/shared/buildCommands/buildPixelLine.js":757,"./graphics/shared/buildCommands/buildPolygon.js":758,"./graphics/shared/buildCommands/buildRectangle.js":759,"./graphics/shared/buildCommands/buildTriangle.js":760,"./graphics/shared/const.js":761,"./graphics/shared/fill/FillGradient.js":762,"./graphics/shared/fill/FillPattern.js":763,"./graphics/shared/path/GraphicsPath.js":764,"./graphics/shared/path/ShapePath.js":765,"./graphics/shared/path/roundShape.js":766,"./graphics/shared/svg/SVGParser.js":767,"./graphics/shared/svg/parseSVGDefinitions.js":768,"./graphics/shared/svg/parseSVGFloatAttribute.js":769,"./graphics/shared/svg/parseSVGPath.js":770,"./graphics/shared/svg/parseSVGStyle.js":771,"./graphics/shared/svg/utils/extractSvgUrlId.js":772,"./graphics/shared/utils/buildContextBatches.js":773,"./graphics/shared/utils/buildGeometryFromPath.js":774,"./graphics/shared/utils/convertFillInputToFillStyle.js":775,"./graphics/shared/utils/generateTextureFillMatrix.js":776,"./graphics/shared/utils/getOrientationOfPoints.js":777,"./graphics/shared/utils/triangulateWithHoles.js":778,"./layers/RenderLayer.js":780,"./mesh-perspective/PerspectiveMesh.js":781,"./mesh-perspective/PerspectivePlaneGeometry.js":782,"./mesh-perspective/utils/applyProjectiveTransformationToPlane.js":783,"./mesh-perspective/utils/compute2DProjections.js":784,"./mesh-plane/MeshPlane.js":785,"./mesh-plane/PlaneGeometry.js":786,"./mesh-simple/MeshRope.js":787,"./mesh-simple/MeshSimple.js":788,"./mesh-simple/RopeGeometry.js":789,"./mesh/gl/GlMeshAdaptor.js":790,"./mesh/gpu/GpuMeshAdapter.js":791,"./mesh/shared/BatchableMesh.js":793,"./mesh/shared/Mesh.js":794,"./mesh/shared/MeshGeometry.js":795,"./mesh/shared/MeshPipe.js":796,"./mesh/shared/getTextureDefaultMatrix.js":797,"./particle-container/gl/GlParticleContainerAdaptor.js":798,"./particle-container/gpu/GpuParticleContainerAdaptor.js":799,"./particle-container/shared/GlParticleContainerPipe.js":801,"./particle-container/shared/GpuParticleContainerPipe.js":802,"./particle-container/shared/Particle.js":803,"./particle-container/shared/ParticleBuffer.js":804,"./particle-container/shared/ParticleContainer.js":805,"./particle-container/shared/ParticleContainerPipe.js":806,"./particle-container/shared/particleData.js":807,"./particle-container/shared/shader/ParticleShader.js":808,"./particle-container/shared/shader/particles.frag.js":809,"./particle-container/shared/shader/particles.vert.js":810,"./particle-container/shared/shader/particles.wgsl.js":811,"./particle-container/shared/utils/createIndicesForQuads.js":812,"./particle-container/shared/utils/generateParticleUpdateFunction.js":813,"./sprite-animated/AnimatedSprite.js":814,"./sprite-nine-slice/NineSliceGeometry.js":815,"./sprite-nine-slice/NineSliceSprite.js":816,"./sprite-nine-slice/NineSliceSpritePipe.js":817,"./sprite-tiling/TilingSprite.js":819,"./sprite-tiling/TilingSpritePipe.js":820,"./sprite-tiling/shader/TilingSpriteShader.js":822,"./sprite-tiling/shader/tilingBit.js":823,"./sprite-tiling/utils/QuadGeometry.js":824,"./sprite-tiling/utils/applyMatrix.js":825,"./sprite-tiling/utils/setPositions.js":826,"./sprite-tiling/utils/setUvs.js":827,"./sprite/BatchableSprite.js":828,"./sprite/Sprite.js":829,"./sprite/SpritePipe.js":830,"./text-bitmap/AbstractBitmapFont.js":831,"./text-bitmap/BitmapFont.js":832,"./text-bitmap/BitmapFontManager.js":833,"./text-bitmap/BitmapText.js":834,"./text-bitmap/BitmapTextPipe.js":835,"./text-bitmap/DynamicBitmapFont.js":836,"./text-bitmap/asset/bitmapFontTextParser.js":837,"./text-bitmap/asset/bitmapFontXMLParser.js":838,"./text-bitmap/asset/bitmapFontXMLStringParser.js":839,"./text-bitmap/asset/loadBitmapFont.js":840,"./text-bitmap/utils/getBitmapTextLayout.js":842,"./text-bitmap/utils/resolveCharacters.js":843,"./text-html/HTMLText.js":844,"./text-html/HTMLTextPipe.js":845,"./text-html/HTMLTextRenderData.js":846,"./text-html/HTMLTextStyle.js":847,"./text-html/HTMLTextSystem.js":848,"./text-html/utils/extractFontFamilies.js":850,"./text-html/utils/getFontCss.js":851,"./text-html/utils/getSVGUrl.js":852,"./text-html/utils/getTemporaryCanvasFromImage.js":853,"./text-html/utils/loadFontAsBase64.js":854,"./text-html/utils/loadFontCSS.js":855,"./text-html/utils/loadSVGImage.js":856,"./text-html/utils/measureHtmlText.js":857,"./text-html/utils/textStyleToCSS.js":858,"./text/AbstractText.js":859,"./text/Text.js":860,"./text/TextStyle.js":861,"./text/canvas/CanvasTextMetrics.js":862,"./text/canvas/CanvasTextPipe.js":863,"./text/canvas/CanvasTextSystem.js":864,"./text/canvas/utils/fontStringFromTextStyle.js":865,"./text/canvas/utils/getCanvasFillStyle.js":866,"./text/sdfShader/SdfShader.js":868,"./text/sdfShader/shader-bits/localUniformMSDFBit.js":869,"./text/sdfShader/shader-bits/mSDFBit.js":870,"./text/utils/ensureTextStyle.js":871,"./text/utils/generateTextStyleKey.js":872,"./text/utils/getPo2TextureFromSource.js":873,"./text/utils/updateTextBounds.js":874,"./view/ViewContainer.js":875}],780:[function(require,module,exports){
+},{"./container/Container.js":707,"./container/CustomRenderPipe.js":708,"./container/Effect.js":709,"./container/RenderContainer.js":710,"./container/RenderGroup.js":711,"./container/RenderGroupPipe.js":712,"./container/RenderGroupSystem.js":713,"./container/bounds/Bounds.js":714,"./container/bounds/getFastGlobalBounds.js":715,"./container/bounds/getGlobalBounds.js":716,"./container/bounds/getLocalBounds.js":717,"./container/bounds/getRenderableBounds.js":718,"./container/bounds/utils/matrixAndBoundsPool.js":719,"./container/container-mixins/cacheAsTextureMixin.js":720,"./container/container-mixins/childrenHelperMixin.js":721,"./container/container-mixins/collectRenderablesMixin.js":722,"./container/container-mixins/effectsMixin.js":723,"./container/container-mixins/findMixin.js":724,"./container/container-mixins/getFastGlobalBoundsMixin.js":725,"./container/container-mixins/getGlobalMixin.js":726,"./container/container-mixins/measureMixin.js":727,"./container/container-mixins/onRenderMixin.js":728,"./container/container-mixins/sortMixin.js":729,"./container/container-mixins/toLocalGlobalMixin.js":730,"./container/destroyTypes.js":731,"./container/utils/assignWithIgnore.js":732,"./container/utils/checkChildrenDidChange.js":733,"./container/utils/clearList.js":734,"./container/utils/collectAllRenderables.js":735,"./container/utils/definedProps.js":736,"./container/utils/executeInstructions.js":737,"./container/utils/mixHexColors.js":738,"./container/utils/multiplyColors.js":739,"./container/utils/multiplyHexColors.js":740,"./container/utils/updateLocalTransform.js":741,"./container/utils/updateRenderGroupTransforms.js":742,"./container/utils/updateWorldTransform.js":743,"./container/utils/validateRenderables.js":744,"./graphics/gl/GlGraphicsAdaptor.js":745,"./graphics/gpu/GpuGraphicsAdaptor.js":746,"./graphics/gpu/colorToUniform.js":747,"./graphics/shared/BatchableGraphics.js":749,"./graphics/shared/FillTypes.js":750,"./graphics/shared/Graphics.js":751,"./graphics/shared/GraphicsContext.js":752,"./graphics/shared/GraphicsContextSystem.js":753,"./graphics/shared/GraphicsPipe.js":754,"./graphics/shared/buildCommands/ShapeBuildCommand.js":755,"./graphics/shared/buildCommands/buildAdaptiveBezier.js":756,"./graphics/shared/buildCommands/buildAdaptiveQuadratic.js":757,"./graphics/shared/buildCommands/buildArc.js":758,"./graphics/shared/buildCommands/buildArcTo.js":759,"./graphics/shared/buildCommands/buildArcToSvg.js":760,"./graphics/shared/buildCommands/buildCircle.js":761,"./graphics/shared/buildCommands/buildLine.js":762,"./graphics/shared/buildCommands/buildPixelLine.js":763,"./graphics/shared/buildCommands/buildPolygon.js":764,"./graphics/shared/buildCommands/buildRectangle.js":765,"./graphics/shared/buildCommands/buildTriangle.js":766,"./graphics/shared/const.js":767,"./graphics/shared/fill/FillGradient.js":768,"./graphics/shared/fill/FillPattern.js":769,"./graphics/shared/path/GraphicsPath.js":770,"./graphics/shared/path/ShapePath.js":771,"./graphics/shared/path/roundShape.js":772,"./graphics/shared/svg/SVGParser.js":773,"./graphics/shared/svg/parseSVGDefinitions.js":774,"./graphics/shared/svg/parseSVGFloatAttribute.js":775,"./graphics/shared/svg/parseSVGPath.js":776,"./graphics/shared/svg/parseSVGStyle.js":777,"./graphics/shared/svg/utils/extractSvgUrlId.js":778,"./graphics/shared/utils/buildContextBatches.js":779,"./graphics/shared/utils/buildGeometryFromPath.js":780,"./graphics/shared/utils/convertFillInputToFillStyle.js":781,"./graphics/shared/utils/generateTextureFillMatrix.js":782,"./graphics/shared/utils/getOrientationOfPoints.js":783,"./graphics/shared/utils/triangulateWithHoles.js":784,"./layers/RenderLayer.js":786,"./mesh-perspective/PerspectiveMesh.js":787,"./mesh-perspective/PerspectivePlaneGeometry.js":788,"./mesh-perspective/utils/applyProjectiveTransformationToPlane.js":789,"./mesh-perspective/utils/compute2DProjections.js":790,"./mesh-plane/MeshPlane.js":791,"./mesh-plane/PlaneGeometry.js":792,"./mesh-simple/MeshRope.js":793,"./mesh-simple/MeshSimple.js":794,"./mesh-simple/RopeGeometry.js":795,"./mesh/gl/GlMeshAdaptor.js":796,"./mesh/gpu/GpuMeshAdapter.js":797,"./mesh/shared/BatchableMesh.js":799,"./mesh/shared/Mesh.js":800,"./mesh/shared/MeshGeometry.js":801,"./mesh/shared/MeshPipe.js":802,"./mesh/shared/getTextureDefaultMatrix.js":803,"./particle-container/gl/GlParticleContainerAdaptor.js":804,"./particle-container/gpu/GpuParticleContainerAdaptor.js":805,"./particle-container/shared/GlParticleContainerPipe.js":807,"./particle-container/shared/GpuParticleContainerPipe.js":808,"./particle-container/shared/Particle.js":809,"./particle-container/shared/ParticleBuffer.js":810,"./particle-container/shared/ParticleContainer.js":811,"./particle-container/shared/ParticleContainerPipe.js":812,"./particle-container/shared/particleData.js":813,"./particle-container/shared/shader/ParticleShader.js":814,"./particle-container/shared/shader/particles.frag.js":815,"./particle-container/shared/shader/particles.vert.js":816,"./particle-container/shared/shader/particles.wgsl.js":817,"./particle-container/shared/utils/createIndicesForQuads.js":818,"./particle-container/shared/utils/generateParticleUpdateFunction.js":819,"./sprite-animated/AnimatedSprite.js":820,"./sprite-nine-slice/NineSliceGeometry.js":821,"./sprite-nine-slice/NineSliceSprite.js":822,"./sprite-nine-slice/NineSliceSpritePipe.js":823,"./sprite-tiling/TilingSprite.js":825,"./sprite-tiling/TilingSpritePipe.js":826,"./sprite-tiling/shader/TilingSpriteShader.js":828,"./sprite-tiling/shader/tilingBit.js":829,"./sprite-tiling/utils/QuadGeometry.js":830,"./sprite-tiling/utils/applyMatrix.js":831,"./sprite-tiling/utils/setPositions.js":832,"./sprite-tiling/utils/setUvs.js":833,"./sprite/BatchableSprite.js":834,"./sprite/Sprite.js":835,"./sprite/SpritePipe.js":836,"./text-bitmap/AbstractBitmapFont.js":837,"./text-bitmap/BitmapFont.js":838,"./text-bitmap/BitmapFontManager.js":839,"./text-bitmap/BitmapText.js":840,"./text-bitmap/BitmapTextPipe.js":841,"./text-bitmap/DynamicBitmapFont.js":842,"./text-bitmap/asset/bitmapFontTextParser.js":843,"./text-bitmap/asset/bitmapFontXMLParser.js":844,"./text-bitmap/asset/bitmapFontXMLStringParser.js":845,"./text-bitmap/asset/loadBitmapFont.js":846,"./text-bitmap/utils/getBitmapTextLayout.js":848,"./text-bitmap/utils/resolveCharacters.js":849,"./text-html/HTMLText.js":850,"./text-html/HTMLTextPipe.js":851,"./text-html/HTMLTextRenderData.js":852,"./text-html/HTMLTextStyle.js":853,"./text-html/HTMLTextSystem.js":854,"./text-html/utils/extractFontFamilies.js":856,"./text-html/utils/getFontCss.js":857,"./text-html/utils/getSVGUrl.js":858,"./text-html/utils/getTemporaryCanvasFromImage.js":859,"./text-html/utils/loadFontAsBase64.js":860,"./text-html/utils/loadFontCSS.js":861,"./text-html/utils/loadSVGImage.js":862,"./text-html/utils/measureHtmlText.js":863,"./text-html/utils/textStyleToCSS.js":864,"./text/AbstractText.js":865,"./text/Text.js":866,"./text/TextStyle.js":867,"./text/canvas/CanvasTextMetrics.js":868,"./text/canvas/CanvasTextPipe.js":869,"./text/canvas/CanvasTextSystem.js":870,"./text/canvas/utils/fontStringFromTextStyle.js":871,"./text/canvas/utils/getCanvasFillStyle.js":872,"./text/sdfShader/SdfShader.js":874,"./text/sdfShader/shader-bits/localUniformMSDFBit.js":875,"./text/sdfShader/shader-bits/mSDFBit.js":876,"./text/utils/ensureTextStyle.js":877,"./text/utils/generateTextStyleKey.js":878,"./text/utils/getPo2TextureFromSource.js":879,"./text/utils/updateTextBounds.js":880,"./view/ViewContainer.js":881}],786:[function(require,module,exports){
 'use strict';
 
 var warn = require('../../utils/logging/warn.js');
@@ -75665,7 +75958,7 @@ exports.RenderLayer = RenderLayer;
 exports.RenderLayerClass = RenderLayerClass;
 
 
-},{"../../utils/logging/warn.js":902,"../container/Container.js":701}],781:[function(require,module,exports){
+},{"../../utils/logging/warn.js":908,"../container/Container.js":707}],787:[function(require,module,exports){
 'use strict';
 
 var Texture = require('../../rendering/renderers/shared/texture/Texture.js');
@@ -75757,7 +76050,7 @@ let PerspectiveMesh = _PerspectiveMesh;
 exports.PerspectiveMesh = PerspectiveMesh;
 
 
-},{"../../rendering/renderers/shared/texture/Texture.js":678,"../container/utils/definedProps.js":730,"../mesh/shared/Mesh.js":794,"./PerspectivePlaneGeometry.js":782}],782:[function(require,module,exports){
+},{"../../rendering/renderers/shared/texture/Texture.js":684,"../container/utils/definedProps.js":736,"../mesh/shared/Mesh.js":800,"./PerspectivePlaneGeometry.js":788}],788:[function(require,module,exports){
 'use strict';
 
 var PlaneGeometry = require('../mesh-plane/PlaneGeometry.js');
@@ -75846,7 +76139,7 @@ class PerspectivePlaneGeometry extends PlaneGeometry.PlaneGeometry {
 exports.PerspectivePlaneGeometry = PerspectivePlaneGeometry;
 
 
-},{"../mesh-plane/PlaneGeometry.js":786,"./utils/applyProjectiveTransformationToPlane.js":783,"./utils/compute2DProjections.js":784}],783:[function(require,module,exports){
+},{"../mesh-plane/PlaneGeometry.js":792,"./utils/applyProjectiveTransformationToPlane.js":789,"./utils/compute2DProjections.js":790}],789:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -75882,7 +76175,7 @@ function applyProjectiveTransformationToPlane(width, height, geometry, transform
 exports.applyProjectiveTransformationToPlane = applyProjectiveTransformationToPlane;
 
 
-},{}],784:[function(require,module,exports){
+},{}],790:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -76020,7 +76313,7 @@ function compute2DProjection(out, x1s, y1s, x1d, y1d, x2s, y2s, x2d, y2d, x3s, y
 exports.compute2DProjection = compute2DProjection;
 
 
-},{}],785:[function(require,module,exports){
+},{}],791:[function(require,module,exports){
 'use strict';
 
 var definedProps = require('../container/utils/definedProps.js');
@@ -76083,7 +76376,7 @@ class MeshPlane extends Mesh.Mesh {
 exports.MeshPlane = MeshPlane;
 
 
-},{"../container/utils/definedProps.js":730,"../mesh/shared/Mesh.js":794,"./PlaneGeometry.js":786}],786:[function(require,module,exports){
+},{"../container/utils/definedProps.js":736,"../mesh/shared/Mesh.js":800,"./PlaneGeometry.js":792}],792:[function(require,module,exports){
 'use strict';
 
 var deprecation = require('../../utils/logging/deprecation.js');
@@ -76165,7 +76458,7 @@ let PlaneGeometry = _PlaneGeometry;
 exports.PlaneGeometry = PlaneGeometry;
 
 
-},{"../../utils/logging/deprecation.js":899,"../mesh/shared/MeshGeometry.js":795}],787:[function(require,module,exports){
+},{"../../utils/logging/deprecation.js":905,"../mesh/shared/MeshGeometry.js":801}],793:[function(require,module,exports){
 'use strict';
 
 var definedProps = require('../container/utils/definedProps.js');
@@ -76213,7 +76506,7 @@ let MeshRope = _MeshRope;
 exports.MeshRope = MeshRope;
 
 
-},{"../container/utils/definedProps.js":730,"../mesh/shared/Mesh.js":794,"./RopeGeometry.js":789}],788:[function(require,module,exports){
+},{"../container/utils/definedProps.js":736,"../mesh/shared/Mesh.js":800,"./RopeGeometry.js":795}],794:[function(require,module,exports){
 'use strict';
 
 var definedProps = require('../container/utils/definedProps.js');
@@ -76261,7 +76554,7 @@ class MeshSimple extends Mesh.Mesh {
 exports.MeshSimple = MeshSimple;
 
 
-},{"../container/utils/definedProps.js":730,"../mesh/shared/Mesh.js":794,"../mesh/shared/MeshGeometry.js":795}],789:[function(require,module,exports){
+},{"../container/utils/definedProps.js":736,"../mesh/shared/Mesh.js":800,"../mesh/shared/MeshGeometry.js":801}],795:[function(require,module,exports){
 'use strict';
 
 var MeshGeometry = require('../mesh/shared/MeshGeometry.js');
@@ -76414,7 +76707,7 @@ let RopeGeometry = _RopeGeometry;
 exports.RopeGeometry = RopeGeometry;
 
 
-},{"../mesh/shared/MeshGeometry.js":795}],790:[function(require,module,exports){
+},{"../mesh/shared/MeshGeometry.js":801}],796:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -76485,7 +76778,7 @@ GlMeshAdaptor.extension = {
 exports.GlMeshAdaptor = GlMeshAdaptor;
 
 
-},{"../../../extensions/Extensions.js":418,"../../../maths/matrix/Matrix.js":461,"../../../rendering/high-shader/compileHighShaderToProgram.js":497,"../../../rendering/high-shader/shader-bits/localUniformBit.js":510,"../../../rendering/high-shader/shader-bits/roundPixelsBit.js":511,"../../../rendering/high-shader/shader-bits/textureBit.js":512,"../../../rendering/renderers/shared/shader/Shader.js":655,"../../../rendering/renderers/shared/texture/Texture.js":678,"../../../utils/logging/warn.js":902}],791:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../../maths/matrix/Matrix.js":467,"../../../rendering/high-shader/compileHighShaderToProgram.js":503,"../../../rendering/high-shader/shader-bits/localUniformBit.js":516,"../../../rendering/high-shader/shader-bits/roundPixelsBit.js":517,"../../../rendering/high-shader/shader-bits/textureBit.js":518,"../../../rendering/renderers/shared/shader/Shader.js":661,"../../../rendering/renderers/shared/texture/Texture.js":684,"../../../utils/logging/warn.js":908}],797:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -76560,7 +76853,7 @@ GpuMeshAdapter.extension = {
 exports.GpuMeshAdapter = GpuMeshAdapter;
 
 
-},{"../../../extensions/Extensions.js":418,"../../../maths/matrix/Matrix.js":461,"../../../rendering/high-shader/compileHighShaderToProgram.js":497,"../../../rendering/high-shader/shader-bits/localUniformBit.js":510,"../../../rendering/high-shader/shader-bits/roundPixelsBit.js":511,"../../../rendering/high-shader/shader-bits/textureBit.js":512,"../../../rendering/renderers/shared/shader/Shader.js":655,"../../../rendering/renderers/shared/texture/Texture.js":678,"../../../utils/logging/warn.js":902}],792:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../../maths/matrix/Matrix.js":467,"../../../rendering/high-shader/compileHighShaderToProgram.js":503,"../../../rendering/high-shader/shader-bits/localUniformBit.js":516,"../../../rendering/high-shader/shader-bits/roundPixelsBit.js":517,"../../../rendering/high-shader/shader-bits/textureBit.js":518,"../../../rendering/renderers/shared/shader/Shader.js":661,"../../../rendering/renderers/shared/texture/Texture.js":684,"../../../utils/logging/warn.js":908}],798:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -76570,7 +76863,7 @@ var MeshPipe = require('./shared/MeshPipe.js');
 Extensions.extensions.add(MeshPipe.MeshPipe);
 
 
-},{"../../extensions/Extensions.js":418,"./shared/MeshPipe.js":796}],793:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424,"./shared/MeshPipe.js":802}],799:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -76658,7 +76951,7 @@ class BatchableMesh {
 exports.BatchableMesh = BatchableMesh;
 
 
-},{}],794:[function(require,module,exports){
+},{}],800:[function(require,module,exports){
 'use strict';
 
 var pointInTriangle = require('../../../maths/point/pointInTriangle.js');
@@ -76856,7 +77149,7 @@ class Mesh extends ViewContainer.ViewContainer {
 exports.Mesh = Mesh;
 
 
-},{"../../../maths/point/pointInTriangle.js":471,"../../../rendering/renderers/shared/geometry/Geometry.js":640,"../../../rendering/renderers/shared/state/State.js":666,"../../../rendering/renderers/shared/texture/Texture.js":678,"../../../utils/logging/deprecation.js":899,"../../view/ViewContainer.js":875,"./MeshGeometry.js":795}],795:[function(require,module,exports){
+},{"../../../maths/point/pointInTriangle.js":477,"../../../rendering/renderers/shared/geometry/Geometry.js":646,"../../../rendering/renderers/shared/state/State.js":672,"../../../rendering/renderers/shared/texture/Texture.js":684,"../../../utils/logging/deprecation.js":905,"../../view/ViewContainer.js":881,"./MeshGeometry.js":801}],801:[function(require,module,exports){
 'use strict';
 
 var Buffer = require('../../../rendering/renderers/shared/buffer/Buffer.js');
@@ -76969,7 +77262,7 @@ let MeshGeometry = _MeshGeometry;
 exports.MeshGeometry = MeshGeometry;
 
 
-},{"../../../rendering/renderers/shared/buffer/Buffer.js":634,"../../../rendering/renderers/shared/buffer/const.js":636,"../../../rendering/renderers/shared/geometry/Geometry.js":640,"../../../utils/logging/deprecation.js":899}],796:[function(require,module,exports){
+},{"../../../rendering/renderers/shared/buffer/Buffer.js":640,"../../../rendering/renderers/shared/buffer/const.js":642,"../../../rendering/renderers/shared/geometry/Geometry.js":646,"../../../utils/logging/deprecation.js":905}],802:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -77123,7 +77416,7 @@ MeshPipe.extension = {
 exports.MeshPipe = MeshPipe;
 
 
-},{"../../../extensions/Extensions.js":418,"../../../maths/matrix/Matrix.js":461,"../../../rendering/renderers/gpu/shader/BindGroup.js":607,"../../../rendering/renderers/shared/shader/UniformGroup.js":658,"../../../rendering/renderers/shared/state/getAdjustedBlendModeBlend.js":668,"../../../utils/pool/PoolGroup.js":908,"../../graphics/gpu/colorToUniform.js":741,"./BatchableMesh.js":793}],797:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../../maths/matrix/Matrix.js":467,"../../../rendering/renderers/gpu/shader/BindGroup.js":613,"../../../rendering/renderers/shared/shader/UniformGroup.js":664,"../../../rendering/renderers/shared/state/getAdjustedBlendModeBlend.js":674,"../../../utils/pool/PoolGroup.js":914,"../../graphics/gpu/colorToUniform.js":747,"./BatchableMesh.js":799}],803:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -77136,7 +77429,7 @@ function getTextureDefaultMatrix(texture, out) {
 exports.getTextureDefaultMatrix = getTextureDefaultMatrix;
 
 
-},{}],798:[function(require,module,exports){
+},{}],804:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -77161,7 +77454,7 @@ class GlParticleContainerAdaptor {
 exports.GlParticleContainerAdaptor = GlParticleContainerAdaptor;
 
 
-},{}],799:[function(require,module,exports){
+},{}],805:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -77185,7 +77478,7 @@ class GpuParticleContainerAdaptor {
 exports.GpuParticleContainerAdaptor = GpuParticleContainerAdaptor;
 
 
-},{}],800:[function(require,module,exports){
+},{}],806:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -77197,7 +77490,7 @@ Extensions.extensions.add(GlParticleContainerPipe.GlParticleContainerPipe);
 Extensions.extensions.add(GpuParticleContainerPipe.GpuParticleContainerPipe);
 
 
-},{"../../extensions/Extensions.js":418,"./shared/GlParticleContainerPipe.js":801,"./shared/GpuParticleContainerPipe.js":802}],801:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424,"./shared/GlParticleContainerPipe.js":807,"./shared/GpuParticleContainerPipe.js":808}],807:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -77221,7 +77514,7 @@ GlParticleContainerPipe.extension = {
 exports.GlParticleContainerPipe = GlParticleContainerPipe;
 
 
-},{"../../../extensions/Extensions.js":418,"../gl/GlParticleContainerAdaptor.js":798,"./ParticleContainerPipe.js":806}],802:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../gl/GlParticleContainerAdaptor.js":804,"./ParticleContainerPipe.js":812}],808:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -77245,7 +77538,7 @@ GpuParticleContainerPipe.extension = {
 exports.GpuParticleContainerPipe = GpuParticleContainerPipe;
 
 
-},{"../../../extensions/Extensions.js":418,"../gpu/GpuParticleContainerAdaptor.js":799,"./ParticleContainerPipe.js":806}],803:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../gpu/GpuParticleContainerAdaptor.js":805,"./ParticleContainerPipe.js":812}],809:[function(require,module,exports){
 'use strict';
 
 var Color = require('../../../color/Color.js');
@@ -77305,7 +77598,7 @@ let Particle = _Particle;
 exports.Particle = Particle;
 
 
-},{"../../../color/Color.js":356,"../../../rendering/renderers/shared/texture/Texture.js":678,"../../container/container-mixins/getGlobalMixin.js":720,"../../container/utils/assignWithIgnore.js":726}],804:[function(require,module,exports){
+},{"../../../color/Color.js":362,"../../../rendering/renderers/shared/texture/Texture.js":684,"../../container/container-mixins/getGlobalMixin.js":726,"../../container/utils/assignWithIgnore.js":732}],810:[function(require,module,exports){
 'use strict';
 
 var Buffer = require('../../../rendering/renderers/shared/buffer/Buffer.js');
@@ -77440,7 +77733,7 @@ function getParticleSyncKey(properties) {
 exports.ParticleBuffer = ParticleBuffer;
 
 
-},{"../../../rendering/renderers/shared/buffer/Buffer.js":634,"../../../rendering/renderers/shared/buffer/const.js":636,"../../../rendering/renderers/shared/geometry/Geometry.js":640,"../../../rendering/renderers/shared/geometry/utils/getAttributeInfoFromFormat.js":644,"../../../utils/data/ViewableBuffer.js":892,"./utils/createIndicesForQuads.js":812,"./utils/generateParticleUpdateFunction.js":813}],805:[function(require,module,exports){
+},{"../../../rendering/renderers/shared/buffer/Buffer.js":640,"../../../rendering/renderers/shared/buffer/const.js":642,"../../../rendering/renderers/shared/geometry/Geometry.js":646,"../../../rendering/renderers/shared/geometry/utils/getAttributeInfoFromFormat.js":650,"../../../utils/data/ViewableBuffer.js":898,"./utils/createIndicesForQuads.js":818,"./utils/generateParticleUpdateFunction.js":819}],811:[function(require,module,exports){
 'use strict';
 
 var Bounds = require('../../container/bounds/Bounds.js');
@@ -77752,7 +78045,7 @@ let ParticleContainer = _ParticleContainer;
 exports.ParticleContainer = ParticleContainer;
 
 
-},{"../../container/bounds/Bounds.js":708,"../../view/ViewContainer.js":875,"./particleData.js":807}],806:[function(require,module,exports){
+},{"../../container/bounds/Bounds.js":714,"../../view/ViewContainer.js":881,"./particleData.js":813}],812:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('../../../maths/matrix/Matrix.js');
@@ -77848,7 +78141,7 @@ class ParticleContainerPipe {
 exports.ParticleContainerPipe = ParticleContainerPipe;
 
 
-},{"../../../maths/matrix/Matrix.js":461,"../../../rendering/renderers/shared/shader/UniformGroup.js":658,"../../../rendering/renderers/shared/state/State.js":666,"../../../rendering/renderers/shared/state/getAdjustedBlendModeBlend.js":668,"../../graphics/gpu/colorToUniform.js":741,"./ParticleBuffer.js":804,"./shader/ParticleShader.js":808}],807:[function(require,module,exports){
+},{"../../../maths/matrix/Matrix.js":467,"../../../rendering/renderers/shared/shader/UniformGroup.js":664,"../../../rendering/renderers/shared/state/State.js":672,"../../../rendering/renderers/shared/state/getAdjustedBlendModeBlend.js":674,"../../graphics/gpu/colorToUniform.js":747,"./ParticleBuffer.js":810,"./shader/ParticleShader.js":814}],813:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -77972,7 +78265,7 @@ const particleData = {
 exports.particleData = particleData;
 
 
-},{}],808:[function(require,module,exports){
+},{}],814:[function(require,module,exports){
 'use strict';
 
 var Color = require('../../../../color/Color.js');
@@ -78026,7 +78319,7 @@ class ParticleShader extends Shader.Shader {
 exports.ParticleShader = ParticleShader;
 
 
-},{"../../../../color/Color.js":356,"../../../../maths/matrix/Matrix.js":461,"../../../../rendering/renderers/gl/shader/GlProgram.js":545,"../../../../rendering/renderers/gpu/shader/GpuProgram.js":609,"../../../../rendering/renderers/shared/shader/Shader.js":655,"../../../../rendering/renderers/shared/texture/Texture.js":678,"../../../../rendering/renderers/shared/texture/TextureStyle.js":682,"./particles.frag.js":809,"./particles.vert.js":810,"./particles.wgsl.js":811}],809:[function(require,module,exports){
+},{"../../../../color/Color.js":362,"../../../../maths/matrix/Matrix.js":467,"../../../../rendering/renderers/gl/shader/GlProgram.js":551,"../../../../rendering/renderers/gpu/shader/GpuProgram.js":615,"../../../../rendering/renderers/shared/shader/Shader.js":661,"../../../../rendering/renderers/shared/texture/Texture.js":684,"../../../../rendering/renderers/shared/texture/TextureStyle.js":688,"./particles.frag.js":815,"./particles.vert.js":816,"./particles.wgsl.js":817}],815:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -78036,7 +78329,7 @@ var fragment = "varying vec2 vUV;\nvarying vec4 vColor;\n\nuniform sampler2D uTe
 exports.default = fragment;
 
 
-},{}],810:[function(require,module,exports){
+},{}],816:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -78046,7 +78339,7 @@ var vertex = "attribute vec2 aVertex;\nattribute vec2 aUV;\nattribute vec4 aColo
 exports.default = vertex;
 
 
-},{}],811:[function(require,module,exports){
+},{}],817:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -78056,7 +78349,7 @@ var wgsl = "\nstruct ParticleUniforms {\n  uProjectionMatrix:mat3x3<f32>,\n  uCo
 exports.default = wgsl;
 
 
-},{}],812:[function(require,module,exports){
+},{}],818:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -78084,7 +78377,7 @@ function createIndicesForQuads(size, outBuffer = null) {
 exports.createIndicesForQuads = createIndicesForQuads;
 
 
-},{}],813:[function(require,module,exports){
+},{}],819:[function(require,module,exports){
 'use strict';
 
 var getAttributeInfoFromFormat = require('../../../../rendering/renderers/shared/geometry/utils/getAttributeInfoFromFormat.js');
@@ -78131,7 +78424,7 @@ function generateUpdateFunction(properties, dynamic) {
 exports.generateParticleUpdateFunction = generateParticleUpdateFunction;
 
 
-},{"../../../../rendering/renderers/shared/geometry/utils/getAttributeInfoFromFormat.js":644}],814:[function(require,module,exports){
+},{"../../../../rendering/renderers/shared/geometry/utils/getAttributeInfoFromFormat.js":650}],820:[function(require,module,exports){
 'use strict';
 
 var Texture = require('../../rendering/renderers/shared/texture/Texture.js');
@@ -78392,7 +78685,7 @@ class AnimatedSprite extends Sprite.Sprite {
 exports.AnimatedSprite = AnimatedSprite;
 
 
-},{"../../rendering/renderers/shared/texture/Texture.js":678,"../../ticker/Ticker.js":880,"../../ticker/const.js":882,"../sprite/Sprite.js":829}],815:[function(require,module,exports){
+},{"../../rendering/renderers/shared/texture/Texture.js":684,"../../ticker/Ticker.js":886,"../../ticker/const.js":888,"../sprite/Sprite.js":835}],821:[function(require,module,exports){
 'use strict';
 
 var PlaneGeometry = require('../mesh-plane/PlaneGeometry.js');
@@ -78497,7 +78790,7 @@ let NineSliceGeometry = _NineSliceGeometry;
 exports.NineSliceGeometry = NineSliceGeometry;
 
 
-},{"../mesh-plane/PlaneGeometry.js":786}],816:[function(require,module,exports){
+},{"../mesh-plane/PlaneGeometry.js":792}],822:[function(require,module,exports){
 'use strict';
 
 var ObservablePoint = require('../../maths/point/ObservablePoint.js');
@@ -78728,7 +79021,7 @@ exports.NineSlicePlane = NineSlicePlane;
 exports.NineSliceSprite = NineSliceSprite;
 
 
-},{"../../maths/point/ObservablePoint.js":467,"../../rendering/renderers/shared/texture/Texture.js":678,"../../utils/logging/deprecation.js":899,"../view/ViewContainer.js":875,"./NineSliceGeometry.js":815}],817:[function(require,module,exports){
+},{"../../maths/point/ObservablePoint.js":473,"../../rendering/renderers/shared/texture/Texture.js":684,"../../utils/logging/deprecation.js":905,"../view/ViewContainer.js":881,"./NineSliceGeometry.js":821}],823:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -78813,7 +79106,7 @@ NineSliceSpritePipe.extension = {
 exports.NineSliceSpritePipe = NineSliceSpritePipe;
 
 
-},{"../../extensions/Extensions.js":418,"../../utils/pool/PoolGroup.js":908,"../mesh/shared/BatchableMesh.js":793,"./NineSliceGeometry.js":815}],818:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424,"../../utils/pool/PoolGroup.js":914,"../mesh/shared/BatchableMesh.js":799,"./NineSliceGeometry.js":821}],824:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -78823,7 +79116,7 @@ var NineSliceSpritePipe = require('./NineSliceSpritePipe.js');
 Extensions.extensions.add(NineSliceSpritePipe.NineSliceSpritePipe);
 
 
-},{"../../extensions/Extensions.js":418,"./NineSliceSpritePipe.js":817}],819:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424,"./NineSliceSpritePipe.js":823}],825:[function(require,module,exports){
 'use strict';
 
 var Cache = require('../../assets/cache/Cache.js');
@@ -79114,7 +79407,7 @@ let TilingSprite = _TilingSprite;
 exports.TilingSprite = TilingSprite;
 
 
-},{"../../assets/cache/Cache.js":321,"../../maths/point/ObservablePoint.js":467,"../../rendering/renderers/shared/texture/Texture.js":678,"../../utils/logging/deprecation.js":899,"../../utils/logging/warn.js":902,"../../utils/misc/Transform.js":904,"../view/ViewContainer.js":875}],820:[function(require,module,exports){
+},{"../../assets/cache/Cache.js":327,"../../maths/point/ObservablePoint.js":473,"../../rendering/renderers/shared/texture/Texture.js":684,"../../utils/logging/deprecation.js":905,"../../utils/logging/warn.js":908,"../../utils/misc/Transform.js":910,"../view/ViewContainer.js":881}],826:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -79281,7 +79574,7 @@ TilingSpritePipe.extension = {
 exports.TilingSpritePipe = TilingSpritePipe;
 
 
-},{"../../extensions/Extensions.js":418,"../../rendering/renderers/shared/state/State.js":666,"../../rendering/renderers/shared/state/getAdjustedBlendModeBlend.js":668,"../../rendering/renderers/types.js":700,"../graphics/gpu/colorToUniform.js":741,"../mesh/shared/BatchableMesh.js":793,"../mesh/shared/MeshGeometry.js":795,"./shader/TilingSpriteShader.js":822,"./utils/QuadGeometry.js":824,"./utils/setPositions.js":826,"./utils/setUvs.js":827}],821:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424,"../../rendering/renderers/shared/state/State.js":672,"../../rendering/renderers/shared/state/getAdjustedBlendModeBlend.js":674,"../../rendering/renderers/types.js":706,"../graphics/gpu/colorToUniform.js":747,"../mesh/shared/BatchableMesh.js":799,"../mesh/shared/MeshGeometry.js":801,"./shader/TilingSpriteShader.js":828,"./utils/QuadGeometry.js":830,"./utils/setPositions.js":832,"./utils/setUvs.js":833}],827:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -79291,7 +79584,7 @@ var TilingSpritePipe = require('./TilingSpritePipe.js');
 Extensions.extensions.add(TilingSpritePipe.TilingSpritePipe);
 
 
-},{"../../extensions/Extensions.js":418,"./TilingSpritePipe.js":820}],822:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424,"./TilingSpritePipe.js":826}],828:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('../../../maths/matrix/Matrix.js');
@@ -79379,7 +79672,7 @@ class TilingSpriteShader extends Shader.Shader {
 exports.TilingSpriteShader = TilingSpriteShader;
 
 
-},{"../../../maths/matrix/Matrix.js":461,"../../../rendering/high-shader/compileHighShaderToProgram.js":497,"../../../rendering/high-shader/shader-bits/localUniformBit.js":510,"../../../rendering/high-shader/shader-bits/roundPixelsBit.js":511,"../../../rendering/renderers/shared/shader/Shader.js":655,"../../../rendering/renderers/shared/shader/UniformGroup.js":658,"../../../rendering/renderers/shared/texture/Texture.js":678,"./tilingBit.js":823}],823:[function(require,module,exports){
+},{"../../../maths/matrix/Matrix.js":467,"../../../rendering/high-shader/compileHighShaderToProgram.js":503,"../../../rendering/high-shader/shader-bits/localUniformBit.js":516,"../../../rendering/high-shader/shader-bits/roundPixelsBit.js":517,"../../../rendering/renderers/shared/shader/Shader.js":661,"../../../rendering/renderers/shared/shader/UniformGroup.js":664,"../../../rendering/renderers/shared/texture/Texture.js":684,"./tilingBit.js":829}],829:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -79499,7 +79792,7 @@ exports.tilingBit = tilingBit;
 exports.tilingBitGl = tilingBitGl;
 
 
-},{}],824:[function(require,module,exports){
+},{}],830:[function(require,module,exports){
 'use strict';
 
 var MeshGeometry = require('../../mesh/shared/MeshGeometry.js');
@@ -79518,7 +79811,7 @@ class QuadGeometry extends MeshGeometry.MeshGeometry {
 exports.QuadGeometry = QuadGeometry;
 
 
-},{"../../mesh/shared/MeshGeometry.js":795}],825:[function(require,module,exports){
+},{"../../mesh/shared/MeshGeometry.js":801}],831:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -79545,7 +79838,7 @@ function applyMatrix(array, stride, offset, matrix) {
 exports.applyMatrix = applyMatrix;
 
 
-},{}],826:[function(require,module,exports){
+},{}],832:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -79565,7 +79858,7 @@ function setPositions(tilingSprite, positions) {
 exports.setPositions = setPositions;
 
 
-},{}],827:[function(require,module,exports){
+},{}],833:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('../../../maths/matrix/Matrix.js');
@@ -79598,7 +79891,7 @@ function setUvs(tilingSprite, uvs) {
 exports.setUvs = setUvs;
 
 
-},{"../../../maths/matrix/Matrix.js":461,"./applyMatrix.js":825}],828:[function(require,module,exports){
+},{"../../../maths/matrix/Matrix.js":467,"./applyMatrix.js":831}],834:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -79634,7 +79927,7 @@ class BatchableSprite {
 exports.BatchableSprite = BatchableSprite;
 
 
-},{}],829:[function(require,module,exports){
+},{}],835:[function(require,module,exports){
 'use strict';
 
 var ObservablePoint = require('../../maths/point/ObservablePoint.js');
@@ -79832,7 +80125,7 @@ class Sprite extends ViewContainer.ViewContainer {
 exports.Sprite = Sprite;
 
 
-},{"../../maths/point/ObservablePoint.js":467,"../../rendering/renderers/shared/texture/Texture.js":678,"../../utils/data/updateQuadBounds.js":896,"../../utils/logging/deprecation.js":899,"../view/ViewContainer.js":875}],830:[function(require,module,exports){
+},{"../../maths/point/ObservablePoint.js":473,"../../rendering/renderers/shared/texture/Texture.js":684,"../../utils/data/updateQuadBounds.js":902,"../../utils/logging/deprecation.js":905,"../view/ViewContainer.js":881}],836:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -79911,7 +80204,7 @@ SpritePipe.extension = {
 exports.SpritePipe = SpritePipe;
 
 
-},{"../../extensions/Extensions.js":418,"../../utils/pool/PoolGroup.js":908,"./BatchableSprite.js":828}],831:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424,"../../utils/pool/PoolGroup.js":914,"./BatchableSprite.js":834}],837:[function(require,module,exports){
 'use strict';
 
 var EventEmitter = require('eventemitter3');
@@ -80007,7 +80300,7 @@ class AbstractBitmapFont extends EventEmitter {
 exports.AbstractBitmapFont = AbstractBitmapFont;
 
 
-},{"../../utils/logging/deprecation.js":899,"eventemitter3":206}],832:[function(require,module,exports){
+},{"../../utils/logging/deprecation.js":905,"eventemitter3":212}],838:[function(require,module,exports){
 'use strict';
 
 var Rectangle = require('../../maths/shapes/Rectangle.js');
@@ -80106,7 +80399,7 @@ class BitmapFont extends AbstractBitmapFont.AbstractBitmapFont {
 exports.BitmapFont = BitmapFont;
 
 
-},{"../../maths/shapes/Rectangle.js":475,"../../rendering/renderers/shared/texture/Texture.js":678,"./AbstractBitmapFont.js":831,"./BitmapFontManager.js":833}],833:[function(require,module,exports){
+},{"../../maths/shapes/Rectangle.js":481,"../../rendering/renderers/shared/texture/Texture.js":684,"./AbstractBitmapFont.js":837,"./BitmapFontManager.js":839}],839:[function(require,module,exports){
 'use strict';
 
 var Cache = require('../../assets/cache/Cache.js');
@@ -80267,7 +80560,7 @@ const BitmapFontManager = new BitmapFontManagerClass();
 exports.BitmapFontManager = BitmapFontManager;
 
 
-},{"../../assets/cache/Cache.js":321,"../../utils/logging/deprecation.js":899,"../../utils/logging/warn.js":902,"../text/TextStyle.js":861,"./DynamicBitmapFont.js":836,"./utils/getBitmapTextLayout.js":842,"./utils/resolveCharacters.js":843}],834:[function(require,module,exports){
+},{"../../assets/cache/Cache.js":327,"../../utils/logging/deprecation.js":905,"../../utils/logging/warn.js":908,"../text/TextStyle.js":867,"./DynamicBitmapFont.js":842,"./utils/getBitmapTextLayout.js":848,"./utils/resolveCharacters.js":849}],840:[function(require,module,exports){
 'use strict';
 
 var warn = require('../../utils/logging/warn.js');
@@ -80324,7 +80617,7 @@ class BitmapText extends AbstractText.AbstractText {
 exports.BitmapText = BitmapText;
 
 
-},{"../../utils/logging/warn.js":902,"../text/AbstractText.js":859,"../text/TextStyle.js":861,"./BitmapFontManager.js":833}],835:[function(require,module,exports){
+},{"../../utils/logging/warn.js":908,"../text/AbstractText.js":865,"../text/TextStyle.js":867,"./BitmapFontManager.js":839}],841:[function(require,module,exports){
 'use strict';
 
 var Cache = require('../../assets/cache/Cache.js');
@@ -80479,7 +80772,7 @@ function syncWithProxy(container, proxy) {
 exports.BitmapTextPipe = BitmapTextPipe;
 
 
-},{"../../assets/cache/Cache.js":321,"../../extensions/Extensions.js":418,"../../utils/pool/PoolGroup.js":908,"../graphics/shared/Graphics.js":745,"../text/sdfShader/SdfShader.js":868,"./BitmapFontManager.js":833,"./utils/getBitmapTextLayout.js":842}],836:[function(require,module,exports){
+},{"../../assets/cache/Cache.js":327,"../../extensions/Extensions.js":424,"../../utils/pool/PoolGroup.js":914,"../graphics/shared/Graphics.js":751,"../text/sdfShader/SdfShader.js":874,"./BitmapFontManager.js":839,"./utils/getBitmapTextLayout.js":848}],842:[function(require,module,exports){
 'use strict';
 
 var Color = require('../../color/Color.js');
@@ -80758,7 +81051,7 @@ let DynamicBitmapFont = _DynamicBitmapFont;
 exports.DynamicBitmapFont = DynamicBitmapFont;
 
 
-},{"../../color/Color.js":356,"../../maths/shapes/Rectangle.js":475,"../../rendering/renderers/shared/texture/CanvasPool.js":674,"../../rendering/renderers/shared/texture/Texture.js":678,"../../rendering/renderers/shared/texture/sources/ImageSource.js":688,"../../utils/logging/deprecation.js":899,"../text/TextStyle.js":861,"../text/canvas/CanvasTextMetrics.js":862,"../text/canvas/utils/fontStringFromTextStyle.js":865,"../text/canvas/utils/getCanvasFillStyle.js":866,"./AbstractBitmapFont.js":831,"./utils/resolveCharacters.js":843}],837:[function(require,module,exports){
+},{"../../color/Color.js":362,"../../maths/shapes/Rectangle.js":481,"../../rendering/renderers/shared/texture/CanvasPool.js":680,"../../rendering/renderers/shared/texture/Texture.js":684,"../../rendering/renderers/shared/texture/sources/ImageSource.js":694,"../../utils/logging/deprecation.js":905,"../text/TextStyle.js":867,"../text/canvas/CanvasTextMetrics.js":868,"../text/canvas/utils/fontStringFromTextStyle.js":871,"../text/canvas/utils/getCanvasFillStyle.js":872,"./AbstractBitmapFont.js":837,"./utils/resolveCharacters.js":849}],843:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -80858,7 +81151,7 @@ const bitmapFontTextParser = {
 exports.bitmapFontTextParser = bitmapFontTextParser;
 
 
-},{}],838:[function(require,module,exports){
+},{}],844:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -80936,7 +81229,7 @@ const bitmapFontXMLParser = {
 exports.bitmapFontXMLParser = bitmapFontXMLParser;
 
 
-},{}],839:[function(require,module,exports){
+},{}],845:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../environment/adapter.js');
@@ -80958,7 +81251,7 @@ const bitmapFontXMLStringParser = {
 exports.bitmapFontXMLStringParser = bitmapFontXMLStringParser;
 
 
-},{"../../../environment/adapter.js":400,"./bitmapFontXMLParser.js":838}],840:[function(require,module,exports){
+},{"../../../environment/adapter.js":406,"./bitmapFontXMLParser.js":844}],846:[function(require,module,exports){
 'use strict';
 
 var LoaderParser = require('../../../assets/loader/parsers/LoaderParser.js');
@@ -81042,7 +81335,7 @@ exports.bitmapFontCachePlugin = bitmapFontCachePlugin;
 exports.loadBitmapFont = loadBitmapFont;
 
 
-},{"../../../assets/loader/parsers/LoaderParser.js":335,"../../../assets/utils/copySearchParams.js":353,"../../../environment/adapter.js":400,"../../../extensions/Extensions.js":418,"../../../utils/path.js":906,"../BitmapFont.js":832,"./bitmapFontTextParser.js":837,"./bitmapFontXMLStringParser.js":839}],841:[function(require,module,exports){
+},{"../../../assets/loader/parsers/LoaderParser.js":341,"../../../assets/utils/copySearchParams.js":359,"../../../environment/adapter.js":406,"../../../extensions/Extensions.js":424,"../../../utils/path.js":912,"../BitmapFont.js":838,"./bitmapFontTextParser.js":843,"./bitmapFontXMLStringParser.js":845}],847:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -81052,7 +81345,7 @@ var BitmapTextPipe = require('./BitmapTextPipe.js');
 Extensions.extensions.add(BitmapTextPipe.BitmapTextPipe);
 
 
-},{"../../extensions/Extensions.js":418,"./BitmapTextPipe.js":835}],842:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424,"./BitmapTextPipe.js":841}],848:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -81215,7 +81508,7 @@ function alignJustify(measurementData) {
 exports.getBitmapTextLayout = getBitmapTextLayout;
 
 
-},{}],843:[function(require,module,exports){
+},{}],849:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -81257,7 +81550,7 @@ function resolveCharacters(chars) {
 exports.resolveCharacters = resolveCharacters;
 
 
-},{}],844:[function(require,module,exports){
+},{}],850:[function(require,module,exports){
 'use strict';
 
 var AbstractText = require('../text/AbstractText.js');
@@ -81287,7 +81580,7 @@ class HTMLText extends AbstractText.AbstractText {
 exports.HTMLText = HTMLText;
 
 
-},{"../text/AbstractText.js":859,"./HTMLTextStyle.js":847,"./utils/measureHtmlText.js":857}],845:[function(require,module,exports){
+},{"../text/AbstractText.js":865,"./HTMLTextStyle.js":853,"./utils/measureHtmlText.js":863}],851:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -81433,7 +81726,7 @@ HTMLTextPipe.extension = {
 exports.HTMLTextPipe = HTMLTextPipe;
 
 
-},{"../../extensions/Extensions.js":418,"../../rendering/renderers/shared/texture/Texture.js":678,"../../utils/pool/PoolGroup.js":908,"../sprite/BatchableSprite.js":828,"../text/utils/updateTextBounds.js":874}],846:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424,"../../rendering/renderers/shared/texture/Texture.js":684,"../../utils/pool/PoolGroup.js":914,"../sprite/BatchableSprite.js":834,"../text/utils/updateTextBounds.js":880}],852:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -81461,7 +81754,7 @@ exports.nssvg = nssvg;
 exports.nsxhtml = nsxhtml;
 
 
-},{}],847:[function(require,module,exports){
+},{}],853:[function(require,module,exports){
 'use strict';
 
 var warn = require('../../utils/logging/warn.js');
@@ -81570,7 +81863,7 @@ class HTMLTextStyle extends TextStyle.TextStyle {
 exports.HTMLTextStyle = HTMLTextStyle;
 
 
-},{"../../utils/logging/warn.js":902,"../text/TextStyle.js":861,"../text/utils/generateTextStyleKey.js":872,"./utils/textStyleToCSS.js":858}],848:[function(require,module,exports){
+},{"../../utils/logging/warn.js":908,"../text/TextStyle.js":867,"../text/utils/generateTextStyleKey.js":878,"./utils/textStyleToCSS.js":864}],854:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -81707,7 +82000,7 @@ HTMLTextSystem.defaultFontOptions = {
 exports.HTMLTextSystem = HTMLTextSystem;
 
 
-},{"../../extensions/Extensions.js":418,"../../rendering/renderers/shared/texture/CanvasPool.js":674,"../../rendering/renderers/shared/texture/TexturePool.js":681,"../../rendering/renderers/types.js":700,"../../utils/browser/isSafari.js":886,"../../utils/logging/warn.js":902,"../../utils/pool/PoolGroup.js":908,"../text/utils/getPo2TextureFromSource.js":873,"./HTMLTextRenderData.js":846,"./HTMLTextStyle.js":847,"./utils/extractFontFamilies.js":850,"./utils/getFontCss.js":851,"./utils/getSVGUrl.js":852,"./utils/getTemporaryCanvasFromImage.js":853,"./utils/loadSVGImage.js":856,"./utils/measureHtmlText.js":857}],849:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424,"../../rendering/renderers/shared/texture/CanvasPool.js":680,"../../rendering/renderers/shared/texture/TexturePool.js":687,"../../rendering/renderers/types.js":706,"../../utils/browser/isSafari.js":892,"../../utils/logging/warn.js":908,"../../utils/pool/PoolGroup.js":914,"../text/utils/getPo2TextureFromSource.js":879,"./HTMLTextRenderData.js":852,"./HTMLTextStyle.js":853,"./utils/extractFontFamilies.js":856,"./utils/getFontCss.js":857,"./utils/getSVGUrl.js":858,"./utils/getTemporaryCanvasFromImage.js":859,"./utils/loadSVGImage.js":862,"./utils/measureHtmlText.js":863}],855:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -81719,7 +82012,7 @@ Extensions.extensions.add(HTMLTextSystem.HTMLTextSystem);
 Extensions.extensions.add(HTMLTextPipe.HTMLTextPipe);
 
 
-},{"../../extensions/Extensions.js":418,"./HTMLTextPipe.js":845,"./HTMLTextSystem.js":848}],850:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424,"./HTMLTextPipe.js":851,"./HTMLTextSystem.js":854}],856:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -81758,7 +82051,7 @@ function extractFontFamilies(text, style) {
 exports.extractFontFamilies = extractFontFamilies;
 
 
-},{}],851:[function(require,module,exports){
+},{}],857:[function(require,module,exports){
 'use strict';
 
 var Cache = require('../../../assets/cache/Cache.js');
@@ -81793,7 +82086,7 @@ exports.FontStylePromiseCache = FontStylePromiseCache;
 exports.getFontCss = getFontCss;
 
 
-},{"../../../assets/cache/Cache.js":321,"./loadFontCSS.js":855}],852:[function(require,module,exports){
+},{"../../../assets/cache/Cache.js":327,"./loadFontCSS.js":861}],858:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -81811,7 +82104,7 @@ function getSVGUrl(text, style, resolution, fontCSS, htmlTextData) {
 exports.getSVGUrl = getSVGUrl;
 
 
-},{}],853:[function(require,module,exports){
+},{}],859:[function(require,module,exports){
 'use strict';
 
 var CanvasPool = require('../../../rendering/renderers/shared/texture/CanvasPool.js');
@@ -81832,7 +82125,7 @@ function getTemporaryCanvasFromImage(image, resolution) {
 exports.getTemporaryCanvasFromImage = getTemporaryCanvasFromImage;
 
 
-},{"../../../rendering/renderers/shared/texture/CanvasPool.js":674}],854:[function(require,module,exports){
+},{"../../../rendering/renderers/shared/texture/CanvasPool.js":680}],860:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../environment/adapter.js');
@@ -81853,7 +82146,7 @@ async function loadFontAsBase64(url) {
 exports.loadFontAsBase64 = loadFontAsBase64;
 
 
-},{"../../../environment/adapter.js":400}],855:[function(require,module,exports){
+},{"../../../environment/adapter.js":406}],861:[function(require,module,exports){
 'use strict';
 
 var loadFontAsBase64 = require('./loadFontAsBase64.js');
@@ -81872,7 +82165,7 @@ async function loadFontCSS(style, url) {
 exports.loadFontCSS = loadFontCSS;
 
 
-},{"./loadFontAsBase64.js":854}],856:[function(require,module,exports){
+},{"./loadFontAsBase64.js":860}],862:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -81892,7 +82185,7 @@ function loadSVGImage(image, url, delay) {
 exports.loadSVGImage = loadSVGImage;
 
 
-},{}],857:[function(require,module,exports){
+},{}],863:[function(require,module,exports){
 'use strict';
 
 var HTMLTextRenderData = require('../HTMLTextRenderData.js');
@@ -81920,7 +82213,7 @@ function measureHtmlText(text, style, fontStyleCSS, htmlTextRenderData) {
 exports.measureHtmlText = measureHtmlText;
 
 
-},{"../HTMLTextRenderData.js":846}],858:[function(require,module,exports){
+},{"../HTMLTextRenderData.js":852}],864:[function(require,module,exports){
 'use strict';
 
 var Color = require('../../../color/Color.js');
@@ -82009,7 +82302,7 @@ function tagStyleToCSS(tagStyles, out) {
 exports.textStyleToCSS = textStyleToCSS;
 
 
-},{"../../../color/Color.js":356}],859:[function(require,module,exports){
+},{"../../../color/Color.js":362}],865:[function(require,module,exports){
 'use strict';
 
 var ObservablePoint = require('../../maths/point/ObservablePoint.js');
@@ -82222,7 +82515,7 @@ exports.AbstractText = AbstractText;
 exports.ensureTextOptions = ensureTextOptions;
 
 
-},{"../../maths/point/ObservablePoint.js":467,"../../utils/logging/deprecation.js":899,"../view/ViewContainer.js":875}],860:[function(require,module,exports){
+},{"../../maths/point/ObservablePoint.js":473,"../../utils/logging/deprecation.js":905,"../view/ViewContainer.js":881}],866:[function(require,module,exports){
 'use strict';
 
 var AbstractText = require('./AbstractText.js');
@@ -82255,7 +82548,7 @@ class Text extends AbstractText.AbstractText {
 exports.Text = Text;
 
 
-},{"./AbstractText.js":859,"./TextStyle.js":861,"./canvas/CanvasTextMetrics.js":862}],861:[function(require,module,exports){
+},{"./AbstractText.js":865,"./TextStyle.js":867,"./canvas/CanvasTextMetrics.js":868}],867:[function(require,module,exports){
 'use strict';
 
 var EventEmitter = require('eventemitter3');
@@ -82748,7 +83041,7 @@ function convertV7Tov8Style(style) {
 exports.TextStyle = TextStyle;
 
 
-},{"../../color/Color.js":356,"../../utils/logging/deprecation.js":899,"../graphics/shared/GraphicsContext.js":746,"../graphics/shared/fill/FillGradient.js":762,"../graphics/shared/fill/FillPattern.js":763,"../graphics/shared/utils/convertFillInputToFillStyle.js":775,"./utils/generateTextStyleKey.js":872,"eventemitter3":206}],862:[function(require,module,exports){
+},{"../../color/Color.js":362,"../../utils/logging/deprecation.js":905,"../graphics/shared/GraphicsContext.js":752,"../graphics/shared/fill/FillGradient.js":768,"../graphics/shared/fill/FillPattern.js":769,"../graphics/shared/utils/convertFillInputToFillStyle.js":781,"./utils/generateTextStyleKey.js":878,"eventemitter3":212}],868:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../../environment/adapter.js');
@@ -83289,7 +83582,7 @@ let CanvasTextMetrics = _CanvasTextMetrics;
 exports.CanvasTextMetrics = CanvasTextMetrics;
 
 
-},{"../../../environment/adapter.js":400,"./utils/fontStringFromTextStyle.js":865}],863:[function(require,module,exports){
+},{"../../../environment/adapter.js":406,"./utils/fontStringFromTextStyle.js":871}],869:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../../extensions/Extensions.js');
@@ -83412,7 +83705,7 @@ CanvasTextPipe.extension = {
 exports.CanvasTextPipe = CanvasTextPipe;
 
 
-},{"../../../extensions/Extensions.js":418,"../../../utils/pool/PoolGroup.js":908,"../../sprite/BatchableSprite.js":828,"../utils/updateTextBounds.js":874}],864:[function(require,module,exports){
+},{"../../../extensions/Extensions.js":424,"../../../utils/pool/PoolGroup.js":914,"../../sprite/BatchableSprite.js":834,"../utils/updateTextBounds.js":880}],870:[function(require,module,exports){
 'use strict';
 
 var Color = require('../../../color/Color.js');
@@ -83685,7 +83978,7 @@ CanvasTextSystem.extension = {
 exports.CanvasTextSystem = CanvasTextSystem;
 
 
-},{"../../../color/Color.js":356,"../../../extensions/Extensions.js":418,"../../../maths/misc/pow2.js":465,"../../../rendering/renderers/shared/texture/CanvasPool.js":674,"../../../rendering/renderers/shared/texture/TexturePool.js":681,"../../../utils/canvas/getCanvasBoundingBox.js":890,"../../../utils/logging/deprecation.js":899,"../TextStyle.js":861,"../utils/getPo2TextureFromSource.js":873,"./CanvasTextMetrics.js":862,"./utils/fontStringFromTextStyle.js":865,"./utils/getCanvasFillStyle.js":866}],865:[function(require,module,exports){
+},{"../../../color/Color.js":362,"../../../extensions/Extensions.js":424,"../../../maths/misc/pow2.js":471,"../../../rendering/renderers/shared/texture/CanvasPool.js":680,"../../../rendering/renderers/shared/texture/TexturePool.js":687,"../../../utils/canvas/getCanvasBoundingBox.js":896,"../../../utils/logging/deprecation.js":905,"../TextStyle.js":867,"../utils/getPo2TextureFromSource.js":879,"./CanvasTextMetrics.js":868,"./utils/fontStringFromTextStyle.js":871,"./utils/getCanvasFillStyle.js":872}],871:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -83716,7 +84009,7 @@ function fontStringFromTextStyle(style) {
 exports.fontStringFromTextStyle = fontStringFromTextStyle;
 
 
-},{}],866:[function(require,module,exports){
+},{}],872:[function(require,module,exports){
 'use strict';
 
 var Color = require('../../../../color/Color.js');
@@ -83806,7 +84099,7 @@ function getCanvasFillStyle(fillStyle, context, textMetrics, padding = 0) {
 exports.getCanvasFillStyle = getCanvasFillStyle;
 
 
-},{"../../../../color/Color.js":356,"../../../../maths/matrix/Matrix.js":461,"../../../../rendering/renderers/shared/texture/Texture.js":678,"../../../../utils/logging/warn.js":902,"../../../graphics/shared/fill/FillGradient.js":762,"../../../graphics/shared/fill/FillPattern.js":763}],867:[function(require,module,exports){
+},{"../../../../color/Color.js":362,"../../../../maths/matrix/Matrix.js":467,"../../../../rendering/renderers/shared/texture/Texture.js":684,"../../../../utils/logging/warn.js":908,"../../../graphics/shared/fill/FillGradient.js":768,"../../../graphics/shared/fill/FillPattern.js":769}],873:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -83818,7 +84111,7 @@ Extensions.extensions.add(CanvasTextSystem.CanvasTextSystem);
 Extensions.extensions.add(CanvasTextPipe.CanvasTextPipe);
 
 
-},{"../../extensions/Extensions.js":418,"./canvas/CanvasTextPipe.js":863,"./canvas/CanvasTextSystem.js":864}],868:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424,"./canvas/CanvasTextPipe.js":869,"./canvas/CanvasTextSystem.js":870}],874:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('../../../maths/matrix/Matrix.js');
@@ -83879,7 +84172,7 @@ class SdfShader extends Shader.Shader {
 exports.SdfShader = SdfShader;
 
 
-},{"../../../maths/matrix/Matrix.js":461,"../../../rendering/batcher/gl/utils/maxRecommendedTextures.js":486,"../../../rendering/high-shader/compileHighShaderToProgram.js":497,"../../../rendering/high-shader/shader-bits/colorBit.js":507,"../../../rendering/high-shader/shader-bits/generateTextureBatchBit.js":508,"../../../rendering/high-shader/shader-bits/roundPixelsBit.js":511,"../../../rendering/renderers/gl/shader/getBatchSamplersUniformGroup.js":550,"../../../rendering/renderers/shared/shader/Shader.js":655,"../../../rendering/renderers/shared/shader/UniformGroup.js":658,"./shader-bits/localUniformMSDFBit.js":869,"./shader-bits/mSDFBit.js":870}],869:[function(require,module,exports){
+},{"../../../maths/matrix/Matrix.js":467,"../../../rendering/batcher/gl/utils/maxRecommendedTextures.js":492,"../../../rendering/high-shader/compileHighShaderToProgram.js":503,"../../../rendering/high-shader/shader-bits/colorBit.js":513,"../../../rendering/high-shader/shader-bits/generateTextureBatchBit.js":514,"../../../rendering/high-shader/shader-bits/roundPixelsBit.js":517,"../../../rendering/renderers/gl/shader/getBatchSamplersUniformGroup.js":556,"../../../rendering/renderers/shared/shader/Shader.js":661,"../../../rendering/renderers/shared/shader/UniformGroup.js":664,"./shader-bits/localUniformMSDFBit.js":875,"./shader-bits/mSDFBit.js":876}],875:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -83985,7 +84278,7 @@ exports.localUniformMSDFBit = localUniformMSDFBit;
 exports.localUniformMSDFBitGl = localUniformMSDFBitGl;
 
 
-},{}],870:[function(require,module,exports){
+},{}],876:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -84066,7 +84359,7 @@ exports.mSDFBit = mSDFBit;
 exports.mSDFBitGl = mSDFBitGl;
 
 
-},{}],871:[function(require,module,exports){
+},{}],877:[function(require,module,exports){
 'use strict';
 
 var HTMLTextStyle = require('../../text-html/HTMLTextStyle.js');
@@ -84083,7 +84376,7 @@ function ensureTextStyle(renderMode, style) {
 exports.ensureTextStyle = ensureTextStyle;
 
 
-},{"../../text-html/HTMLTextStyle.js":847,"../TextStyle.js":861}],872:[function(require,module,exports){
+},{"../../text-html/HTMLTextStyle.js":853,"../TextStyle.js":867}],878:[function(require,module,exports){
 'use strict';
 
 var Color = require('../../../color/Color.js');
@@ -84153,7 +84446,7 @@ function addDropShadowKey(dropShadow, key, index) {
 exports.generateTextStyleKey = generateTextStyleKey;
 
 
-},{"../../../color/Color.js":356}],873:[function(require,module,exports){
+},{"../../../color/Color.js":362}],879:[function(require,module,exports){
 'use strict';
 
 var TexturePool = require('../../../rendering/renderers/shared/texture/TexturePool.js');
@@ -84186,7 +84479,7 @@ function getPo2TextureFromSource(image, width, height, resolution) {
 exports.getPo2TextureFromSource = getPo2TextureFromSource;
 
 
-},{"../../../rendering/renderers/shared/texture/TexturePool.js":681,"../../container/bounds/Bounds.js":708}],874:[function(require,module,exports){
+},{"../../../rendering/renderers/shared/texture/TexturePool.js":687,"../../container/bounds/Bounds.js":714}],880:[function(require,module,exports){
 'use strict';
 
 var updateQuadBounds = require('../../../utils/data/updateQuadBounds.js');
@@ -84205,7 +84498,7 @@ function updateTextBounds(batchableSprite, text) {
 exports.updateTextBounds = updateTextBounds;
 
 
-},{"../../../utils/data/updateQuadBounds.js":896}],875:[function(require,module,exports){
+},{"../../../utils/data/updateQuadBounds.js":902}],881:[function(require,module,exports){
 'use strict';
 
 var Bounds = require('../container/bounds/Bounds.js');
@@ -84291,7 +84584,7 @@ class ViewContainer extends Container.Container {
 exports.ViewContainer = ViewContainer;
 
 
-},{"../container/Container.js":701,"../container/bounds/Bounds.js":708}],876:[function(require,module,exports){
+},{"../container/Container.js":707,"../container/bounds/Bounds.js":714}],882:[function(require,module,exports){
 'use strict';
 
 var Rectangle = require('../maths/shapes/Rectangle.js');
@@ -84457,7 +84750,7 @@ let Spritesheet = _Spritesheet;
 exports.Spritesheet = Spritesheet;
 
 
-},{"../maths/shapes/Rectangle.js":475,"../rendering/renderers/shared/texture/Texture.js":678}],877:[function(require,module,exports){
+},{"../maths/shapes/Rectangle.js":481,"../rendering/renderers/shared/texture/Texture.js":684}],883:[function(require,module,exports){
 'use strict';
 
 var Spritesheet = require('./Spritesheet.js');
@@ -84469,7 +84762,7 @@ exports.Spritesheet = Spritesheet.Spritesheet;
 exports.spritesheetAsset = spritesheetAsset.spritesheetAsset;
 
 
-},{"./Spritesheet.js":876,"./spritesheetAsset.js":879}],878:[function(require,module,exports){
+},{"./Spritesheet.js":882,"./spritesheetAsset.js":885}],884:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../extensions/Extensions.js');
@@ -84479,7 +84772,7 @@ var spritesheetAsset = require('./spritesheetAsset.js');
 Extensions.extensions.add(spritesheetAsset.spritesheetAsset);
 
 
-},{"../extensions/Extensions.js":418,"./spritesheetAsset.js":879}],879:[function(require,module,exports){
+},{"../extensions/Extensions.js":424,"./spritesheetAsset.js":885}],885:[function(require,module,exports){
 'use strict';
 
 var LoaderParser = require('../assets/loader/parsers/LoaderParser.js');
@@ -84635,7 +84928,7 @@ const spritesheetAsset = {
 exports.spritesheetAsset = spritesheetAsset;
 
 
-},{"../assets/loader/parsers/LoaderParser.js":335,"../assets/resolver/Resolver.js":345,"../assets/utils/copySearchParams.js":353,"../extensions/Extensions.js":418,"../rendering/renderers/shared/texture/Texture.js":678,"../utils/path.js":906,"./Spritesheet.js":876}],880:[function(require,module,exports){
+},{"../assets/loader/parsers/LoaderParser.js":341,"../assets/resolver/Resolver.js":351,"../assets/utils/copySearchParams.js":359,"../extensions/Extensions.js":424,"../rendering/renderers/shared/texture/Texture.js":684,"../utils/path.js":912,"./Spritesheet.js":882}],886:[function(require,module,exports){
 'use strict';
 
 var _const = require('./const.js');
@@ -85038,7 +85331,7 @@ let Ticker = _Ticker;
 exports.Ticker = Ticker;
 
 
-},{"./TickerListener.js":881,"./const.js":882}],881:[function(require,module,exports){
+},{"./TickerListener.js":887,"./const.js":888}],887:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -85132,7 +85425,7 @@ class TickerListener {
 exports.TickerListener = TickerListener;
 
 
-},{}],882:[function(require,module,exports){
+},{}],888:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -85148,7 +85441,7 @@ var UPDATE_PRIORITY = /* @__PURE__ */ ((UPDATE_PRIORITY2) => {
 exports.UPDATE_PRIORITY = UPDATE_PRIORITY;
 
 
-},{}],883:[function(require,module,exports){
+},{}],889:[function(require,module,exports){
 'use strict';
 
 var _const = require('./const.js');
@@ -85162,7 +85455,7 @@ exports.Ticker = Ticker.Ticker;
 exports.TickerListener = TickerListener.TickerListener;
 
 
-},{"./Ticker.js":880,"./TickerListener.js":881,"./const.js":882}],884:[function(require,module,exports){
+},{"./Ticker.js":886,"./TickerListener.js":887,"./const.js":888}],890:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -85214,7 +85507,7 @@ async function detectVideoAlphaMode() {
 exports.detectVideoAlphaMode = detectVideoAlphaMode;
 
 
-},{}],885:[function(require,module,exports){
+},{}],891:[function(require,module,exports){
 'use strict';
 
 var isMobileJs = require('ismobilejs');
@@ -85226,7 +85519,7 @@ const isMobile = isMobileCall(globalThis.navigator);
 exports.isMobile = isMobile;
 
 
-},{"ismobilejs":224}],886:[function(require,module,exports){
+},{"ismobilejs":230}],892:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../environment/adapter.js');
@@ -85240,7 +85533,7 @@ function isSafari() {
 exports.isSafari = isSafari;
 
 
-},{"../../environment/adapter.js":400}],887:[function(require,module,exports){
+},{"../../environment/adapter.js":406}],893:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../environment/adapter.js');
@@ -85281,7 +85574,7 @@ function isWebGLSupported(failIfMajorPerformanceCaveat) {
 exports.isWebGLSupported = isWebGLSupported;
 
 
-},{"../../environment/adapter.js":400,"../../rendering/renderers/shared/system/AbstractRenderer.js":669}],888:[function(require,module,exports){
+},{"../../environment/adapter.js":406,"../../rendering/renderers/shared/system/AbstractRenderer.js":675}],894:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../../environment/adapter.js');
@@ -85310,7 +85603,7 @@ async function isWebGPUSupported(options = {}) {
 exports.isWebGPUSupported = isWebGPUSupported;
 
 
-},{"../../environment/adapter.js":400}],889:[function(require,module,exports){
+},{"../../environment/adapter.js":406}],895:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -85331,7 +85624,7 @@ function unsafeEvalSupported() {
 exports.unsafeEvalSupported = unsafeEvalSupported;
 
 
-},{}],890:[function(require,module,exports){
+},{}],896:[function(require,module,exports){
 'use strict';
 
 var Rectangle = require('../../maths/shapes/Rectangle.js');
@@ -85384,7 +85677,7 @@ function getCanvasBoundingBox(canvas, resolution = 1) {
 exports.getCanvasBoundingBox = getCanvasBoundingBox;
 
 
-},{"../../maths/shapes/Rectangle.js":475}],891:[function(require,module,exports){
+},{"../../maths/shapes/Rectangle.js":481}],897:[function(require,module,exports){
 'use strict';
 
 var EventEmitter = require('eventemitter3');
@@ -85398,7 +85691,7 @@ exports.DATA_URI = DATA_URI;
 exports.VERSION = VERSION;
 
 
-},{"eventemitter3":206}],892:[function(require,module,exports){
+},{"eventemitter3":212}],898:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -85504,7 +85797,7 @@ class ViewableBuffer {
 exports.ViewableBuffer = ViewableBuffer;
 
 
-},{}],893:[function(require,module,exports){
+},{}],899:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -85544,7 +85837,7 @@ exports.cleanArray = cleanArray;
 exports.cleanHash = cleanHash;
 
 
-},{}],894:[function(require,module,exports){
+},{}],900:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -85565,7 +85858,7 @@ function removeItems(arr, startIdx, removeCount) {
 exports.removeItems = removeItems;
 
 
-},{}],895:[function(require,module,exports){
+},{}],901:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -85588,7 +85881,7 @@ exports.resetUids = resetUids;
 exports.uid = uid;
 
 
-},{}],896:[function(require,module,exports){
+},{}],902:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -85613,7 +85906,7 @@ function updateQuadBounds(bounds, anchor, texture) {
 exports.updateQuadBounds = updateQuadBounds;
 
 
-},{}],897:[function(require,module,exports){
+},{}],903:[function(require,module,exports){
 'use strict';
 
 var Extensions = require('../../extensions/Extensions.js');
@@ -85654,7 +85947,7 @@ exports.ApplicationInitHook = ApplicationInitHook;
 exports.RendererInitHook = RendererInitHook;
 
 
-},{"../../extensions/Extensions.js":418,"../const.js":891}],898:[function(require,module,exports){
+},{"../../extensions/Extensions.js":424,"../const.js":897}],904:[function(require,module,exports){
 'use strict';
 
 var detectVideoAlphaMode = require('./browser/detectVideoAlphaMode.js');
@@ -85722,7 +86015,7 @@ exports.PoolGroupClass = PoolGroup.PoolGroupClass;
 exports.sayHello = sayHello.sayHello;
 
 
-},{"./browser/detectVideoAlphaMode.js":884,"./browser/isMobile.js":885,"./browser/isSafari.js":886,"./browser/isWebGLSupported.js":887,"./browser/isWebGPUSupported.js":888,"./browser/unsafeEvalSupported.js":889,"./canvas/getCanvasBoundingBox.js":890,"./const.js":891,"./data/ViewableBuffer.js":892,"./data/clean.js":893,"./data/removeItems.js":894,"./data/uid.js":895,"./data/updateQuadBounds.js":896,"./global/globalHooks.js":897,"./logging/deprecation.js":899,"./logging/logDebugTexture.js":900,"./logging/logScene.js":901,"./logging/warn.js":902,"./misc/NOOP.js":903,"./misc/Transform.js":904,"./network/getResolutionOfUrl.js":905,"./path.js":906,"./pool/Pool.js":907,"./pool/PoolGroup.js":908,"./sayHello.js":909,"./types.js":910,"./utils.js":911}],899:[function(require,module,exports){
+},{"./browser/detectVideoAlphaMode.js":890,"./browser/isMobile.js":891,"./browser/isSafari.js":892,"./browser/isWebGLSupported.js":893,"./browser/isWebGPUSupported.js":894,"./browser/unsafeEvalSupported.js":895,"./canvas/getCanvasBoundingBox.js":896,"./const.js":897,"./data/ViewableBuffer.js":898,"./data/clean.js":899,"./data/removeItems.js":900,"./data/uid.js":901,"./data/updateQuadBounds.js":902,"./global/globalHooks.js":903,"./logging/deprecation.js":905,"./logging/logDebugTexture.js":906,"./logging/logScene.js":907,"./logging/warn.js":908,"./misc/NOOP.js":909,"./misc/Transform.js":910,"./network/getResolutionOfUrl.js":911,"./path.js":912,"./pool/Pool.js":913,"./pool/PoolGroup.js":914,"./sayHello.js":915,"./types.js":916,"./utils.js":917}],905:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -85763,7 +86056,7 @@ exports.v8_0_0 = v8_0_0;
 exports.v8_3_4 = v8_3_4;
 
 
-},{}],900:[function(require,module,exports){
+},{}],906:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -85784,7 +86077,7 @@ async function logDebugTexture(texture, renderer, size = 200) {
 exports.logDebugTexture = logDebugTexture;
 
 
-},{}],901:[function(require,module,exports){
+},{}],907:[function(require,module,exports){
 'use strict';
 
 var Sprite = require('../../scene/sprite/Sprite.js');
@@ -85857,7 +86150,7 @@ exports.logRenderGroupScene = logRenderGroupScene;
 exports.logScene = logScene;
 
 
-},{"../../scene/sprite/Sprite.js":829}],902:[function(require,module,exports){
+},{"../../scene/sprite/Sprite.js":835}],908:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -85877,7 +86170,7 @@ function warn(...args) {
 exports.warn = warn;
 
 
-},{}],903:[function(require,module,exports){
+},{}],909:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -85887,7 +86180,7 @@ const NOOP = () => {
 exports.NOOP = NOOP;
 
 
-},{}],904:[function(require,module,exports){
+},{}],910:[function(require,module,exports){
 'use strict';
 
 var Matrix = require('../../maths/matrix/Matrix.js');
@@ -85979,7 +86272,7 @@ class Transform {
 exports.Transform = Transform;
 
 
-},{"../../maths/matrix/Matrix.js":461,"../../maths/point/ObservablePoint.js":467}],905:[function(require,module,exports){
+},{"../../maths/matrix/Matrix.js":467,"../../maths/point/ObservablePoint.js":473}],911:[function(require,module,exports){
 'use strict';
 
 var Resolver = require('../../assets/resolver/Resolver.js');
@@ -85996,7 +86289,7 @@ function getResolutionOfUrl(url, defaultValue = 1) {
 exports.getResolutionOfUrl = getResolutionOfUrl;
 
 
-},{"../../assets/resolver/Resolver.js":345}],906:[function(require,module,exports){
+},{"../../assets/resolver/Resolver.js":351}],912:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../environment/adapter.js');
@@ -86467,7 +86760,7 @@ const path = {
 exports.path = path;
 
 
-},{"../environment/adapter.js":400}],907:[function(require,module,exports){
+},{"../environment/adapter.js":406}],913:[function(require,module,exports){
 'use strict';
 
 "use strict";
@@ -86554,7 +86847,7 @@ class Pool {
 exports.Pool = Pool;
 
 
-},{}],908:[function(require,module,exports){
+},{}],914:[function(require,module,exports){
 'use strict';
 
 var Pool = require('./Pool.js');
@@ -86629,7 +86922,7 @@ exports.BigPool = BigPool;
 exports.PoolGroupClass = PoolGroupClass;
 
 
-},{"./Pool.js":907}],909:[function(require,module,exports){
+},{"./Pool.js":913}],915:[function(require,module,exports){
 'use strict';
 
 var adapter = require('../environment/adapter.js');
@@ -86663,9 +86956,9 @@ function sayHello(type) {
 exports.sayHello = sayHello;
 
 
-},{"../environment/adapter.js":400,"./const.js":891}],910:[function(require,module,exports){
-arguments[4][330][0].apply(exports,arguments)
-},{"dup":330}],911:[function(require,module,exports){
+},{"../environment/adapter.js":406,"./const.js":897}],916:[function(require,module,exports){
+arguments[4][336][0].apply(exports,arguments)
+},{"dup":336}],917:[function(require,module,exports){
 'use strict';
 
 var EventEmitter = require('eventemitter3');
@@ -86677,7 +86970,7 @@ exports.EventEmitter = EventEmitter;
 exports.earcut = earcut;
 
 
-},{"earcut":195,"eventemitter3":206}],912:[function(require,module,exports){
+},{"earcut":201,"eventemitter3":212}],918:[function(require,module,exports){
 (function (process){(function (){
 'use strict';
 
@@ -86726,7 +87019,7 @@ function nextTick(fn, arg1, arg2, arg3) {
 
 
 }).call(this)}).call(this,require('_process'))
-},{"_process":913}],913:[function(require,module,exports){
+},{"_process":919}],919:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -86912,7 +87205,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],914:[function(require,module,exports){
+},{}],920:[function(require,module,exports){
 (function (global){(function (){
 /*! https://mths.be/punycode v1.4.1 by @mathias */
 ;(function(root) {
@@ -87449,7 +87742,7 @@ process.umask = function() { return 0; };
 }(this));
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],915:[function(require,module,exports){
+},{}],921:[function(require,module,exports){
 'use strict';
 
 var replace = String.prototype.replace;
@@ -87474,7 +87767,7 @@ module.exports = {
     RFC3986: Format.RFC3986
 };
 
-},{}],916:[function(require,module,exports){
+},{}],922:[function(require,module,exports){
 'use strict';
 
 var stringify = require('./stringify');
@@ -87487,7 +87780,7 @@ module.exports = {
     stringify: stringify
 };
 
-},{"./formats":915,"./parse":917,"./stringify":918}],917:[function(require,module,exports){
+},{"./formats":921,"./parse":923,"./stringify":924}],923:[function(require,module,exports){
 'use strict';
 
 var utils = require('./utils');
@@ -87817,7 +88110,7 @@ module.exports = function (str, opts) {
     return utils.compact(obj);
 };
 
-},{"./utils":919}],918:[function(require,module,exports){
+},{"./utils":925}],924:[function(require,module,exports){
 'use strict';
 
 var getSideChannel = require('side-channel');
@@ -88175,7 +88468,7 @@ module.exports = function (object, opts) {
     return joined.length > 0 ? prefix + joined : '';
 };
 
-},{"./formats":915,"./utils":919,"side-channel":944}],919:[function(require,module,exports){
+},{"./formats":921,"./utils":925,"side-channel":950}],925:[function(require,module,exports){
 'use strict';
 
 var formats = require('./formats');
@@ -88445,7 +88738,7 @@ module.exports = {
     merge: merge
 };
 
-},{"./formats":915}],920:[function(require,module,exports){
+},{"./formats":921}],926:[function(require,module,exports){
 'use strict';
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
@@ -88574,7 +88867,7 @@ createErrorType('ERR_UNKNOWN_ENCODING', function (arg) {
 createErrorType('ERR_STREAM_UNSHIFT_AFTER_END_EVENT', 'stream.unshift() after end event');
 module.exports.codes = codes;
 
-},{}],921:[function(require,module,exports){
+},{}],927:[function(require,module,exports){
 (function (process){(function (){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -88703,7 +88996,7 @@ Object.defineProperty(Duplex.prototype, 'destroyed', {
   }
 });
 }).call(this)}).call(this,require('_process'))
-},{"./_stream_readable":923,"./_stream_writable":925,"_process":913,"inherits":222}],922:[function(require,module,exports){
+},{"./_stream_readable":929,"./_stream_writable":931,"_process":919,"inherits":228}],928:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -88741,7 +89034,7 @@ function PassThrough(options) {
 PassThrough.prototype._transform = function (chunk, encoding, cb) {
   cb(null, chunk);
 };
-},{"./_stream_transform":924,"inherits":222}],923:[function(require,module,exports){
+},{"./_stream_transform":930,"inherits":228}],929:[function(require,module,exports){
 (function (process,global){(function (){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -89771,7 +90064,7 @@ function indexOf(xs, x) {
   return -1;
 }
 }).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../errors":920,"./_stream_duplex":921,"./internal/streams/async_iterator":926,"./internal/streams/buffer_list":927,"./internal/streams/destroy":928,"./internal/streams/from":930,"./internal/streams/state":932,"./internal/streams/stream":933,"_process":913,"buffer":182,"events":207,"inherits":222,"string_decoder/":950,"util":181}],924:[function(require,module,exports){
+},{"../errors":926,"./_stream_duplex":927,"./internal/streams/async_iterator":932,"./internal/streams/buffer_list":933,"./internal/streams/destroy":934,"./internal/streams/from":936,"./internal/streams/state":938,"./internal/streams/stream":939,"_process":919,"buffer":188,"events":213,"inherits":228,"string_decoder/":956,"util":187}],930:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -89962,7 +90255,7 @@ function done(stream, er, data) {
   if (stream._transformState.transforming) throw new ERR_TRANSFORM_ALREADY_TRANSFORMING();
   return stream.push(null);
 }
-},{"../errors":920,"./_stream_duplex":921,"inherits":222}],925:[function(require,module,exports){
+},{"../errors":926,"./_stream_duplex":927,"inherits":228}],931:[function(require,module,exports){
 (function (process,global){(function (){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -90606,7 +90899,7 @@ Writable.prototype._destroy = function (err, cb) {
   cb(err);
 };
 }).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../errors":920,"./_stream_duplex":921,"./internal/streams/destroy":928,"./internal/streams/state":932,"./internal/streams/stream":933,"_process":913,"buffer":182,"inherits":222,"util-deprecate":952}],926:[function(require,module,exports){
+},{"../errors":926,"./_stream_duplex":927,"./internal/streams/destroy":934,"./internal/streams/state":938,"./internal/streams/stream":939,"_process":919,"buffer":188,"inherits":228,"util-deprecate":958}],932:[function(require,module,exports){
 (function (process){(function (){
 'use strict';
 
@@ -90789,7 +91082,7 @@ var createReadableStreamAsyncIterator = function createReadableStreamAsyncIterat
 };
 module.exports = createReadableStreamAsyncIterator;
 }).call(this)}).call(this,require('_process'))
-},{"./end-of-stream":929,"_process":913}],927:[function(require,module,exports){
+},{"./end-of-stream":935,"_process":919}],933:[function(require,module,exports){
 'use strict';
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -90973,7 +91266,7 @@ module.exports = /*#__PURE__*/function () {
   }]);
   return BufferList;
 }();
-},{"buffer":182,"util":181}],928:[function(require,module,exports){
+},{"buffer":188,"util":187}],934:[function(require,module,exports){
 (function (process){(function (){
 'use strict';
 
@@ -91072,7 +91365,7 @@ module.exports = {
   errorOrDestroy: errorOrDestroy
 };
 }).call(this)}).call(this,require('_process'))
-},{"_process":913}],929:[function(require,module,exports){
+},{"_process":919}],935:[function(require,module,exports){
 // Ported from https://github.com/mafintosh/end-of-stream with
 // permission from the author, Mathias Buus (@mafintosh).
 
@@ -91159,12 +91452,12 @@ function eos(stream, opts, callback) {
   };
 }
 module.exports = eos;
-},{"../../../errors":920}],930:[function(require,module,exports){
+},{"../../../errors":926}],936:[function(require,module,exports){
 module.exports = function () {
   throw new Error('Readable.from is not available in the browser')
 };
 
-},{}],931:[function(require,module,exports){
+},{}],937:[function(require,module,exports){
 // Ported from https://github.com/mafintosh/pump with
 // permission from the author, Mathias Buus (@mafintosh).
 
@@ -91251,7 +91544,7 @@ function pipeline() {
   return streams.reduce(pipe);
 }
 module.exports = pipeline;
-},{"../../../errors":920,"./end-of-stream":929}],932:[function(require,module,exports){
+},{"../../../errors":926,"./end-of-stream":935}],938:[function(require,module,exports){
 'use strict';
 
 var ERR_INVALID_OPT_VALUE = require('../../../errors').codes.ERR_INVALID_OPT_VALUE;
@@ -91274,10 +91567,10 @@ function getHighWaterMark(state, options, duplexKey, isDuplex) {
 module.exports = {
   getHighWaterMark: getHighWaterMark
 };
-},{"../../../errors":920}],933:[function(require,module,exports){
+},{"../../../errors":926}],939:[function(require,module,exports){
 module.exports = require('events').EventEmitter;
 
-},{"events":207}],934:[function(require,module,exports){
+},{"events":213}],940:[function(require,module,exports){
 exports = module.exports = require('./lib/_stream_readable.js');
 exports.Stream = exports;
 exports.Readable = exports;
@@ -91288,7 +91581,7 @@ exports.PassThrough = require('./lib/_stream_passthrough.js');
 exports.finished = require('./lib/internal/streams/end-of-stream.js');
 exports.pipeline = require('./lib/internal/streams/pipeline.js');
 
-},{"./lib/_stream_duplex.js":921,"./lib/_stream_passthrough.js":922,"./lib/_stream_readable.js":923,"./lib/_stream_transform.js":924,"./lib/_stream_writable.js":925,"./lib/internal/streams/end-of-stream.js":929,"./lib/internal/streams/pipeline.js":931}],935:[function(require,module,exports){
+},{"./lib/_stream_duplex.js":927,"./lib/_stream_passthrough.js":928,"./lib/_stream_readable.js":929,"./lib/_stream_transform.js":930,"./lib/_stream_writable.js":931,"./lib/internal/streams/end-of-stream.js":935,"./lib/internal/streams/pipeline.js":937}],941:[function(require,module,exports){
 'use strict'
 
 function ReInterval (callback, interval, args) {
@@ -91347,12 +91640,12 @@ function reInterval () {
 
 module.exports = reInterval;
 
-},{}],936:[function(require,module,exports){
+},{}],942:[function(require,module,exports){
 'use strict'
 
 module.exports = require('./index.js')()
 
-},{"./index.js":937}],937:[function(require,module,exports){
+},{"./index.js":943}],943:[function(require,module,exports){
 (function (Buffer){(function (){
 'use strict'
 module.exports = rfdc
@@ -91554,7 +91847,7 @@ function rfdcCircles (opts) {
 }
 
 }).call(this)}).call(this,require("buffer").Buffer)
-},{"buffer":182}],938:[function(require,module,exports){
+},{"buffer":188}],944:[function(require,module,exports){
 (function (process,global){(function (){
 // Copyright (c) Microsoft, All rights reserved. See License.txt in the project root for license information.
 
@@ -98612,7 +98905,7 @@ Observable.fromNodeCallback = function (fn, ctx, selector) {
 }.call(this));
 
 }).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"_process":913}],939:[function(require,module,exports){
+},{"_process":919}],945:[function(require,module,exports){
 /*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 /* eslint-disable node/no-deprecated-api */
 var buffer = require('buffer')
@@ -98679,7 +98972,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
   return buffer.SlowBuffer(size)
 }
 
-},{"buffer":182}],940:[function(require,module,exports){
+},{"buffer":188}],946:[function(require,module,exports){
 (function (Buffer){(function (){
 /*!
  * shallow-clone <https://github.com/jonschlinkert/shallow-clone>
@@ -98766,7 +99059,7 @@ function cloneSymbol(val) {
 module.exports = clone;
 
 }).call(this)}).call(this,require("buffer").Buffer)
-},{"buffer":182,"kind-of":247}],941:[function(require,module,exports){
+},{"buffer":188,"kind-of":253}],947:[function(require,module,exports){
 'use strict';
 
 var inspect = require('object-inspect');
@@ -98881,7 +99174,7 @@ module.exports = function getSideChannelList() {
 	return channel;
 };
 
-},{"es-errors/type":203,"object-inspect":279}],942:[function(require,module,exports){
+},{"es-errors/type":209,"object-inspect":285}],948:[function(require,module,exports){
 'use strict';
 
 var GetIntrinsic = require('get-intrinsic');
@@ -98951,7 +99244,7 @@ module.exports = !!$Map && /** @type {Exclude<import('.'), false>} */ function g
 	return channel;
 };
 
-},{"call-bound":188,"es-errors/type":203,"get-intrinsic":210,"object-inspect":279}],943:[function(require,module,exports){
+},{"call-bound":194,"es-errors/type":209,"get-intrinsic":216,"object-inspect":285}],949:[function(require,module,exports){
 'use strict';
 
 var GetIntrinsic = require('get-intrinsic');
@@ -99037,7 +99330,7 @@ module.exports = $WeakMap
 	}
 	: getSideChannelMap;
 
-},{"call-bound":188,"es-errors/type":203,"get-intrinsic":210,"object-inspect":279,"side-channel-map":942}],944:[function(require,module,exports){
+},{"call-bound":194,"es-errors/type":209,"get-intrinsic":216,"object-inspect":285,"side-channel-map":948}],950:[function(require,module,exports){
 'use strict';
 
 var $TypeError = require('es-errors/type');
@@ -99082,7 +99375,7 @@ module.exports = function getSideChannel() {
 	return channel;
 };
 
-},{"es-errors/type":203,"object-inspect":279,"side-channel-list":941,"side-channel-map":942,"side-channel-weakmap":943}],945:[function(require,module,exports){
+},{"es-errors/type":209,"object-inspect":285,"side-channel-list":947,"side-channel-map":948,"side-channel-weakmap":949}],951:[function(require,module,exports){
 module.exports = shift
 
 function shift (stream) {
@@ -99105,7 +99398,7 @@ function getStateLength (state) {
   return state.length
 }
 
-},{}],946:[function(require,module,exports){
+},{}],952:[function(require,module,exports){
 function count(self, substr) {
   var count = 0
   var pos = self.indexOf(substr)
@@ -99119,7 +99412,7 @@ function count(self, substr) {
 }
 
 module.exports = count
-},{}],947:[function(require,module,exports){
+},{}],953:[function(require,module,exports){
 function splitLeft(self, sep, maxSplit, limit) {
 
   if (typeof maxSplit === 'undefined') {
@@ -99148,7 +99441,7 @@ function splitLeft(self, sep, maxSplit, limit) {
 
 module.exports = splitLeft;
 
-},{}],948:[function(require,module,exports){
+},{}],954:[function(require,module,exports){
 function splitRight(self, sep, maxSplit, limit) {
 
   if (typeof maxSplit === 'undefined') {
@@ -99181,7 +99474,7 @@ function splitRight(self, sep, maxSplit, limit) {
 
 module.exports = splitRight;
 
-},{}],949:[function(require,module,exports){
+},{}],955:[function(require,module,exports){
 /*
 string.js - Copyright (C) 2012-2014, JP Richardson <jprichardson@gmail.com>
 */
@@ -100291,7 +100584,7 @@ string.js - Copyright (C) 2012-2014, JP Richardson <jprichardson@gmail.com>
 
 }).call(this);
 
-},{"./_count":946,"./_splitLeft":947,"./_splitRight":948}],950:[function(require,module,exports){
+},{"./_count":952,"./_splitLeft":953,"./_splitRight":954}],956:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -100588,7 +100881,7 @@ function simpleWrite(buf) {
 function simpleEnd(buf) {
   return buf && buf.length ? this.write(buf) : '';
 }
-},{"safe-buffer":939}],951:[function(require,module,exports){
+},{"safe-buffer":945}],957:[function(require,module,exports){
 /*
  * Copyright Joyent, Inc. and other Node contributors.
  *
@@ -101366,7 +101659,7 @@ exports.format = urlFormat;
 
 exports.Url = Url;
 
-},{"punycode/":914,"qs":916}],952:[function(require,module,exports){
+},{"punycode/":920,"qs":922}],958:[function(require,module,exports){
 (function (global){(function (){
 
 /**
@@ -101437,7 +101730,7 @@ function config (name) {
 }
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],953:[function(require,module,exports){
+},{}],959:[function(require,module,exports){
 // Returns a wrapper function that returns a wrapped callback
 // The wrapper function should do some stuff, and return a
 // presumably different callback function.
@@ -101472,7 +101765,7 @@ function wrappy (fn, cb) {
   }
 }
 
-},{}],954:[function(require,module,exports){
+},{}],960:[function(require,module,exports){
 'use strict';
 
 module.exports = function () {
@@ -101482,7 +101775,7 @@ module.exports = function () {
   );
 };
 
-},{}],955:[function(require,module,exports){
+},{}],961:[function(require,module,exports){
 module.exports = extend
 
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -101503,7 +101796,7 @@ function extend() {
     return target
 }
 
-},{}],956:[function(require,module,exports){
+},{}],962:[function(require,module,exports){
 'use strict'
 module.exports = function (Yallist) {
   Yallist.prototype[Symbol.iterator] = function* () {
@@ -101513,7 +101806,7 @@ module.exports = function (Yallist) {
   }
 }
 
-},{}],957:[function(require,module,exports){
+},{}],963:[function(require,module,exports){
 'use strict'
 module.exports = Yallist
 
@@ -101941,4 +102234,4 @@ try {
   require('./iterator.js')(Yallist)
 } catch (er) {}
 
-},{"./iterator.js":956}]},{},[1]);
+},{"./iterator.js":962}]},{},[1]);
