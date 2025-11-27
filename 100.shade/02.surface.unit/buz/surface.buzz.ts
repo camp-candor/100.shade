@@ -28,6 +28,10 @@ export const createSurface = async (cpy: SurfaceModel, bal: SurfaceBit, ste: Sta
 
     if (bal.dat == null) bal.dat = {}
 
+    if ( bal.dat.clr == null ) bal.dat.clr = '#ffff00'
+    if ( bal.dat.w == null ) bal.dat.w = 800;
+    if ( bal.dat.h == null ) bal.dat.h = 480;
+
     if (bal.dat.src == null) bal.dat.src = 'indexCanvas'
 
     var dat: StageBit = { idx: bal.idx, src: bal.dat.src, bit: null };
@@ -40,13 +44,13 @@ export const createSurface = async (cpy: SurfaceModel, bal: SurfaceBit, ste: Sta
     //const width = 800;
     //const height = 480;
 
-    const width = 720;
-    const height = 1280;
+    const width = bal.dat.w;
+    const height = bal.dat.h;
 
     var app = dat.bit;
 
     //app.init
-    await app.init({ background: '#ffff00',  width, height });
+    await app.init({ background: bal.dat.clr,  width, height });
     //await app.init({ background: '#00FFFF',  resizeTo: window });
 
     //debugger
