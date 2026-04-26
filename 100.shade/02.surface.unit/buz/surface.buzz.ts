@@ -40,7 +40,7 @@ export const createSurface = async (cpy: SurfaceModel, bal: SurfaceBit, ste: Sta
     bal.slv({ fceBit: { idx: "create-surface", dat } });
     var el: HTMLElement | null = document.getElementById(dat.src as string)
 
-    
+
     //const width = 800;
     //const height = 480;
 
@@ -50,12 +50,16 @@ export const createSurface = async (cpy: SurfaceModel, bal: SurfaceBit, ste: Sta
     var app = dat.bit;
 
     //app.init
-    await app.init({ background: bal.dat.clr,  width, height });
+    if (bal.dat.rsz && el) {
+        await app.init({ background: bal.dat.clr, resizeTo: el });
+    } else {
+        await app.init({ background: bal.dat.clr, width, height });
+    }
     //await app.init({ background: '#00FFFF',  resizeTo: window });
 
     //debugger
     //var el = document.getElementById("surface00");
-    el.appendChild(app.canvas);
+    if (el) el.appendChild(app.canvas);
 
     bal.slv({ fceBit: { idx: "create-surface", dat:{bit:app} } });
 
@@ -103,7 +107,7 @@ export const createSurface = async (cpy: SurfaceModel, bal: SurfaceBit, ste: Sta
     //bunny.y = app.screen.height / 2;
 
     //app.stage.addChild(bunny);
-    
+
     //await Assets.load([
     //    "./sprite/000/000.json"
     //]);
@@ -116,7 +120,7 @@ export const createSurface = async (cpy: SurfaceModel, bal: SurfaceBit, ste: Sta
     //app.stage.addChild( button)
     //button.onPress.connect(() => console.log('Button pressed!'));
 
-    
+
     return cpy;
 };
 
@@ -149,7 +153,7 @@ export const readSurface = async (cpy: SurfaceModel, bal: SurfaceBit, ste: State
 };
 export const writeSurface = async (cpy: SurfaceModel, bal: SurfaceBit, ste: State) => {
 
-    
+
 
     bit = await ste.hunt(ActCol.WRITE_COLLECT, { idx: bal.idx, dat: bal.dat, bit: ActFce.CREATE_SURFACE })
     ste.hunt(ActFce.UPDATE_SURFACE, { idx: bal.idx })
@@ -254,7 +258,7 @@ export const listSurface = async (cpy: SurfaceModel, bal: SurfaceBit, ste: State
 
     //if (bal.idx != null) process.chdir(bal.idx)
 
-    
+
     //var dex = lst.length()
 
     bal.slv({ fceBit: { idx: "list-surface", lst} });
@@ -263,7 +267,3 @@ export const listSurface = async (cpy: SurfaceModel, bal: SurfaceBit, ste: State
 
     return cpy;
 };
-
-
-
-
