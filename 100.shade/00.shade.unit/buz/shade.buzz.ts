@@ -1,4 +1,3 @@
-import * as ActMnu from "../../98.menu.unit/menu.action";
 import * as ActBus from "../../99.bus.unit/bus.action";
 import * as ActShd from "../../00.shade.unit/shade.action";
 import * as ActVsg from "../../21.visage.unit/visage.action";
@@ -18,7 +17,6 @@ import * as ActPvt from "../../act/pivot.action";
 import * as ActVrt from "../../act/vurt.action";
 import * as ActDsk from "../../act/disk.action";
 
-import * as ActCns from "../../act/console.action";
 
 import { ShadeModel } from "../shade.model";
 import ShadeBit from "../fce/shade.bit";
@@ -37,7 +35,6 @@ export const initShade = async (cpy: ShadeModel, bal: ShadeBit, ste: State) => {
 
     if (bal.dat != null) bit = await ste.hunt(ActBus.INIT_BUS, { idx: cpy.idx, lst: [ActShd, ActVsg, ActSrf, ActCan, ActGph, ActTxt, ActSpr, ActHex, ActVid, ActTun], dat: bal.dat, src: bal.src })
 
-    if (bal.val == 1) patch(ste, ActMnu.INIT_MENU, bal);
 
     //ste.bus(ActSpc.READY_SPACE, {})
 
@@ -67,16 +64,16 @@ export const openShade = async (cpy: ShadeModel, bal: ShadeBit, ste: State) => {
         batch = spawn('cmd', ['/c', sanitizedPath]);
 
         batch.stdout.on('data', async (data) => {
-            bit = await ste.hunt(ActCns.UPDATE_CONSOLE, { idx: 'cns00', src: `stdout: ${data}` })
+            console.log(`stdout: ${data}`)
         });
 
         batch.stderr.on('data', async (data) => {
-            bit = await ste.hunt(ActCns.UPDATE_CONSOLE, { idx: 'cns00', src: `stderr: ${data}` })
+            console.error(`stderr: ${data}`)
         });
 
         batch.on('close', async (code) => {
             console.log();
-            bit = await ste.hunt(ActCns.UPDATE_CONSOLE, { idx: 'cns00', src: `child process exited with code ${code}` })
+            console.log(`child process exited with code ${code}`)
             //FS.emptyDir( dest, ()=>{
             //  FS.copySync('./dist/win-unpacked/' , dest )
             //})
@@ -185,7 +182,7 @@ export const updateShade = async (cpy: ShadeModel, bal: ShadeBit, ste: State) =>
         var remove = a + '/110.shade'
         //FS.removeSync(remove);
 
-        bit = ste.hunt(ActCns.UPDATE_CONSOLE, { idx: 'cns00', src: 'removing --- ' + remove })
+        console.log('removing --- ' + remove)
 
         unitList.forEach((c) => {
 
@@ -194,7 +191,7 @@ export const updateShade = async (cpy: ShadeModel, bal: ShadeBit, ste: State) =>
             var source = './110.shade/' + c;
             var output = a + '/110.shade/' + c
 
-            bit = ste.hunt(ActCns.UPDATE_CONSOLE, { idx: 'cns00', src: source + ' --- ' + output })
+            console.log(source + ' --- ' + output)
 
             FS.copySync(source, output);
 

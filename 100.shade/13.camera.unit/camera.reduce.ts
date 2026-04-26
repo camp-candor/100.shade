@@ -4,7 +4,7 @@ import { CameraModel } from "./camera.model";
 import * as Buzz from "./camera.buzzer";
 import State from "../99.core/state";
 
-export function reducer(model: CameraModel = new CameraModel(), act: Act.Actions,  state?: State ) {
+export function reducer(model: CameraModel = new CameraModel(), act: Act.Actions,  state?: any ) {
  switch (act.type) {
  
  case Act.UPDATE_CAMERA:

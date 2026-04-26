@@ -4,7 +4,7 @@ import { CollectModel } from "./collect.model";
 import * as Buzz from "./collect.buzzer";
 import State from "../99.core/state";
 
-export function reducer(model: CollectModel = new CollectModel(), act: Act.Actions, state?: State) {
+export function reducer(model: CollectModel = new CollectModel(), act: Act.Actions, state?: any) {
    switch (act.type) {
 
       case Act.UPDATE_COLLECT:

@@ -1,4 +1,3 @@
-import * as ActMnu from "../../98.menu.unit/menu.action";
 import * as ActBus from "../../99.bus.unit/bus.action";
 import * as ActCol from "../../97.collect.unit/collect.action";
 
@@ -8,7 +7,7 @@ export const initBus = (cpy: BusModel, bal: BusBit, ste: State) => {
 
   cpy.actList = []
 
-  if (bal == null) bal = { idx: null }
+  if (bal == null) bal = { idx: "" }
   if (bal.lst == null) bal.lst = []
 
   if ((bal.src != null) && (bal.src.constructor == Array)) lst = bal.src;
@@ -87,7 +86,7 @@ export const createBus = (cpy: BusModel, bal: BusBit, ste: State) => {
 export const openBus = async (cpy: BusModel, bal: BusBit, ste: State) => {
 
 
-  var out = []
+  var out: any[] = []
 
   bal.lst.forEach((a) => {
     if (a == null) return
@@ -122,7 +121,6 @@ export const openBus = async (cpy: BusModel, bal: BusBit, ste: State) => {
 export const connectBus = (cpy: BusModel, bal: BusBit, ste: State) => {
 
   var lst = []
-  if (bal.val == 1) patch(ste, ActMnu.INIT_MENU, { lst })
 }
 
 export const messageBus = async (cpy: BusModel, bal: BusBit, ste: State) => {

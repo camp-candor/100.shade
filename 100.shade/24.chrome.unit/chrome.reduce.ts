@@ -4,7 +4,7 @@ import { ChromeModel } from "./chrome.model";
 import * as Buzz from "./chrome.buzzer";
 import State from "../99.core/state";
 
-export function reducer(model: ChromeModel = new ChromeModel(), act: Act.Actions,  state?: State ) {
+export function reducer(model: ChromeModel = new ChromeModel(), act: Act.Actions,  state?: any ) {
  switch (act.type) {
  
  case Act.UPDATE_CHROME:

@@ -4,7 +4,7 @@ import { GraphicModel } from "./graphic.model";
 import * as Buzz from "./graphic.buzzer";
 import State from "../99.core/state";
 
-export function reducer(model: GraphicModel = new GraphicModel(), act: Act.Actions,  state?: State ) {
+export function reducer(model: GraphicModel = new GraphicModel(), act: Act.Actions,  state?: any ) {
  switch (act.type) {
  
  case Act.UPDATE_GRAPHIC:

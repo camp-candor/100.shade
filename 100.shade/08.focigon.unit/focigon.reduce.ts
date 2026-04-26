@@ -4,7 +4,7 @@ import { FocigonModel } from "./focigon.model";
 import * as Buzz from "./focigon.buzzer";
 import State from "../99.core/state";
 
-export function reducer(model: FocigonModel = new FocigonModel(), act: Act.Actions,  state?: State ) {
+export function reducer(model: FocigonModel = new FocigonModel(), act: Act.Actions,  state?: any ) {
  switch (act.type) {
  
  case Act.UPDATE_FOCIGON:

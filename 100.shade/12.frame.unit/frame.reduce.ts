@@ -4,7 +4,7 @@ import { FrameModel } from "./frame.model";
 import * as Buzz from "./frame.buzzer";
 import State from "../99.core/state";
 
-export function reducer(model: FrameModel = new FrameModel(), act: Act.Actions,  state?: State ) {
+export function reducer(model: FrameModel = new FrameModel(), act: Act.Actions,  state?: any ) {
  switch (act.type) {
  
  case Act.UPDATE_FRAME:

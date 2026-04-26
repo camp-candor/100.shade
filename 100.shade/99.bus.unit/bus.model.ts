@@ -9,7 +9,7 @@ export class BusModel implements Bus {
  actList:any;
  client:any;
  host:string = "mqtt://localhost:1883";
- bus:Function;
+ bus:Function = () => {};
  responseSuffix:string = '-response'
  promises:any = {}
 

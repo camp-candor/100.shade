@@ -17,14 +17,7 @@ import CameraUnit from "./13.camera.unit/camera.unit";
 import SpritesheetUnit from "./15.spritesheet.unit/spritesheet.unit";
 import VisageUnit from "./21.visage.unit/visage.unit";
 import ChromeUnit from "./24.chrome.unit/chrome.unit";
-//import TerminalUnit from "./80.terminal.unit/terminal.unit";
-import GridUnit from "./81.grid.unit/grid.unit";
-import CanvasUnit from "./82.canvas.unit/canvas.unit";
-import ConsoleUnit from "./83.console.unit/console.unit";
-//import InputUnit from "./84.input.unit/input.unit";
-//import ChoiceUnit from "./85.choice.unit/choice.unit";
 import CollectUnit from "./97.collect.unit/collect.unit";
-import MenuUnit from "./98.menu.unit/menu.unit";
 import BusUnit from "./99.bus.unit/bus.unit";
 
 
@@ -62,27 +55,12 @@ import Visage from "./21.visage.unit/fce/visage.interface";
 import { VisageModel } from "./21.visage.unit/visage.model";
 import Chrome from "./24.chrome.unit/fce/chrome.interface";
 import { ChromeModel } from "./24.chrome.unit/chrome.model";
-import Terminal from "./80.terminal.unit/fce/terminal.interface";
-import { TerminalModel } from "./80.terminal.unit/terminal.model";
-import Grid from "./81.grid.unit/fce/grid.interface";
-import { GridModel } from "./81.grid.unit/grid.model";
-import Canvas from "./82.canvas.unit/fce/canvas.interface";
-import { CanvasModel } from "./82.canvas.unit/canvas.model";
-import Console from "./83.console.unit/fce/console.interface";
-import { ConsoleModel } from "./83.console.unit/console.model";
-import Input from "./84.input.unit/fce/input.interface";
-import { InputModel } from "./84.input.unit/input.model";
-import Choice from "./85.choice.unit/fce/choice.interface";
-import { ChoiceModel } from "./85.choice.unit/choice.model";
 import Collect from "./97.collect.unit/fce/collect.interface";
 import { CollectModel } from "./97.collect.unit/collect.model";
-import Menu from "./98.menu.unit/fce/menu.interface";
-import { MenuModel } from "./98.menu.unit/menu.model";
 import Bus from "./99.bus.unit/fce/bus.interface";
 import { BusModel } from "./99.bus.unit/bus.model";
 
 
-export const list: Array<any> = [ShadeUnit,ApplicationUnit,SurfaceUnit,ContainerUnit,GraphicUnit,TextUnit,SpriteUnit,HexagonUnit,FocigonUnit,LoopUnit,ToonUnit,VideoUnit,FrameUnit,CameraUnit,SpritesheetUnit,VisageUnit,ChromeUnit,GridUnit,CanvasUnit,ConsoleUnit,CollectUnit,MenuUnit,BusUnit];
 
 import * as reduceFromShade from "./00.shade.unit/shade.reduce";
 import * as reduceFromApplication from "./01.application.unit/application.reduce";
@@ -101,14 +79,7 @@ import * as reduceFromCamera from "./13.camera.unit/camera.reduce";
 import * as reduceFromSpritesheet from "./15.spritesheet.unit/spritesheet.reduce";
 import * as reduceFromVisage from "./21.visage.unit/visage.reduce";
 import * as reduceFromChrome from "./24.chrome.unit/chrome.reduce";
-import * as reduceFromTerminal from "./80.terminal.unit/terminal.reduce";
-import * as reduceFromGrid from "./81.grid.unit/grid.reduce";
-import * as reduceFromCanvas from "./82.canvas.unit/canvas.reduce";
-import * as reduceFromConsole from "./83.console.unit/console.reduce";
-import * as reduceFromInput from "./84.input.unit/input.reduce";
-import * as reduceFromChoice from "./85.choice.unit/choice.reduce";
 import * as reduceFromCollect from "./97.collect.unit/collect.reduce";
-import * as reduceFromMenu from "./98.menu.unit/menu.reduce";
 import * as reduceFromBus from "./99.bus.unit/bus.reduce";
 
 
@@ -130,14 +101,7 @@ camera : reduceFromCamera.reducer,
 spritesheet : reduceFromSpritesheet.reducer, 
 visage : reduceFromVisage.reducer, 
 chrome : reduceFromChrome.reducer, 
-//terminal : reduceFromTerminal.reducer, 
-grid : reduceFromGrid.reducer, 
-canvas : reduceFromCanvas.reducer, 
-console : reduceFromConsole.reducer, 
-//input : reduceFromInput.reducer, 
-//choice : reduceFromChoice.reducer, 
 collect : reduceFromCollect.reducer, 
-menu : reduceFromMenu.reducer, 
 bus : reduceFromBus.reducer, 
 
 };
@@ -161,15 +125,9 @@ camera : Camera = new CameraModel();
 spritesheet : Spritesheet = new SpritesheetModel();
 visage : Visage = new VisageModel();
 chrome : Chrome = new ChromeModel();
-//terminal : Terminal = new TerminalModel();
-grid : Grid = new GridModel();
-canvas : Canvas = new CanvasModel();
-console : Console = new ConsoleModel();
-//input : Input = new InputModel();
-//choice : Choice = new ChoiceModel();
 collect : Collect = new CollectModel();
-menu : Menu = new MenuModel();
 bus : Bus = new BusModel();
 
  
 }
+export const list: any[] = [ShadeUnit,ApplicationUnit,SurfaceUnit,ContainerUnit,GraphicUnit,TextUnit,SpriteUnit,HexagonUnit,FocigonUnit,LoopUnit,ToonUnit,VideoUnit,FrameUnit,CameraUnit,SpritesheetUnit,VisageUnit,ChromeUnit,CollectUnit,BusUnit];
