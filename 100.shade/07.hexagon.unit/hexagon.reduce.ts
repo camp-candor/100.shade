@@ -4,7 +4,7 @@ import { HexagonModel } from "./hexagon.model";
 import * as Buzz from "./hexagon.buzzer";
 import State from "../99.core/state";
 
-export function reducer(model: HexagonModel = new HexagonModel(), act: Act.Actions,  state?: State ) {
+export function reducer(model: HexagonModel = new HexagonModel(), act: Act.Actions,  state?: any ) {
  switch (act.type) {
  
  case Act.UPDATE_HEXAGON:

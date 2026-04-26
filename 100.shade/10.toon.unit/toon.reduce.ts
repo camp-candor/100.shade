@@ -4,7 +4,7 @@ import { ToonModel } from "./toon.model";
 import * as Buzz from "./toon.buzzer";
 import State from "../99.core/state";
 
-export function reducer(model: ToonModel = new ToonModel(), act: Act.Actions,  state?: State ) {
+export function reducer(model: ToonModel = new ToonModel(), act: Act.Actions,  state?: any ) {
  switch (act.type) {
  
  case Act.UPDATE_TOON:

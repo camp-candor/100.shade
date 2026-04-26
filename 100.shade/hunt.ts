@@ -1,4 +1,4 @@
-var sim = {
+var sim: any = {
   hunt:null,
   state: null
 };
@@ -26,10 +26,10 @@ var init = () => {
   sim.state = new State();
   sim.state.pivot = sim;
   sim.state.hunt = sim.hunt
-  for (var k in Import.list) new Import.list[k](sim.state);
+  for (var k in list) new list[k](sim.state);
 };
 
-import * as Import from "./BEE";
+import { list } from "./BEE";
 import State from "./99.core/state";
 
-module.exports = sim;
+export default sim;

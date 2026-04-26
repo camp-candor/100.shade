@@ -4,7 +4,7 @@ import { VideoModel } from "./video.model";
 import * as Buzz from "./video.buzzer";
 import State from "../99.core/state";
 
-export function reducer(model: VideoModel = new VideoModel(), act: Act.Actions,  state?: State ) {
+export function reducer(model: VideoModel = new VideoModel(), act: Act.Actions,  state?: any ) {
  switch (act.type) {
  
  case Act.UPDATE_VIDEO:

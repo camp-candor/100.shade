@@ -5,30 +5,31 @@
   },
   "devDependencies": {
     "@root/walk": "^1.1.0",
-    "@types/node": "^22.13.5",
+    "@types/node": "^22.19.17",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
     "aedes": "^0.51.3",
     "assert": "^2.1.0",
     "async-mqtt": "^2.6.3",
     "buffer": "^6.0.3",
+    "clipboardy": "^4.0.0",
     "fs-extra": "^11.3.0",
+    "gpt-tokenizer": "^3.0.1",
+    "gsap": "^3.12.5",
+    "jsdom": "^26.1.0",
+    "ollama": "^0.5.0",
     "parcel": "^2.13.3",
     "parcel-resolver-ignore": "^2.2.0",
     "process": "^0.11.10",
     "terminal-kit": "^3.0.0",
     "typescript-ioc": "^3.2.2",
-    "websocket-stream": "^5.5.2",
-    "jsdom": "^26.1.0",
-    "gpt-tokenizer": "^3.0.1",
-    "gsap": "^3.12.5",
-    "ollama": "^0.5.0",
-    "clipboardy": "^4.0.0"
+    "websocket-stream": "^5.5.2"
   },
   "dependencies": {
     "@mantine/core": "^7.17.5",
     "@mantine/hooks": "^7.17.5",
     "@pixi/ui": "^2.2.0",
+    "@tanstack/react-query": "^5.66.11",
     "@tanstack/react-router": "^1.119.0",
     "bezier-js": "^6.1.4",
     "blessed": "^0.1.81",
@@ -47,7 +48,7 @@
     "rx-lite": "^4.0.8",
     "string": "^3.3.3",
     "stringify": "^5.2.0",
-    "@tanstack/react-query": "^5.66.11"
+    "typescript": "^6.0.3"
   },
   "alias": {
     "@tanstack/router-core/isServer": "@tanstack/router-core/dist/esm/isServer/client.js",
