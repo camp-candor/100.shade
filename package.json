@@ -9,9 +9,11 @@
     "@types/node": "^22.19.17",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
+    "@types/sinon": "^17.0.3",
     "aedes": "^0.51.3",
     "assert": "^2.1.0",
     "async-mqtt": "^2.6.3",
+    "ava": "^6.1.2",
     "buffer": "^6.0.3",
     "clipboardy": "^4.0.0",
     "fs-extra": "^11.3.0",
@@ -22,13 +24,11 @@
     "parcel": "^2.13.3",
     "parcel-resolver-ignore": "^2.2.0",
     "process": "^0.11.10",
-    "terminal-kit": "^3.0.0",
-    "typescript-ioc": "^3.2.2",
-    "websocket-stream": "^5.5.2",
-    "ava": "^6.1.2",
     "sinon": "^17.0.1",
-    "@types/sinon": "^17.0.3",
-    "tsx": "^4.7.1"
+    "terminal-kit": "^3.0.0",
+    "tsx": "^4.7.1",
+    "typescript-ioc": "^3.2.2",
+    "websocket-stream": "^5.5.2"
   },
   "dependencies": {
     "@mantine/core": "^7.17.5",
@@ -53,7 +53,7 @@
     "rx-lite": "^4.0.8",
     "string": "^3.3.3",
     "stringify": "^5.2.0",
-    "typescript": "^6.0.3"
+    "typescript": "^5.6.3"
   },
   "alias": {
     "@tanstack/router-core/isServer": "@tanstack/router-core/dist/esm/isServer/client.js",
