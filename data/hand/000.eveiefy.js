@@ -50,9 +50,9 @@ var eveiefy = () => {
 
   var endLoc = "../" + title + "/work/" + title + ".js";
   FS.ensureFileSync(endLoc);
-  console.log("bundle me ... " + endLoc)
+  console.log("bundle me ... " + endLoc);
 
-  var stream = FS.createWriteStream(endLoc, {encoding:'utf8'});
+  var stream = FS.createWriteStream(endLoc, { encoding: "utf8" });
   stream.on("error", () => {
     console.log("error browserify stream");
   });
@@ -82,6 +82,9 @@ var eveiefy = () => {
       appliesTo: {
         includeExtensions: [".txt", ".html"],
       },
+    })
+    .require(require.resolve("../../node_modules/earcut/dist/earcut.dev.js"), {
+      expose: "earcut",
     })
 
     .exclude("fs")
@@ -137,8 +140,12 @@ var eveiefy = () => {
     .exclude("undici")
     .exclude("pty.js")
     .exclude("blessed")
+    // .exclude("pixi.js")
+    // .exclude("@pixi/ui")
+    //.exclude("earcut")
+    //.exclude("gsap");
 
-  var loc = "../" + title + '/' + title + "/000.quest." + pvt + ".js";
+  var loc = "../" + title + "/" + title + "/000.quest." + pvt + ".js";
   console.log("let see " + loc);
 
   b.add(loc);

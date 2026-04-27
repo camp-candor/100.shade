@@ -41,6 +41,8 @@ export const createSurface = async (cpy: SurfaceModel, bal: SurfaceBit, ste: Sta
     var el: HTMLElement | null = document.getElementById(dat.src as string)
 
 
+ 
+
     //const width = 800;
     //const height = 480;
 
@@ -49,17 +51,25 @@ export const createSurface = async (cpy: SurfaceModel, bal: SurfaceBit, ste: Sta
 
     var app = dat.bit;
 
+    if ( bal.dat == null ) bal.dat;
+
+    bal.dat.rsz = true
+
     //app.init
     if (bal.dat.rsz && el) {
         await app.init({ background: bal.dat.clr, resizeTo: el });
+         debugger
     } else {
         await app.init({ background: bal.dat.clr, width, height });
+        debugger
     }
     //await app.init({ background: '#00FFFF',  resizeTo: window });
 
     //debugger
     //var el = document.getElementById("surface00");
     if (el) el.appendChild(app.canvas);
+
+   
 
     bal.slv({ fceBit: { idx: "create-surface", dat:{bit:app} } });
 
@@ -153,7 +163,7 @@ export const readSurface = async (cpy: SurfaceModel, bal: SurfaceBit, ste: State
 };
 export const writeSurface = async (cpy: SurfaceModel, bal: SurfaceBit, ste: State) => {
 
-
+    
 
     bit = await ste.hunt(ActCol.WRITE_COLLECT, { idx: bal.idx, dat: bal.dat, bit: ActFce.CREATE_SURFACE })
     ste.hunt(ActFce.UPDATE_SURFACE, { idx: bal.idx })

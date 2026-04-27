@@ -1,0 +1,7 @@
+﻿separator : 100.shade
+show me the pivot shade
+bundle me ... ../100.shade/work/100.shade.js
+working...
+let see ../100.shade/100.shade/000.quest.shade.js
+updated 100.shade
+replace 100.shade

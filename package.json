@@ -1,7 +1,8 @@
 {
   "scripts": {
     "dev": "node run.js",
-    "launch": "yarn parcel src/index.html --open"
+    "launch": "yarn parcel src/index.html --open",
+    "test": "ava"
   },
   "devDependencies": {
     "@root/walk": "^1.1.0",
@@ -23,7 +24,11 @@
     "process": "^0.11.10",
     "terminal-kit": "^3.0.0",
     "typescript-ioc": "^3.2.2",
-    "websocket-stream": "^5.5.2"
+    "websocket-stream": "^5.5.2",
+    "ava": "^6.1.2",
+    "sinon": "^17.0.1",
+    "@types/sinon": "^17.0.3",
+    "tsx": "^4.7.1"
   },
   "dependencies": {
     "@mantine/core": "^7.17.5",
@@ -62,5 +67,17 @@
     "#ansi-styles",
     "privacy-policy.html",
     "#supports-color"
-  ]
+  ],
+  "ava": {
+    "files": [
+      "test/**/*.test.ts"
+    ],
+    "extensions": {
+      "ts": "commonjs",
+      "tsx": "commonjs"
+    },
+    "nodeArguments": [
+      "--import=tsx"
+    ]
+  }
 }
