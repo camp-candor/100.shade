@@ -1,4 +1,4 @@
-import * as clone from "clone-deep";
+import clone = require("clone-deep");
 import * as Act from "./shade.action";
 import { ShadeModel } from "./shade.model";
 import * as Buzz from "./shade.buzzer";
