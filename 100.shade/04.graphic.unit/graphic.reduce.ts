@@ -1,4 +1,4 @@
-import * as clone from "clone-deep";
+import clone = require("clone-deep");
 import * as Act from "./graphic.action";
 import { GraphicModel } from "./graphic.model";
 import * as Buzz from "./graphic.buzzer";

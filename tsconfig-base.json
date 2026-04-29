@@ -13,6 +13,8 @@
     "sourceMap": true,
     "skipLibCheck": false,
     "outDir": "dist",
-    "ignoreDeprecations": "5.0", "baseUrl": "."
+    "ignoreDeprecations": "6.0", "baseUrl": ".",
+    "strict": false,
+    "strictNullChecks": false
   }
 }

@@ -1,4 +1,4 @@
-import * as clone from "clone-deep";
+import clone = require("clone-deep");
 import * as Act from "./console.action";
 import { ConsoleModel } from "./console.model";
 import * as Buzz from "./console.buzzer";

@@ -1,4 +1,4 @@
-import * as clone from "clone-deep";
+import clone = require("clone-deep");
 import * as Act from "./spritesheet.action";
 import { SpritesheetModel } from "./spritesheet.model";
 import * as Buzz from "./spritesheet.buzzer";

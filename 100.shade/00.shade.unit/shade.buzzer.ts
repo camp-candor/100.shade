@@ -8,3 +8,4 @@ export { editShade  } from "./buz/shade.buzz";
 export { patchShade  } from "./buz/shade.buzz";
 export { testShade  } from "./buz/shade.buzz";
 export { buildShade  } from "./buz/shade.buzz";
+export { launchShade  } from "./buz/shade.buzz";

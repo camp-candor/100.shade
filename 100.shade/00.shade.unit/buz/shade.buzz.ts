@@ -17,7 +17,6 @@ import * as ActPvt from "../../act/pivot.action";
 import * as ActVrt from "../../act/vurt.action";
 import * as ActDsk from "../../act/disk.action";
 
-
 import { ShadeModel } from "../shade.model";
 import ShadeBit from "../fce/shade.bit";
 import State from "../../99.core/state";
@@ -39,6 +38,28 @@ export const initShade = async (cpy: ShadeModel, bal: ShadeBit, ste: State) => {
     //ste.bus(ActSpc.READY_SPACE, {})
 
     if (bal.slv != null) bal.slv({ intBit: { idx: "init-shade" } });
+
+    return cpy;
+};
+
+export const launchShade = async (cpy: ShadeModel, bal:ShadeBit, ste: State) => {
+    const { spawn } = require('child_process');
+
+    const child = spawn('npm', ['run', 'launch'], { shell: true });
+
+    child.stdout.on('data', async (data: Buffer) => {
+        await ste.hunt("[Console action] Update Console", { idx: 'cns00', src: data.toString() });
+    });
+
+    child.stderr.on('data', async (data: Buffer) => {
+        await ste.hunt("[Console action] Update Console", { idx: 'cns00', src: data.toString() });
+    });
+
+    child.on('close', async (code: number) => {
+        await ste.hunt("[Console action] Update Console", { idx: 'cns00', src: `launch process exited with code ${code}` });
+    });
+
+    if (bal.slv != null) bal.slv({ shdBit: { idx: "launch-shade", dat: {} } });
 
     return cpy;
 };

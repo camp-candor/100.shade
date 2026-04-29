@@ -1,4 +1,4 @@
-import * as clone from "clone-deep";
+import clone = require("clone-deep");
 import * as Act from "./grid.action";
 import { GridModel } from "./grid.model";
 import * as Buzz from "./grid.buzzer";

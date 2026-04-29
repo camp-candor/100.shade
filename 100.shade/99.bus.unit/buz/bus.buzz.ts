@@ -222,4 +222,4 @@ import { BusModel } from "../bus.model";
 import BusBit from "../fce/bus.bit";
 import State from "../../99.core/state";
 import S from "string";
-import * as clone from "clone-deep";
+import clone = require("clone-deep");

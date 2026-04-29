@@ -1,4 +1,4 @@
-import * as clone from "clone-deep";
+import clone = require("clone-deep");
 import * as Act from "./focigon.action";
 import { FocigonModel } from "./focigon.model";
 import * as Buzz from "./focigon.buzzer";

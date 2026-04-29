@@ -1,4 +1,4 @@
-import * as clone from "clone-deep";
+import clone = require("clone-deep");
 import * as Act from "./surface.action";
 import { SurfaceModel } from "./surface.model";
 import * as Buzz from "./surface.buzzer";

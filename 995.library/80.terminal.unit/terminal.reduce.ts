@@ -1,4 +1,4 @@
-import * as clone from "clone-deep";
+import clone = require("clone-deep");
 import * as Act from "./terminal.action";
 import { TerminalModel } from "./terminal.model";
 import * as Buzz from "./terminal.buzzer";

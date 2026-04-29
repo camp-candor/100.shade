@@ -1,4 +1,4 @@
-import * as clone from "clone-deep";
+import clone = require("clone-deep");
 import * as Act from "./visage.action";
 import { VisageModel } from "./visage.model";
 import * as Buzz from "./visage.buzzer";

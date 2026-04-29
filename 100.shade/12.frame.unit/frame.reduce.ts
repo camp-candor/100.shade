@@ -1,4 +1,4 @@
-import * as clone from "clone-deep";
+import clone = require("clone-deep");
 import * as Act from "./frame.action";
 import { FrameModel } from "./frame.model";
 import * as Buzz from "./frame.buzzer";

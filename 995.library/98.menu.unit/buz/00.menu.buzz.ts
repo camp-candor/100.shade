@@ -56,7 +56,7 @@ export const initMenu = async (cpy: MenuModel, bal: MenuBit, ste: State) => {
   bit = await ste.hunt(ActCns.WRITE_CONSOLE, { idx: 'cns00', src: "", dat: { net: bit.grdBit.dat, src: "alligaor0" } })
 
   bit = await ste.hunt(ActCns.UPDATE_CONSOLE, { idx: 'cns00', src: "-----------" })
-  bit = await ste.hunt(ActCns.UPDATE_CONSOLE, { idx: 'cns00', src: "Shade PIVOT V0" })
+  bit = await ste.hunt(ActCns.UPDATE_CONSOLE, { idx: 'cns00', src: "Shade PIVOT V 0.0.1" })
   bit = await ste.hunt(ActCns.UPDATE_CONSOLE, { idx: 'cns00', src: "-----------" })
 
   
@@ -74,6 +74,7 @@ export const updateMenu = async (cpy: MenuModel, bal: MenuBit, ste: State) => {
 
   lst = [
     ActSde.BUILD_SHADE,
+    ActSde.LAUNCH_SHADE,
     ActLib.COUNT_LIBRARY,
     ActLib.COUNT_LIBRARY,
     ActUnt.UPDATE_UNIT,
@@ -91,6 +92,16 @@ export const updateMenu = async (cpy: MenuModel, bal: MenuBit, ste: State) => {
   src = bit.chcBit.src;
 
   switch (src) {
+
+
+    case ActSde.LAUNCH_SHADE:
+
+      
+      var updateBit = await ste.hunt(ActSde.LAUNCH_SHADE, {})
+
+
+      bit = await ste.hunt(ActMnu.PRINT_MENU, updateBit)
+      break;
 
     case ActSde.BUILD_SHADE:
 

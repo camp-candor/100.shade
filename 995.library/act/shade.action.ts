@@ -8,3 +8,4 @@ export const EDIT_SHADE = "[Edit action] Edit Shade";
 export const PATCH_SHADE = "[Patch action] Patch Shade";
 export const TEST_SHADE = "[Test action] Test Shade";
 export const BUILD_SHADE = "[Build action] Build Shade";
+export const LAUNCH_SHADE = "[Launch action] Launch Shade";

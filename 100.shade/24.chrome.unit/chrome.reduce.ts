@@ -1,4 +1,4 @@
-import * as clone from "clone-deep";
+import clone = require("clone-deep");
 import * as Act from "./chrome.action";
 import { ChromeModel } from "./chrome.model";
 import * as Buzz from "./chrome.buzzer";

@@ -1,4 +1,4 @@
-import * as clone from "clone-deep";
+import clone = require("clone-deep");
 import * as Act from "./input.action";
 import { InputModel } from "./input.model";
 import * as Buzz from "./input.buzzer";

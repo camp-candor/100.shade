@@ -1,4 +1,4 @@
-import * as clone from "clone-deep";
+import clone = require("clone-deep");
 import * as Act from "./menu.action";
 import { MenuModel } from "./menu.model";
 import * as Buzz from "./menu.buzzer";

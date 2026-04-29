@@ -1,4 +1,4 @@
-import * as clone from "clone-deep";
+import clone = require("clone-deep");
 import * as Act from "./library.action";
 import { LibraryModel } from "./library.model";
 import * as Buzz from "./library.buzzer";

@@ -1,4 +1,4 @@
-import * as clone from "clone-deep";
+import clone = require("clone-deep");
 import * as Act from "./sprite.action";
 import { SpriteModel } from "./sprite.model";
 import * as Buzz from "./sprite.buzzer";

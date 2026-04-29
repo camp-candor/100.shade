@@ -1,4 +1,4 @@
-import * as clone from "clone-deep";
+import clone = require("clone-deep");
 import * as Act from "./hexagon.action";
 import { HexagonModel } from "./hexagon.model";
 import * as Buzz from "./hexagon.buzzer";

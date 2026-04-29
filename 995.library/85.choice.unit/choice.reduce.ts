@@ -1,4 +1,4 @@
-import * as clone from "clone-deep";
+import clone = require("clone-deep");
 import * as Act from "./choice.action";
 import { ChoiceModel } from "./choice.model";
 import * as Buzz from "./choice.buzzer";
