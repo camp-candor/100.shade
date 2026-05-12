@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
     //  "declaration": true,
-    "module": "commonjs",
+    "module": "Node16",
     "target": "es2017",
     "incremental": true,
     "isolatedModules": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "noImplicitAny": false,
-    "moduleResolution": "node",
+    "moduleResolution": "Node16",
+    "types": ["node"],
     "resolveJsonModule": false,
     "sourceMap": true,
     "skipLibCheck": false,
     "outDir": "dist",
-    "ignoreDeprecations": "6.0", "baseUrl": ".",
     "strict": false,
     "strictNullChecks": false
   }

@@ -52,7 +52,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.buildShade = exports.testShade = exports.patchShade = exports.editShade = exports.bodyShade = exports.updateShade = exports.browserShade = exports.runShade = exports.openShade = exports.initShade = void 0;
+exports.buildShade = exports.testShade = exports.patchShade = exports.editShade = exports.bodyShade = exports.updateShade = exports.browserShade = exports.runShade = exports.openShade = exports.launchShade = exports.initShade = void 0;
 const ActBus = __importStar(require("../../99.bus.unit/bus.action"));
 const ActShd = __importStar(require("../../00.shade.unit/shade.action"));
 const ActVsg = __importStar(require("../../21.visage.unit/visage.action"));
@@ -79,6 +79,23 @@ const initShade = async (cpy, bal, ste) => {
     return cpy;
 };
 exports.initShade = initShade;
+const launchShade = async (cpy, bal, ste) => {
+    const { spawn } = require('child_process');
+    const child = spawn('npm', ['run', 'launch'], { shell: true });
+    child.stdout.on('data', async (data) => {
+        await ste.hunt("[Console action] Update Console", { idx: 'cns00', src: data.toString() });
+    });
+    child.stderr.on('data', async (data) => {
+        await ste.hunt("[Console action] Update Console", { idx: 'cns00', src: data.toString() });
+    });
+    child.on('close', async (code) => {
+        await ste.hunt("[Console action] Update Console", { idx: 'cns00', src: `launch process exited with code ${code}` });
+    });
+    if (bal.slv != null)
+        bal.slv({ shdBit: { idx: "launch-shade", dat: {} } });
+    return cpy;
+};
+exports.launchShade = launchShade;
 const openShade = async (cpy, bal, ste) => {
     var batch;
     const { spawn } = require('child_process');
@@ -226,7 +243,7 @@ var patch = (ste, type, bale) => ste.dispatch({ type, bale });
 },{"../../00.shade.unit/shade.action":3,"../../02.surface.unit/surface.action":15,"../../03.container.unit/container.action":21,"../../04.graphic.unit/graphic.action":27,"../../05.text.unit/text.action":33,"../../06.sprite.unit/sprite.action":39,"../../07.hexagon.unit/hexagon.action":45,"../../10.toon.unit/toon.action":63,"../../11.video.unit/video.action":69,"../../21.visage.unit/visage.action":93,"../../99.bus.unit/bus.action":110,"../../act/disk.action":118,"_process":868,"child_process":undefined,"fs-extra":undefined,"path":237}],3:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BuildShade = exports.BUILD_SHADE = exports.TestShade = exports.TEST_SHADE = exports.PatchShade = exports.PATCH_SHADE = exports.EditShade = exports.EDIT_SHADE = exports.RunShade = exports.RUN_SHADE = exports.BrowserShade = exports.BROWSER_SHADE = exports.BodyShade = exports.BODY_SHADE = exports.OpenShade = exports.OPEN_SHADE = exports.UpdateShade = exports.UPDATE_SHADE = exports.InitShade = exports.INIT_SHADE = void 0;
+exports.LaunchShade = exports.LAUNCH_SHADE = exports.BuildShade = exports.BUILD_SHADE = exports.TestShade = exports.TEST_SHADE = exports.PatchShade = exports.PATCH_SHADE = exports.EditShade = exports.EDIT_SHADE = exports.RunShade = exports.RUN_SHADE = exports.BrowserShade = exports.BROWSER_SHADE = exports.BodyShade = exports.BODY_SHADE = exports.OpenShade = exports.OPEN_SHADE = exports.UpdateShade = exports.UPDATE_SHADE = exports.InitShade = exports.INIT_SHADE = void 0;
 // Shade actions
 exports.INIT_SHADE = "[Shade action] Init Shade";
 class InitShade {
@@ -308,11 +325,19 @@ class BuildShade {
     }
 }
 exports.BuildShade = BuildShade;
+exports.LAUNCH_SHADE = "[Launch action] Launch Shade";
+class LaunchShade {
+    constructor(bale) {
+        this.bale = bale;
+        this.type = exports.LAUNCH_SHADE;
+    }
+}
+exports.LaunchShade = LaunchShade;
 
 },{}],4:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.buildShade = exports.testShade = exports.patchShade = exports.editShade = exports.runShade = exports.browserShade = exports.bodyShade = exports.openShade = exports.updateShade = exports.initShade = void 0;
+exports.launchShade = exports.buildShade = exports.testShade = exports.patchShade = exports.editShade = exports.runShade = exports.browserShade = exports.bodyShade = exports.openShade = exports.updateShade = exports.initShade = void 0;
 var shade_buzz_1 = require("./buz/shade.buzz");
 Object.defineProperty(exports, "initShade", { enumerable: true, get: function () { return shade_buzz_1.initShade; } });
 var shade_buzz_2 = require("./buz/shade.buzz");
@@ -333,6 +358,8 @@ var shade_buzz_9 = require("./buz/shade.buzz");
 Object.defineProperty(exports, "testShade", { enumerable: true, get: function () { return shade_buzz_9.testShade; } });
 var shade_buzz_10 = require("./buz/shade.buzz");
 Object.defineProperty(exports, "buildShade", { enumerable: true, get: function () { return shade_buzz_10.buildShade; } });
+var shade_buzz_11 = require("./buz/shade.buzz");
+Object.defineProperty(exports, "launchShade", { enumerable: true, get: function () { return shade_buzz_11.launchShade; } });
 
 },{"./buz/shade.buzz":2}],5:[function(require,module,exports){
 "use strict";
@@ -410,6 +437,8 @@ function reducer(model = new shade_model_1.ShadeModel(), act, state) {
             return Buzz.testShade(clone(model), act.bale, state);
         case Act.BUILD_SHADE:
             return Buzz.buildShade(clone(model), act.bale, state);
+        case Act.LAUNCH_SHADE:
+            return Buzz.launchShade(clone(model), act.bale, state);
         default:
             return model;
     }
