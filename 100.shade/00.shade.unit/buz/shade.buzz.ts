@@ -22,9 +22,11 @@ import ShadeBit from "../fce/shade.bit";
 import State from "../../99.core/state";
 import * as doT from "dot";
 
+
 var bit, val, idx, dex, lst, dat, src;
 
 var once = false
+const trace = async (src) => await global.LIBRARY.hunt("[Console action] Update Console", { idx: 'cns00', src });
 
 export const initShade = async (cpy: ShadeModel, bal: ShadeBit, ste: State) => {
 
@@ -43,23 +45,44 @@ export const initShade = async (cpy: ShadeModel, bal: ShadeBit, ste: State) => {
 };
 
 export const launchShade = async (cpy: ShadeModel, bal:ShadeBit, ste: State) => {
+        
+    await trace( 'launch shade' );
+
+      var batch;
+
     const { spawn } = require('child_process');
+    const path = require('path');
 
-    const child = spawn('npm', ['run', 'launch'], { shell: true });
+    function launchBatchFile(userInputPath) {
+        const sanitizedPath = path.normalize(userInputPath); // Sanitize the path
 
-    child.stdout.on('data', async (data: Buffer) => {
-        await ste.hunt("[Console action] Update Console", { idx: 'cns00', src: data.toString() });
-    });
+        batch = spawn('cmd', ['/c', sanitizedPath]);
 
-    child.stderr.on('data', async (data: Buffer) => {
-        await ste.hunt("[Console action] Update Console", { idx: 'cns00', src: data.toString() });
-    });
+        batch.stdout.on('data', async (data) => {
+            
+            trace( `stdout: ${data}` )
+            
+        });
 
-    child.on('close', async (code: number) => {
-        await ste.hunt("[Console action] Update Console", { idx: 'cns00', src: `launch process exited with code ${code}` });
-    });
+        batch.stderr.on('data', async (data) => {
+            trace(`stderr: ${data}`)
+        });
 
-    if (bal.slv != null) bal.slv({ shdBit: { idx: "launch-shade", dat: {} } });
+        batch.on('close', async (code) => {
+            
+            trace(`child process exited with code ${code}`)
+            //FS.emptyDir( dest, ()=>{
+            //  FS.copySync('./dist/win-unpacked/' , dest )
+            //})
+
+
+        });
+
+    }
+
+    launchBatchFile(process.env.SHADE_BAT);
+
+    bal.slv({ shdBit: { idx: "launch-shade", dat: {} } });
 
     return cpy;
 };
@@ -70,14 +93,6 @@ export const openShade = async (cpy: ShadeModel, bal: ShadeBit, ste: State) => {
 
     const { spawn } = require('child_process');
     const path = require('path');
-
-
-
-    // Simulate some work
-    //setTimeout(() => {
-    //  console.log('Work completed.');
-    //  process.exit(0); // Exit with success code
-    //}, 10000);
 
     function launchBatchFile(userInputPath) {
         const sanitizedPath = path.normalize(userInputPath); // Sanitize the path

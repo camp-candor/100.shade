@@ -5,7 +5,10 @@
     "test": "ava"
   },
   "devDependencies": {
+    "@parcel/rust-win32-x64-msvc": "^2.16.4",
     "@root/walk": "^1.1.0",
+    "@swc/core": "^1.15.33",
+    "@swc/core-win32-x64-msvc": "^1.15.33",
     "@types/node": "^22.19.17",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",

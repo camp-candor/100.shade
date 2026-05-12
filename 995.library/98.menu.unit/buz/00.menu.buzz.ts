@@ -63,7 +63,9 @@ export const initMenu = async (cpy: MenuModel, bal: MenuBit, ste: State) => {
 
   if (global.SHADE == null) await new Promise<void>((resolve, reject) => exec('tsc -b 100.shade', err => err ? reject(err) : resolve()));
   if (global.SHADE == null) bit = await ste.hunt(ActMnu.PRINT_MENU, { src: "compiled shade" });
-  if (global.SHADE == null) global.SHADE = SHADE = require(path.resolve('./dist/100.shade/hunt'));
+  if (global.SHADE == null) SHADE = require(path.resolve('./dist/100.shade/hunt'));
+  if ( global.SHADE == null )  global.SHADE = SHADE.default
+
 
   updateMenu(cpy, bal, ste);
 
@@ -93,12 +95,9 @@ export const updateMenu = async (cpy: MenuModel, bal: MenuBit, ste: State) => {
 
   switch (src) {
 
-
     case ActSde.LAUNCH_SHADE:
-
-      
-      var updateBit = await ste.hunt(ActSde.LAUNCH_SHADE, {})
-
+    
+      var updateBit = await global.SHADE.hunt(ActSde.LAUNCH_SHADE, {})
 
       bit = await ste.hunt(ActMnu.PRINT_MENU, updateBit)
       break;
