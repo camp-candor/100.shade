@@ -48,39 +48,25 @@ export const launchShade = async (cpy: ShadeModel, bal:ShadeBit, ste: State) => 
         
     await trace( 'launch shade' );
 
-      var batch;
-
     const { spawn } = require('child_process');
-    const path = require('path');
 
-    function launchBatchFile(userInputPath) {
-        const sanitizedPath = path.normalize(userInputPath); // Sanitize the path
+    const batch = spawn('npm', ['run', 'launch'], { shell: true });
 
-        batch = spawn('cmd', ['/c', sanitizedPath]);
+    batch.stdout.on('data', async (data) => {
+        
+        trace( `stdout: ${data}` )
+        
+    });
 
-        batch.stdout.on('data', async (data) => {
-            
-            trace( `stdout: ${data}` )
-            
-        });
+    batch.stderr.on('data', async (data) => {
+        trace(`stderr: ${data}`)
+    });
 
-        batch.stderr.on('data', async (data) => {
-            trace(`stderr: ${data}`)
-        });
+    batch.on('close', async (code) => {
+        
+        trace(`child process exited with code ${code}`)
 
-        batch.on('close', async (code) => {
-            
-            trace(`child process exited with code ${code}`)
-            //FS.emptyDir( dest, ()=>{
-            //  FS.copySync('./dist/win-unpacked/' , dest )
-            //})
-
-
-        });
-
-    }
-
-    launchBatchFile(process.env.SHADE_BAT);
+    });
 
     bal.slv({ shdBit: { idx: "launch-shade", dat: {} } });
 
@@ -89,37 +75,22 @@ export const launchShade = async (cpy: ShadeModel, bal:ShadeBit, ste: State) => 
 
 export const openShade = async (cpy: ShadeModel, bal: ShadeBit, ste: State) => {
 
-    var batch;
-
     const { spawn } = require('child_process');
-    const path = require('path');
 
-    function launchBatchFile(userInputPath) {
-        const sanitizedPath = path.normalize(userInputPath); // Sanitize the path
+    const batch = spawn('npm', ['run', 'launch'], { shell: true });
 
-        batch = spawn('cmd', ['/c', sanitizedPath]);
+    batch.stdout.on('data', async (data) => {
+        console.log(`stdout: ${data}`)
+    });
 
-        batch.stdout.on('data', async (data) => {
-            console.log(`stdout: ${data}`)
-        });
+    batch.stderr.on('data', async (data) => {
+        console.error(`stderr: ${data}`)
+    });
 
-        batch.stderr.on('data', async (data) => {
-            console.error(`stderr: ${data}`)
-        });
-
-        batch.on('close', async (code) => {
-            console.log();
-            console.log(`child process exited with code ${code}`)
-            //FS.emptyDir( dest, ()=>{
-            //  FS.copySync('./dist/win-unpacked/' , dest )
-            //})
-
-
-        });
-
-    }
-
-    launchBatchFile(process.env.SHADE_BAT);
+    batch.on('close', async (code) => {
+        console.log();
+        console.log(`child process exited with code ${code}`)
+    });
 
     bal.slv({ shdBit: { idx: "open-shade", dat: {} } });
 
