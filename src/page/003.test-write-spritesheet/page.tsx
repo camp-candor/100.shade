@@ -1,6 +1,6 @@
 import React from 'react'
 
-import WriteSpritesheetTest from "../../../ui/test/SpritesheetTest"
+import WriteSpritesheetTest from "../../../ui/test/WriteSpritesheetTest"
 
 /**
  * The main page component that renders the HomePage component.
@@ -9,7 +9,7 @@ import WriteSpritesheetTest from "../../../ui/test/SpritesheetTest"
  */
 const Page = () => {
     
-    return <SurfaceTest/>;
+    return <WriteSpritesheetTest/>;
 };
 
 export default Page;
