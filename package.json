@@ -20,7 +20,6 @@
     "fs-extra": "^11.3.0",
     "gpt-tokenizer": "^3.0.1",
     "gsap": "^3.12.5",
-    "jsdom": "^26.1.0",
     "ollama": "^0.5.0",
     "parcel": "^2.13.3",
     "parcel-resolver-ignore": "^2.2.0",

@@ -52,14 +52,7 @@ const init = async (prt) => {
 
     const localBit = { idx: 'local', src: local };
 
-    const { JSDOM } = require('jsdom');
 
-    const dom = new JSDOM('<!DOCTYPE html><html><body></body></html>', {
-        url: 'http://localhost', // Provide a URL for features like location.href
-    });
-
-    // Attach the jsdom window to the Node.js global object
-    global.window = dom.window;
 
     LIBRARY = require(path.resolve('./dist/995.library/hunt'));
     LIBRARY_ACTION = require(path.resolve('./dist/995.library/00.library.unit/library.action'));
@@ -138,14 +131,7 @@ function launchBatchFile(userInputPath) {
 
 //const init = async () => {
 
-//    const { JSDOM } = require('jsdom');
 
-//    const dom = new JSDOM('<!DOCTYPE html><html><body></body></html>', {
-//        url: 'http://localhost', // Provide a URL for features like location.href
-//    });
-
-    // Attach the jsdom window to the Node.js global object
- //   global.window = dom.window;
 
  //   LIBRARY = require(path.resolve('./dist/995.library/hunt'));
  //   LIBRARY_ACTION = require(path.resolve('./dist/995.library/00.library.unit/library.action'));
