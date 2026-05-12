@@ -1,4 +1,3 @@
-
 import React from 'react'
 
 import SurfaceAdd from '../../view/000.SurfaceAdd'
@@ -6,7 +5,7 @@ import SurfaceRemove from '../../view/001.SurfaceRemove'
 
 var open = false
 
-const Test = (bus) => {
+const Test = (bus: any) => {
 
   if ( open == true ){
 
@@ -15,31 +14,31 @@ const Test = (bus) => {
       console.log('surface add')
 
      // bit =  await window['SHADE']( ActFce.WRITE_SURFACE, { idx, dat:{ src }  })
-          
-  //}
-  
-  
-    //}, 222 )
+
+  // }
+
+
+    }, 222 )
 
     return (
       <div id='surface'>
         Testing Surface ADD EXIST
-        
+
       </div>
     )
-  
+
   }
 
   open = true
-  
 
 
 
-  
+
+
 
   return (
     <div>
-      Testing Surface ADD 
+      Testing Surface ADD
     </div>
   )
 
@@ -47,5 +46,3 @@ const Test = (bus) => {
 }
 
 export default Test
-
-
