@@ -290,9 +290,7 @@ export const formatCollect = (
 };
 
 export const listCollect = (cpy: CollectModel, bal: CollectBit, ste: State) => {
-
-  
-
+  if (bal.val == null) bal.val = 1;
   var type = bal.bit.split(' ').slice(-1).pop().toLowerCase();
   if (cpy.caboodleBits[type] == null) createCollect(cpy, { idx: type }, ste);
 
@@ -301,16 +299,19 @@ export const listCollect = (cpy: CollectModel, bal: CollectBit, ste: State) => {
   lst = [];
 
   cabBit.bitList.forEach((a) => {
-    if (a.idx != null) lst.push(a.idx);
-    if (a.id != null) lst.push(a.id);
+    if (bal.val == 0) {
+      lst.push(a);
+    } else if (bal.val == 1) {
+      if (a.idx != null) lst.push(a.idx);
+      if (a.id != null) lst.push(a.id);
+    }
   });
-
-  
 
   bal.slv({ clcBit: { idx: 'list-collect', lst } });
 
   return cpy;
 };
+
 
 export const hashCollect = (cpy: CollectModel, bal: CollectBit, ste: State) => {
   if (bal.src == null) bal.src = '';
